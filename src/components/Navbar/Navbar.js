@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.css"
+import "./Navbar.css"
 import { Link } from "react-router-dom"
 
 export default function Navbar() {
@@ -10,19 +10,19 @@ export default function Navbar() {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/homepage">HOMEPAGE</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/about-us">ABOUT US</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/events">EVENTS</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/workshops">WORKSHOPS</Link>
-                    </li>
+                <ul className="navbar-nav brackets">
+
+                    <Link className="nav-link" to="/homepage"><span className="nav-link-text">HOMEPAGE</span></Link>
+
+
+                    <Link className="nav-link" to="/about-us"><span className="nav-link-text">ABOUT US</span></Link>
+
+
+                    <Link className="nav-link" to="/events"><span className="nav-link-text">EVENTS</span></Link>
+
+
+                    <Link className="nav-link" to="/workshops"><span className="nav-link-text">WORKSHOPS</span></Link>
+
 
                 </ul>
             </div>

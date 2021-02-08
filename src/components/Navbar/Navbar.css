@@ -1,0 +1,113 @@
+@font-face {
+    font-family: screamingNeon;
+    src: url(./screaming_neon.ttf);
+}
+
+nav {
+    position: sticky !important;
+    top: 0;
+    z-index: 100;
+    /* background-color: #00001A; */
+    border-radius: 0px 0px 50px 50px;
+    opacity: 1;
+}
+
+.navbar-brand {
+    color: grey;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: grey;
+    font-family: screamingNeon;
+    letter-spacing: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-link {
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+
+    ul>.nav-link {
+        position: relative;
+    }
+
+    ul>.nav-link:before,
+    ul>.nav-link:after {
+        position: absolute;
+        opacity: 0;
+        font-size: 20px;
+        top: 5px;
+        transition: all 0.3s;
+    }
+
+    ul>.nav-link:before {
+        content: '<';
+        color: honeydew;
+        left: -10px;
+        transform: translateX(20px);
+    }
+
+    ul>.nav-link:after {
+        content: '/>';
+        color: honeydew;
+        right: -20px;
+        transform: translateX(-20px);
+    }
+
+    ul>.nav-link:hover:before,
+    ul>.nav-link:hover:after {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    ul>.nav-link>.nav-link-text {
+        position: relative;
+    }
+
+    ul>.nav-link>.nav-link-text:before,
+    ul>.nav-link>.nav-link-text:after {
+        position: absolute;
+        opacity: 0;
+        font-size: 35px;
+        top: -10px;
+        transition: all 0.3s;
+    }
+
+    ul>.nav-link>.nav-link-text:before {
+        content: '<';
+        color: honeydew;
+        left: -30px;
+        transform: translateX(20px);
+    }
+
+    ul>.nav-link>.nav-link-text:after {
+        content: '/>';
+        color: honeydew;
+        right: -30px;
+        transform: translateX(-20px);
+    }
+
+    ul>.nav-link>.nav-link-text:hover:before,
+    ul>.nav-link>.nav-link-text:hover:after {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.nav-link:hover {
+    /* text-shadow: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000; */
+    color: #ff2483;
+}
+
