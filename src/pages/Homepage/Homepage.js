@@ -1,5 +1,5 @@
 import Loader from "./Loader/Loader"
-import Navbar from "../Navbar/Navbar"
+import Navbar from "../../components/Navbar/Navbar"
 import styles from "./Homepage.module.css"
 
 export default function Homepage() {
