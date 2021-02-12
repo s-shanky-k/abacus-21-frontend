@@ -7,7 +7,8 @@
 .box1 {
     height: 100% !important;
     background-image: url(./brick-wall-dark.png);
-    background-color: #000024;
+    /* background-color: #000024; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,21 +21,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(ellipse 50% 35% at 50% 50%,
+    /* background-image: radial-gradient(ellipse 50% 35% at 50% 50%,
             #6b1839,
-            transparent);
-    transform: translate(-50%, -50%);
+            transparent); */
+    /* transform: translate(-50%, -50%); */
     letter-spacing: 2;
-    left: 50%;
-    top: 50%;
+    /* left: 50%;
+    top: 50%; */
     font-family: "Clip";
     text-transform: uppercase;
     font-size: 2em;
     color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    color: #6b1839;
+    /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
         -0.2rem 0.1rem 1rem #ff2483, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    animation: shine 2s forwards, flicker 3s infinite, box-anime 2s;
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
+    /* animation: box-anime-start 2s; */
+    animation: shine 2s forwards 3s, flicker 3s infinite 3s, box-anime-start 2s;
     padding: 50px;
     box-shadow:
         0 0 0.1vw 0.4vw #ffe6ff,
@@ -45,6 +48,37 @@
         inset 0 0 0.5vw 0.2vw #ffe6ff;
     border-radius: 1.5rem;
 }
+
+
+/* Tubelight flickering effect for characters at start B,21,C */
+.flickerStart {
+    animation: abacus-anime-start 1s 2s;
+}
+
+.flickerStart2 {
+    animation: abacus-anime-start 1s 2.5s;
+}
+
+.flickerStart3 {
+    animation: abacus-anime-start 1s 3s;
+}
+
+
+
+
+.flicker {
+    animation: shine 2s forwards 3s, blink 3s 3s infinite;
+}
+
+.flicker2 {
+    animation: shine 2s forwards 3.4s, blink 3s 3.4s infinite;
+}
+
+.flicker3 {
+    animation: shine 2s forwards 3.7s, blink 3s 3.7s infinite;
+}
+
+/* Box flicker animation */
 
 @keyframes box-anime {
 
@@ -91,14 +125,9 @@
     }
 }
 
-.flicker {
-    animation: shine 2s forwards, blink 3s 2s infinite;
-}
 
-.fast-flicker {
-    animation: shine 2s forwards, blink 10s 1s infinite;
-}
 
+/* A and CU blinking*/
 @keyframes shine {
     0% {
         color: #6b1839;
@@ -240,3 +269,54 @@
 }
 
 
+@keyframes box-anime-start {
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow:
+            0 0 0.1vw 0.4vw #ffe6ff,
+            0 0 0.4vw 0.6vw #4380ca,
+            0 0 4vw 0.4vw #005ECE,
+            inset 0 0 1.5vw 0.4vw #005ECE,
+            inset 0 0 0.4vw 0.2vw #4380ca,
+            inset 0 0 0.5vw 0.2vw #ffe6ff;
+    }
+}
+
+@keyframes abacus-anime-start {
+    /* 0% {
+        color: #6b1839;
+        text-shadow: none;
+    }
+
+    100% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+            -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+            0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    } */
+
+    0%,
+    22%,
+    36%,
+    75% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+            -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+            0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+
+    28%,
+    33% {
+        color: #ff65bd;
+        text-shadow: none;
+    }
+
+    82%,
+    97% {
+        color: #ff2483;
+        text-shadow: none;
+    }
+}
