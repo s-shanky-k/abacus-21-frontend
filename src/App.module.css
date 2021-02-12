@@ -7,3 +7,7 @@
   background-color: #000064;
   height: 100vh;
 }
+
+.parent {
+  scroll-snap-type: y mandatory !important;
+}
