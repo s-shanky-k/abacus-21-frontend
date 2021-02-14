@@ -1,0 +1,12 @@
+/* Code for scroll snapping - Child */
+._homepage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+._homepage_container {
+    font-size: 50px;
+}

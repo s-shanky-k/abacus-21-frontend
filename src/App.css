@@ -1,0 +1,11 @@
+@font-face {
+  font-family: NavbarMain;
+  src: url(./assets/Fonts/screaming_neon.ttf);
+}
+
+/* Code for scroll snapping - Parent */
+.App {
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100vh;
+}

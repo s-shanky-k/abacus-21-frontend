@@ -1,27 +1,37 @@
+import React, { Component } from 'react'
 import styles from "./Events.module.css"
-import Navbar from "../../components/Navbar/Navbar"
 
-export default function Events() {
-    return (
-        
-        <div className={`${styles.parent}`}>
-            <Navbar />
-            <section className={`${styles.child1} ${styles.child}`}>
-                <h1>I</h1>
-            </section>
+class Events extends Component {
+    render() {
+        return (
+            <>
 
-            <section className={`${styles.child2} ${styles.child}`}>
-                <h1>II</h1>
-            </section>
+                {/* Child Class */}
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                    <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-EVENTS!</div>
+                </div>
 
-            <section className={`${styles.child3} ${styles.child}`}>
-                <h1>III</h1>
-            </section>
+                {/* Child Class */}
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
+                    <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-EVENTS!</div>
+                </div>
 
-            <section className={`${styles.child4} ${styles.child}`}>
-                <h1>IV</h1>
-            </section>
+                {/* Child Class */}
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'pink' }}>
+                    <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-EVENTS!</div>
+                </div>
 
-        </div>
-    )
+                {/* Child Class */}
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
+                    <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-EVENTS!</div>
+                </div>
+            </>
+        )
+    }
 }
+
+export default Events
