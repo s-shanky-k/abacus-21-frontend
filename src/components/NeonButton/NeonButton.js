@@ -1,9 +1,6 @@
-import {useEffect} from 'react';
 import styles from './NeonButton.module.css';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 /*
 Usage:
@@ -13,17 +10,6 @@ Usage:
 */
 
 function NeonButton({text, href, color}) {
-
-  useEffect(() =>{
-    Aos.init({
-      duration : 1000,
-      delay : 300,
-      once: false,
-      mirror: true,
-      easing: 'ease-out-back',
-      anchorPlacement : 'bottom-top'
-      });
-  }, []);
 
   return ( 
     <div data-aos="fade-up" className={styles.container}>
