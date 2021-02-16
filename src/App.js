@@ -2,14 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css';
 
-//Animation (Global)
-/* Description: Can be used on any div for animation on scroll.
-Usage : <div data-aos="fade-up" className={styles.container}></div>
-Reference : We will stick to "fade-up" for this project, but for other animations refer: https://michalsnik.github.io/aos/  
-*/
-import Aos from "aos";
-import "aos/dist/aos.css";
-
 import NavbarBig from './components/NavbarBig/NavbarBig';
 import NavbarSmall from './components/NavbarSmall/NavbarSmall';
 import Homepage from './pages/Homepage/Homepage';
@@ -29,14 +21,6 @@ class App extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-    Aos.init({
-      duration : 1000,
-      delay : 300,
-      once: false,
-      mirror: true,
-      easing: 'ease-out-back',
-      anchorPlacement : 'bottom-top'
-      });
   }
 
   componentWillUnmount() {
@@ -49,18 +33,6 @@ class App extends Component {
 
 
   render() {
-    /*
-    useEffect(() =>{
-    Aos.init({
-      duration : 1000,
-      delay : 300,
-      once: false,
-      mirror: true,
-      easing: 'ease-out-back',
-      anchorPlacement : 'bottom-top'
-      });
-  }, []);
-    */
     return (
       // Parent class
       <div className="App">

@@ -1,6 +1,7 @@
 import styles from './NeonButton.module.css';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
+import FadeInSection from '../FadeInSection/FadeInSection';
 
 /*
 Usage:
@@ -12,7 +13,8 @@ Usage:
 function NeonButton({text, href, color}) {
 
   return ( 
-    <div data-aos="fade-up" className={styles.container}>
+    <FadeInSection >
+    <div className={styles.container}>
       <Link className={styles.a_n3} to={href} style={{"--color":color}}>
         <span></span>
         <span></span>
@@ -21,6 +23,7 @@ function NeonButton({text, href, color}) {
         {text}
       </Link>  
     </div>
+    </FadeInSection>
   )
 }
 

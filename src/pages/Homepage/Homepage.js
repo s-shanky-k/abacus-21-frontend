@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import styles from "./Homepage.module.css"
 
+//NeonButton
+import NeonButton from '../../components/NeonButton/NeonButton'
+
 class Homepage extends Component {
 
     constructor(props) {
@@ -40,19 +43,25 @@ class Homepage extends Component {
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!</div>
+                        KABOOOOM-HOMEPAGE!
+                    </div>
+                    <NeonButton text={"Boom Button"} href={"/events"} color={"#9D00FF"} />
                 </div>
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
                     <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!</div>
+                        KABOOOOM-HOMEPAGE!
+                    </div>
+                    <NeonButton text={"Boom Button"} href={"/about-us"} color={"#26a0da"} />
                 </div>
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'pink' }}>
                     <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!</div>
+                        KABOOOOM-HOMEPAGE!
+                    </div>
+                    {/* <NeonButton text={"Boom Button"} href={"/workshops"} color={"red"}/>   */}
                 </div>
 
                 {/* Child Class */}
