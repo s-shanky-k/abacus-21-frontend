@@ -1,13 +1,3 @@
-.bg{
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    z-index: 1;
-    position: relative;
-}
 .box{
 	position: relative;
 	width: 300px;
@@ -41,7 +31,7 @@
 }
 
 .box:hover {
-    box-shadow: 0px 0px 10px #89ff00, 0px 0px 40px #010615, 0px 0px 80px #00bcd4; 
+    box-shadow: 0px 0px 10px #FE13BE, 0px 0px 15px  #000052, 0px 0px 15px #8E32FF; 
     transition: 0.2s ease-in;
     -webkit-transition:  box-shadow 0.2s ease-in; 
 }
@@ -49,7 +39,7 @@
 .box::before,
 .box::after 
 {
-    background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+    background: linear-gradient(235deg,#FE13BE,#000052,#8E32FF);
     
 }
 
@@ -78,8 +68,9 @@
 }
 
 .box .content {
-    font-size: 14px;
+	/* font-family: 'Iceland'; */
+    font-size: 24px;
     color: #fff;
-    font-weight: 200;
-    letter-spacing: 2px;
+    /* font-weight: 200; */
+    /* letter-spacing: 2px; */
 }

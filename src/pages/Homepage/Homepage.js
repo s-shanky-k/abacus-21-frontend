@@ -59,7 +59,7 @@ class Homepage extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'indigo' }}>
+                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
