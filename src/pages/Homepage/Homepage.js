@@ -3,7 +3,9 @@ import styles from "./Homepage.module.css"
 
 //NeonButton
 import NeonButton from '../../components/NeonButton/NeonButton'
+import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 
+import mass from "../../assets/Images/mass.png"
 class Homepage extends Component {
 
     constructor(props) {
@@ -45,7 +47,7 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    <NeonButton text={"Boom Button"} href={"/events"} color={"#9D00FF"} />
+                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
                 </div>
 
                 {/* Child Class */}
@@ -53,15 +55,14 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    <NeonButton text={"Boom Button"} href={"/about-us"} color={"#26a0da"} />
+                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'pink' }}>
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'indigo' }}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    {/* <NeonButton text={"Boom Button"} href={"/workshops"} color={"red"}/>   */}
                 </div>
 
                 {/* Child Class */}
