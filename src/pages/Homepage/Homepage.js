@@ -4,8 +4,8 @@ import styles from "./Homepage.module.css"
 //NeonButton
 import NeonButton from '../../components/NeonButton/NeonButton'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
+import GlowCard from '../../components/GlowCard/GlowCard'
 
-import mass from "../../assets/Images/mass.png"
 class Homepage extends Component {
 
     constructor(props) {
@@ -63,6 +63,7 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
+                    <GlowCard props={{title:"Boom", content:"This is Everything"}} />
                 </div>
 
                 {/* Child Class */}
