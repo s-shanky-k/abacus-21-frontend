@@ -5,22 +5,22 @@ import FadeInSection from '../FadeInSection/FadeInSection';
 
 /*
 Usage:
-  <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
+  <NeonButton text={"Boom Events"} href={"/events"} color={"#26a0da"}/>
 
   href: needs to be absolute path
 */
 
-function NeonButton({props}) {
+function NeonButton({text, href, color}) {
 
   return ( 
     <FadeInSection >
     <div className={styles.container}>
-      <Link className={styles.a_n3} to={props.href} style={{"--color":props.color}}>
+      <Link className={styles.a_n3} to={href} style={{"--color":color}}>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        {props.text}
+        {text}
       </Link>  
     </div>
     </FadeInSection>
