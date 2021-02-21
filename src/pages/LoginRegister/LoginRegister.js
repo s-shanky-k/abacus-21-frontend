@@ -22,7 +22,7 @@ const RightComponent = () => (
 
 const App = () => {
     return (
-        <div className="App">
+        <div className="Login-Register-App">
             <Container>
                 <Container.SignIn />
                 <Container.SignUp />
