@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
-import styles from "./Workshops.module.css"
+import React, { Component } from 'react';
+import styles from "./Workshops.module.css";
+import LoginRegister from "../LoginRegister/LoginRegister.js";
 
 class Workshops extends Component {
     render() {
         return (
             <>
+                
+                <LoginRegister></LoginRegister>
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>

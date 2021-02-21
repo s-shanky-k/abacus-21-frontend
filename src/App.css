@@ -3,6 +3,11 @@
   src: url(./assets/Fonts/screaming_neon.ttf);
 }
 
+@font-face {
+  font-family: "MainFont";
+  src: url("./assets/Fonts/Iceland-Regular.ttf");
+}
+
 /* Code for scroll snapping - Parent */
 .App {
   scroll-snap-type: y mandatory;
