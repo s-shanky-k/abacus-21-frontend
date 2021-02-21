@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, useRef } from 'react'
 import styles from "./Homepage.module.css"
+
+
+
 
 //NeonButton
 import NeonButton from '../../components/NeonButton/NeonButton'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import GlowCard from '../../components/GlowCard/GlowCard'
+
+
 
 class Homepage extends Component {
 
@@ -24,17 +29,17 @@ class Homepage extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.divRef1)
-        // console.log(this.divRef2)
-        // console.log(this.divRef3)
-        // console.log(this.divRef4)
+    const script = document.createElement("script");
+    script.src = "./bg.js";
+    script.async = true;
+    document.body.appendChild(script);
     }
-
+    
     getScroll() {
         console.log(document)
     }
-
-
+    
+   
 
 
 
@@ -43,8 +48,12 @@ class Homepage extends Component {
             <>
 
                 {/* Child Class */}
+                
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                    
+                   
                     <div className={`${styles._homepage_container}`}>
+                    <canvas/>
                         KABOOOOM-HOMEPAGE!
                     </div>
                     <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
@@ -64,7 +73,7 @@ class Homepage extends Component {
                         KABOOOOM-HOMEPAGE!
                     </div>
                     <GlowCard props={{title:"Boom", content:"This is Everything"}} />
-                    <GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events"}}/>
+                    <GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events",img:'mass.png'}}/>
                 </div>
 
                 {/* Child Class */}

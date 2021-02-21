@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './GlowCardResponsive.module.css'
 import FadeInSection from '../FadeInSection/FadeInSection'
 import {Link} from "react-router-dom";
-
 import massImg from '../../assets/Images/mass.png'
 
 /*
@@ -18,7 +17,8 @@ function GlowCardResponsive({props}) {
             <div className={styles.box}>
                 <Link to={props.href}>
                 <div className={styles.imgbx}>
-                    <img src={massImg}/>
+                <img src={`${process.env.PUBLIC_URL}/images/`+`${props.img}`}/>
+                   
                 </div>
                 </Link>
                 <div className={styles.content}>
