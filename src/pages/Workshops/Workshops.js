@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
 import ScrollUpButton from 'react-scroll-up-button'
+import LoginRegister from "../LoginRegister/LoginRegister.js";
+
 class Workshops extends Component {
     render() {
         return (
@@ -11,6 +13,8 @@ class Workshops extends Component {
             </div>
         
            
+                
+                <LoginRegister></LoginRegister>
 
                 {/* Child Class */}
                 <div id="worshops" className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>

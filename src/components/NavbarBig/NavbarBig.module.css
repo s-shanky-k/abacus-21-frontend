@@ -7,7 +7,11 @@
     top: 0;
     margin: 15px;
     margin-top: 15px;
-    z-index: 100;
+    z-index: 600;
+}
+
+._navbar *{
+    z-index: 600;
 }
 @media only screen and (max-width: 1100px) {
     ._navbar {

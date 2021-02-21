@@ -1,0 +1,15 @@
+.App {
+    background-color: #282c34;
+    min-height: 100vh;
+    scroll-snap-align: start;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .login-register-heading{
+      font-family: 'MainFont', cursive !important;
+  }
