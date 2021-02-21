@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-
+.abacus-nav-container,.abacus-nav-container * {
+    z-index: 999 !important;
+}
 
 .abacus-text {
     text-transform: uppercase;

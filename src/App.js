@@ -14,8 +14,19 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = { width: 0, height: 0, scrollTop:0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.getScroll = this.getScroll.bind(this)
+    this.wholeRef = React.createRef()
+  }
+
+  getScroll() {
+    const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
+    const scrollTop = this.wholeRef.scrollTop
+    console.log(`onScroll, window.scrollY: ${scrollY} wholeRef.scrollTop: ${scrollTop}`)
+    this.setState({
+      scrollTop: scrollTop
+    })
   }
 
   componentDidMount() {
@@ -29,13 +40,15 @@ class App extends Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
+    console.log(window)
   }
+
 
 
   render() {
     return (
       // Parent class
-      <div className="App">
+      <div className="App" onScroll={this.getScroll}>
         <Router>
           {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
           <Switch>

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    flex-direction: column;
 }
 
 ._homepage_container {

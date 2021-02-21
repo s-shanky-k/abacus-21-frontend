@@ -5,6 +5,9 @@ import styles from "./Homepage.module.css"
 import NeonButton from '../../components/NeonButton/NeonButton'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import GlowCard from '../../components/GlowCard/GlowCard'
+import Loader from '../../components/Loader/Loader'
+import Heading from '../../components/Heading/Heading'
+
 
 class Homepage extends Component {
 
@@ -14,40 +17,18 @@ class Homepage extends Component {
         this.state = {
 
         }
-
-        this.divRef1 = React.createRef()
-        this.divRef2 = React.createRef()
-        this.divRef3 = React.createRef()
-        this.divRef4 = React.createRef()
-
-        this.getScroll = this.getScroll.bind(this)
     }
-
-    componentDidMount() {
-        // console.log(this.divRef1)
-        // console.log(this.divRef2)
-        // console.log(this.divRef3)
-        // console.log(this.divRef4)
-    }
-
-    getScroll() {
-        console.log(document)
-    }
-
-
-
-
 
     render() {
         return (
             <>
-
+                <Loader />
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!
+                        <Heading text="CSEA" fontSize="50px" />
                     </div>
-                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
+                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
                 </div>
 
                 {/* Child Class */}
@@ -55,7 +36,7 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
+                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
                 </div>
 
                 {/* Child Class */}
@@ -63,8 +44,8 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    <GlowCard props={{title:"Boom", content:"This is Everything"}} />
-                    <GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events"}}/>
+                    <GlowCard props={{ title: "Boom", content: "This is Everything" }} />
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
 
                 {/* Child Class */}
