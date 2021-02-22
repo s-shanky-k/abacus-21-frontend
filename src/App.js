@@ -8,6 +8,7 @@ import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
+import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
 
 class App extends Component {
@@ -46,6 +47,7 @@ class App extends Component {
             <Route path="/about-us" exact component={AboutUs} />
             <Route path="/events" exact component={Events} />
             <Route path="/workshops" exact component={Workshops} />
+            <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
         </Router>
       </div>

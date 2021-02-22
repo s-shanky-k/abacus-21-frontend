@@ -1,8 +1,11 @@
 import React from 'react';
+import Heading from '../../../../components/Heading/Heading.js';
+import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 
 const SignUp = ({ children }) => (
     <div className="form-container sign-up-container">
-        <h1 className="login-register-heading">Sign Up Form</h1>
+        {/* <h1 className="login-register-heading">Sign Up Form</h1> */}
+        <Heading text="REGISTER" fontSize="35px"></Heading>
         <div className="form-class align-form">
             <input type="text" placeholder="Name" required />
             <input type="text" placeholder="Year" required />
@@ -16,7 +19,7 @@ const SignUp = ({ children }) => (
             <input type="password" placeholder="Confirm Password" required />
         </div>
         {/* <div></div> - Validation Output */}
-        <button className="sign_up_btn">Sign Up</button>
+        <NeonButton props={{text:"Sign Up", href:"/events", color:"#26a0da"}}/>
     </div>
 );
 
