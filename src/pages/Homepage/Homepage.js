@@ -44,7 +44,7 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
-                    <GlowCard props={{ title: "Boom", content: "This is Everything" }} />
+                    <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} />
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
 

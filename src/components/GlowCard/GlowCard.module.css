@@ -1,3 +1,6 @@
+.root{
+	--degree: 235deg;
+}
 .box{
 	position: relative;
 	display: flex;
@@ -38,7 +41,7 @@
 .box::before,
 .box::after 
 {
-    background: linear-gradient(235deg,#FE13BE,#000052,#8E32FF);
+    background: linear-gradient(var(--degree),#FE13BE,#000052,#8E32FF);
     
 }
 
