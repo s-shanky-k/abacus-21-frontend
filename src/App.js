@@ -13,6 +13,7 @@ import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
 
+import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
 
 class App extends Component {
@@ -71,6 +72,7 @@ class App extends Component {
             <Route path="/non-tech-events" exact component={NonTechEvents} />
 
             <Route path="/event-template" exact component={EventTemplate} />
+            <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
           <Footer />
         </Router>

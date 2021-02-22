@@ -39,12 +39,10 @@ class Container extends React.Component {
 
     signInListener = () => {
         this.container.classList.add('right-panel-active');
-        console.log(this.container.classList);
     };
 
     signUpListener = () => {
         this.container.classList.remove('right-panel-active');
-        console.log(this.container.classList);
     };
 
     componentDidMount() {

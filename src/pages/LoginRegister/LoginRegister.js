@@ -1,22 +1,26 @@
 import React from 'react';
 import './LoginRegister.css';
 import Container from './Container/Container.jsx';
+import NeonButton from "../../components/NeonButton/NeonButton.js";
+import Heading from '../../components/Heading/Heading.js';
 
 const LeftComponent = () => (
     <div>
-        <h1 className="login-register-heading">Greetings</h1>
-        <button id="signIn" type="button">
-            Sign In
-        </button>
+        {/* <h1 className="login-register-heading">Greetings</h1> */}
+        <Heading text="GREETINGS!" fontSize="35px"></Heading>
+        <div id="signIn">
+            <NeonButton props={{text:"Sign In", color:"#26a0da"}}/>
+        </div>
     </div>
 );
 
 const RightComponent = () => (
     <div>
-        <h1 className="login-register-heading">Greetings</h1>
-        <button id="signUp" type="button">
-            Sign Up
-        </button>
+        {/* <h1 className="login-register-heading">Greetings</h1> */}
+        <Heading text="GREETINGS!" fontSize="35px"></Heading>
+        <div id="signUp">
+            <NeonButton props={{text:"Sign Up", color:"#26a0da"}}/>
+        </div>
     </div>
 );
 

@@ -4,7 +4,9 @@
  }
 
  .container {
-     display: inline-block;
+    display: inline-block;
+    font-family: 'MainFont', cursive !important;
+    font-size: 18px;
  }
 
  .a_n2 {
