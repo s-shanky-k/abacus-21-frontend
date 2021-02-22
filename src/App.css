@@ -9,3 +9,9 @@
   overflow: auto;
   height: 100vh;
 }
+
+@media only screen and (max-width: 576px) {
+  .App {
+    scroll-snap-type: y proximity;
+  }
+}
