@@ -1,13 +1,16 @@
-.box{
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+.box {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
+	padding: 40px;
 	background: #060c21;
 	margin: 40px;
 }
-.box::before{
+
+.box::before {
 	content: '';
 	position: absolute;
 	top: -2px;
@@ -17,7 +20,8 @@
 	background: #fff;
 	z-index: -1;
 }
-.box::after{
+
+.box::after {
 	content: '';
 	position: absolute;
 	top: -2px;
@@ -30,28 +34,28 @@
 }
 
 .box:hover {
-    box-shadow: 0px 0px 10px #FE13BE, 0px 0px 15px  #000052, 0px 0px 15px #8E32FF; 
-    transition: 0.2s ease-in;
-    -webkit-transition:  box-shadow 0.2s ease-in; 
+	box-shadow: 0px 0px 10px #FE13BE, 0px 0px 15px #000052, 0px 0px 15px #8E32FF;
+	transition: 0.2s ease-in;
+	-webkit-transition: box-shadow 0.2s ease-in;
 }
 
 .box::before,
-.box::after 
-{
-    background: linear-gradient(235deg,#FE13BE,#000052,#8E32FF);
-    
+.box::after {
+	background: linear-gradient(235deg, #FE13BE, #000052, #8E32FF);
+
 }
 
-.box .glass{
+.box .glass {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 50%;
 	height: 100%;
 	display: block;
-	background: rgba(255,255,255,.1);
+	background: rgba(255, 255, 255, .1);
 	pointer-events: none;
 }
+
 /* .box .content{
     position: absolute;
 	padding: 20px;
@@ -59,17 +63,30 @@
 } */
 
 .box .content h2 {
-    font-size: 20px;
-    line-height: 20px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 1px;
+	font-size: 20px;
+	line-height: 20px;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 1px;
 }
 
 .box .content {
 	/* font-family: 'Iceland'; */
-    font-size: 24px;
-    color: #fff;
-    /* font-weight: 200; */
-    /* letter-spacing: 2px; */
+	font-size: 24px;
+	color: #fff;
+	font-family: 'Iceland';
+	/* font-weight: 200; */
+	/* letter-spacing: 2px; */
+}
+
+/* .glowCardFlex {
+	display: flex !important;
+	justify-content: center !important;
+	flex:2 !important;
+} */
+
+
+.glowCardImg {
+	width: 250px;
+	height: 250px;
 }

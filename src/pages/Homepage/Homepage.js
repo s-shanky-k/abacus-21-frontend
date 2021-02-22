@@ -36,6 +36,7 @@ class Homepage extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
                     </div>
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />
                     <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
                 </div>
 
