@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './GlowCard.module.css'
 import FadeInSection from '../FadeInSection/FadeInSection'
 import Heading from '../Heading/Heading'
+import AnimatedCard from "@rihor/react-3d-card/dist/AnimatedCard"
 
 /*
 Usage:
@@ -11,35 +12,36 @@ If degree is not set, then default value 235deg will be set
 
 function GlowCard({ props }) {
 
-    if(props.degree === undefined){
+    if (props.degree === undefined) {
         props.degree = "235deg";
     }
     return (
+        <AnimatedCard weight={0.05}>
+            <FadeInSection>
+                <div className={styles.bg}>
+                    <div className={`${styles.box}`} style={{ "--degree": props.degree }}>
 
-        <FadeInSection>
-            <div className={styles.bg}>
-                <div className={`${styles.box}`} style={{"--degree":props.degree}}>
-                    
-                    
-                    <div className={`${styles.content}`}>
-                        <div className={styles.glowCardImgDiv}>
-                            <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt="" className={styles.glowCardImg} />
-                        </div>
 
-                        
-                        <div className={styles.glowCardContent}>
-                            <div style={{textAlign:'center'}}>
-                                <Heading text={props.title} fontSize="30px" />
+                        <div className={`${styles.content}`}>
+                            <div className={styles.glowCardImgDiv}>
+                                <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt="" className={styles.glowCardImg} />
                             </div>
-                                <p className={styles.glowCardText}>{props.content}</p>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
 
-        </FadeInSection >
+
+                            <div className={styles.glowCardContent}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <Heading text={props.title} fontSize="30px" />
+                                </div>
+                                <p className={styles.glowCardText}>{props.content}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </FadeInSection >
+        </AnimatedCard>
     )
 }
 
