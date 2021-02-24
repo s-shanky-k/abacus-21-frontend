@@ -9,7 +9,7 @@ class AboutUs extends Component {
         return (
             <>
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
+                <div id="sec1" className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
                     <GlowCard props={{
                         title: "ABACUS",
                         content: "ABACUS is the annual intercollege symposium of the Department of Computer Science and Engineering conducted by Computer Science and Engineering Association (CSEA ), College of Engineering Guindy. It is an event where people from multiple colleges demonstrate their technical prowess to win exciting prizes and internships.",
@@ -39,7 +39,7 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage} ${styles._shanky}`} style={{ backgroundColor: 'green' }}>
+                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: 'green' }}>
                     {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-ABOUT-US!</div> */}
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
@@ -48,7 +48,7 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage} ${styles._shanky}`} style={{ backgroundColor: 'green' }}>
+                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: 'green' }}>
                     {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-ABOUT-US!</div> */}
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />

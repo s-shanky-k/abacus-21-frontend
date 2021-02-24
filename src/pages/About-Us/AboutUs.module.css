@@ -14,11 +14,23 @@
         scroll-snap-stop: always;
     }
 }
+@media only screen and (min-width:850px) and (max-width: 1290px) {
+    ._homepage {
+        padding-top: 100px;
+       margin-bottom: auto;
+    }
+}
+@media only screen and (min-width:1291) and (max-width: 1300px) {
+    ._homepage {
+        padding-top: 50px;
+       margin-bottom: auto;
+    }
+}
 
 
 ._homepage_container {}
 
-._shanky {
+._responsive {
     flex: 3;
     flex-wrap: wrap;
     align-items: center;

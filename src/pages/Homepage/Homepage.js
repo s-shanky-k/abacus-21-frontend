@@ -25,13 +25,14 @@ class Homepage extends Component {
             <>
                 <Loader />
                 {/* Child Class */}
+                <section id="sec1">
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     <div className={`${styles._homepage_container}`}>
                         <Heading text="CSEA" fontSize="50px" />
                     </div>
                     <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
                 </div>
-
+                </section>
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
                     {/* <div className={`${styles._homepage_container}`}>

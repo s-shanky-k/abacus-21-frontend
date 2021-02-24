@@ -9,7 +9,7 @@ class Events extends Component {
             <>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21'}}>
+                <div id="sec1"className={`${styles._homepage}`} style={{ backgroundColor: '#060c21'}}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-EVENTS!</div>
                         <div>
