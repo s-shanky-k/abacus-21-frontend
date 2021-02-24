@@ -29,7 +29,7 @@ function GlowCard({ props }) {
                         
                         <div className={styles.glowCardContent}>
                             <div style={{textAlign:'center'}}>
-                                <Heading text={props.title} fontSize="50px" />
+                                <Heading text={props.title} fontSize="30px" />
                             </div>
                                 <p className={styles.glowCardText}>{props.content}</p>
                         </div>

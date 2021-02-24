@@ -33,19 +33,19 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
-                    <div className={`${styles._homepage_container}`}>
+                    {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
-                    </div>
+                    </div> */}
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />
-                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
+                    {/* <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} /> */}
                 </div>
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
-                    <div className={`${styles._homepage_container}`}>
+                    {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
-                    </div>
-                    <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} />
+                    </div> */}
+                    {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
 

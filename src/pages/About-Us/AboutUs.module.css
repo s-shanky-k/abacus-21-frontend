@@ -1,6 +1,7 @@
 /* Code for scroll snapping - Child */
 ._homepage {
-    height: 100vh;
+    min-height: 100vh !important;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,3 +17,9 @@
 
 
 ._homepage_container {}
+
+._shanky {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
+}

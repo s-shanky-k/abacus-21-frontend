@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from "./AboutUs.module.css"
 import Heading from '../../components/Heading/Heading'
 import GlowCard from '../../components/GlowCard/GlowCard'
+import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 
 class AboutUs extends Component {
     render() {
@@ -38,9 +39,21 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-ABOUT-US!</div>
+                <div className={`${styles._homepage} ${styles._shanky}`} style={{ backgroundColor: 'green' }}>
+                    {/* <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-ABOUT-US!</div> */}
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+                </div>
+
+                {/* Child Class */}
+                <div className={`${styles._homepage} ${styles._shanky}`} style={{ backgroundColor: 'green' }}>
+                    {/* <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-ABOUT-US!</div> */}
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
             </>
         )
