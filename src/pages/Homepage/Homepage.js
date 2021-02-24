@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, useRef } from 'react'
 import styles from "./Homepage.module.css"
+
+
 
 
 //NeonButton
@@ -10,6 +12,8 @@ import Loader from '../../components/Loader/Loader'
 import Heading from '../../components/Heading/Heading'
 
 
+
+
 class Homepage extends Component {
 
     constructor(props) {
@@ -18,17 +22,25 @@ class Homepage extends Component {
         this.state = {
 
         }
+
     }
+
 
     render() {
         return (
             <>
                 <Loader />
                 {/* Child Class */}
+
                 <section id="sec1">
+
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                    
+                   
                     <div className={`${styles._homepage_container}`}>
+
                         <Heading text="CSEA" fontSize="50px" />
+
                     </div>
                     <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
                 </div>
@@ -46,9 +58,11 @@ class Homepage extends Component {
                 <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
                     {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
+
                     </div> */}
                     {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+
                 </div>
 
                 {/* Child Class */}
