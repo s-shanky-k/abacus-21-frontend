@@ -10,3 +10,10 @@
 ._homepage_container {
     font-size: 50px;
 }
+.countup{
+    display: block;
+    font-size: large;
+    font-weight: bolder;
+    padding: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
