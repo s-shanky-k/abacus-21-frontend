@@ -10,3 +10,16 @@
 ._homepage_container {
     font-size: 50px;
 }
+
+@media only screen and (min-width:850px) and (max-width: 1290px) {
+    ._homepage {
+        padding-top: 100px;
+       margin-bottom: auto;
+    }
+}
+@media only screen and (min-width:1291) and (max-width: 1300px) {
+    ._homepage {
+        padding-top: 50px;
+       margin-bottom: auto;
+    }
+}

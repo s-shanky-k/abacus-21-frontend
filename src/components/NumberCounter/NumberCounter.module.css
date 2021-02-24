@@ -10,6 +10,7 @@
 }
 
 .box {
+	
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -99,8 +100,8 @@
 
 
 .glowCardImg {
-	width: 75px;
-	height: 75px;
+	width: 150px;
+	height: 150px;
 }
 
 .glowCardImgDiv {
@@ -118,6 +119,16 @@
 
 .glowCardText {
 	text-align: center;
+}
+.countup{
+    display: block;
+    font-size:xx-large;
+	font-weight: bolder;
+    padding: 10px;
+	text-align: center;
+	color:grey;
+	
+    
 }
 
 @media only screen and (max-width: 576px) {

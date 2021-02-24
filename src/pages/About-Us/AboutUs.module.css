@@ -1,12 +1,37 @@
 /* Code for scroll snapping - Child */
 ._homepage {
-    height: 100vh;
+    min-height: 100vh !important;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
 }
 
-._homepage_container {
-    font-size: 50px;
+@media only screen and (max-width: 576px) {
+    ._homepage {
+        height: fit-content;
+        scroll-snap-stop: always;
+    }
+}
+@media only screen and (min-width:850px) and (max-width: 1290px) {
+    ._homepage {
+        padding-top: 100px;
+       margin-bottom: auto;
+    }
+}
+@media only screen and (min-width:1291) and (max-width: 1300px) {
+    ._homepage {
+        padding-top: 50px;
+       margin-bottom: auto;
+    }
+}
+
+
+._homepage_container {}
+
+._responsive {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
 }

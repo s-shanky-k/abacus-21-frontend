@@ -17,8 +17,9 @@ function GlowCardResponsive({props}) {
             <div className={styles.box}>
                 <Link to={props.href}>
                 <div className={styles.imgbx}>
-                <img src={`${process.env.PUBLIC_URL}/images/`+`${props.img}`}/>
-                   
+
+                    <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt=""/>
+
                 </div>
                 </Link>
                 <div className={styles.content}>

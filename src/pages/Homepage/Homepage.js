@@ -8,6 +8,9 @@ import styles from "./Homepage.module.css"
 import NeonButton from '../../components/NeonButton/NeonButton'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import GlowCard from '../../components/GlowCard/GlowCard'
+import Loader from '../../components/Loader/Loader'
+import Heading from '../../components/Heading/Heading'
+
 
 
 
@@ -20,60 +23,46 @@ class Homepage extends Component {
 
         }
 
-        this.divRef1 = React.createRef()
-        this.divRef2 = React.createRef()
-        this.divRef3 = React.createRef()
-        this.divRef4 = React.createRef()
-
-        this.getScroll = this.getScroll.bind(this)
     }
-
-    componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "./bg.js";
-    script.async = true;
-    document.body.appendChild(script);
-    }
-    
-    getScroll() {
-        console.log(document)
-    }
-    
-   
-
 
 
     render() {
         return (
             <>
-
+                <Loader />
                 {/* Child Class */}
-                
+
+                <section id="sec1">
+
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     
                    
                     <div className={`${styles._homepage_container}`}>
-                    <canvas/>
-                        KABOOOOM-HOMEPAGE!
-                    </div>
-                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
-                </div>
 
+                        <Heading text="CSEA" fontSize="50px" />
+
+                    </div>
+                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
+                </div>
+                </section>
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
-                    <div className={`${styles._homepage_container}`}>
+                    {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
-                    </div>
-                    <NeonButton props={{text:"Boom Events", href:"/events", color:"#26a0da"}}/>
+                    </div> */}
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />
+                    {/* <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} /> */}
                 </div>
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
-                    <div className={`${styles._homepage_container}`}>
+                    {/* <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!
-                    </div>
-                    <GlowCard props={{title:"Boom", content:"This is Everything"}} />
-                    <GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events",img:'mass.png'}}/>
+
+                    </div> */}
+                    {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
+                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
+
                 </div>
 
                 {/* Child Class */}

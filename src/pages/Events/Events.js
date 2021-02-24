@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./Events.module.css"
+import NumberCounterCard from '../../components/NumberCounter/NumberCounter'
+
 
 class Events extends Component {
     render() {
@@ -7,9 +9,12 @@ class Events extends Component {
             <>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                <div id="sec1"className={`${styles._homepage}`} style={{ backgroundColor: '#060c21'}}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-EVENTS!</div>
+                        <div>
+                            <NumberCounterCard props={{number:500}}/>
+                        </div>
                 </div>
 
                 {/* Child Class */}
@@ -28,7 +33,11 @@ class Events extends Component {
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-EVENTS!</div>
-                </div>
+                        <div>
+                            <NumberCounterCard props={{number:500}}/>
+                        </div>  
+                        
+                        </div>
             </>
         )
     }

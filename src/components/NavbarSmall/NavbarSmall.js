@@ -1,5 +1,6 @@
 import React, { Component, createRef } from 'react'
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 import "./NavbarSmall.css"
 
 export default class NavbarSmall extends Component {
@@ -38,7 +39,7 @@ export default class NavbarSmall extends Component {
 
     render() {
         return (
-            <div>
+            <div className="abacus-nav-container">
                 <button className="abacus-nav-btn abacus-open-btn" onClick={this.clickOpenBtn}>
                     <i className="fa fa-bars"></i>
                 </button>
@@ -54,16 +55,16 @@ export default class NavbarSmall extends Component {
 
                             <ul className="abacus-list">
                                 <li>
-                                    <Link to="/homepage" className="abacus-list-link">Homepage</Link>
+                                    <HashLink to="/homepage#sec1" className="abacus-list-link">Homepage</HashLink>
                                 </li>
                                 <li>
-                                    <Link to="/about-us" className="abacus-list-link">About Us</Link>
+                                    <HashLink to="/about-us#sec1" className="abacus-list-link">About Us</HashLink>
                                 </li>
                                 <li>
-                                    <Link to="/events" className="abacus-list-link">Events</Link>
+                                    <HashLink to="/events#sec1" className="abacus-list-link">Events</HashLink>
                                 </li>
                                 <li>
-                                    <Link to="/workshops" className="abacus-list-link">Workshops</Link>
+                                    <HashLink to="/workshops#sec1" className="abacus-list-link">Workshops</HashLink>
                                 </li>
                             </ul>
                         </div>

@@ -7,7 +7,7 @@ class Workshops extends Component {
             <>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                <div id="sec1" className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-WORKSHOPS!</div>
                 </div>

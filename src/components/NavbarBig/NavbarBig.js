@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link" 
 import styles from "./NavbarBig.module.css"
 
 class NavbarBig extends Component {
@@ -13,21 +14,21 @@ class NavbarBig extends Component {
                 </div>
 
                 <div className={`${styles._navbar_main}`}>
-                    <Link className={`${styles._navbar_main_link}`} to="/homepage">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/homepage#sec1">
                         <span className={`${styles._navbar_main_link_text}`}>Homepage</span>
-                    </Link>
+                    </HashLink>
 
-                    <Link className={`${styles._navbar_main_link}`} to="/about-us">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/about-us#sec1">
                         <span className={`${styles._navbar_main_link_text}`}>About Us</span>
-                    </Link>
+                    </HashLink>
 
-                    <Link className={`${styles._navbar_main_link}`} to="/events">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/events#sec1">
                         <span className={`${styles._navbar_main_link_text}`}>Events</span>
-                    </Link>
+                    </HashLink>
 
-                    <Link className={`${styles._navbar_main_link}`} to="/workshops">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/workshops#sec1">
                         <span className={`${styles._navbar_main_link_text}`}>Workshops</span>
-                    </Link>
+                    </HashLink>
 
                 </div>
             </div>
