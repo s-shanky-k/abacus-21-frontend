@@ -6,7 +6,7 @@ const SignUp = ({ children }) => (
     <div className="form-container sign-up-container">
         {/* <h1 className="login-register-heading">Sign Up Form</h1> */}
         <Heading text="REGISTER" fontSize="35px"></Heading>
-        <div className="form-class align-form">
+        <div className="form-class align-form" id="style-2">
             <input type="text" placeholder="Name" required />
             <input type="text" placeholder="Year" required />
             <input type="text" placeholder="Department" required />
