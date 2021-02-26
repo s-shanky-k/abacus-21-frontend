@@ -23,8 +23,7 @@
 
 
 .fa-angle-double-down {
-    position: relative;
-    top: 100px !important;
+    margin-top: 50px;
     color: white;
     font-size: 80px;
     animation: 1s arrow infinite;

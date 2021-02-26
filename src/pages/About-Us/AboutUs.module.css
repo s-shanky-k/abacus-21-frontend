@@ -11,6 +11,7 @@
 @media only screen and (max-width: 576px) {
     ._homepage {
         height: fit-content;
+        scroll-snap-align:none;
         scroll-snap-stop: always;
     }
 }

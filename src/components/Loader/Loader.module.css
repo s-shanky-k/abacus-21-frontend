@@ -1,6 +1,7 @@
 ._homepage {
     height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
     scroll-snap-align: start;
     background-image: url(./brick-wall-dark.png) !important;
@@ -20,12 +21,15 @@
     }
 }
 
-
+._loader_box {
+    
+    text-align: center;
+}
 /* Copied */
 ._loader_sign {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     /* background-image: radial-gradient(ellipse 50% 35% at 50% 50%,
             #6b1839,
             transparent); */
@@ -61,10 +65,18 @@
 @media only screen and (max-width: 650px) {
     ._loader_sign {
         font-size: 60px;
-        margin-bottom: 50px !important;
+        /* margin-bottom: 50px !important; */
     }
 }
 
+@media only screen and (max-width: 420px) {
+    ._loader_sign {
+        font-size: 50px;
+        padding: 20px;
+        margin-bottom: 100px;
+    }
+
+}
 
 /* Tubelight flickering effect for characters at start B,21,C */
 .flickerStart {

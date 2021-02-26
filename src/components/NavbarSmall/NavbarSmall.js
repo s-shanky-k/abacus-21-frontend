@@ -16,6 +16,7 @@ export default class NavbarSmall extends Component {
         this.navLinkRef1 = React.createRef()
         this.navLinkRef2 = React.createRef()
         this.navLinkRef3 = React.createRef()
+        this.clickedNavLink = this.clickedNavLink.bind(this)
         this.clickOpenBtn = this.clickOpenBtn.bind(this)
         this.clickCloseBtn = this.clickCloseBtn.bind(this)
 
@@ -31,6 +32,10 @@ export default class NavbarSmall extends Component {
         this.navLinkRef1.current.classList.remove('visible');
         this.navLinkRef2.current.classList.remove('visible');
         this.navLinkRef3.current.classList.remove('visible');
+    }
+
+    clickedNavLink() {
+        this.clickCloseBtn()
     }
 
     componentDidMount() {
@@ -54,16 +59,16 @@ export default class NavbarSmall extends Component {
                             <p className="abacus-logo">Abacus</p>
 
                             <ul className="abacus-list">
-                                <li>
+                                <li onClick={this.clickedNavLink}>
                                     <HashLink to="/homepage#homepage" className="abacus-list-link">Homepage</HashLink>
                                 </li>
-                                <li>
+                                <li onClick={this.clickedNavLink}>
                                     <HashLink to="/about-us#aboutus" className="abacus-list-link">About Us</HashLink>
                                 </li>
-                                <li>
+                                <li onClick={this.clickedNavLink}>
                                     <HashLink to="/events#events" className="abacus-list-link">Events</HashLink>
                                 </li>
-                                <li>
+                                <li onClick={this.clickedNavLink}>
                                     <HashLink to="/workshops#workshops" className="abacus-list-link">Workshops</HashLink>
                                 </li>
                             </ul>
