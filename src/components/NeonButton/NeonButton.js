@@ -13,7 +13,7 @@ Usage:
 function NeonButton({props}) {
 
   return ( 
-    <FadeInSection >
+    // <FadeInSection >
     <div className={styles.container}>
       <Link className={styles.a_n3} to={props.href} style={{"--color":props.color}}>
         <span></span>
@@ -23,7 +23,7 @@ function NeonButton({props}) {
         {props.text}
       </Link>  
     </div>
-    </FadeInSection>
+    // </FadeInSection>
   )
 }
 

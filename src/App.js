@@ -18,18 +18,18 @@ class App extends Component {
     super(props);
     this.state = { width: 0, height: 0, scrollTop:0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    this.getScroll = this.getScroll.bind(this)
-    this.wholeRef = React.createRef()
+    // this.getScroll = this.getScroll.bind(this)
+    // this.wholeRef = React.createRef()
   }
 
-  getScroll() {
-    const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
-    const scrollTop = this.wholeRef.scrollTop
-    console.log(`onScroll, window.scrollY: ${scrollY} wholeRef.scrollTop: ${scrollTop}`)
-    this.setState({
-      scrollTop: scrollTop
-    })
-  }
+  // getScroll() {
+  //   const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
+  //   const scrollTop = this.wholeRef.scrollTop
+  //   console.log(`onScroll, window.scrollY: ${scrollY} wholeRef.scrollTop: ${scrollTop}`)
+  //   this.setState({
+  //     scrollTop: scrollTop
+  //   })
+  // }
 
   componentDidMount() {
     this.updateWindowDimensions();
