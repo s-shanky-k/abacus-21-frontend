@@ -8,6 +8,7 @@ import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
+import { Footer } from './components/Footer/Footer';
 
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
     return (
       // Parent class
       <div className="App" onScroll={this.getScroll}>
+        
         <Router>
           {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
           <Switch>
@@ -60,6 +62,7 @@ class App extends Component {
             <Route path="/events" exact component={Events} />
             <Route path="/workshops" exact component={Workshops} />
           </Switch>
+          <Footer />
         </Router>
       </div>
     )
