@@ -36,28 +36,27 @@ import { apiRegister } from "../../../../api/api";
 //     );
 // }
 
+const initialState = {
+    name : '',
+    year : '',
+    dept : '',
+    college : '',
+    email : '',
+    phone : '',
+    pwd : '',
+    cpwd : '',
+    nameError : '',
+    emailError : '',
+    phoneError : '',
+    pwdError : '',
+    cpwdError : '',
+}
+
 export default class SignUp extends Component{
 
     constructor(props) {
         super(props);
-        this.state = {
-            name : '',
-            year : '',
-            dept : '',
-            college : '',
-            email : '',
-            phone : '',
-            pwd : '',
-            cpwd : '',
-            nameError : '',
-            yearError : '',
-            deptError : '',
-            collegeError : '',
-            emailError : '',
-            phoneError : '',
-            pwdError : '',
-            cpwdError : '',
-        };
+        this.state = initialState;
         this.textInput = React.createRef();
     }
 
@@ -67,6 +66,78 @@ export default class SignUp extends Component{
 
     giveFocus() {
         this.textInput.current.focus();
+    }
+
+    handleSubmit = () => {
+        const isValid = this.validate();
+        if(isValid) {
+            console.log(this.state);
+            this.setState(initialState);
+        }
+    }
+
+    validate = () => {
+        let nameError = '';
+        let emailError = '';
+        let phoneError = '';
+        let pwdError = '';
+        let cpwdError = '';
+
+        if(!this.state.name) {
+            nameError = 'Name field cannot be blank';
+        }
+        
+        if(!this.state.email.includes('@')) {
+            emailError = 'Invalid Email! Try a different one!';
+        }
+
+        if(!this.state.email) {
+            emailError = 'Email field cannot be blank';
+        }
+
+        if(!this.state.phoneError) {
+            phoneError = 'Phone field cannot be blank';
+        }
+
+        if(!this.state.pwdError) {
+            pwdError = 'Password field cannot be blank';
+        }
+
+        if(!this.state.cpwdError) {
+            cpwdError = 'Confirm Password field cannot be blank';
+        }
+
+        if(nameError) {
+            this.setState({nameError});
+            return false;
+        }
+
+        if(emailError) {
+            this.setState({emailError});
+            return false;
+        }
+
+        if(phoneError) {
+            this.setState({phoneError});
+            return false;
+        }
+
+        if(pwdError) {
+            this.setState({pwdError});
+            return false;
+        }
+
+        if(cpwdError) {
+            this.setState({cpwdError});
+            return false;
+        }
+
+        return true;
+    }
+
+    onSubmit = () => {
+        this.handleSubmit();
+        // apiSignin();
     }
 
     render() {
@@ -86,8 +157,12 @@ export default class SignUp extends Component{
                     <input type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
                     <input type="password" placeholder="Confirm Password" required value={this.state.cpwd} onChange={(e) => this.setState({cpwd : e.target.value})} />
                 </div>
-                <div>{this.state.name}</div>
-                <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: apiRegister, credentials: { name: this.state.name, year: this.state.year, dept: this.state.dept, college: this.state.college, email: this.state.email, phone: this.state.phone, pwd: this.state.pwd, cpwd: this.state.cpwd } }} />
+                {this.state.nameError ? (<div className="validation-output">{this.state.nameError}</div>) : null}
+                {this.state.emailError ? (<div className="validation-output">{this.state.emailError}</div>) : null}
+                {this.state.phoneError ? (<div className="validation-output">{this.state.phoneError}</div>) : null}
+                {this.state.pwdError ? (<div className="validation-output">{this.state.pwdError}</div>) : null}
+                {this.state.cpwdError ? (<div className="validation-output">{this.state.cpwdError}</div>) : null}
+                <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: this.onSubmit, credentials: { name: this.state.name, year: this.state.year, dept: this.state.dept, college: this.state.college, email: this.state.email, phone: this.state.phone, pwd: this.state.pwd, cpwd: this.state.cpwd } }} />
             </div>    
         );
     }
