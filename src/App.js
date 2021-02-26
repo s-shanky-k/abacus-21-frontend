@@ -9,7 +9,7 @@ import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
-import EventTemplate from './pages/Events/EventTemplate';
+import EventTemplate from './components/EventTemplate/EventTemplate';
 
 
 class App extends Component {

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styles from "./Events.module.css"
 import NumberCounterCard from '../../components/NumberCounter/NumberCounter'
 
-
 class Events extends Component {
     render() {
         return (

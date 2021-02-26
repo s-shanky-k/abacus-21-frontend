@@ -7,7 +7,10 @@ import AnimatedCard from "@rihor/react-3d-card/dist/AnimatedCard"
 /*
 Usage:
 <GlowCard props={{title:"Boom", content:"This is Everything",degree: "180deg"}}
-If degree is not set, then default value 235deg will be set
+    If degree is not set, then default value 235deg will be set
+
+If there is no content prop, then the list prop will be used to print in a list format
+<GlowCard props={{title:"Boom", list:["asudn","asjfdnsajn","asnjdlamk"],degree: "180deg"}}
 */
 
 function GlowCard({ props }) {
@@ -21,7 +24,6 @@ function GlowCard({ props }) {
                 <div className={styles.bg}>
                     <div className={`${styles.box}`} style={{ "--degree": props.degree }}>
 
-
                         <div className={`${styles.content}`}>
                             {props.img !== undefined &&
                             <div className={styles.glowCardImgDiv}>
@@ -33,7 +35,12 @@ function GlowCard({ props }) {
                                 <div style={{ textAlign: 'center' }}>
                                     <Heading text={props.title} fontSize="30px" />
                                 </div>
-                                <p className={styles.glowCardText}>{props.content}</p>
+                                {props.content === undefined 
+                                ? props.list.map((item) => 
+                                    <p className={styles.glowCardText}>{item}</p>
+                                )
+                                : <p className={styles.glowCardText}>{props.content}</p>}
+                                
                             </div>
 
                         </div>
