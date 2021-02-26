@@ -9,8 +9,7 @@ const url_signin = "ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/auth/s
 const initialState = {
     email : '',
     pwd : '',
-    emailError:'',
-    pwdError:'',
+    validationError : '',
 }
 
 
@@ -40,28 +39,41 @@ export default class SignIn extends Component{
     }
 
     validate = () => {
-        let emailError = "";
-        let pwdError = "";
-
-        if(!this.state.pwd) {
-            pwdError = 'Password field cannot be blank';
-        }
-        
-        if(!this.state.email.includes('@')) {
-            emailError = 'Invalid Email! Try a different one!';
-        }
+        let validationError = '';
 
         if(!this.state.email) {
-            emailError = 'Email field cannot be blank';
+            validationError = 'Email field cannot be blank';
+        }
+        else{
+            if(!this.state.email.includes('@')) {
+                validationError = 'Invalid Email! Try a different one!';
+            }
+            else{
+                if(!this.state.pwd) {
+                    validationError = 'Password field cannot be blank';
+                }
+            }
         }
 
-        if(emailError) {
-            this.setState({emailError});
-            return false;
-        }
+        // if(!this.state.email.includes('@')) {
+        //     validationError = 'Invalid Email! Try a different one!';
+        //     break;
+        // }
+        // else {
+        //     if(!this.state.email) {
+        //         validationError = 'Email field cannot be blank';
+        //         break;
+        //     }
+        //     else{
+        //         if(!this.state.pwd) {
+        //             validationError = 'Password field cannot be blank';
+        //             break;
+        //         }       
+        //     }
+        // }
 
-        if(pwdError) {
-            this.setState({pwdError});
+        if(validationError) {
+            this.setState({validationError});
             return false;
         }
 
@@ -97,8 +109,7 @@ export default class SignIn extends Component{
                 <input ref={this.textInput} type="text" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
                 <input type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
             </div>
-            {this.state.emailError ? (<div className="validation-output">{this.state.emailError}</div>) : null}
-            {this.state.pwdError ? (<div className="validation-output">{this.state.pwdError}</div>) : null}
+            {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
             <Link href=""><div className="forgot-password">Forgot password?</div></Link>
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: this.onSubmit, credentials: { email: this.state.email, pwd: this.state.pwd } }} />
         </div>
