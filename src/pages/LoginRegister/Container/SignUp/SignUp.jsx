@@ -1,7 +1,10 @@
 import React, { Component, useState } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
+import Select from 'react-select';
 import { apiRegister } from "../../../../api/api";
+import colleges from "../../../../assets/colleges.js"
+import departments from "../../../../assets/departments.js"
 
 // const SignUp = ({ children }) => {
 
@@ -45,12 +48,29 @@ const initialState = {
     phone : '',
     pwd : '',
     cpwd : '',
-    nameError : '',
-    emailError : '',
-    phoneError : '',
-    pwdError : '',
-    cpwdError : '',
+    validationError : '',
 }
+
+const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px dotted pink',
+      color: state.isSelected ? 'red' : 'blue',
+      padding: 20,
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: 200,
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+  
+      return { ...provided, opacity, transition };
+    }
+  }
+
+// const college = colleges.map(opt => ({ label: opt, value: opt }));
 
 export default class SignUp extends Component{
 
@@ -76,59 +96,50 @@ export default class SignUp extends Component{
         }
     }
 
+    
+
     validate = () => {
-        let nameError = '';
-        let emailError = '';
-        let phoneError = '';
-        let pwdError = '';
-        let cpwdError = '';
+        let validationError = '';
 
         if(!this.state.name) {
-            nameError = 'Name field cannot be blank';
-        }
-        
-        if(!this.state.email.includes('@')) {
-            emailError = 'Invalid Email! Try a different one!';
-        }
-
-        if(!this.state.email) {
-            emailError = 'Email field cannot be blank';
-        }
-
-        if(!this.state.phoneError) {
-            phoneError = 'Phone field cannot be blank';
-        }
-
-        if(!this.state.pwdError) {
-            pwdError = 'Password field cannot be blank';
-        }
-
-        if(!this.state.cpwdError) {
-            cpwdError = 'Confirm Password field cannot be blank';
-        }
-
-        if(nameError) {
-            this.setState({nameError});
-            return false;
-        }
-
-        if(emailError) {
-            this.setState({emailError});
-            return false;
-        }
-
-        if(phoneError) {
-            this.setState({phoneError});
-            return false;
+            validationError = 'Name field cannot be blank';
+        } else {
+            if(!this.state.email) {
+                validationError = 'Email field cannot be blank';
+            }
+            else{
+                if(!this.state.email.includes('@')) {
+                    validationError = 'Invalid Email! Try a different one!';
+                }
+                else{
+                    if(!this.state.phone) {
+                        validationError = 'Phone field cannot be blank';
+                    }
+                    else{
+                        if(this.state.phone<1000000000 || this.state.phone>9999999999) {
+                            validationError = 'Invalid Phone Number';
+                        }
+                        else{
+                            if(!this.state.pwd) {
+                                validationError = 'Password field cannot be blank';
+                            }
+                            else{
+                                if(!this.state.cpwd) {
+                                    validationError = 'Confirm Password field cannot be blank';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        if(pwdError) {
-            this.setState({pwdError});
-            return false;
+        if(!validationError && (this.state.cpwd !== this.state.pwd)) {
+            validationError = 'Passwords do not match';
         }
 
-        if(cpwdError) {
-            this.setState({cpwdError});
+        if(validationError) {
+            this.setState({validationError});
             return false;
         }
 
@@ -148,20 +159,19 @@ export default class SignUp extends Component{
                 <div className="form-class align-form" id="style-2">
                     <input ref={this.textInput} type="text" placeholder="Name" required value={this.state.name} onChange={(e) => this.setState({name : e.target.value})} />
                     <input type="text" placeholder="Year" required value={this.state.year} onChange={(e) => this.setState({year : e.target.value})} />
-                    <input type="text" placeholder="Department" required value={this.state.dept} onChange={(e) => this.setState({dept : e.target.value})} />
-                    <input type="text" placeholder="College" required value={this.state.college} onChange={(e) => this.setState({college : e.target.value})} />
+                    {/* <input type="text" placeholder="Department" required value={this.state.dept} onChange={(e) => this.setState({dept : e.target.value})} /> */}
+                    {/* <input type="text" placeholder="College" required value={this.state.college} onChange={(e) => this.setState({college : e.target.value})} /> */}
                     {/* <input type="text" placeholder="City" required />
                     <input type="text" placeholder="State" required /> */}
+                    <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/>
+                    {/* <Select styles={customStyles} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/> */}
+                    <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/>
                     <input type="email" placeholder="Email-ID" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
                     <input type="number" placeholder="Phone" required value={this.state.phone} onChange={(e) => this.setState({phone : e.target.value})} />
                     <input type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
                     <input type="password" placeholder="Confirm Password" required value={this.state.cpwd} onChange={(e) => this.setState({cpwd : e.target.value})} />
                 </div>
-                {this.state.nameError ? (<div className="validation-output">{this.state.nameError}</div>) : null}
-                {this.state.emailError ? (<div className="validation-output">{this.state.emailError}</div>) : null}
-                {this.state.phoneError ? (<div className="validation-output">{this.state.phoneError}</div>) : null}
-                {this.state.pwdError ? (<div className="validation-output">{this.state.pwdError}</div>) : null}
-                {this.state.cpwdError ? (<div className="validation-output">{this.state.cpwdError}</div>) : null}
+                {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
                 <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: this.onSubmit, credentials: { name: this.state.name, year: this.state.year, dept: this.state.dept, college: this.state.college, email: this.state.email, phone: this.state.phone, pwd: this.state.pwd, cpwd: this.state.cpwd } }} />
             </div>    
         );
