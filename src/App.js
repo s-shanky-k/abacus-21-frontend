@@ -9,6 +9,7 @@ import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
+import EventTemplate from './pages/Events/EventTemplate';
 
 
 class App extends Component {
@@ -61,6 +62,7 @@ class App extends Component {
             <Route path="/about-us" exact component={AboutUs} />
             <Route path="/events" exact component={Events} />
             <Route path="/workshops" exact component={Workshops} />
+            <Route path="/event-template" exact component={EventTemplate} />
           </Switch>
           <Footer />
         </Router>

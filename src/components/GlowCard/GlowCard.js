@@ -23,10 +23,11 @@ function GlowCard({ props }) {
 
 
                         <div className={`${styles.content}`}>
+                            {props.img !== undefined &&
                             <div className={styles.glowCardImgDiv}>
                                 <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt="" className={styles.glowCardImg} />
                             </div>
-
+                            }
 
                             <div className={styles.glowCardContent}>
                                 <div style={{ textAlign: 'center' }}>
