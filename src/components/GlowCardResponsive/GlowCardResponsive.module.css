@@ -114,4 +114,17 @@
     /* margin-top:20px;  */
     /* letter-spacing: 2px; */
     font-family: 'Iceland';
+
+    letter-spacing: 2px;
 }
+
+@media only screen and (max-width:1024px){
+    .box{
+        height: 400px;
+    }
+    .box .content{
+        opacity: 1;
+    }
+    .box .imgbx img{
+        opacity: 1;
+    }}

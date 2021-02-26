@@ -14,6 +14,7 @@ import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
 
 
+
 class App extends Component {
 
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
       <div className="App" onScroll={this.getScroll}>
         
         <Router>
+          
           {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
           <Switch>
             <Route path="/" exact>
@@ -72,8 +74,9 @@ class App extends Component {
           </Switch>
           <Footer />
         </Router>
+        
       </div>
-    )
+    );
   }
 }
 export default App

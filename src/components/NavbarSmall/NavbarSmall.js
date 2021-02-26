@@ -55,16 +55,16 @@ export default class NavbarSmall extends Component {
 
                             <ul className="abacus-list">
                                 <li>
-                                    <HashLink to="/homepage#sec1" className="abacus-list-link">Homepage</HashLink>
+                                    <HashLink to="/homepage#homepage" className="abacus-list-link">Homepage</HashLink>
                                 </li>
                                 <li>
-                                    <HashLink to="/about-us#sec1" className="abacus-list-link">About Us</HashLink>
+                                    <HashLink to="/about-us#aboutus" className="abacus-list-link">About Us</HashLink>
                                 </li>
                                 <li>
-                                    <HashLink to="/events#sec1" className="abacus-list-link">Events</HashLink>
+                                    <HashLink to="/events#events" className="abacus-list-link">Events</HashLink>
                                 </li>
                                 <li>
-                                    <HashLink to="/workshops#sec1" className="abacus-list-link">Workshops</HashLink>
+                                    <HashLink to="/workshops#workshops" className="abacus-list-link">Workshops</HashLink>
                                 </li>
                             </ul>
                         </div>

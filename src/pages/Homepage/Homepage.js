@@ -1,39 +1,48 @@
 import React, { Component, useRef } from 'react'
 import styles from "./Homepage.module.css"
-
-
-
-
+import {ScrollUpButton} from 'react-scroll-up-button'
 //NeonButton
 import NeonButton from '../../components/NeonButton/NeonButton'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import GlowCard from '../../components/GlowCard/GlowCard'
 import Loader from '../../components/Loader/Loader'
+import Load from '../../components/Load/Load'
 import Heading from '../../components/Heading/Heading'
 
 
+function demoAsyncCall() {
+    return new Promise((resolve) => setTimeout(() => resolve(), 2500));
+  }
 
 
 class Homepage extends Component {
 
-    constructor(props) {
-        super(props)
+    state = {
+        loading: true
+      };
+    
+      componentDidMount() {
+  
+        demoAsyncCall().then(() => this.setState({ loading: false }));
+      }
+      
+ render() {
 
-        this.state = {
-
+        const { loading } = this.state;
+    
+        if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+          return <Load/>; // render null when app is not ready
         }
-
-    }
-
-
-    render() {
         return (
+            
             <>
+        
                 <Loader />
+              
                 {/* Child Class */}
-
-                <section id="sec1">
-
+              
+                <section id="homepage">
+                
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
                     
                    
@@ -67,8 +76,10 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
+                    
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-HOMEPAGE!</div>
+                     
                 </div>
             </>
 

@@ -14,19 +14,19 @@ class NavbarBig extends Component {
                 </div>
 
                 <div className={`${styles._navbar_main}`}>
-                    <HashLink className={`${styles._navbar_main_link}`} to="/homepage#sec1">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/homepage#homepage">
                         <span className={`${styles._navbar_main_link_text}`}>Homepage</span>
                     </HashLink>
 
-                    <HashLink className={`${styles._navbar_main_link}`} to="/about-us#sec1">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/about-us#aboutus">
                         <span className={`${styles._navbar_main_link_text}`}>About Us</span>
                     </HashLink>
 
-                    <HashLink className={`${styles._navbar_main_link}`} to="/events#sec1">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/events#events">
                         <span className={`${styles._navbar_main_link_text}`}>Events</span>
                     </HashLink>
 
-                    <HashLink className={`${styles._navbar_main_link}`} to="/workshops#sec1">
+                    <HashLink className={`${styles._navbar_main_link}`} to="/workshops#workshops">
                         <span className={`${styles._navbar_main_link_text}`}>Workshops</span>
                     </HashLink>
 

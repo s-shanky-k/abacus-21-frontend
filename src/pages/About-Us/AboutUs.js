@@ -3,14 +3,19 @@ import styles from "./AboutUs.module.css"
 import Heading from '../../components/Heading/Heading'
 import GlowCard from '../../components/GlowCard/GlowCard'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
+import ScrollToTop from 'react-scroll-up'
 
 
 class AboutUs extends Component {
+
+    
     render() {
         return (
-            <>
+            <> 
+
+           
                 {/* Child Class */}
-                <div id="sec1" className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
+                <div ref={this.myRef} id="aboutus" className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
                     
                         <GlowCard props={{
                             title: "ABACUS",
@@ -58,6 +63,9 @@ class AboutUs extends Component {
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
+                <ScrollToTop>
+                </ScrollToTop>
+              
             </>
         )
     }
