@@ -41,9 +41,10 @@ export default class SignIn extends Component{
 
     validate = () => {
         let emailError = "";
+        let pwdError = "";
 
         if(!this.state.pwd) {
-            emailError = 'Password field cannot be blank';
+            pwdError = 'Password field cannot be blank';
         }
         
         if(!this.state.email.includes('@')) {
@@ -56,6 +57,11 @@ export default class SignIn extends Component{
 
         if(emailError) {
             this.setState({emailError});
+            return false;
+        }
+
+        if(pwdError) {
+            this.setState({pwdError});
             return false;
         }
 
