@@ -37,7 +37,7 @@ function GlowCard({ props }) {
                                 </div>
                                 {props.content === undefined 
                                 ? props.list.map((item) => 
-                                    <p className={styles.glowCardText}>{item}</p>
+                                    <p key={item.id} className={styles.glowCardText}>{item.text}</p>
                                 )
                                 : <p className={styles.glowCardText}>{props.content}</p>}
                                 

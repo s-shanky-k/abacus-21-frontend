@@ -15,13 +15,16 @@ function GlowCardResponsive({props}) {
         <FadeInSection>
         <div className={styles.bg}>
             <div className={styles.box}>
-                <Link to={props.href}>
-                <div className={styles.imgbx}>
-
-                    <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt=""/>
-
-                </div>
-                </Link>
+                {props.href !==undefined  
+                ?    <Link to={props.href}>
+                    <div className={styles.imgbx}>
+                        <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt=""/>
+                    </div>
+                    </Link>
+                :   <div className={styles.imgbx}>
+                        <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt=""/>
+                    </div>
+                }
                 <div className={styles.content}>
                     <h2>{props.title}
                     <br/>

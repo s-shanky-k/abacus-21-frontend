@@ -55,12 +55,34 @@ function EventTemplate() {
       > 
         <GlowCardSimple props={{
                             title: "Contact",
-                            list: ['1.dfjkdjnfkndsk','2. aiodsifnaiai','3.dkajfkodanfona']
+                            list:[{
+                              id:1,
+                              text: "1. The event is the best event"
+                            },
+                            {
+                              id:2,
+                              text: "2. All participants need to be there"
+                            },
+                            {
+                              id:3,
+                              text: "3. Max four in a group only"
+                            }],
                         }} /> 
         <GlowCardResponsive props={{ title: "Sponsor"}} />
         <GlowCardSimple props={{
                             title: "Venue & Time",
-                            list: ['1.dfjkdjnfkndsk','2. aiodsifnaiai','3.dkajfkodanfona']
+                            list:[{
+                              id:1,
+                              text: "1. The event is the best event"
+                            },
+                            {
+                              id:2,
+                              text: "2. All participants need to be there"
+                            },
+                            {
+                              id:3,
+                              text: "3. Max four in a group only"
+                            }],
                         }} /> 
       </div>
 
@@ -73,12 +95,34 @@ function EventTemplate() {
       > 
           <GlowCard props={{
                               title: "Contact",
-                              list: ['1.dfjkdjnfkndsk','2. aiodsifnaiai','3.dkajfkodanfona']
+                              list:[{
+                                id:1,
+                                text: "1. The event is the best event"
+                              },
+                              {
+                                id:2,
+                                text: "2. All participants need to be there"
+                              },
+                              {
+                                id:3,
+                                text: "3. Max four in a group only"
+                              }],
                           }} /> 
           <GlowCardResponsive props={{title: "Sponsor"}} />
           <GlowCard props={{
                               title: "Venue & Time",
-                              list: ['1.dfjkdjnfkndsk','2. aiodsifnaiai','3.dkajfkodanfona']
+                              list:[{
+                                id:1,
+                                text: "1. The event is the best event"
+                              },
+                              {
+                                id:2,
+                                text: "2. All participants need to be there"
+                              },
+                              {
+                                id:3,
+                                text: "3. Max four in a group only"
+                              }],
                           }} /> 
       </div>
 
@@ -92,7 +136,18 @@ function EventTemplate() {
         <div className={`${styles._homepage_container}`}>
         <GlowCard props={{
                             title: "Rules",
-                            list:["1. The event is the best event","2. All participants need to be there","3. Max four in a group only"],
+                            list:[{
+                              id:1,
+                              text: "1. The event is the best event"
+                            },
+                            {
+                              id:2,
+                              text: "2. All participants need to be there"
+                            },
+                            {
+                              id:3,
+                              text: "3. Max four in a group only"
+                            }],
                             img: "events/mass-Main.png"
                         }} /> 
             
