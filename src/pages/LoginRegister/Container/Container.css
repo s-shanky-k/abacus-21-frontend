@@ -299,3 +299,10 @@ input {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #ff65bd;
 }
+
+.validation-output{
+    font-family: 'MainFont', cursive;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
