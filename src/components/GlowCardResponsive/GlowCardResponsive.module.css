@@ -82,7 +82,7 @@
     left: 10px;
     right: 10px;
     bottom: 10px;
-    height: 90px;
+    /* height: 90px; */
     background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
@@ -90,6 +90,7 @@
     text-align: center;
     opacity: 0;
     transition: 0.5s;
+    padding-top: 10px;
 }
 
 .box:hover .content {
@@ -97,16 +98,20 @@
 }
 
 .box .content h2 {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 20px;
     color: #fff;
     font-weight: 500;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
+    font-family: 'Iceland';
 }
 
 .box .content h2 span {
-    font-size: 14px;
+    font-size: 18px;
     color: #fff;
     font-weight: 200;
-    letter-spacing: 2px;
+    /* padding-top: 200px !important; */
+    /* margin-top:20px;  */
+    /* letter-spacing: 2px; */
+    font-family: 'Iceland';
 }

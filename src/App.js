@@ -10,6 +10,8 @@ import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
 import EventTemplate from './components/EventTemplate/EventTemplate';
+import TechEvents from './pages/Events/TechEvents';
+import NonTechEvents from './pages/Events/NonTechEvents';
 
 
 class App extends Component {
@@ -62,6 +64,10 @@ class App extends Component {
             <Route path="/about-us" exact component={AboutUs} />
             <Route path="/events" exact component={Events} />
             <Route path="/workshops" exact component={Workshops} />
+
+            <Route path="/tech-events" exact component={TechEvents} />
+            <Route path="/non-tech-events" exact component={NonTechEvents} />
+
             <Route path="/event-template" exact component={EventTemplate} />
           </Switch>
           <Footer />

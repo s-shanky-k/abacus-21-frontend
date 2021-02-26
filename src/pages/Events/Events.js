@@ -1,42 +1,15 @@
 import React, { Component } from 'react'
 import styles from "./Events.module.css"
-import NumberCounterCard from '../../components/NumberCounter/NumberCounter'
+import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 
 class Events extends Component {
     render() {
         return (
             <>
-
-                {/* Child Class */}
-                <div id="sec1"className={`${styles._homepage}`} style={{ backgroundColor: '#060c21'}}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-EVENTS!</div>
-                        <div>
-                            <NumberCounterCard props={{number:500}}/>
-                        </div>
+                <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
+                    <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily:"Iceland",href: "/tech-events" }} />
+                    <GlowCardResponsive props={{ title: "Non-Tech Events", href: "/non-tech-events" }} />
                 </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-EVENTS!</div>
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'pink' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-EVENTS!</div>
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-EVENTS!</div>
-                        <div>
-                            <NumberCounterCard props={{number:500}}/>
-                        </div>  
-                        
-                        </div>
             </>
         )
     }

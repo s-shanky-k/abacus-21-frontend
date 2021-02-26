@@ -1,5 +1,5 @@
 ._heading {
-    font-family: NavbarMain !important;
+    font-family: NavbarMain;
     letter-spacing: 5px;
     animation: flicker 3s infinite;
     color: #ffe6ff;

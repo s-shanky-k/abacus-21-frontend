@@ -77,7 +77,7 @@
 }
 
 .abacus-close-btn:hover {
-    color: hotpink !important;
+    color: #ff2483 !important;
     opacity: 1;
 }
 
@@ -114,5 +114,5 @@
 }
 
 .abacus-list-link:hover {
-    color: hotpink !important;
+    color: #ff2483 !important;
 }

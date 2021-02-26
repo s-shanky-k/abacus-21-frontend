@@ -3,7 +3,7 @@ import styles from './GlowCardResponsive.module.css'
 import FadeInSection from '../FadeInSection/FadeInSection'
 import {Link} from "react-router-dom";
 import massImg from '../../assets/Images/mass.png'
-
+import Heading from '../Heading/Heading'
 /*
 Usage: 
 <GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events"}}/>
@@ -15,7 +15,7 @@ function GlowCardResponsive({props}) {
         <FadeInSection>
         <div className={styles.bg}>
             <div className={styles.box}>
-                {props.href !==undefined  
+                {props.href !== undefined  
                 ?    <Link to={props.href}>
                     <div className={styles.imgbx}>
                         <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt=""/>
@@ -26,8 +26,14 @@ function GlowCardResponsive({props}) {
                     </div>
                 }
                 <div className={styles.content}>
-                    <h2>{props.title}
-                    <br/>
+                    <h2>
+                    <div style={{ textAlign: 'center' , paddingBottom:'5px'}}>
+                            {props.titleFontFamily !== undefined 
+                            ?  <Heading text={props.title} fontSize="34px" fontFamily={props.titleFontFamily}/>
+                            :  <Heading text={props.title} fontSize="28px"/>
+                            }
+                          
+                    </div>
                     <span>{props.content}</span>
                     </h2>
                 </div>
