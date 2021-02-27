@@ -18,8 +18,8 @@ class Workshops extends Component {
 
                 {/* Child Class */}
                 <div id="worshops" className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-WORKSHOPS!</div>
+                    {/* <div className={`${styles._homepage_container}`}>
+                        KABOOOOM-WORKSHOPS!</div> */}
                 </div>
 
                 {/* Child Class */}
