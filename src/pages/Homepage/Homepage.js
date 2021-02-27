@@ -8,32 +8,30 @@ import GlowCard from '../../components/GlowCard/GlowCard'
 import Loader from '../../components/Loader/Loader'
 import Load from '../../components/Load/Load'
 import Heading from '../../components/Heading/Heading'
-
+import Footer from '../../components/Footer/Footer'
 
 function demoAsyncCall() {
     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
   }
 
 
-class Homepage extends Component {
 
+class Homepage extends Component {
     state = {
         loading: true
       };
-    
       componentDidMount() {
-  
-        demoAsyncCall().then(() => this.setState({ loading: false }));
+        demoAsyncCall().then(() => this.setState({ loading: false }));  
       }
-      
  render() {
 
-        const { loading } = this.state;
-    
-        if(loading) { // if your component doesn't have to wait for an async action, remove this block 
-          return <Load/>; // render null when app is not ready
+    const { loading } = this.state;
+    if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+          return <Load />; // render null when app is not ready
         }
+        
         return (
+
             
             <>
         
@@ -81,6 +79,7 @@ class Homepage extends Component {
                         KABOOOOM-HOMEPAGE!</div>
                      
                 </div>
+                <Footer /> 
             </>
 
         )
