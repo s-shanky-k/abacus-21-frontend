@@ -68,7 +68,6 @@
     flex-wrap: wrap;
     align-items: center;
 }
-
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;

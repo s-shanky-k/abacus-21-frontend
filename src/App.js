@@ -57,8 +57,7 @@ function App() {
     setwidth(window.innerWidth)
     setheight(window.innerHeight)
   }
-
-
+  
 
   return (
     <div className="App">
