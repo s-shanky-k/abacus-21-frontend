@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
 import ScrollUpButton from 'react-scroll-up-button'
-import LoginRegister from "../LoginRegister/LoginRegister.js";
 
 class Workshops extends Component {
     render() {
         return (
             <>
-            <div>
-                <ScrollUpButton />
+                <div>
+                    <ScrollUpButton />
                 //This is all you need to get the default view working
             </div>
-        
-           
-                
-                <LoginRegister></LoginRegister>
+
+
+
+
 
                 {/* Child Class */}
                 <div id="worshops" className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>

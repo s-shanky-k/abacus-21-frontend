@@ -16,15 +16,15 @@ function NeonButton({ props }) {
     // <FadeInSection >
 
 
-    < div className={styles.container} onClick={() => { props.credentials !== undefined && props.onClick(props.credentials) }}>
+    < div className={styles.container}>
 
-      <Link className={styles.a_n3} to={props.href} style={{ "--color": props.color }}>
+      <div className={styles.a_n3} onClick={() => {props.onClick && props.onClick(props.parameters)}} style={{ "--color": props.color }}>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         {props.text}
-      </Link>
+      </div>
     </div >
     // </FadeInSection>
   )
