@@ -1,120 +1,88 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect, useContext } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
-import { apiSignin } from "../../../../api/api";
-import { Link } from "react-router-dom"
-
-const url_signin = "ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/auth/signin";
-
-const initialState = {
-    email : '',
-    pwd : '',
-    validationError : '',
-}
+import { Link, useHistory } from "react-router-dom"
+import { apiSignin } from "../../../../api/api"
+import { withRouter } from "react-router-dom"
+import Cookies from "js-cookie"
+import { AuthApi, SetAuthApi } from "../../../../App"
 
 
-// const SignIn = ({ children }) => {
-//     const [email, setemail] = useState('')
-//     const [pwd, setpwd] = useState('')
-//     return (
-//         <div className="form-container sign-in-container">
-//             <Heading text="LOGIN" fontSize="35px"></Heading>
-//             <div className="form-class">
-//                 <input type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
-//                 <input type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-//                 {/* <div></div> - Validation Output */}
-//             </div>
-//             <Link href=""><div className="forgot-password">Forgot password?</div></Link>
-//             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: apiSignin, credentials: { email: email, pwd: pwd } }} />
-//         </div>
-//     )
-// }
+function SignIn(props) {
 
-export default class SignIn extends Component{
+    const Auth = useContext(AuthApi)
+    const SetAuth = useContext(SetAuthApi)
+    const history = useHistory()
 
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-        this.textInput = React.createRef();
-    }
+    const [email, setemail] = useState("")
+    const [pwd, setpwd] = useState("")
+    const [validationError, setvalidationError] = useState("")
 
-    validate = () => {
+    // Refs
+    let textInput = null;
+
+    useEffect(() => {
+        // textInput.current.focus();
+        return () => {
+
+        }
+    }, [])
+
+    const validate = () => {
         let validationError = '';
 
-        if(!this.state.email) {
+        if (!email) {
             validationError = 'Email field cannot be blank';
         }
-        else{
-            if(!this.state.email.includes('@')) {
+        else {
+            if (!email.includes('@')) {
                 validationError = 'Invalid Email! Try a different one!';
             }
-            else{
-                if(!this.state.pwd) {
+            else {
+                if (!pwd) {
                     validationError = 'Password field cannot be blank';
                 }
             }
         }
 
-        // if(!this.state.email.includes('@')) {
-        //     validationError = 'Invalid Email! Try a different one!';
-        //     break;
-        // }
-        // else {
-        //     if(!this.state.email) {
-        //         validationError = 'Email field cannot be blank';
-        //         break;
-        //     }
-        //     else{
-        //         if(!this.state.pwd) {
-        //             validationError = 'Password field cannot be blank';
-        //             break;
-        //         }       
-        //     }
-        // }
-
-        if(validationError) {
-            this.setState({validationError});
+        if (validationError) {
+            setvalidationError(validationError)
             return false;
         }
-
         return true;
     }
 
-    handleSubmit = () => {
-        const isValid = this.validate();
-        if(isValid) {
-            console.log(this.state);
-            this.setState(initialState);
+    const onSubmit = async (SetAuth) => {
+        if (validate()) {
+            const response = await apiSignin({ email: email, pwd: pwd })
+            if (response.auth) {
+                Cookies.set("token", response.token)
+                SetAuth(true)
+                history.push('/dashboard')
+            }
+            else {
+                setvalidationError("Invalid Email/Password")
+            }
         }
     }
 
-    onSubmit = () => {
-        this.handleSubmit();
-        // apiSignin();
-    }
-
-    componentDidMount() {
+    const giveFocus = () => {
         this.textInput.current.focus();
     }
 
-    giveFocus = () => {
-        this.textInput.current.focus();
-    }
-
-    render() {
-        return (
-        <div className="form-container sign-in-container">
+    return (
+        <div className="form-container sign-in-container" >
             <Heading text="LOGIN" fontSize="35px"></Heading>
             <div className="form-class">
-                <input className="input-field-style" ref={this.textInput} type="text" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
-                <input className="input-field-style" type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
+                <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
+                <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
             </div>
-            {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
-            <Link href=""><div className="forgot-password">Forgot password?</div></Link>
-            <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: this.onSubmit, credentials: { email: this.state.email, pwd: this.state.pwd } }} />
-        </div>
+            { validationError ? (<div className="validation-output">{validationError}</div>) : null
+            }
+            <Link><div className="forgot-password" >Forgot password?</div></Link>
+            <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
+        </div >
     )
-    }
 }
 
-// export default SignIn;
+export default withRouter(SignIn);

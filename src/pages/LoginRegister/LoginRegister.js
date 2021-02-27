@@ -8,12 +8,12 @@ import SignIn from './Container/SignIn/SignIn.jsx';
 
 class LeftComponent extends Component {
     render() {
-        return(
+        return (
             <div>
                 {/* <h1 className="login-register-heading">Greetings</h1> */}
                 <Heading text="GREETINGS!" fontSize="35px"></Heading>
                 <div id="signIn">
-                    <NeonButton props={{text:"Sign In", color:"#26a0da"}}/>
+                    <NeonButton props={{ text: "Sign In", color: "#26a0da" }} />
                 </div>
             </div>
         );
@@ -32,12 +32,12 @@ class LeftComponent extends Component {
 
 class RightComponent extends Component {
     render() {
-        return(
+        return (
             <div>
                 {/* <h1 className="login-register-heading">Greetings</h1> */}
                 <Heading text="GREETINGS!" fontSize="35px"></Heading>
                 <div id="signUp">
-                    <NeonButton props={{text:"Sign Up", color:"#26a0da"}}/>
+                    <NeonButton props={{ text: "Sign Up", color: "#26a0da" }} />
                 </div>
             </div>
         );

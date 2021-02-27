@@ -1,9 +1,8 @@
-import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import React, { Component, useState, useContext, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, withRouter } from 'react-router-dom'
+import Cookies from "js-cookie"
 import './App.css';
 
-import NavbarBig from './components/NavbarBig/NavbarBig';
-import NavbarSmall from './components/NavbarSmall/NavbarSmall';
 import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
@@ -15,92 +14,98 @@ import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
 import Tenet from './pages/Events/Event/Tenet';
 import EventMiddleware from './pages/Events/Event/EventMiddleware';
+import Dashboard from './pages/Dashboard/Dashboard'
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword.js'
+import Navbar from './components/Navbar/Navbar';
+
+// import AuthApi from "./api/AuthApi"
+
+// componentWillUnmount() {
+//   window.removeEventListener('resize', this.updateWindowDimensions);
+// }
+
+export const AuthApi = React.createContext();
+export const SetAuthApi = React.createContext();
+
+function App() {
+  const [auth, setauth] = useState(false)
+  const [width, setwidth] = useState(0)
+  const [height, setheight] = useState(0)
+
+  const history = useHistory()
+
+  useEffect(() => {
+    updateWindowDimensions();
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => {
+
+    }
+  }, [])
 
 
-
-class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = { width: 0, height: 0, scrollTop: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    // this.getScroll = this.getScroll.bind(this)
-    // this.wholeRef = React.createRef()
+  const updateWindowDimensions = () => {
+    setwidth(window.innerWidth)
+    setheight(window.innerHeight)
   }
 
-  // getScroll() {
-  //   const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
-  //   const scrollTop = this.wholeRef.scrollTop
-  //   console.log(`onScroll, window.scrollY: ${scrollY} wholeRef.scrollTop: ${scrollTop}`)
-  //   this.setState({
-  //     scrollTop: scrollTop
-  //   })
-  // }
-
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-
-    
-    
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-    console.log(window)
-  }
-  
-
-  render() {
-    
-    return (
-     
-        
-      // Parent class
-      <div className="App" onScroll={this.getScroll}>
-        <Router>
-
-          {this.state.width < 1100 ? <NavbarSmall /> : <NavbarBig />}
-          <Switch>
-            <Route path="/" exact>
-              <Redirect to="/homepage" />
-            </Route>
-            <Route path="/homepage" exact component={Homepage} />
-            <Route path="/about-us" exact component={AboutUs} />
-
-            {/* Events */}
-            <Route path="/events" exact component={Events} />
-
-            {/* Tech */}
-            <Route path="/events/tech" exact component={TechEvents} />
-            <Route path="/events/tech/:title" exact component={EventMiddleware} />
-
-            <Route path="/events/non-tech" exact component={NonTechEvents} />
 
 
+  return (
+    <div className="App">
+      <AuthApi.Provider value={auth}>
+        <SetAuthApi.Provider value={setauth}>
+          <Router>
+            <Navbar width={width} />
 
-            <Route path="/workshops" exact component={Workshops} />
+            <Routes />
+            <Footer />
+          </Router>
+        </SetAuthApi.Provider>
+      </AuthApi.Provider>
 
-            <Route path="/tenet" exact component={Tenet} />
-            <Route path="/event-template" exact component={EventTemplate} />
-
-            <Route path="/login-register" exact component={LoginRegister} />
-
-            <Route path="/forgot-password" exact component={ForgotPassword} />
-          </Switch>
-          {/* <Footer /> */}
-        </Router>
-
-      </div>
-    );
-  }
+    </div>
+  )
 }
-export default App
 
+const Routes = () => {
+  const Auth = React.useContext(AuthApi)
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <Redirect to="/homepage" />
+      </Route>
+      <Route path="/homepage" exact component={Homepage} />
+      <Route path="/about-us" exact component={AboutUs} />
+      <Route path="/events" exact component={Events} />
+      <Route path="/workshops" exact component={Workshops} />
+
+      <Route path="/tech-events" exact component={TechEvents} />
+      <Route path="/non-tech-events" exact component={NonTechEvents} />
+
+      <Route path="/event-template" exact component={EventTemplate} />
+
+      <Route path="/forgot-password" exact component={ForgotPassword} />
+      <Route path="/login-register" exact component={LoginRegister} />
+      <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
+    </Switch>
+  )
+}
+
+const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        if (auth) {
+          return <Component />
+        }
+        else {
+          return <Redirect to="/login-register"></Redirect>
+        }
+      }} />
+  )
+}
+
+export default (App)

@@ -1,187 +1,154 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useContext, useState } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { apiRegister } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
 import Select from "react-select";
-
-// const SignUp = ({ children }) => {
-
-//     const [name, setname] = useState('')
-//     const [year, setyear] = useState('')
-//     const [dept, setdept] = useState('')
-//     const [college, setcollege] = useState('')
-//     const [email, setemail] = useState('')
-//     const [phone, setphone] = useState('')
-//     const [pwd, setpwd] = useState('')
-//     const [cpwd, setcpwd] = useState('')
-
-//     return (
-//         <div className="form-container sign-up-container">
-//             {/* <h1 className="login-register-heading">Sign Up Form</h1> */}
-//             <Heading text="REGISTER" fontSize="35px"></Heading>
-//             <div className="form-class align-form" id="style-2">
-//                 <input type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-//                 <input type="text" placeholder="Year" required value={year} onChange={(e) => setyear(e.target.value)} />
-//                 <input type="text" placeholder="Department" required value={dept} onChange={(e) => setdept(e.target.value)} />
-//                 <input type="text" placeholder="College" required value={college} onChange={(e) => setcollege(e.target.value)} />
-//                 {/* <input type="text" placeholder="City" required />
-//                 <input type="text" placeholder="State" required /> */}
-//                 <input type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
-//                 <input type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
-//                 <input type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-//                 <input type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
-//             </div>
-//             {/* <div></div> - Validation Output */}
-//             <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: apiRegister, credentials: { name: name, year: year, dept: dept, college: college, email: email, phone: phone, pwd: pwd, cpwd: cpwd } }} />
-//         </div>
-//     );
-// }
-
-const initialState = {
-    name : '',
-    year : '',
-    dept : '',
-    college : '',
-    email : '',
-    phone : '',
-    pwd : '',
-    cpwd : '',
-    validationError : '',
-}
+import Cookies from "js-cookie"
+import { AuthApi, SetAuthApi } from "../../../../App"
+import { useHistory, withRouter } from 'react-router-dom';
 
 
 const customStyle1 = {
     option: (provided, state) => ({
-      ...provided,
-      borderBottom: '1px solid #fff',
-      color: state.isSelected ? '#ff65bd' : '#060c21',
-      padding: 10,
-      fontFamily: 'MainFont',
-      backgroundColor : 'black',
-      color: '#fff',
-      fontSize: 20,
+        ...provided,
+        borderBottom: '1px solid #fff',
+        color: state.isSelected ? '#ff65bd' : '#060c21',
+        padding: 10,
+        fontFamily: 'MainFont',
+        backgroundColor: 'black',
+        color: '#fff',
+        fontSize: 20,
     }),
     control: () => ({
-      // none of react-select's styles are passed to <Control />
-      width: 450,
-      height: 50,
-      display: 'flex',
-      backgroundColor: 'black',
-      fontFamily: 'MainFont',
-      fontSize: 20,
-      borderRadius: 20,
-      alignItems: 'center',
-      color: '#fff',
-      marginBottom: 20,
-      marginTop: 10,
-      paddingLeft: 5,
+        // none of react-select's styles are passed to <Control />
+        width: 450,
+        height: 50,
+        display: 'flex',
+        backgroundColor: 'black',
+        fontFamily: 'MainFont',
+        fontSize: 20,
+        borderRadius: 20,
+        alignItems: 'center',
+        color: '#fff',
+        marginBottom: 20,
+        marginTop: 10,
+        paddingLeft: 5,
     }),
     singleValue: (provided, state) => {
         const opacity = state.isDisabled ? 0.5 : 1;
         const transition = 'opacity 300ms';
-        
+
         return { ...provided, opacity, transition };
     }
-  }
+}
 
-  const customStyle2 = {
+const customStyle2 = {
     option: (provided, state) => ({
-      ...provided,
-      borderBottom: '1px solid #fff',
-      color: state.isSelected ? '#ff65bd' : '#060c21',
-      padding: 10,
-      fontFamily: 'MainFont',
-      backgroundColor : 'black',
-      color: '#fff',
-      fontSize: 20,
+        ...provided,
+        borderBottom: '1px solid #fff',
+        color: state.isSelected ? '#ff65bd' : '#060c21',
+        padding: 10,
+        fontFamily: 'MainFont',
+        backgroundColor: 'black',
+        color: '#fff',
+        fontSize: 20,
     }),
     control: () => ({
-      // none of react-select's styles are passed to <Control />
-      width: 450,
-      height: 50,
-      display: 'flex',
-      backgroundColor: 'black',
-      fontFamily: 'MainFont',
-      fontSize: 20,
-      borderRadius: 20,
-      alignItems: 'center',
-      color: 'red',
-      marginBottom: 10,
-      paddingLeft: 5,
+        // none of react-select's styles are passed to <Control />
+        width: 450,
+        height: 50,
+        display: 'flex',
+        backgroundColor: 'black',
+        fontFamily: 'MainFont',
+        fontSize: 20,
+        borderRadius: 20,
+        alignItems: 'center',
+        color: 'red',
+        marginBottom: 10,
+        paddingLeft: 5,
     }),
     singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
-  
-      return { ...provided, opacity, transition };
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+
+        return { ...provided, opacity, transition };
     }
-  }
+}
 
 const dropdownIndicatorStyles = (base, state) => {
     let changes = {
-      // all your override styles
-      backgroundColor: 'blue',
+        // all your override styles
+        backgroundColor: 'blue',
     };
     return Object.assign(base, changes);
 };
 
-// const college = colleges.map(opt => ({ label: opt, value: opt }));
 
-export default class SignUp extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-        this.textInput = React.createRef();
-    }
 
-    // componentDidMount() {
-    //     this.textInput.current.focus();
-    // }
 
-    giveFocus() {
+
+
+// this.textInput = React.createRef();
+
+// componentDidMount() {
+//     this.textInput.current.focus();
+// }
+
+
+
+function SignUp() {
+
+    // Ref
+    let textInput = React.createRef();
+
+    const Auth = useContext(AuthApi)
+    const SetAuth = useContext(SetAuthApi)
+    const history = useHistory()
+
+    const [name, setname] = useState('')
+    const [year, setyear] = useState(1)
+    const [dept, setdept] = useState(null)
+    const [college, setcollege] = useState(null)
+    const [email, setemail] = useState('')
+    const [phone, setphone] = useState('')
+    const [pwd, setpwd] = useState('')
+    const [cpwd, setcpwd] = useState('')
+    const [validationError, setvalidationError] = useState('')
+
+    const giveFocus = () => {
         this.textInput.current.focus();
     }
 
-    handleSubmit = () => {
-        const isValid = this.validate();
-        if(isValid) {
-            console.log(this.state);
-            this.setState(initialState);
-        }
-    }
-
-    
-
-    validate = () => {
+    const validate = () => {
         let validationError = '';
 
-        if(!this.state.name) {
+        if (!name) {
             validationError = 'Name field cannot be blank';
         } else {
-            if(!this.state.email) {
+            if (!email) {
                 validationError = 'Email field cannot be blank';
             }
-            else{
-                if(!this.state.email.includes('@')) {
+            else {
+                if (!email.includes('@')) {
                     validationError = 'Invalid Email! Try a different one!';
                 }
-                else{
-                    if(!this.state.phone) {
+                else {
+                    if (!phone) {
                         validationError = 'Phone field cannot be blank';
                     }
-                    else{
-                        if(this.state.phone<1000000000 || this.state.phone>9999999999) {
+                    else {
+                        if (phone < 1000000000 || phone > 9999999999) {
                             validationError = 'Invalid Phone Number';
                         }
-                        else{
-                            if(!this.state.pwd) {
+                        else {
+                            if (!pwd) {
                                 validationError = 'Password field cannot be blank';
                             }
-                            else{
-                                if(!this.state.cpwd) {
+                            else {
+                                if (!cpwd) {
                                     validationError = 'Confirm Password field cannot be blank';
                                 }
                             }
@@ -191,53 +158,64 @@ export default class SignUp extends Component{
             }
         }
 
-        if(!validationError && (this.state.cpwd !== this.state.pwd)) {
+        if (!validationError && (cpwd !== pwd)) {
             validationError = 'Passwords do not match';
         }
 
-        if(validationError) {
-            this.setState({validationError});
+        if (validationError) {
+            setvalidationError(validationError);
             return false;
         }
 
         return true;
     }
 
-    onSubmit = () => {
-        this.handleSubmit();
-        // apiSignin();
+    const onSubmit = async () => {
+        const isValid = validate();
+        if (isValid) {
+            const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
+            if (response.auth) {
+                Cookies.set("token", response.token)
+                SetAuth(true)
+                history.push("/dashboard")
+            }
+            else {
+                setvalidationError(response.message)
+            }
+            // api
+
+
+        }
     }
 
-    onChangeInput = (value) => {
-        console.log(value);
+    const handleDeptChange = (selectedOption) => {
+        setdept(selectedOption)
     }
 
-    render() {
-        return (
-                <div className="form-container sign-up-container">
-                {/* <h1 className="login-register-heading">Sign Up Form</h1> */}
-                <Heading text="REGISTER" fontSize="35px"></Heading>
-                <div className="form-class align-form" id="style-2">
-                    <input className="input-field-style" ref={this.textInput} type="text" placeholder="Name" required value={this.state.name} onChange={(e) => this.setState({name : e.target.value})} />
-                    <input className="input-field-style" type="text" placeholder="Year" required value={this.state.year} onChange={(e) => this.setState({year : e.target.value})} />
-                    {/* <input type="text" placeholder="Department" required value={this.state.dept} onChange={(e) => this.setState({dept : e.target.value})} /> */}
-                    {/* <input type="text" placeholder="College" required value={this.state.college} onChange={(e) => this.setState({college : e.target.value})} /> */}
-                    {/* <input type="text" placeholder="City" required />
-                    <input type="text" placeholder="State" required /> */}
-                    {/* <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/> */}
-                    <Select components={{ DropdownIndicator:() => null,  IndicatorSeparator:() => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/>
-                    <Select components={{ DropdownIndicator:() => null,  IndicatorSeparator:() => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/>
-                    {/* <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/> */}
-                    <input className="input-field-style" type="email" placeholder="Email-ID" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
-                    <input className="input-field-style" type="number" placeholder="Phone" required value={this.state.phone} onChange={(e) => this.setState({phone : e.target.value})} />
-                    <input className="input-field-style" type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
-                    <input className="input-field-style" type="password" placeholder="Confirm Password" required value={this.state.cpwd} onChange={(e) => this.setState({cpwd : e.target.value})} />
-                </div>
-                {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
-                <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: this.onSubmit, credentials: { name: this.state.name, year: this.state.year, dept: this.state.dept, college: this.state.college, email: this.state.email, phone: this.state.phone, pwd: this.state.pwd, cpwd: this.state.cpwd } }} />
-            </div>  
-        );
+    const handleCollegeChange = (selectedOption) => {
+        setcollege(selectedOption);
     }
+
+
+    return (
+        <div className="form-container sign-up-container">
+            <Heading text="REGISTER" fontSize="35px"></Heading>
+            <div className="form-class align-form" id="style-2">
+                <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
+                <input className="input-field-style" type="text" placeholder="Year" required value={year} onChange={(e) => setyear(e.target.value)} />
+
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                <input className="input-field-style" type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
+                <input className="input-field-style" type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
+                <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
+                <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
+            </div>
+            {validationError ? (<div className="validation-output">{validationError}</div>) : null}
+            <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
+        </div>
+    );
 }
 
-// export default SignUp;
+
+export default withRouter(SignUp);
