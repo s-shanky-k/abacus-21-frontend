@@ -7,14 +7,13 @@ import SignUp from './Container/SignUp/SignUp.jsx';
 import SignIn from './Container/SignIn/SignIn.jsx';
 
 class LeftComponent extends Component {
-    static SignIn = SignIn;
     render() {
         return(
             <div>
                 {/* <h1 className="login-register-heading">Greetings</h1> */}
                 <Heading text="GREETINGS!" fontSize="35px"></Heading>
                 <div id="signIn">
-                    <NeonButton props={{text:"Sign In", color:"#26a0da", onClick:SignIn.giveFocus}}/>
+                    <NeonButton props={{text:"Sign In", color:"#26a0da"}}/>
                 </div>
             </div>
         );
@@ -32,14 +31,13 @@ class LeftComponent extends Component {
 // );
 
 class RightComponent extends Component {
-    static SignUp = SignUp;
     render() {
         return(
             <div>
                 {/* <h1 className="login-register-heading">Greetings</h1> */}
                 <Heading text="GREETINGS!" fontSize="35px"></Heading>
                 <div id="signUp">
-                    <NeonButton props={{text:"Sign Up", color:"#26a0da", onClick:SignUp.giveFocus}}/>
+                    <NeonButton props={{text:"Sign Up", color:"#26a0da"}}/>
                 </div>
             </div>
         );

@@ -106,8 +106,8 @@ export default class SignIn extends Component{
         <div className="form-container sign-in-container">
             <Heading text="LOGIN" fontSize="35px"></Heading>
             <div className="form-class">
-                <input ref={this.textInput} type="text" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
-                <input type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
+                <input className="input-field-style" ref={this.textInput} type="text" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
+                <input className="input-field-style" type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
             </div>
             {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
             <Link href=""><div className="forgot-password">Forgot password?</div></Link>

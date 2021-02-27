@@ -1,10 +1,10 @@
 import React, { Component, useState } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
-import Select from 'react-select';
 import { apiRegister } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
+import Select from "react-select";
 
 // const SignUp = ({ children }) => {
 
@@ -51,16 +51,65 @@ const initialState = {
     validationError : '',
 }
 
-const customStyles = {
+
+const customStyle1 = {
     option: (provided, state) => ({
       ...provided,
-      borderBottom: '1px dotted pink',
-      color: state.isSelected ? 'red' : 'blue',
-      padding: 20,
+      borderBottom: '1px solid #fff',
+      color: state.isSelected ? '#ff65bd' : '#060c21',
+      padding: 10,
+      fontFamily: 'MainFont',
+      backgroundColor : 'black',
+      color: '#fff',
+      fontSize: 20,
     }),
     control: () => ({
       // none of react-select's styles are passed to <Control />
-      width: 200,
+      width: 450,
+      height: 50,
+      display: 'flex',
+      backgroundColor: 'black',
+      fontFamily: 'MainFont',
+      fontSize: 20,
+      borderRadius: 20,
+      alignItems: 'center',
+      color: '#fff',
+      marginBottom: 20,
+      marginTop: 10,
+      paddingLeft: 5,
+    }),
+    singleValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+        
+        return { ...provided, opacity, transition };
+    }
+  }
+
+  const customStyle2 = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid #fff',
+      color: state.isSelected ? '#ff65bd' : '#060c21',
+      padding: 10,
+      fontFamily: 'MainFont',
+      backgroundColor : 'black',
+      color: '#fff',
+      fontSize: 20,
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: 450,
+      height: 50,
+      display: 'flex',
+      backgroundColor: 'black',
+      fontFamily: 'MainFont',
+      fontSize: 20,
+      borderRadius: 20,
+      alignItems: 'center',
+      color: 'red',
+      marginBottom: 10,
+      paddingLeft: 5,
     }),
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
@@ -69,6 +118,14 @@ const customStyles = {
       return { ...provided, opacity, transition };
     }
   }
+
+const dropdownIndicatorStyles = (base, state) => {
+    let changes = {
+      // all your override styles
+      backgroundColor: 'blue',
+    };
+    return Object.assign(base, changes);
+};
 
 // const college = colleges.map(opt => ({ label: opt, value: opt }));
 
@@ -151,29 +208,34 @@ export default class SignUp extends Component{
         // apiSignin();
     }
 
+    onChangeInput = (value) => {
+        console.log(value);
+    }
+
     render() {
         return (
-            <div className="form-container sign-up-container">
+                <div className="form-container sign-up-container">
                 {/* <h1 className="login-register-heading">Sign Up Form</h1> */}
                 <Heading text="REGISTER" fontSize="35px"></Heading>
                 <div className="form-class align-form" id="style-2">
-                    <input ref={this.textInput} type="text" placeholder="Name" required value={this.state.name} onChange={(e) => this.setState({name : e.target.value})} />
-                    <input type="text" placeholder="Year" required value={this.state.year} onChange={(e) => this.setState({year : e.target.value})} />
+                    <input className="input-field-style" ref={this.textInput} type="text" placeholder="Name" required value={this.state.name} onChange={(e) => this.setState({name : e.target.value})} />
+                    <input className="input-field-style" type="text" placeholder="Year" required value={this.state.year} onChange={(e) => this.setState({year : e.target.value})} />
                     {/* <input type="text" placeholder="Department" required value={this.state.dept} onChange={(e) => this.setState({dept : e.target.value})} /> */}
                     {/* <input type="text" placeholder="College" required value={this.state.college} onChange={(e) => this.setState({college : e.target.value})} /> */}
                     {/* <input type="text" placeholder="City" required />
                     <input type="text" placeholder="State" required /> */}
-                    <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/>
-                    {/* <Select styles={customStyles} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/> */}
-                    <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/>
-                    <input type="email" placeholder="Email-ID" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
-                    <input type="number" placeholder="Phone" required value={this.state.phone} onChange={(e) => this.setState({phone : e.target.value})} />
-                    <input type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
-                    <input type="password" placeholder="Confirm Password" required value={this.state.cpwd} onChange={(e) => this.setState({cpwd : e.target.value})} />
+                    {/* <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/> */}
+                    <Select components={{ DropdownIndicator:() => null,  IndicatorSeparator:() => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} placeholder="Department"/>
+                    <Select components={{ DropdownIndicator:() => null,  IndicatorSeparator:() => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/>
+                    {/* <Select styles={{ singleValue: (base) => ({ ...base, background: this.state.selectedOption.value, backgroundColor: 'black', border: 'none', margin: '8px 0', width: '100%', fontFamily: 'MainFont', height: '50', fontSize: '20', color: 'white', borderRadius: '20px'}) }} options={colleges.map(opt => ({ label: opt, value: opt }))} placeholder="College"/> */}
+                    <input className="input-field-style" type="email" placeholder="Email-ID" required value={this.state.email} onChange={(e) => this.setState({email : e.target.value})} />
+                    <input className="input-field-style" type="number" placeholder="Phone" required value={this.state.phone} onChange={(e) => this.setState({phone : e.target.value})} />
+                    <input className="input-field-style" type="password" placeholder="Password" required value={this.state.pwd} onChange={(e) => this.setState({pwd : e.target.value})} />
+                    <input className="input-field-style" type="password" placeholder="Confirm Password" required value={this.state.cpwd} onChange={(e) => this.setState({cpwd : e.target.value})} />
                 </div>
                 {this.state.validationError ? (<div className="validation-output">{this.state.validationError}</div>) : null}
                 <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: this.onSubmit, credentials: { name: this.state.name, year: this.state.year, dept: this.state.dept, college: this.state.college, email: this.state.email, phone: this.state.phone, pwd: this.state.pwd, cpwd: this.state.cpwd } }} />
-            </div>    
+            </div>  
         );
     }
 }

@@ -17,6 +17,7 @@ import Tenet from './pages/Events/Event/Tenet';
 import EventMiddleware from './pages/Events/Event/EventMiddleware';
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword.js'
 
 
 
@@ -91,6 +92,8 @@ class App extends Component {
             <Route path="/event-template" exact component={EventTemplate} />
 
             <Route path="/login-register" exact component={LoginRegister} />
+
+            <Route path="/forgot-password" exact component={ForgotPassword} />
           </Switch>
           {/* <Footer /> */}
         </Router>

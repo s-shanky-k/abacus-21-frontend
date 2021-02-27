@@ -24,6 +24,14 @@ input[type=number] {
     transition: transform 80ms ease-in;
 } */
 
+/* .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
 .login-register-heading {
     font-family: 'MainFont', cursive !important;
     color: #fff;
@@ -233,7 +241,7 @@ button.ghost {
     width: 75%;
 }
 
-input {
+.input-field-style {
     background-color: #000;
     border: none;
     padding: 12px 15px;
