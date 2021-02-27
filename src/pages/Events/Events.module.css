@@ -17,6 +17,11 @@
     padding: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+._responsive {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
+}
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;

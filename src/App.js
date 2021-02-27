@@ -9,6 +9,7 @@ import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
+import Load from './components/Load/Load'
 import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
@@ -16,8 +17,9 @@ import NonTechEvents from './pages/Events/NonTechEvents';
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
 
-class App extends Component {
 
+class App extends Component {
+  
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0, scrollTop:0 };
@@ -36,8 +38,11 @@ class App extends Component {
   // }
 
   componentDidMount() {
-    this.updateWindowDimensions();
+   
     window.addEventListener('resize', this.updateWindowDimensions);
+
+    this.updateWindowDimensions();
+    
   }
 
   componentWillUnmount() {
@@ -48,14 +53,16 @@ class App extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
     console.log(window)
   }
-
-
+  
 
   render() {
+    
     return (
+     
+        
       // Parent class
       <div className="App" onScroll={this.getScroll}>
-        
+       
         <Router>
           
           {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
@@ -74,7 +81,7 @@ class App extends Component {
             <Route path="/event-template" exact component={EventTemplate} />
             <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
-          <Footer />
+         
         </Router>
         
       </div>

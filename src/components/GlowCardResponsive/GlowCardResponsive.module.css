@@ -36,7 +36,8 @@
 }
 
 .box .imgbx img {
-    width: 100%;
+    padding-left: 13px;
+    width: 95%;
     opacity: 0.4;
     transition: 0.5s;
 }
