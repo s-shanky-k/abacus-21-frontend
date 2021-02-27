@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./Events.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
-
+import img from "./Asset 5patt.svg"
 class Events extends Component {
     render() {
         return (
