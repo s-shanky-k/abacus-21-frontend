@@ -20,7 +20,7 @@ class AboutUs extends Component {
                         <GlowCard props={{
                             title: "ABACUS",
                             content: "ABACUS is the annual intercollege symposium of the Department of Computer Science and Engineering conducted by Computer Science and Engineering Association (CSEA ), College of Engineering Guindy. It is an event where people from multiple colleges demonstrate their technical prowess to win exciting prizes and internships.",
-                            img: "about-us/abacus_white.png",
+                            img: "about-us/abacus.svg",
                             degree: "25deg"
                         }} />
                     

@@ -8,15 +8,8 @@ class NonTechEvents extends Component {
             <>
 
                 <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
-                    <GlowCardResponsive props={{ title: "Tenet", content: "A challenge where the participants have to identify and resolve bugs", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Hackathon", content: "Innovate and develop influential solutions to a problem using technology", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Novice.inti()", content: "Exclusive event for the first year students ", href: "/events" }} />
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
-                    <GlowCardResponsive props={{ title: "X-Domain Combat", content: "Explore new horizons in various technical domains", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Code for Crown", content: "Online Programming Contest ", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Cam", content: "A challenge where the participants have to identify and resolve bugs",img:"events/cam.svg", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Design", content: "Innovate and develop influential solutions to a problem using technology",img:"events/design.svg", href: "/events" }} />
                 </div>
             </>
         )

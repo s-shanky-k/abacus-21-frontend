@@ -1,47 +1,20 @@
 import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
-import ScrollUpButton from 'react-scroll-up-button'
-import LoginRegister from "../LoginRegister/LoginRegister.js";
+import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 
-class Workshops extends Component {
+class TechEvents extends Component {
     render() {
         return (
             <>
-            <div>
-                <ScrollUpButton />
-                //This is all you need to get the default view working
-            </div>
-        
-           
-                
-                <LoginRegister></LoginRegister>
 
-                {/* Child Class */}
-                <div id="worshops" className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-WORKSHOPS!</div>
+                <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
+                    <GlowCardResponsive props={{ title: "Cloud", titleFontFamily:"Iceland",content: "A challenge where the participants have to identify and resolve bugs", img:"workshops/cloud.svg", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "Security", titleFontFamily:"Iceland", content: "Exclusive event for the first year students ",img:"workshops/security.svg", href: "/events" }} />
                 </div>
 
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-WORKSHOPS!</div>
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'pink' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-WORKSHOPS!</div>
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
-                    <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-WORKSHOPS!</div>
-                </div>
             </>
         )
     }
 }
 
-export default Workshops
+export default TechEvents

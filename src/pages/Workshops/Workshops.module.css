@@ -1,6 +1,6 @@
 /* Code for scroll snapping - Child */
 ._homepage {
-    height: 100vh;
+    min-height: 100vh !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,13 @@
 ._homepage_container {
     font-size: 50px;
 }
-
+.countup{
+    display: block;
+    font-size: large;
+    font-weight: bolder;
+    padding: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;
@@ -22,4 +28,10 @@
         padding-top: 50px;
        margin-bottom: auto;
     }
+}
+
+._responsive {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
 }

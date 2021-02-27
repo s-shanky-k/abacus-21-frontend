@@ -29,3 +29,9 @@
        margin-bottom: auto;
     }
 }
+
+._responsive {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
+}
