@@ -9,9 +9,11 @@ import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
+
 import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
+import Tenet from './pages/Events/Event/Tenet';
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
@@ -71,7 +73,9 @@ class App extends Component {
             <Route path="/tech-events" exact component={TechEvents} />
             <Route path="/non-tech-events" exact component={NonTechEvents} />
 
+            <Route path="/tenet" exact component={Tenet} />
             <Route path="/event-template" exact component={EventTemplate} />
+            
             <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
           <Footer />

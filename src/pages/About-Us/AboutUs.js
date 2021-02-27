@@ -45,24 +45,6 @@ class AboutUs extends Component {
                         degree: "25deg"
                     }} />
                 </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: 'green' }}>
-                    {/* <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-ABOUT-US!</div> */}
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: 'green' }}>
-                    {/* <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-ABOUT-US!</div> */}
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-                </div>
                 <ScrollToTop>
                 </ScrollToTop>
               

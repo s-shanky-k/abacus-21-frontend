@@ -7,8 +7,9 @@ class Events extends Component {
         return (
             <>
                 <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
-                    <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily:"Iceland",href: "/tech-events" }} />
-                    <GlowCardResponsive props={{ title: "Non-Tech Events", href: "/non-tech-events" }} />
+                    <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily:"Iceland",href: "/tech-events", img:"events/tech.svg" }} />
+                    <GlowCardResponsive props={{ title: "Hackathon", titleFontFamily:"Iceland",href: "/hackathon", img:"events/hackathon.svg"}} />
+                    <GlowCardResponsive props={{ title: "Non-Tech Events", titleFontFamily:"Iceland",href: "/non-tech-events", img:"events/nontech.svg"}} />
                 </div>
             </>
         )

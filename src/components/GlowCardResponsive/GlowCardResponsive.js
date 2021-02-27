@@ -6,7 +6,7 @@ import massImg from '../../assets/Images/mass.png'
 import Heading from '../Heading/Heading'
 /*
 Usage: 
-<GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events"}}/>
+<GlowCardResponsive props={{title:"Boom", content:"This is Everything", href:"/events", img:"boom.png"}}/>
 
 Todo: Need to pass image as a prop and display it on the card
 */

@@ -35,11 +35,17 @@ function GlowCard({ props }) {
                                 <div style={{ textAlign: 'center' }}>
                                     <Heading text={props.title} fontSize="30px" />
                                 </div>
-                                {props.content === undefined 
+                                {/* {props.content === undefined 
                                 ? props.list.map((item) => 
                                     <p key={item.id} className={styles.glowCardText}>{item.text}</p>
                                 )
-                                : <p className={styles.glowCardText}>{props.content}</p>}
+                                : <p className={styles.glowCardText}>{props.content}</p>} */}
+                                { props.content === undefined 
+                                ? props.list.map((item,index) => 
+                                    <p key={index+1} className={styles.glowCardText}>{item}</p>
+                                )
+                                : <p className={styles.glowCardText}>{props.content}</p>
+                                }
                                 
                             </div>
 
