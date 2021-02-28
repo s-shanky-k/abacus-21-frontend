@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect, useContext } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { Link, useHistory } from "react-router-dom"
-import { apiSignin } from "../../../../api/api"
+import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { withRouter } from "react-router-dom"
 import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
@@ -59,9 +59,9 @@ function SignIn(props) {
                 Cookies.set("token", response.token)
                 SetAuth(true)
                 history.push({
-                    pathname:"/dashboard",
-                    state:{
-                        snackbar_message:"Login Successful!",
+                    pathname: "/dashboard",
+                    state: {
+                        snackbar_message: "Login Successful!",
                     }
                 })
             }
@@ -75,6 +75,11 @@ function SignIn(props) {
         this.textInput.current.focus();
     }
 
+    const clickGoogleIcon = () => {
+        window.location = `${baseURL}${url_gAuth}`
+        // history.push()
+    }
+
     return (
         <div className="form-container sign-in-container" >
             <Heading text="LOGIN" fontSize="35px"></Heading>
@@ -85,6 +90,7 @@ function SignIn(props) {
             { validationError ? (<div className="validation-output">{validationError}</div>) : null
             }
             <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
+            <i class="fa fa-google" style={{ fontSize: '50px' }} onClick={clickGoogleIcon}></i>
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
         </div>
     )

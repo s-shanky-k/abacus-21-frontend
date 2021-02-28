@@ -127,36 +127,37 @@ function SignUp() {
 
         if (!name) {
             validationError = 'Name field cannot be blank';
-        } else {
-            if (!email) {
-                validationError = 'Email field cannot be blank';
-            }
-            else {
-                if (!email.includes('@')) {
-                    validationError = 'Invalid Email! Try a different one!';
-                }
-                else {
-                    if (!phone) {
-                        validationError = 'Phone field cannot be blank';
-                    }
-                    else {
-                        if (phone < 1000000000 || phone > 9999999999) {
-                            validationError = 'Invalid Phone Number';
-                        }
-                        else {
-                            if (!pwd) {
-                                validationError = 'Password field cannot be blank';
-                            }
-                            else {
-                                if (!cpwd) {
-                                    validationError = 'Confirm Password field cannot be blank';
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        } else if (!email) {
+            validationError = 'Email field cannot be blank';
         }
+        else if (!email.includes('@')) {
+            validationError = 'Invalid Email! Try a different one!';
+        }
+        else if (!phone) {
+            validationError = 'Phone field cannot be blank';
+        }
+        else if (phone < 1000000000 || phone > 9999999999) {
+            validationError = 'Invalid Phone Number';
+        }
+        else if (!pwd) {
+            validationError = 'Password field cannot be blank';
+        }
+        else if (!cpwd) {
+            validationError = 'Confirm Password field cannot be blank';
+        }
+        else if (!dept) {
+            validationError = 'Department field cannot be blank'
+        }
+        else if (!college) {
+            validationError = 'College field cannot be blank'
+        }
+        else if (!year) {
+            validationError = 'Year field cannot be blank'
+        }
+        else if (!(year <= 5 && year >= 1)) {
+            validationError = 'Choose valid academic year'
+        }
+
 
         if (!validationError && (cpwd !== pwd)) {
             validationError = 'Passwords do not match';
@@ -178,9 +179,9 @@ function SignUp() {
                 Cookies.set("token", response.token)
                 SetAuth(true)
                 history.push({
-                    pathname:"/dashboard",
-                    state:{
-                        snackbar_message:"Register Successful!",
+                    pathname: "/dashboard",
+                    state: {
+                        snackbar_message: "Register Successful!",
                     }
                 })
             }
@@ -217,6 +218,7 @@ function SignUp() {
                 <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
             </div>
             {validationError ? (<div className="validation-output">{validationError}</div>) : null}
+            <i class="fa fa-google" style={{ fontSize: '50px' }}></i>
             <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
         </div>
     );

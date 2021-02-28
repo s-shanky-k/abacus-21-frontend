@@ -1,12 +1,15 @@
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 
-export const url_signin = "signin";
-export const url_register = "register"
-export const url_forgotPassword = "forgotPassword"
-export const url_googledata = "googledata"
+export const baseURL = "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
+export const url_signin = "auth/signin";
+export const url_register = "auth/register"
+export const url_forgotPassword = "auth/forgotPassword"
+export const url_googledata = "auth/googledata"
+export const url_gAuth = "auth/googlesignin"
 
 const api = axios.create({
-    baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/auth/"
+    baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
 })
 
 export const apiSignin = async (credentials) => {
@@ -51,7 +54,7 @@ export const apiRegister = async (credentials) => {
 export const apiForgotPassword = async (credentials) => {
 
     try {
-        console.log("creds",credentials)
+        console.log("creds", credentials)
         const response = await api.post(
             `${url_forgotPassword}`, {
             email: credentials.email,
@@ -59,14 +62,15 @@ export const apiForgotPassword = async (credentials) => {
         console.log(response)
 
     } catch (error) {
-        console.log(error.response.data,"ERROR")
+        console.log(error.response.data, "ERROR")
     }
 }
+
 
 export const apiGoogleDataForm = async (credentials) => {
 
     try {
-        console.log("creds",credentials)
+        console.log("creds", credentials)
         const response = await api.post(
             `${url_googledata}`, {
             name: credentials.name,
@@ -78,6 +82,6 @@ export const apiGoogleDataForm = async (credentials) => {
         console.log(response)
 
     } catch (error) {
-        console.log(error.response.data,"ERROR")
+        console.log(error.response.data, "ERROR")
     }
 }
