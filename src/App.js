@@ -7,7 +7,7 @@ import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
-import { Footer } from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import Load from './components/Load/Load'
 import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
@@ -83,8 +83,10 @@ const Routes = () => {
       <Route path="/events" exact component={Events} />
       <Route path="/workshops" exact component={Workshops} />
 
-      <Route path="/tech-events" exact component={TechEvents} />
-      <Route path="/non-tech-events" exact component={NonTechEvents} />
+
+      <Route path="/events/tech" exact component={TechEvents} />
+      <Route path="/events/tech/:title" exact component={EventMiddleware} />
+      <Route path="/events/non-tech" exact component={NonTechEvents} />
 
       <Route path="/event-template" exact component={EventTemplate} />
 

@@ -14,12 +14,6 @@ import { AuthApi } from "../../App"
 
 export default function NavbarSmall({clickLogout}) {
 
-        this.navLinkRef1 = React.createRef()
-        this.navLinkRef2 = React.createRef()
-        this.navLinkRef3 = React.createRef()
-        this.clickedNavLink = this.clickedNavLink.bind(this)
-        this.clickOpenBtn = this.clickOpenBtn.bind(this)
-        this.clickCloseBtn = this.clickCloseBtn.bind(this)
     const Auth = useContext(AuthApi)
 
     //Refs
