@@ -19,4 +19,4 @@ class Workshops extends Component {
     }
 }
 
-export default TechEvents
+export default Workshops
