@@ -11,12 +11,13 @@ import Workshops from './pages/Workshops/Workshops';
 import { Footer } from './components/Footer/Footer';
 
 import EventTemplate from './components/EventTemplate/EventTemplate';
-import TechEvents from './pages/Events/TechEvents';
-import NonTechEvents from './pages/Events/NonTechEvents';
+import TechEvents from './pages/Events/Event-Types/TechEvents';
+import NonTechEvents from './pages/Events/Event-Types/NonTechEvents';
 import Tenet from './pages/Events/Event/Tenet';
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
+import sampleEvents from './pages/Events/sampleEvents';
 
 class App extends Component {
 
@@ -48,7 +49,6 @@ class App extends Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
-    console.log(window)
   }
 
 
@@ -77,6 +77,8 @@ class App extends Component {
             <Route path="/event-template" exact component={EventTemplate} />
             
             <Route path="/login-register" exact component={LoginRegister} />
+
+            <Route path="/sample-events" exact component={sampleEvents} />
           </Switch>
           <Footer />
         </Router>

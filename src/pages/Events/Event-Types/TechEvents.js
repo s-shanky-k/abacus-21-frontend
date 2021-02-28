@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import styles from "./Events.module.css"
-import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
+import styles from "../Events.module.css"
+import GlowCardResponsive from '../../../components/GlowCardResponsive/GlowCardResponsive'
 
 class TechEvents extends Component {
     render() {

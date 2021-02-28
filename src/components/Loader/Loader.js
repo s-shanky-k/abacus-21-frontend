@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styles from "./Loader.module.css"
 import "./Loader2.css"
 import { Link } from 'react-scroll'
-import AnimatedCard from "@rihor/react-3d-card/dist/AnimatedCard"
 
 class Loader extends Component {
 
