@@ -4,7 +4,7 @@ import Heading from '../../components/Heading/Heading'
 import GlowCard from '../../components/GlowCard/GlowCard'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import ScrollToTop from 'react-scroll-up'
-
+import Footer from '../../components/Footer/Footer'
 
 class AboutUs extends Component {
 
@@ -63,8 +63,7 @@ class AboutUs extends Component {
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                     <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
                 </div>
-                <ScrollToTop>
-                </ScrollToTop>
+                <Footer />
               
             </>
         )

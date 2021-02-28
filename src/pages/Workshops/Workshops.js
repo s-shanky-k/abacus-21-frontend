@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
 import ScrollUpButton from 'react-scroll-up-button'
 import LoginRegister from "../LoginRegister/LoginRegister.js";
-
+import Footer from '../../components/Footer/Footer'
 class Workshops extends Component {
     render() {
         return (
@@ -39,6 +39,7 @@ class Workshops extends Component {
                     <div className={`${styles._homepage_container}`}>
                         KABOOOOM-WORKSHOPS!</div>
                 </div>
+             <Footer/>   
             </>
         )
     }

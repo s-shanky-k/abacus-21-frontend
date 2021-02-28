@@ -16,7 +16,7 @@ import Heading1 from '../../components/Heading1/Heading1'
 import Footer from '../../components/Footer/Footer'
 import ErrorPage from '../../components/ErrorPage/ErrorPage'
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
-
+import Dev from '../../components/Dev/Dev';
 
 
 
@@ -56,15 +56,10 @@ class Homepage extends Component {
                 <section id="homepage">
                 
                 <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '060c21' }}>
-                    
-                   
-                    <div className={`${styles._homepage_container}`}>
-
-                        <Heading text="CSEA" fontSize="50px" />
-
-                    </div>
-                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
-      <div class="container-fluid  ml-sm-0 mt-5 pt-5 justify-content-center align-self-center">
+                <GlowCardResponsive props={{ title: "Abacus", content: "This is Everything", href: "/about-us/#aboutus" ,img:"about-us/abacus.svg"}} />      
+                <GlowCardResponsive props={{ title: "Sponser1", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />   
+                <GlowCardResponsive props={{ title: "Sponser2", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />   
+      <div class="container-fluid  ml-sm-0  justify-content-center align-self-center">
           <div class="row justify-content-center align-self-center ">
               <div class="col col-lg-3 col-md-4 pb-5 mt-5 text-center">
          
@@ -120,34 +115,32 @@ class Homepage extends Component {
   
                 </section>
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
-                    {/* <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!
-                    </div> */}
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />
-                    {/* <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} /> */}
-                </div>
+                <div className={`${styles._homepage} ${styles.bg}`} >
+        
+                <iframe width="900" height="400" display="flex" flex="wrap" src="https://www.youtube.com/embed/aQ8rsGYszOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
-                    {/* <div className={`${styles._homepage_container}`}>
-                        KABOOOOM-HOMEPAGE!
-
-                    </div> */}
-                    {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
-                    <GlowCardResponsive props={{ title: "Boom", content: "This is Everything", href: "/events" }} />
-
-                </div>
-
-                {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'green' }}>
                     
+                </div>
+
+                {/* Child Class */}
+                <div className={`${styles._homepage} ${styles.bg} ${styles._responsive}`}>
+                    <div className={`${styles._homepage_container}`}>
+                       SPONSERS
+
+                    </div> 
+                    {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
+                    
+                </div>
+
+                {/* Child Class */}
+                <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+                   <Dev /> 
                    
                 </div>
                
                 
            
-                <ErrorPage />
+ 
                 <Footer /> 
             </>
 
