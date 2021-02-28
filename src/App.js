@@ -66,7 +66,7 @@ class App extends Component {
       <div className="App" onScroll={this.getScroll}>
         <Router>
 
-          {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
+          {this.state.width < 1100 ? <NavbarSmall /> : <NavbarBig />}
           <Switch>
             <Route path="/" exact>
               <Redirect to="/homepage" />
@@ -92,7 +92,7 @@ class App extends Component {
 
             <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
-         
+          {/* <Footer /> */}
         </Router>
 
       </div>

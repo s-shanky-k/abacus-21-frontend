@@ -4,7 +4,18 @@ import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResp
 import img from "./img/Asset 5patt.svg"
 import Footer from '../../components/Footer/Footer'
 class Events extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             
+        }
+
+        
+    }
+    
     render() {
+        const {width} = this.props
         return (
             <>
                 <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>

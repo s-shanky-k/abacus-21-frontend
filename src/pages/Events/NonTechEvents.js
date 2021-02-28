@@ -3,7 +3,19 @@ import styles from "./Events.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 
 class NonTechEvents extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+    }
+
+
     render() {
+
+        const { width } = this.props
         return (
             <>
 
