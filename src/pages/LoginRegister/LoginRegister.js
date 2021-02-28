@@ -5,7 +5,7 @@ import NeonButton from "../../components/NeonButton/NeonButton.js";
 import Heading from '../../components/Heading/Heading.js';
 import SignUp from './Container/SignUp/SignUp.jsx';
 import SignIn from './Container/SignIn/SignIn.jsx';
-import {useLocation} from 'react-router-dom' 
+import { useLocation } from 'react-router-dom'
 import CustomSnackBar from "../../components/CustomSnackBar/CustomSnackBar.js"
 
 
@@ -29,7 +29,7 @@ const LeftComponent = () => (
         {/* <h1 className="login-register-heading">Greetings</h1> */}
         <Heading text="GREETINGS!" fontSize="35px"></Heading>
         <div id="signIn">
-            <NeonButton props={{text:"Sign In", color:"#26a0da"}}/>
+            <NeonButton props={{ text: "Sign In", color: "#26a0da" }} />
         </div>
     </div>
 );
@@ -53,7 +53,7 @@ const RightComponent = () => (
         {/* <h1 className="login-register-heading">Greetings</h1> */}
         <Heading text="GREETINGS!" fontSize="35px"></Heading>
         <div id="signUp">
-            <NeonButton props={{text:"Sign Up", color:"#26a0da"}}/>
+            <NeonButton props={{ text: "Sign Up", color: "#26a0da" }} />
         </div>
     </div>
 );
@@ -64,11 +64,12 @@ const App = (props) => {
     const CustomSnackBarRef = useRef();
 
     useEffect(() => {
-        if(location.state && location.state.hasOwnProperty("snackbar_message")){
+        console.log(location.state)
+        if (location.state && location.state.hasOwnProperty("snackbar_message")) {
             CustomSnackBarRef.current.handleClick(location.state.snackbar_message);
         }
         return () => {
-            
+
         }
     }, [])
 

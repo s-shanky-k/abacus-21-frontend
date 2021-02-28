@@ -45,7 +45,7 @@ class AboutUs extends Component {
                         degree: "25deg"
                     }} />
                 </div>
-
+                <Footer />
             </>
         )
     }

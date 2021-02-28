@@ -62,7 +62,6 @@ function App() {
             <Navbar width={width} />
 
             <Routes />
-            <Footer />
           </Router>
         </SetAuthApi.Provider>
       </AuthApi.Provider>
