@@ -72,14 +72,14 @@ function SignIn(props) {
 
     return (
         <div className="form-container sign-in-container" >
-            <Heading text="LOGIN" fontSize="35px"></Heading>
+            <Heading text={props.message} fontSize="35px"></Heading>
             <div className="form-class">
                 <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                 <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
             </div>
             { validationError ? (<div className="validation-output">{validationError}</div>) : null
             }
-            <Link><div className="forgot-password" >Forgot password?</div></Link>
+            <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
         </div >
     )

@@ -18,7 +18,7 @@ function NeonButton({ props }) {
 
     < div className={styles.container}>
 
-      <div className={styles.a_n3} onClick={() => {props.onClick && props.onClick(props.parameters)}} style={{ "--color": props.color }}>
+      <div className={styles.a_n3} onClick={() => { props.onClick && (props.parameters ? props.onClick(props.parameters) : props.onClick()) }} style={{ "--color": props.color }}>
         <span></span>
         <span></span>
         <span></span>
