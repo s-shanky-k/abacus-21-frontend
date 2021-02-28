@@ -24,14 +24,18 @@ function GlowCardSimple({ props }) {
 
 
                                 {props.content === undefined
-                                    ?
-                                    (props.list === undefined) ? props.contact.map((person, index) =>
-                                        <p key={index + 1} className={styles.glowCardText}>{person.name} - {person.mobile}</p>
-                                    )
-                                        : props.list.map((item, index) =>
-                                            <p key={index + 1} className={styles.glowCardText}>{item}</p>
+                                ? (props.list === undefined) 
+                                    ? (props.contact === undefined) 
+                                        ? props.rounds.roundDetails.map((round,index)=>
+                                            <p key={index + 1} className={styles.glowCardText}>{round.title} - {round.description}</p>
                                         )
-                                    : <p className={styles.glowCardText}>{props.content}</p>}
+                                        : props.contact.map((person, index) =>
+                                            <p key={index + 1} className={styles.glowCardText}>{person.name} - {person.mobile}</p>
+                                        )
+                                    : props.list.map((item, index) =>
+                                            <p key={index + 1} className={styles.glowCardText}>{item}</p>
+                                    )
+                                : <p className={styles.glowCardText}>{props.content}</p>}
                             </div>
 
                         </div>

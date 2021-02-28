@@ -126,11 +126,9 @@ function EventTemplate({ props }) {
       >
         <div className={`${styles._rulesDivContainer}`}>
           <div className={`${styles._rulesDiv}`}>
-            <GlowCard props={{
+            <GlowCardSimple props={{
               title: "Rounds",
-              list: props.rounds,
-              img: "events/" + `${props.refName}` + `_rules.svg`,
-              textAlign:'left'
+              rounds: props.rounds,
             }} />
           </div>
           <div>
