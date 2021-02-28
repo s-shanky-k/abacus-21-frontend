@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
-
-class TechEvents extends Component {
+import ScrollUpButton from 'react-scroll-up-button'
+import LoginRegister from "../LoginRegister/LoginRegister.js";
+import Footer from '../../components/Footer/Footer'
+class Workshops extends Component {
     render() {
         return (
             <>

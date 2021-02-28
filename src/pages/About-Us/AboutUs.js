@@ -4,26 +4,26 @@ import Heading from '../../components/Heading/Heading'
 import GlowCard from '../../components/GlowCard/GlowCard'
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
 import ScrollToTop from 'react-scroll-up'
-
+import Footer from '../../components/Footer/Footer'
 
 class AboutUs extends Component {
 
-    
+
     render() {
         return (
-            <> 
+            <>
 
-           
+
                 {/* Child Class */}
                 <div ref={this.myRef} id="aboutus" className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
-                    
-                        <GlowCard props={{
-                            title: "ABACUS",
-                            content: "ABACUS is the annual intercollege symposium of the Department of Computer Science and Engineering conducted by Computer Science and Engineering Association (CSEA ), College of Engineering Guindy. It is an event where people from multiple colleges demonstrate their technical prowess to win exciting prizes and internships.",
-                            img: "about-us/abacus.svg",
-                            degree: "25deg"
-                        }} />
-                    
+
+                    <GlowCard props={{
+                        title: "ABACUS",
+                        content: "ABACUS is the annual intercollege symposium of the Department of Computer Science and Engineering conducted by Computer Science and Engineering Association (CSEA ), College of Engineering Guindy. It is an event where people from multiple colleges demonstrate their technical prowess to win exciting prizes and internships.",
+                        img: "about-us/abacus.svg",
+                        degree: "25deg"
+                    }} />
+
                 </div>
 
                 {/* Child Class */}
@@ -45,9 +45,7 @@ class AboutUs extends Component {
                         degree: "25deg"
                     }} />
                 </div>
-                <ScrollToTop>
-                </ScrollToTop>
-              
+
             </>
         )
     }
