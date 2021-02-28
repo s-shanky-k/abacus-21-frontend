@@ -1,19 +1,24 @@
 import React, { Component } from 'react'
 import styles from "./Footer.module.css"
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
-export class Footer extends Component {
+export default class Footer extends Component {
     render() {
         return (
             <div className={`${styles._footer_container}`}>
-                <p>This is Kabooom-Footer</p>
-                <p>This is Kabooom-Footer</p>
-                <p>This is Kabooom-Footer</p>
-                <p>This is Kabooom-Footer</p>
-                <p>This is Kabooom-Footer</p>
-                <p>This is Kabooom-Footer</p>
+                <div className={`${styles._footer_icons_div}`}>
+                    <InstagramIcon className={`${styles._icon}`} />
+                    <TwitterIcon className={`${styles._icon}`} />
+                    <FacebookIcon className={`${styles._icon}`} />
+                    <LinkedInIcon className={`${styles._icon}`} />
+                </div>
+                <div className={`${styles._footer_copyright_div}`}>
+                    <p>&#169; 2021 Copyright ABACUS</p>
+                </div>
             </div>
         )
     }
 }
-
-export default Footer
