@@ -1,46 +1,31 @@
 import React, { Component } from "react"
-import { FaArrowAltCircleUp } from "react-icons/fa"
-import cn from "classnames"
 import "./ScrollToTop.module.css"
 
 
 class ScrollToTop extends Component {
-  state = {
-    visible: false,
-  }
+  constructor() {
+    super();
 
-  scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    this.state = {
+        intervalId: 0
+    };
   }
-
-  toggleVisibility = () => {
-    if (window.pageYOffset > 50) {
-      this.setState({
-        visible: true,
-      })
-    } else {
-      this.setState({
-        visible: false,
-      })
+  
+  scrollStep() {
+    if (window.pageYOffset === 0) {
+        clearInterval(this.state.intervalId);
     }
+    window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
   }
-
-  componentDidMount() {
-    document.addEventListener("scroll", this.toggleVisibility)
+  
+  scrollToTop() {
+    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+    this.setState({ intervalId: intervalId });
   }
-
-  componentWillUnmount() {
-    document.removeEventListener("scroll", this.toggleVisibility)
-  }
-
-  render() {
-    return (
-      <FaArrowAltCircleUp
-        className={cn("ScrollToTop", { visible: this.state.visible })}
-        onClick={this.scrollToTop}
-      />
-    )
-  }
-}
-
+  
+  render () {
+      return <button title='Back to top' className='scroll' 
+               onClick={ () => { this.scrollToTop(); }}>
+                <span className='arrow_up glyphicon glyphicon-chevron-up'></span>
+              </button>;}}
 export default ScrollToTop

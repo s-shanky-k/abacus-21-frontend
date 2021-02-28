@@ -179,3 +179,27 @@
  .a_n2 {
      z-index: -999 !important;
  }
+ @media only screen and (max-width:1024px){
+    .a_n3{
+    background: var(--color);
+     color: #fff;
+     box-shadow: 0px 0px 10px var(--color), 0px 0px 40px var(--color), 0px 0px 80px var(--color);
+     transition-delay: 0.2s;
+    }
+    .a_n3 span:nth-child(1) {
+        left: 0%;
+        transition: 0.3s;
+    }
+    .a_n3 span:nth-child(3){
+        right: 0%;
+        transition: 0.3s; 
+    }
+    .a_n3 span:nth-child(2){
+        bottom: 0%;
+     transition: 0.3s;
+    }
+    .a_n3 span:nth-child(4){
+        top: 0%;
+        transition: 0.3s;  
+    }
+ }

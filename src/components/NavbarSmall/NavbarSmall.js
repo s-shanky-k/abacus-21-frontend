@@ -41,7 +41,7 @@ export default class NavbarSmall extends Component {
         return (
             <div className="abacus-nav-container">
                 <button className="abacus-nav-btn abacus-open-btn" onClick={this.clickOpenBtn}>
-                    <i className="fa fa-bars"></i>
+                    <i className="fa fa-bars buttoncolor"></i>
                 </button>
 
                 <div className="abacus-nav abacus-nav-black" ref={this.navLinkRef1}>
