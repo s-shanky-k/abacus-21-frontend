@@ -36,7 +36,7 @@ export default function NavbarSmall({clickLogout}) {
     return (
         <div className="abacus-nav-container">
             <button className="abacus-nav-btn abacus-open-btn" onClick={clickOpenBtn}>
-                <i className="fa fa-bars"></i>
+                <i className="fa fa-bars buttoncolor"></i>
             </button>
 
             <div className="abacus-nav abacus-nav-black" ref={navLinkRef1} >

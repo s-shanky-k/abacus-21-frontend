@@ -56,7 +56,14 @@
     }
 }
 
-.countup {
+.bg{
+    background-color:#060c21;
+    background-image:url('Asset 5event.svg');
+   
+    background-repeat:no-repeat;
+    background-size:cover
+}
+.countup{
     display: block;
     font-size: large;
     font-weight: bolder;
