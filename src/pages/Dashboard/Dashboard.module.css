@@ -1,8 +1,36 @@
 ._dashboard_wrapper {
     min-height: 100vh !important;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+}
+
+._homepage {
+    min-height: 100vh !important;
+    width: 100% !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+@media only screen and (max-width: 1100px) {
+    ._homepage {
+        height: fit-content;
+        scroll-snap-align: none;
+    }
+}
+
+._rulesDivContainer {
+    display: flex;
+    justify-content: space-evenly !important;
+    align-items: center;
+    flex-direction: column !important;
+    width: 100%;
+}
+
+._rulesDiv {
+    flex-basis: 100% !important;
 }

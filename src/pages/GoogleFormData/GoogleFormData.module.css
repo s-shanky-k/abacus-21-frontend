@@ -9,10 +9,10 @@
 .google_form_data_container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 65vh;
     text-align: center;
+    height: 100vh;
 }
 
 .google_form_data_form_container {

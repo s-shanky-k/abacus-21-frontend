@@ -20,7 +20,12 @@ function Navbar({ width }) {
                 Cookies.remove("token")
             }
             SetAuth(false)
-            history.push("/homepage")
+            history.push({
+                pathname:"/homepage",
+                state:{
+                    snackbar_message:"You have been logged out!",
+                }
+            })
         }
     }
 

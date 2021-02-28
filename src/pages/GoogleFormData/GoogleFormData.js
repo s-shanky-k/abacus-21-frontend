@@ -1,10 +1,15 @@
-import {React, useState} from 'react'
+import {React, useState, useContext} from 'react'
 import styles from "./GoogleFormData.module.css"
 import Heading from "../../components/Heading/Heading"
 import NeonButton from "../../components/NeonButton/NeonButton.js"
 import Select from "react-select";
 import colleges from "../../assets/colleges"
 import departments from "../../assets/departments"
+import Cookies from "js-cookie"
+import { AuthApi, SetAuthApi } from "../../App"
+import { useHistory, withRouter } from 'react-router-dom';
+import {apiGoogleDataForm} from "../../api/api"
+
 
 const customStyle1 = {
     option: (provided, state) => ({
@@ -81,23 +86,20 @@ const dropdownIndicatorStyles = (base, state) => {
     return Object.assign(base, changes);
 };
 
-export default function GoogleFormData() {
+function GoogleFormData() {
 
     // Ref
     // let textInput = React.createRef();
 
-    // const Auth = useContext(AuthApi)
-    // const SetAuth = useContext(SetAuthApi)
-    // const history = useHistory()
+    const Auth = useContext(AuthApi)
+    const SetAuth = useContext(SetAuthApi)
+    const history = useHistory()
 
     const [name, setname] = useState('')
     const [year, setyear] = useState(1)
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
-    const [email, setemail] = useState('')
     const [phone, setphone] = useState('')
-    const [pwd, setpwd] = useState('')
-    const [cpwd, setcpwd] = useState('')
     const [validationError, setvalidationError] = useState('')
 
     const giveFocus = () => {
@@ -109,40 +111,17 @@ export default function GoogleFormData() {
 
         if (!name) {
             validationError = 'Name field cannot be blank';
-        } else {
-            if (!email) {
-                validationError = 'Email field cannot be blank';
-            }
+        } 
         else {
-            if (!email.includes('@')) {
-                validationError = 'Invalid Email! Try a different one!';
+            if (!phone) {
+                validationError = 'Phone field cannot be blank';
             }
             else {
-                if (!phone) {
-                    validationError = 'Phone field cannot be blank';
-                }
-                else {
-                    if (phone < 1000000000 || phone > 9999999999) {
-                        validationError = 'Invalid Phone Number';
-                    }
-                    else {
-                        if (!pwd) {
-                            validationError = 'Password field cannot be blank';
-                        }
-                        else {
-                            if (!cpwd) {
-                                validationError = 'Confirm Password field cannot be blank';
-                            }
-                        }
-                    }
+                if (phone < 1000000000 || phone > 9999999999) {
+                    validationError = 'Invalid Phone Number';
                 }
             }
         }
-    }
-
-    if (!validationError && (cpwd !== pwd)) {
-        validationError = 'Passwords do not match';
-    }
 
     if (validationError) {
         setvalidationError(validationError);
@@ -155,17 +134,16 @@ export default function GoogleFormData() {
 const onSubmit = async () => {
     const isValid = validate();
     if (isValid) {
-        // const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
-        // if (response.auth) {
-        //     Cookies.set("token", response.token)
-        //     SetAuth(true)
-        //     history.push("/dashboard")
-        // }
-        // else {
-        //     setvalidationError(response.message)
-        // }
-        // // api
-        console.log("VALID");
+        const response = await apiGoogleDataForm({ name: name, year: year, dept: dept.value, college: college.value, phone: phone })
+        if (response.auth) {
+            Cookies.set("token", response.token)
+            SetAuth(true)
+            history.push("/dashboard")
+        }
+        else {
+            setvalidationError(response.message)
+        }
+        // api
     }
 }
 
@@ -182,14 +160,11 @@ const handleCollegeChange = (selectedOption) => {
             <div className={styles.google_form_data_container}>
                 <Heading text="Register" fontSize="35px"></Heading>
                 <div className={styles.google_form_data_form_container}>
-                    <input className={styles.google_form_data_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)}/>
                     <input className={styles.google_form_data_input_field} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
                     <input className={styles.google_form_data_input_field} type="text" placeholder="Year" required value={year} onChange={(e) => setyear(e.target.value)} />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
                     <input className={styles.google_form_data_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
-                    <input className={styles.google_form_data_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-                    <input className={styles.google_form_data_input_field} type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                 </div>
                 {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}
                 <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit}} />
@@ -197,3 +172,5 @@ const handleCollegeChange = (selectedOption) => {
         </div>
     )
 }
+
+export default withRouter(GoogleFormData);

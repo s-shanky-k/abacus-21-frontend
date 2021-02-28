@@ -3,6 +3,7 @@ import axios from "axios"
 export const url_signin = "signin";
 export const url_register = "register"
 export const url_forgotPassword = "forgotPassword"
+export const url_googledata = "googledata"
 
 const api = axios.create({
     baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/auth/"
@@ -56,10 +57,27 @@ export const apiForgotPassword = async (credentials) => {
             email: credentials.email,
         })
         console.log(response)
-        // return response.data
 
     } catch (error) {
         console.log(error.response.data,"ERROR")
-        // return error.response.data
+    }
+}
+
+export const apiGoogleDataForm = async (credentials) => {
+
+    try {
+        console.log("creds",credentials)
+        const response = await api.post(
+            `${url_googledata}`, {
+            name: credentials.name,
+            phone: credentials.phone,
+            college: credentials.college,
+            dept: credentials.dept,
+            year: credentials.year,
+        })
+        console.log(response)
+
+    } catch (error) {
+        console.log(error.response.data,"ERROR")
     }
 }

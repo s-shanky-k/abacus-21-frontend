@@ -177,7 +177,12 @@ function SignUp() {
             if (response.auth) {
                 Cookies.set("token", response.token)
                 SetAuth(true)
-                history.push("/dashboard")
+                history.push({
+                    pathname:"/dashboard",
+                    state:{
+                        snackbar_message:"Register Successful!",
+                    }
+                })
             }
             else {
                 setvalidationError(response.message)
