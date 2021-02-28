@@ -2,6 +2,7 @@ import axios from "axios"
 
 export const url_signin = "signin";
 export const url_register = "register"
+export const url_forgotPassword = "forgotPassword"
 
 const api = axios.create({
     baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/auth/"
@@ -44,4 +45,21 @@ export const apiRegister = async (credentials) => {
         return error.response.data
     }
 
+}
+
+export const apiForgotPassword = async (credentials) => {
+
+    try {
+        console.log("creds",credentials)
+        const response = await api.post(
+            `${url_forgotPassword}`, {
+            email: credentials.email,
+        })
+        console.log(response)
+        // return response.data
+
+    } catch (error) {
+        console.log(error.response.data,"ERROR")
+        // return error.response.data
+    }
 }

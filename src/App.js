@@ -14,8 +14,9 @@ import NonTechEvents from './pages/Events/NonTechEvents';
 import Dashboard from './pages/Dashboard/Dashboard'
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
-import ForgotPassword from './pages/ForgotPassword/ForgotPassword.js'
+import ResetPassword from './pages/ResetPassword/ResetPassword.js'
 import Navbar from './components/Navbar/Navbar';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 
 // import AuthApi from "./api/AuthApi"
 
@@ -83,6 +84,7 @@ const Routes = () => {
 
       <Route path="/event-template" exact component={EventTemplate} />
 
+      <Route path="/reset-password" exact component={ResetPassword} />
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/login-register" exact component={LoginRegister} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
@@ -104,5 +106,23 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
       }} />
   )
 }
+
+const ProtectFromLogin = ({ auth, component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        if (auth) {
+          return <Redirect to="/dashboard"></Redirect>
+        }
+        else {
+          return <Component />
+        }
+      }}
+    />
+  )
+}
+
+
 
 export default (App)

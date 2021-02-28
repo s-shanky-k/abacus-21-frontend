@@ -54,11 +54,11 @@ class RightComponent extends Component {
 //     </div>
 // );
 
-const App = () => {
+const App = (props) => {
     return (
         <div className="Login-Register-App">
             <Container>
-                <Container.SignIn />
+                <Container.SignIn message={props.location.state.message} />
                 <Container.SignUp />
                 <Container.Overlay>
                     <Container.Overlay.Left>
