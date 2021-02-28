@@ -43,10 +43,10 @@ class Homepage extends Component {
               
                 <section id="homepage">
                 
-                <div className={`${styles._homepage}`} style={{ backgroundColor: 'blue' }}>
+                <div className={`${styles._homepage}`} style={{ backgroundColor: 'purple' }}>
                     
                    
-                    <div className={`${styles._homepage_container}`}>
+                    <div className={`${styles._homepage_container}`} >
 
                         <Heading text="CSEA" fontSize="50px" />
 
