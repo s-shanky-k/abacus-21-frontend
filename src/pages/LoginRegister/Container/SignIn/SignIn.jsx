@@ -58,7 +58,12 @@ function SignIn(props) {
             if (response.auth) {
                 Cookies.set("token", response.token)
                 SetAuth(true)
-                history.push('/dashboard')
+                history.push({
+                    pathname:"/dashboard",
+                    state:{
+                        snackbar_message:"Login Successful!",
+                    }
+                })
             }
             else {
                 setvalidationError("Invalid Email/Password")
@@ -72,7 +77,7 @@ function SignIn(props) {
 
     return (
         <div className="form-container sign-in-container" >
-            <Heading text={props.message} fontSize="35px"></Heading>
+            <Heading text="LOGIN" fontSize="35px"></Heading>
             <div className="form-class">
                 <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                 <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
@@ -81,7 +86,7 @@ function SignIn(props) {
             }
             <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
-        </div >
+        </div>
     )
 }
 

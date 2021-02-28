@@ -61,7 +61,6 @@ export default class ResetPassword extends Component {
     }
 
     onSubmit = () => {
-        console.log("Hi");
         this.handleSubmit();
         // apiCall();
     }

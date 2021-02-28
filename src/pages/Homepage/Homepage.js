@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react'
+import React, { Component, useRef, useState, useEffect } from 'react'
 import styles from "./Homepage.module.css"
 import {ScrollUpButton} from 'react-scroll-up-button'
 //NeonButton
@@ -8,33 +8,42 @@ import GlowCard from '../../components/GlowCard/GlowCard'
 import Loader from '../../components/Loader/Loader'
 import Load from '../../components/Load/Load'
 import Heading from '../../components/Heading/Heading'
+import CustomSnackBar from '../../components/CustomSnackBar/CustomSnackBar'
+import {useHistory} from "react-router-dom"
+import {useLocation} from 'react-router-dom'
 
 
 function demoAsyncCall() {
     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-  }
+}
 
+export default function Homepage(props) {
 
-class Homepage extends Component {
+    const [loading, setloading] = useState(true);
+    const history = useHistory()
+    const location = useLocation()
+    const CustomSnackBarRef = useRef();
 
-    state = {
-        loading: true
-      };
-    
-      componentDidMount() {
-  
-        demoAsyncCall().then(() => this.setState({ loading: false }));
-      }
-      
- render() {
-
-        const { loading } = this.state;
-    
-        if(loading) { // if your component doesn't have to wait for an async action, remove this block 
-          return <Load/>; // render null when app is not ready
+    useEffect(() => {
+        demoAsyncCall().then(() => setloading(false));
+        console.log(props.location.state);
+        if(props.location.state && location.state.hasOwnProperty("snackbar_message")){
+            console.log("LOG");
+            CustomSnackBarRef.current.handleClick(location.state.snackbar_message);
         }
-        return (
-            
+        return () => {
+        }
+      }, [])
+
+    if(loading){
+        return(
+            <div>
+                <Load />
+            </div>
+        )
+    }
+    else{
+        return(
             <>
         
                 <Loader />
@@ -51,7 +60,16 @@ class Homepage extends Component {
                         <Heading text="CSEA" fontSize="50px" />
 
                     </div>
-                    <NeonButton props={{ text: "Boom Events", href: "/events", color: "#26a0da" }} />
+
+                    {/* <NeonButton props={{ text: "Boom Events", color: "#26a0da", onClick: eventRedirect}} /> */}
+                    {/* <NeonButton props={{ text: "Boom Events", color: "#26a0da", onClick: () => CustomSnackBarRef.current.handleClick()}} /> */}
+                    <NeonButton props={{ text: "Boom Events", color: "#26a0da" }} />
+
+
+                    <CustomSnackBar ref={CustomSnackBarRef}></CustomSnackBar>
+
+
+
                 </div>
                 </section>
                 {/* Child Class */}
@@ -82,9 +100,6 @@ class Homepage extends Component {
                      
                 </div>
             </>
-
         )
     }
 }
-
-export default Homepage

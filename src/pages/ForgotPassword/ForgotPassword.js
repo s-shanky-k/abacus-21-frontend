@@ -58,7 +58,7 @@ function ForgotPassword() {
             history.push({
                 pathname:"/login-register",
                 state:{
-                    message:"RAMPUUU"
+                    snackbar_message:"Check your mail!",
                 }
             })
 
