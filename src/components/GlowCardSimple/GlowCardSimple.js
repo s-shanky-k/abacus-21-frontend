@@ -20,16 +20,18 @@ function GlowCardSimple({ props }) {
                                 <div style={{ textAlign: 'center' }}>
                                     <Heading text={props.title} fontSize="30px" />
                                 </div>
-                                {/* {props.content === undefined
-                                    ? props.list.map((item) =>
-                                        <p key={item.id} className={styles.glowCardText}>{item.text}</p>
+
+
+
+                                {props.content === undefined
+                                    ?
+                                    (props.list === undefined) ? props.contact.map((person, index) =>
+                                        <p key={index + 1} className={styles.glowCardText}>{person.name} - {person.mobile}</p>
                                     )
-                                    : <p className={styles.glowCardText}>{props.content}</p>} */}
-                                {props.content === undefined 
-                                ? props.list.map((item,index) => 
-                                    <p key={index+1} className={styles.glowCardText}>{item}</p>
-                                )
-                                : <p className={styles.glowCardText}>{props.content}</p>}
+                                        : props.list.map((item, index) =>
+                                            <p key={index + 1} className={styles.glowCardText}>{item}</p>
+                                        )
+                                    : <p className={styles.glowCardText}>{props.content}</p>}
                             </div>
 
                         </div>

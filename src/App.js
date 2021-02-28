@@ -14,6 +14,7 @@ import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
 import Tenet from './pages/Events/Event/Tenet';
+import EventMiddleware from './pages/Events/Event/EventMiddleware';
 
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
@@ -22,7 +23,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0, scrollTop:0 };
+    this.state = { width: 0, height: 0, scrollTop: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     // this.getScroll = this.getScroll.bind(this)
     // this.wholeRef = React.createRef()
@@ -57,9 +58,9 @@ class App extends Component {
     return (
       // Parent class
       <div className="App" onScroll={this.getScroll}>
-        
+
         <Router>
-          
+
           {this.state.width < 808 ? <NavbarSmall /> : <NavbarBig />}
           <Switch>
             <Route path="/" exact>
@@ -67,20 +68,28 @@ class App extends Component {
             </Route>
             <Route path="/homepage" exact component={Homepage} />
             <Route path="/about-us" exact component={AboutUs} />
-            <Route path="/events" exact component={Events} />
-            <Route path="/workshops" exact component={Workshops} />
 
-            <Route path="/tech-events" exact component={TechEvents} />
-            <Route path="/non-tech-events" exact component={NonTechEvents} />
+            {/* Events */}
+            <Route path="/events" exact component={Events} />
+
+            {/* Tech */}
+            <Route path="/events/tech" exact component={TechEvents} />
+            <Route path="/events/tech/:title" exact component={EventMiddleware} />
+
+            <Route path="/events/non-tech" exact component={NonTechEvents} />
+
+
+
+            <Route path="/workshops" exact component={Workshops} />
 
             <Route path="/tenet" exact component={Tenet} />
             <Route path="/event-template" exact component={EventTemplate} />
-            
+
             <Route path="/login-register" exact component={LoginRegister} />
           </Switch>
           <Footer />
         </Router>
-        
+
       </div>
     );
   }

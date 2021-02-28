@@ -1,6 +1,7 @@
 import React from 'react'
 import EventTemplate from '../../../components/EventTemplate/EventTemplate'
 function Tenet() {
+    
     return (
         <>
         <EventTemplate props = {{

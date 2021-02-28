@@ -37,7 +37,8 @@ import NeonButton from "../NeonButton/NeonButton";
                              public/images/events/refName_sponsor.svg    
 */
 
-function EventTemplate({props}) {
+function EventTemplate({ props }) {
+  console.log(props, "RAMPUUUUUUUUUUU")
   return (
     <>
       {/* Child Class */}
@@ -50,7 +51,6 @@ function EventTemplate({props}) {
       </div> */}
 
 
-      {/* Child Class */}
       {/*About Event*/}
       <div
         className={`${styles._homepage}`}
@@ -59,20 +59,20 @@ function EventTemplate({props}) {
         <div className={`${styles._about_event}`}>
           <div className={`${styles._glowCardDiv}`}>
             <GlowCardSimple props={{
-              title: "About Event",
+              title: props.name,
               content: props.about
             }} />
           </div>
           <div className={`${styles._eventCardImgDiv}`}>
-            <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `_about.svg`} alt="" className={styles.eventCardImg} />
+            <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
           </div>
         </div>
       </div>
 
 
 
-      {/* Child Class */}
-      {/* Contact-Sponsor-Venue */}
+
+      {/* Contact-Sponsor-Platform */}
       <div
         className={`${styles._homepage}`}
         style={{ backgroundColor: "#060c21" }}
@@ -81,23 +81,23 @@ function EventTemplate({props}) {
           <div className={`${styles._child}`}>
             <GlowCardSimple props={{
               title: "Contact",
-              list:props.contact
+              contact: props.contact
             }} />
           </div>
+
           <div className={`${styles._child}`}>
-            <GlowCardResponsive props={{title: "Sponsor", img: "events/"+`${props.refName}`+`_sponsor.svg`}} />
+            <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
           </div>
 
           <div className={`${styles._child}`}>
             <GlowCardSimple props={{
-              title: "Venue & Time",
-              list: props.venueTime
+              title: "Time & Platform",
+              list: props.dateTime
             }} />
           </div>
         </div>
       </div>
 
-      {/* Child Class */}
       {/* Rules */}
       <div
         className={`${styles._homepage}`}
@@ -108,7 +108,29 @@ function EventTemplate({props}) {
             <GlowCard props={{
               title: "Rules",
               list: props.rules,
-              img: "events/"+`${props.refName}`+`_rules.svg`
+              img: "events/" + `${props.refName}` + `_rules.svg`,
+              textAlign:'left'
+            }} />
+          </div>
+          {/* <div>
+            <NeonButton props={{ text: "Register", href: "/register", color: "#26a0da" }} />
+          </div> */}
+        </div>
+      </div>
+
+
+      {/* Rounds */}
+      <div
+        className={`${styles._homepage}`}
+        style={{ backgroundColor: "#060c21" }}
+      >
+        <div className={`${styles._rulesDivContainer}`}>
+          <div className={`${styles._rulesDiv}`}>
+            <GlowCard props={{
+              title: "Rounds",
+              list: props.rounds,
+              img: "events/" + `${props.refName}` + `_rules.svg`,
+              textAlign:'left'
             }} />
           </div>
           <div>
