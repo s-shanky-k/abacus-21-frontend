@@ -10,11 +10,9 @@
 
 /* Code for scroll snapping - Parent */
 .App {
-  scroll-snap-type: y mandatory;
   overflow: auto;
   height: 100vh;
   overflow-x: hidden;
-  /* background-color: black; */
 }
 
 

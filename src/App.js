@@ -19,9 +19,13 @@ import EventMiddleware from './pages/Events/Event/EventMiddleware';
 import LoginRegister from './pages/LoginRegister/LoginRegister.js'
 
 
+import $ from 'jquery';
+import './jquery.pagepiling';
+import './jquery.pagepiling.css';
+
 
 class App extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0, scrollTop: 0 };
@@ -42,9 +46,18 @@ class App extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    $(document).ready(function () {
+      $('#pagepiling').pagepiling({
+        navigation: {
+          'textColor': '#fff',
+          'bulletsColor': '#fff',
+          'position': 'right',
+          'tooltips': ['Water', 'Air', 'Fire', 'Soil', 'Sky']
+        }
+      })
+    })
 
-    
-    
+
   }
 
   componentWillUnmount() {
@@ -55,15 +68,15 @@ class App extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
     console.log(window)
   }
-  
+
 
   render() {
-    
+
     return (
-     
-        
+
+
       // Parent class
-      <div className="App" onScroll={this.getScroll}>
+      <div className="App" id="pagepiling" onScroll={this.getScroll}>
         <Router>
 
           {this.state.width < 1100 ? <NavbarSmall /> : <NavbarBig />}
