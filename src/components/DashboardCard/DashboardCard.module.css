@@ -9,7 +9,7 @@
 	justify-content: center;
 	align-items: center;
 	background: #060c21;
-	padding: 100px;
+	padding: 60px;
 }
 .box::before{
 	content: '';

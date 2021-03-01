@@ -15,7 +15,7 @@ function GlowCardSimple({ props }) {
     return (
 
         <FadeInSection>
-            <AnimatedCard weight={0.05}>
+            {/* <AnimatedCard weight={0.05}> */}
                 <div className={styles.bg}>
                     <div className={styles.box}>
                         <div className={`${styles.content}`}>
@@ -45,7 +45,7 @@ function GlowCardSimple({ props }) {
                         </div>
                     </div>
                 </div>
-            </AnimatedCard>
+            {/* </AnimatedCard> */}
         </FadeInSection>
 
     )
