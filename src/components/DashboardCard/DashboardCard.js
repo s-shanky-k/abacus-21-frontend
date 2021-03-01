@@ -22,13 +22,25 @@ function GlowCardSimple({ props }) {
                             <div className={styles.glowCardContent}>
                                 <div style={{ textAlign: 'center' }}>
                                     <Heading text={props.title} fontSize="30px" />
+                                    <div className={styles.profile_data_div}>
+                                        <div className={styles.profile_data_title}>
+                                            <ul>
+                                                <li>Abacus ID</li>
+                                                <li>Name</li>
+                                                <li>Email ID</li>
+                                                <li>Phone</li>
+                                            </ul>
+                                        </div>
+                                        <div className={styles.profile_data_item}>
+                                            <ul>
+                                                <li>123456</li>
+                                                <li>Paargav Shanker</li>
+                                                <li>paargav.shuttle@gmail.com</li>
+                                                <li>9876543210</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                {/* {props.content === undefined
-                                    ? props.list.map((item) =>
-                                        <p key={item.id} className={styles.glowCardText}>{item.text}</p>
-                                    )
-                                    : <p className={styles.glowCardText}>{props.content}</p>} */}
-                                    <DashboardTableComponent></DashboardTableComponent>
                             </div>
                         </div>
                     </div>

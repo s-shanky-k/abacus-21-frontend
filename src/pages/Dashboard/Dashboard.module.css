@@ -33,4 +33,19 @@
 
 ._rulesDiv {
     flex-basis: 100% !important;
+    align-items: center;
+    justify-content: space-evenly;
+    scroll-snap-align: start;
+    flex-direction: row;
+}
+
+._dashboard_display_template{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+}
+
+.profile_wrapper {
+    display: flex;
+    flex-basis: 40%;
 }

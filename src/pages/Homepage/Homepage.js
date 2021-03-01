@@ -150,10 +150,6 @@ export default function Homepage(props) {
                     <Dev />
 
                 </div>
-
-
-
-
                 <Footer />
             </>
         )

@@ -96,4 +96,23 @@
 	.box .content {
 		flex-direction: column;
 	}
-  }
+}
+
+.profile_data_div {
+	display: flex;
+	flex-direction: row;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.profile_data_title {
+	width: 40%;
+	text-align: left;
+}
+
+.profile_data_item {
+	width: 70%;
+	text-align: left;
+}

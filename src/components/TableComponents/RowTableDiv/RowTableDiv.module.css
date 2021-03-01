@@ -1,0 +1,12 @@
+.rowTableDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cellTableDiv {
+    font-size: 24px;
+	color: #fff;
+	font-family: 'Iceland';
+    text-align: left;
+}
