@@ -129,7 +129,7 @@ class Homepage extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage} ${styles.bg} ${styles._responsive}`}>
+                <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
                     <div className={`${styles._homepage_container}`}>
                        SPONSERS
 
