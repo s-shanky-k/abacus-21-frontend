@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useRef, useState } from 'react'
 import styles from "./Dashboard.module.css"
 import {useLocation} from 'react-router-dom'
-import CustomSnackBar from '../../components/CustomSnackBar/CustomSnackBar'
 import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import Heading from "../../components/Heading/Heading"
 import MainTableDiv from "../../components/TableComponents/MainTableDiv/MainTableDiv"

@@ -2,14 +2,21 @@ import React, { Component, useState, useEffect, useContext } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { Link, useHistory } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { withRouter } from "react-router-dom"
 import Cookies from "js-cookie"
-import { AuthApi, SetAuthApi } from "../../../../App"
+import { AuthApi, SetAuthApi, Width } from "../../../../App"
 
+import { css } from "glamor"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+import Notification from '../../../../components/Notification/Notification.js';
 
+toast.configure()
 function SignIn(props) {
 
+    const _Width = useContext(Width)
     const Auth = useContext(AuthApi)
     const SetAuth = useContext(SetAuthApi)
     const history = useHistory()
@@ -58,12 +65,10 @@ function SignIn(props) {
             if (response.auth) {
                 Cookies.set("token", response.token)
                 SetAuth(true)
-                history.push({
-                    pathname: "/dashboard",
-                    state: {
-                        snackbar_message: "Login Successful!",
-                    }
+                toast.success("Login Successful", {
+                    position: toast.POSITION.BOTTOM_CENTER
                 })
+                history.push("/dashboard")
             }
             else {
                 setvalidationError("Invalid Email/Password")
@@ -90,6 +95,8 @@ function SignIn(props) {
             { validationError ? (<div className="validation-output">{validationError}</div>) : null
             }
             <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
+
+            {_Width < 1100 && <HashLink to="/login-register#register"><div className="forgot-password" >Not Registered Yet?</div></HashLink>}
             <i class="fa fa-google" style={{ fontSize: '50px' }} onClick={clickGoogleIcon}></i>
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
         </div>

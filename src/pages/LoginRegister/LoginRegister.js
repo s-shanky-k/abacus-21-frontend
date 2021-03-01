@@ -1,12 +1,14 @@
-import React, { Component, useRef, useEffect } from 'react';
+import React, { Component, useRef, useEffect, useState, useContext } from 'react';
 import './LoginRegister.css';
 import Container from './Container/Container.jsx';
 import NeonButton from "../../components/NeonButton/NeonButton.js";
 import Heading from '../../components/Heading/Heading.js';
 import SignUp from './Container/SignUp/SignUp.jsx';
 import SignIn from './Container/SignIn/SignIn.jsx';
-import { useLocation } from 'react-router-dom'
-import CustomSnackBar from "../../components/CustomSnackBar/CustomSnackBar.js"
+import { useHistory, useLocation } from 'react-router-dom'
+
+import { AuthApi, SetAuthApi, Width } from "../../App"
+import Cookies from "js-cookie"
 
 
 
@@ -60,14 +62,33 @@ const RightComponent = () => (
 
 const App = (props) => {
 
+    const Auth = useContext(AuthApi)
+    const SetAuth = useContext(SetAuthApi)
+    const _Width = useContext(Width)
+    const history = useHistory()
     const location = useLocation()
-    const CustomSnackBarRef = useRef();
+    const [queryParams, setqueryParams] = useState({})
 
     useEffect(() => {
         console.log(location.state)
-        if (location.state && location.state.hasOwnProperty("snackbar_message")) {
-            CustomSnackBarRef.current.handleClick(location.state.snackbar_message);
+
+        // Redirect to Dashboard after Google Login
+        let queryString = require('query-string')
+        let params = queryString.parse(props.location.search)
+        if (!(Object.keys(params).length === 0)) {
+            SetAuth(true)
+            Cookies.set("token", params.token)
+            history.push({
+                pathname: "/dashboard",
+                state: params
+            })
         }
+        // setqueryParams({
+        //     "auth": params.auth,
+        //     "email": params.email,
+        //     "name": params.name,
+        //     "token": params.token
+        // })
         return () => {
 
         }
@@ -86,8 +107,8 @@ const App = (props) => {
                         <RightComponent />
                     </Container.Overlay.Right>
                 </Container.Overlay>
-                <CustomSnackBar ref={CustomSnackBarRef}></CustomSnackBar>
             </Container>
+
         </div>
     );
 };

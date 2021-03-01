@@ -9,6 +9,11 @@ import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 
+import { css } from "glamor"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+
+
 
 const customStyle1 = {
     option: (provided, state) => ({
@@ -98,7 +103,7 @@ const dropdownIndicatorStyles = (base, state) => {
 // }
 
 
-
+toast.configure()
 function SignUp() {
 
     // Ref
@@ -178,12 +183,10 @@ function SignUp() {
             if (response.auth) {
                 Cookies.set("token", response.token)
                 SetAuth(true)
-                history.push({
-                    pathname: "/dashboard",
-                    state: {
-                        snackbar_message: "Register Successful!",
-                    }
+                toast.success("Registration Successfull", {
+                    position: toast.POSITION.BOTTOM_LEFT
                 })
+                history.push("/dashboard")
             }
             else {
                 setvalidationError(response.message)

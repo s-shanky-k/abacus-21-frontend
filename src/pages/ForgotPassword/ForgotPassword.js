@@ -5,7 +5,9 @@ import NeonButton from "../../components/NeonButton/NeonButton.js"
 import { useHistory, withRouter } from 'react-router-dom';
 import { apiForgotPassword } from "../../api/api"
 
-
+import { css } from "glamor"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -18,7 +20,8 @@ import { apiForgotPassword } from "../../api/api"
 //     this.textInput.current.focus();
 // }
 
-function ForgotPassword() {
+toast.configure()
+function ForgotPassword(props) {
 
     const [email, setemail] = useState('')
     const [validationError, setvalidationError] = useState('')
@@ -51,16 +54,11 @@ function ForgotPassword() {
         const isValid = validate();
         if (isValid) {
             console.log("VALID", email)
-            // this.setState(initialState);
-            // Reset
             const response = await apiForgotPassword({ email: email })
-            // history.push("/login-register", { message: "RAMPUUUUUUUUUUUUU" })
-            history.push({
-                pathname:"/login-register",
-                state:{
-                    snackbar_message:"Check your mail!",
-                }
+            toast.success("Check Registered Email", {
+                position: toast.POSITION.BOTTOM_LEFT
             })
+            history.push("/login-register")
 
         }
     }
