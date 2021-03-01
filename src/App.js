@@ -22,6 +22,9 @@ import Navbar from './components/Navbar/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 
+import { css } from "glamor"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 // import AuthApi from "./api/AuthApi"
 
 // componentWillUnmount() {
@@ -30,7 +33,10 @@ import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 
 export const AuthApi = React.createContext();
 export const SetAuthApi = React.createContext();
+export const Width = React.createContext();
+export const Height = React.createContext();
 
+toast.configure()
 function App() {
   const [auth, setauth] = useState(false)
   const [width, setwidth] = useState(0)
@@ -42,7 +48,7 @@ function App() {
     updateWindowDimensions();
     window.addEventListener('resize', updateWindowDimensions);
     return () => {
-
+      window.removeEventListener('resize', updateWindowDimensions);
     }
   }, [])
 
@@ -58,11 +64,13 @@ function App() {
     <div className="App">
       <AuthApi.Provider value={auth}>
         <SetAuthApi.Provider value={setauth}>
-          <Router>
-            <Navbar width={width} />
+          <Width.Provider value={width}>
+            <Router>
+              <Navbar width={width} />
 
-            <Routes />
-          </Router>
+              <Routes />
+            </Router>
+          </Width.Provider>
         </SetAuthApi.Provider>
       </AuthApi.Provider>
 

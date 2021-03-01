@@ -1,13 +1,13 @@
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 /* button {
@@ -82,6 +82,7 @@ button.ghost {
     z-index: 2 !important;
     height: 100vh !important;
 }
+
 
 .sign-in-container * {
     z-index: 2 !important;
@@ -320,7 +321,7 @@ button.ghost {
     background-color: #ff65bd;
 }
 
-.validation-output{
+.validation-output {
     font-family: 'MainFont', cursive;
     font-size: 18px;
     color: #fff;

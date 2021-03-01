@@ -8,6 +8,11 @@ import { SetAuthApi } from "../../App"
 import { AuthApi } from "../../App"
 import Cookies from "js-cookie"
 
+import { css } from "glamor"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure()
 function Navbar({ width }) {
 
     const SetAuth = useContext(SetAuthApi)
@@ -20,12 +25,10 @@ function Navbar({ width }) {
                 Cookies.remove("token")
             }
             SetAuth(false)
-            history.push({
-                pathname:"/homepage",
-                state:{
-                    snackbar_message:"You have been logged out!",
-                }
+            toast.success("Logged Out Successfully", {
+                position: toast.POSITION.BOTTOM_LEFT
             })
+            history.push("/homepage")
         }
     }
 

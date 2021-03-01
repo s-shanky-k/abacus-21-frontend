@@ -18,7 +18,6 @@ import ErrorPage from '../../components/ErrorPage/ErrorPage'
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Dev from '../../components/Dev/Dev';
 
-import CustomSnackBar from '../../components/CustomSnackBar/CustomSnackBar'
 import { useHistory } from "react-router-dom"
 import { useLocation } from 'react-router-dom'
 
@@ -32,15 +31,11 @@ export default function Homepage(props) {
     const [loading, setloading] = useState(true);
     const history = useHistory()
     const location = useLocation()
-    const CustomSnackBarRef = useRef();
 
     useEffect(() => {
         demoAsyncCall().then(() => setloading(false));
         console.log(props.location.state);
-        if (props.location.state && location.state.hasOwnProperty("snackbar_message")) {
-            console.log("LOG");
-            CustomSnackBarRef.current.handleClick(location.state.snackbar_message);
-        }
+       
         return () => {
         }
     }, [])
@@ -64,7 +59,6 @@ export default function Homepage(props) {
                 <section id="homepage">
 
                     <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '060c21' }}>
-                        <CustomSnackBar ref={CustomSnackBarRef}></CustomSnackBar>
                         <GlowCardResponsive props={{ title: "Abacus", content: "This is Everything", href: "/about-us/#aboutus", img: "about-us/abacus.svg" }} />
                         <GlowCardResponsive props={{ title: "Sponser1", content: "This is Everything", href: "/events", img: "about-us/ceg_white.png" }} />
                         <GlowCardResponsive props={{ title: "Sponser2", content: "This is Everything", href: "/events", img: "about-us/ceg_white.png" }} />
