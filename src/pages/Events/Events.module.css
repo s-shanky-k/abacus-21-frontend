@@ -11,11 +11,11 @@
     font-size: 50px;
 }
 .bg{
-    background-color:#060c21;
-    background-image:url('transparent-01.svg');
    
+    background-image:url('bricks.svg');
+    width: 100%;
     background-repeat:no-repeat;
-    background-size:cover
+    background-size:cover;
 }
 .countup{
     display: block;

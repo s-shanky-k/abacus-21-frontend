@@ -17,6 +17,7 @@ import Footer from '../../components/Footer/Footer'
 import ErrorPage from '../../components/ErrorPage/ErrorPage'
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Dev from '../../components/Dev/Dev';
+import GlowCircle from '../../components/GlowCircle/GlowCircle';
 
 
 
@@ -56,9 +57,14 @@ class Homepage extends Component {
                 <section id="homepage">
                 
                 <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '060c21' }}>
-                <GlowCardResponsive props={{ title: "Abacus", content: "This is Everything", href: "/about-us/#aboutus" ,img:"about-us/abacus.svg"}} />      
-                <GlowCardResponsive props={{ title: "Sponser1", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />   
-                <GlowCardResponsive props={{ title: "Sponser2", content: "This is Everything", href: "/events" ,img:"about-us/ceg_white.png"}} />   
+                <div class="container-fluid m-auto ml-md-5 pl-5 mb-5 pb-5 justify-content-center align-self-center">
+                        <div class="row justify-content-center align-self-center align-items-center">
+                  <div class="col pr-5  col-lg-3 pb-5 justify-content-center">
+                   <GlowCircle  props={{img:"about-us/abacus.svg"}} /> </div>
+                   <div class="col pr-5 col-lg-3 pb-5 col-md-4 col-sm-6">
+                   <GlowCircle props={{ img:"about-us/abacus.svg"}} /> </div>
+                   <div class="col pr-5 col-lg-3 pb-5 col-md-4 col-sm-6">
+                   <GlowCircle props={{img:"about-us/abacus.svg"}}/> </div>  </div></div>
       <div class="container-fluid  ml-sm-0  justify-content-center align-self-center">
           <div class="row justify-content-center align-self-center ">
               <div class="col col-lg-3 col-md-4 pb-5 mt-5 text-center">
@@ -123,7 +129,7 @@ class Homepage extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage} ${styles.bg} ${styles._responsive}`}>
+                <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
                     <div className={`${styles._homepage_container}`}>
                        SPONSERS
 
@@ -134,9 +140,36 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-                   <Dev /> 
+                    <div class="container-fluid m-auto pl-5 ml-5 mb-5 pb-5 d-flex justify-content-lg-center 
+                    justify-content-md-end align-self-center">
+                        <div class="row d-flex justify-content-center align-self-center ">
+                  <div class="col col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 align-items-center">
+                   <Dev  props={{title:"Shankar Kumar S",title1:"Frontend",img:"dev/darrshana.jpeg"}} /> 
+                   <div style={{ paddingTop: '30px' ,textAlign:'center'}}>
+          <Heading1 text="Shankar Kumar S" fontSize="18px" />
+          <Heading1 text="Frontend" fontSize="15px" />
+    </div>
+                   </div>
+                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <Dev props={{ title: "Darrshana R",title1:"Frontend",img:"dev/darrshana.jpeg"}} /> </div>
+                   <div class="col  col-lg-3 pb-5 pr-5 pr-5  col-md-4 col-sm-6">
+                   <Dev props={{ title: "Paargav Shanker Su",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
+                   <div class="col  col-lg-3 pb-5  pr-5  col-md-4 col-sm-6">
+                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
+                   <div class="col  col-lg-3 pb-5 pr-5 col-md-4 col-sm-6">
+                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
+                   </div>
+                   <div class="col  col-lg-3 pb-5   pr-5 col-md-4 col-sm-6">
+                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
+                   </div>
+                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
+                   </div>
+                   <div class="col  col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
+                   </div>
                    
-                </div>
+                </div>  </div></div>
                
                 
            
