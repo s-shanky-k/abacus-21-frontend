@@ -57,7 +57,7 @@ class Homepage extends Component {
                 <section id="homepage">
                 
                 <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '060c21' }}>
-                <div class="container-fluid m-auto ml-md-5 pl-5 mb-5 pb-5 justify-content-center align-self-center">
+                <div class="container-fluid m-auto ml-md-5 pl-5 mb-5 pb-5 justify-content-lg-center  align-self-center">
                         <div class="row justify-content-center align-self-center align-items-center">
                   <div class="col pr-5  col-lg-3 pb-5 justify-content-center">
                    <GlowCircle  props={{img:"about-us/abacus.svg"}} /> </div>
@@ -140,32 +140,31 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-                    <div class="container-fluid m-auto pl-5 ml-5 mb-5 pb-5 d-flex justify-content-lg-center 
+                    <div class="container-fluid m-auto  ml-md-5 mb-5 pb-5 d-flex justify-content-lg-center 
                     justify-content-md-end align-self-center">
                         <div class="row d-flex justify-content-center align-self-center ">
-                  <div class="col col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 align-items-center">
-                   <Dev  props={{title:"Shankar Kumar S",title1:"Frontend",img:"dev/darrshana.jpeg"}} /> 
-                   <div style={{ paddingTop: '30px' ,textAlign:'center'}}>
-          <Heading1 text="Shankar Kumar S" fontSize="18px" />
-          <Heading1 text="Frontend" fontSize="15px" />
-    </div>
+                  <div class="col col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 
+                   col-xs-12 ml-xs-auto align-items-center">
+                  
+                   <Dev  props={{title:"Shankar Kumar S",title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                   
                    </div>
-                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 col-xs-12 ml-xs-auto  align-items-center">
                    <Dev props={{ title: "Darrshana R",title1:"Frontend",img:"dev/darrshana.jpeg"}} /> </div>
-                   <div class="col  col-lg-3 pb-5 pr-5 pr-5  col-md-4 col-sm-6">
+                   <div class="col  col-lg-3 pb-5 pr-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Paargav Shanker Su",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
-                   <div class="col  col-lg-3 pb-5  pr-5  col-md-4 col-sm-6">
+                   <div class="col  col-lg-3 pb-5  pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
-                   <div class="col  col-lg-3 pb-5 pr-5 col-md-4 col-sm-6">
+                   <div class="col  col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
                    </div>
-                   <div class="col  col-lg-3 pb-5   pr-5 col-md-4 col-sm-6">
+                   <div class="col  col-lg-3 pb-5   pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
                    </div>
-                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
                    </div>
-                   <div class="col  col-lg-3 pb-5 pr-5  col-md-4 col-sm-6">
+                   <div class="col  col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
                    <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
                    </div>
                    
