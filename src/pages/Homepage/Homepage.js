@@ -140,37 +140,44 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-                    <div class="container-fluid m-auto  ml-md-5 mb-5 pb-5 d-flex justify-content-lg-center 
-                    justify-content-md-end align-self-center">
-                        <div class="row d-flex justify-content-center align-self-center ">
-                  <div class="col col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 
-                   col-xs-12 ml-xs-auto align-items-center">
-                  
-                   <Dev  props={{title:"Shankar Kumar S",title1:"Frontend",img:"dev/darrshana.jpeg"}} />
-                   
-                   </div>
-                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 col-xs-12 ml-xs-auto  align-items-center">
-                   <Dev props={{ title: "Darrshana R",title1:"Frontend",img:"dev/darrshana.jpeg"}} /> </div>
-                   <div class="col  col-lg-3 pb-5 pr-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Paargav Shanker Su",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
-                   <div class="col  col-lg-3 pb-5  pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/> </div>
-                   <div class="col  col-lg-3 pb-5 pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
-                   </div>
-                   <div class="col  col-lg-3 pb-5   pr-5 col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
-                   </div>
-                   <div class="col col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
-                   </div>
-                   <div class="col  col-lg-3 pb-5 pr-5  col-md-4 col-sm-6 pl-sm-0 ml-sm-0 ">
-                   <Dev props={{ title: "Umar Ahmed T",title1:"Frontend",img:"dev/darrshana.jpeg"}}/>
-                   </div>
-                   
-                </div>  </div></div>
-               
+                    <Heading text='Developers and Design Team' fontSize='40px'/>
+                <div class="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
+                        <div class="row  d-flex justify-content-center align-self-center pb-5">
+                  <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+                 
+                 <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg" ,
+                 href:"https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"}} />
+                 
+                 </div>
                 
+               
+               <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 "> 
+               <Dev  props={{title:"Darrshana" ,title1:"Frontend",img:"dev/darrshana.jpeg",
+                href:"https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"}}/>
+                </div>
+           
+                
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 "> 
+                <Dev  props={{title:"Paargav Shanker" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
+                <Dev  props={{title:"Umar Ahmed" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
+                <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  "> 
+                <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
+                <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
+                <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                </div>
+                                    </div>
+               
+                </div></div>
            
  
                 <Footer /> 

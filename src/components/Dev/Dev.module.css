@@ -11,6 +11,28 @@
     border-radius:50%;
     box-shadow: 0 0 8px #ff2483, inset 0 0 8px #ff2483;
     animation: pulse 2s linear 1s infinite;
-    margin-left: 55px;
+    margin: auto;
   }
-  
+  a :hover{
+    color:#ff65bd;
+  }
+  .text{
+      
+    font-family: NavbarMain;
+    letter-spacing: 5px;
+  text-align: center;
+    font-size: 18px;
+    color:#8E32FF;
+    padding-top: 10px;
+
+}
+.text1{
+    
+    font-family: NavbarMain;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 15px;
+    color:#26a0da;
+    
+   
+}
