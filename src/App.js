@@ -21,6 +21,7 @@ import ResetPassword from './pages/ResetPassword/ResetPassword.js'
 import Navbar from './components/Navbar/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
+import LoginRegisterXS from "./components/LoginRegisterXS/LoginRegisterXS.js"
 
 import { css } from "glamor"
 import { toast } from "react-toastify"
@@ -100,7 +101,9 @@ const Routes = () => {
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
+      <Route path="/login-register-xs" exact component={LoginRegisterXS} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
+      
     </Switch>
   )
 }
