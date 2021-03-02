@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styles from "./Events.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
-import img from "./img/Asset 5patt.svg"
 import Footer from '../../components/Footer/Footer'
 class Events extends Component {
     constructor(props) {
