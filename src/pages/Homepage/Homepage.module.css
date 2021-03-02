@@ -188,3 +188,23 @@
             opacity: 1;
         }
     }
+    .text{
+      
+        font-family: NavbarMain;
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 18px;
+        color:#8E32FF;
+        padding-top: 30px;
+
+    }
+    .text1{
+        
+        font-family: NavbarMain;
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 15px;
+        color:#26a0da;
+       
+    }
+      
