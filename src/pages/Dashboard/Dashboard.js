@@ -53,7 +53,6 @@ export default function Dashboard(props) {
                 </div>
             </div>
 
-            <CustomSnackBar ref={CustomSnackBarRef}></CustomSnackBar>  
         </>
         
     )
