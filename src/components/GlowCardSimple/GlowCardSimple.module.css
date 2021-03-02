@@ -89,7 +89,18 @@
 } */
 
 .glowCardText {
-	text-align: center;
+	text-align: center !important;
+}
+.glowCardName{
+	text-align: center !important;
+	color:#8E32FF;
+}
+.dateTime{
+	font-size: 30px;
+	text-align: center !important;
+	color:#8E32FF;
+	padding-top: 17px;
+	padding-bottom: 17px;
 }
 
 @media only screen and (max-width: 576px) {

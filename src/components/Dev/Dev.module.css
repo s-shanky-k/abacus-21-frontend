@@ -13,7 +13,8 @@
     animation: pulse 2s linear 1s infinite;
     margin: auto;
   }
-  a :hover{
+  .hover :hover{
+    text-decoration: none;
     color:#ff65bd;
   }
   .text{

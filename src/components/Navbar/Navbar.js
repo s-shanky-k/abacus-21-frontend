@@ -34,7 +34,7 @@ function Navbar({ width }) {
 
     return (
         <>
-            { width < 808 ? (<NavbarSmall clickLogout={logout} />) : (<NavbarBig clickLogout={logout} />)}
+            { width < 903 ? (<NavbarSmall clickLogout={logout} />) : (<NavbarBig clickLogout={logout} />)}
         </>
     )
 

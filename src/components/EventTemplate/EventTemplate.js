@@ -4,6 +4,7 @@ import GlowCard from "../GlowCard/GlowCard";
 import GlowCardSimple from "../GlowCardSimple/GlowCardSimple"
 import GlowCardResponsive from "../GlowCardResponsive/GlowCardResponsive"
 import NeonButton from "../NeonButton/NeonButton";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* 
 <EventTemplate props = {name:"Tenet",
@@ -55,7 +56,7 @@ function EventTemplate({ props }) {
       <div
         className={`${styles._homepage}`}
         style={{ backgroundColor: "#060c21" }}
-      >
+      ><div class="pt-5">
         <div className={`${styles._about_event}`}>
           <div className={`${styles._glowCardDiv}`}>
             <GlowCardSimple props={{
@@ -67,7 +68,7 @@ function EventTemplate({ props }) {
             <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
           </div>
         </div>
-      </div>
+      </div></div>
 
 
 
@@ -131,7 +132,7 @@ function EventTemplate({ props }) {
               rounds: props.rounds,
             }} />
           </div>
-          <div>
+          <div class="pt-3">
             <NeonButton props={{ text: "Register", href: "/register", color: "#26a0da" }} />
           </div>
         </div>

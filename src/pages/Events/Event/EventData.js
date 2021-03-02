@@ -13,20 +13,20 @@ export const Events = {
 
         contact: [
             {
-                name: "Arshak Shan",
-                mobile: "8129583239"
+                name: "Arshak Shan ",
+                mobile:"  8129583239"
             },
             {
-                name: "Shruthi S",
-                mobile: "7358325784"
+                name: "Shruthi S ",
+                mobile: "  7358325784"
             },
             {
-                name: "Darrshana R",
-                mobile: "9123590345"
+                name: "Darrshana R ",
+                mobile: "  9123590345"
             },
             {
-                name: "Shakkthi",
-                mobile: "7299084122"
+                name: "Shakkthi ",
+                mobile: "  7299084122"
             },
         ],
 

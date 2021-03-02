@@ -18,6 +18,7 @@ import ErrorPage from '../../components/ErrorPage/ErrorPage'
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Dev from '../../components/Dev/Dev';
 import GlowCircle from '../../components/GlowCircle/GlowCircle';
+import { ArrowBackIosOutlined } from '@material-ui/icons';
 
 
 
@@ -55,23 +56,21 @@ class Homepage extends Component {
               
                 
                 <section id="homepage">
+
                 
-                <div className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '060c21' }}>
-                <div class="container-fluid m-auto ml-md-5 pl-5 mb-5 pb-5 justify-content-lg-center  align-self-center">
-                        <div class="row justify-content-center align-self-center align-items-center">
-                  <div class="col pr-5  col-lg-3 pb-5 justify-content-center">
-                   <GlowCircle  props={{img:"about-us/abacus.svg"}} /> </div>
-                   <div class="col pr-5 col-lg-3 pb-5 col-md-4 col-sm-6">
-                   <GlowCircle props={{ img:"about-us/abacus.svg"}} /> </div>
-                   <div class="col pr-5 col-lg-3 pb-5 col-md-4 col-sm-6">
-                   <GlowCircle props={{img:"about-us/abacus.svg"}}/> </div>  </div></div>
+                <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
+
+                <img src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`} alt="" style={{
+        width:'250px',height:'250px', margin:'auto',paddingTop:'20px',paddingBottom:'20px'}} />
+        <img src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`} alt="" style={{
+        width:'250px',height:'250px',margin:'auto',paddingTop:'20px',paddingBottom:'20px'}} />
+        <img src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`} alt="" style={{
+        width:'250px',height:'250px',margin:'auto',paddingTop:'20px',paddingBottom:'20px' }} />
+        
       <div class="container-fluid  ml-sm-0  justify-content-center align-self-center">
           <div class="row justify-content-center align-self-center ">
-              <div class="col col-lg-3 col-md-4 pb-5 mt-5 text-center">
+              <div class="col col-lg-3 col-md-4   mt-5   text-center">
          
-                
-             
-                 
                 <div className={`${styles.countup}`}   >  
             
                         <CountUp  start={0} end={5} redraw={true} suffix=" +" >
@@ -81,7 +80,7 @@ class Homepage extends Component {
                                         </VisibilitySensor>
                                     )}
                                 </CountUp></div> <Heading1 text="Events" fontSize="20px" /></div>
-            <div class="col mt-5  pb-5 col-lg-3 col-md-4 text-center">                   
+            <div class="col mt-5   col-lg-3 col-md-4 text-center">                   
                       
                                 
                                 <div className={`${styles.countup}`}  >          
@@ -92,7 +91,7 @@ class Homepage extends Component {
                                         </VisibilitySensor>
                                     )}
                                 </CountUp> </div><Heading1 text="Workshops" fontSize="20px" /></div>
-                                <div class="col col-lg-3 col-md-4 pb-5  mt-5 text-center ">                 
+                                <div class="col col-lg-3 col-md-4 mt-5 text-center ">                 
                                    
                                 
                                 <div className={`${styles.countup}`}  >          
@@ -103,7 +102,7 @@ class Homepage extends Component {
                                         </VisibilitySensor>
                                     )}
                                 </CountUp></div><Heading1 text=" Mega Hackathon" fontSize="20px" /></div>
-                                <div class="col col-lg-3 col-md-4  mt-5  pb-5 text-center">                     
+                                <div class="col col-lg-3 col-md-4  mt-5  text-center">                     
                   
                                 
                                 
@@ -115,17 +114,19 @@ class Homepage extends Component {
                                         </VisibilitySensor>
                                     )}
                                 </CountUp> </div><Heading1 text="Prize Money" fontSize="20px" />
-  </div> </div> </div>  </div>                    
+  </div> </div> </div> </div>                   
                   
                                 
   
                 </section>
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles.bg}`} >
-        
-                <iframe width="900" height="400" display="flex" flex="wrap" src="https://www.youtube.com/embed/aQ8rsGYszOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    
+                  
+          <div class="embed-responsive embed-responsive-21by9 m-lg-5 m-sm-1 m-xs-1 m-md-5">
+ 
+<iframe  src="https://www.youtube.com/embed/aQ8rsGYszOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               
+                   </div> 
                 </div>
 
                 {/* Child Class */}
@@ -140,8 +141,9 @@ class Homepage extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-                    <Heading text='Developers and Design Team' fontSize='40px'/>
-                <div class="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
+                    <div class="text-center">
+                    <Heading text='Developers and Design Team' fontSize='40px'/></div>
+                <div class="container-fluid m-auto d-flex justify-content-center pt-4 align-self-center pb-5">
                         <div class="row  d-flex justify-content-center align-self-center pb-5">
                   <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                  
@@ -149,7 +151,7 @@ class Homepage extends Component {
                  href:"https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"}} />
                  
                  </div>
-                
+                            
                
                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 "> 
                <Dev  props={{title:"Darrshana" ,title1:"Frontend",img:"dev/darrshana.jpeg",
@@ -158,10 +160,12 @@ class Homepage extends Component {
            
                 
                 <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 "> 
-                <Dev  props={{title:"Paargav Shanker" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                <Dev  props={{title:"Paargav Shanker" ,title1:"Frontend",img:"dev/darrshana.jpeg",
+                href:"https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"}} />
                 </div>
                 <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
-                <Dev  props={{title:"Umar Ahmed" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
+                <Dev  props={{title:"Umar Ahmed" ,title1:"Frontend",img:"dev/darrshana.jpeg",
+                href:"https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"}} />
                 </div>
                 <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 "> 
                 <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
@@ -176,11 +180,13 @@ class Homepage extends Component {
                 <Dev  props={{title:"Shankar Kumar" ,title1:"Frontend",img:"dev/darrshana.jpeg"}} />
                 </div>
                                     </div>
+                                   
+                </div>
                
-                </div></div>
+                </div>
            
  
-                <Footer /> 
+                <Footer />  
             </>
 
         )
