@@ -1,14 +1,25 @@
 import React, { Component } from 'react'
 import styles from "./Dev.module.css"
+import Heading from '../Heading/Heading'
+import Heading1 from '../Heading1/Heading1'
+import FadeInSection from '../FadeInSection/FadeInSection'
 
-export class Dev extends Component {
-    render() {
-        return (
-            <div className={`${styles.inner}`}>
-            <p>10%</p>
-          </div> 
+function Dev({ props }){
+            return (
+                <>
+        <FadeInSection></FadeInSection> 
+      <div style={{justifyContent: 'center',alignItems: 'center'}}>
+        <div className= {`${styles.inner}`}>
+           <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt="" style={{ borderRadius: '100%' ,
+        width:'100%',height:'100%' }} /></div>
+    <a href={`${props.href}`}style={{textDecoration:'none'}}><p className={`${styles.text}`}>{props.title}</p></a>
+        <p className={`${styles.text1}`}>{props.title1}</p>
+        </div>
+          
+       
+</>
         )
     }
-}
+
 
 export default Dev
