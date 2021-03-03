@@ -70,7 +70,7 @@ function App() {
       <AuthApi.Provider value={auth}>
         <SetAuthApi.Provider value={setauth}>
           <Width.Provider value={width}>
-            <Router>
+            <Router basename="http://paarshan4800.github.io/abacus-21-frontend/">
               <Navbar width={width} />
               <Routes />
             </Router>
