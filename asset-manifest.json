@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/abacus-21-frontend/static/css/main.b5547d9c.chunk.css",
+    "main.js": "/abacus-21-frontend/static/js/main.da0ddfa3.chunk.js",
+    "main.js.map": "/abacus-21-frontend/static/js/main.da0ddfa3.chunk.js.map",
+    "runtime-main.js": "/abacus-21-frontend/static/js/runtime-main.e8ae0ed1.js",
+    "runtime-main.js.map": "/abacus-21-frontend/static/js/runtime-main.e8ae0ed1.js.map",
+    "static/css/2.d5b8b7d2.chunk.css": "/abacus-21-frontend/static/css/2.d5b8b7d2.chunk.css",
+    "static/js/2.da60a48e.chunk.js": "/abacus-21-frontend/static/js/2.da60a48e.chunk.js",
+    "static/js/2.da60a48e.chunk.js.map": "/abacus-21-frontend/static/js/2.da60a48e.chunk.js.map",
+    "static/js/3.9788b616.chunk.js": "/abacus-21-frontend/static/js/3.9788b616.chunk.js",
+    "static/js/3.9788b616.chunk.js.map": "/abacus-21-frontend/static/js/3.9788b616.chunk.js.map",
+    "index.html": "/abacus-21-frontend/index.html",
+    "static/css/2.d5b8b7d2.chunk.css.map": "/abacus-21-frontend/static/css/2.d5b8b7d2.chunk.css.map",
+    "static/css/main.b5547d9c.chunk.css.map": "/abacus-21-frontend/static/css/main.b5547d9c.chunk.css.map",
+    "static/js/2.da60a48e.chunk.js.LICENSE.txt": "/abacus-21-frontend/static/js/2.da60a48e.chunk.js.LICENSE.txt",
+    "static/media/Homepage.module.css": "/abacus-21-frontend/static/media/Asset 5event_variation.40c950c5.svg",
+    "static/media/Loader.module.css": "/abacus-21-frontend/static/media/Clip.4fc95a3e.ttf",
+    "static/media/App.css": "/abacus-21-frontend/static/media/screaming_neon.f155c1c5.ttf",
+    "static/media/Events.module.css": "/abacus-21-frontend/static/media/transparent-01.56b2ed04.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8ae0ed1.js",
+    "static/css/2.d5b8b7d2.chunk.css",
+    "static/js/2.da60a48e.chunk.js",
+    "static/css/main.b5547d9c.chunk.css",
+    "static/js/main.da0ddfa3.chunk.js"
+  ]
+}
