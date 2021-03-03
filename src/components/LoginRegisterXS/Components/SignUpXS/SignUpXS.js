@@ -2,7 +2,7 @@ import React, { Component, useState, useContext } from 'react';
 import styles from "./SignUpXS.module.css"
 import Heading from "../../../Heading/Heading"
 import NeonButton from "../../../NeonButton/NeonButton"
-import { apiRegister } from "../../../../api/api";
+import { apiRegister, baseURL, url_gAuth } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
 import Select from "react-select";
@@ -10,9 +10,12 @@ import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 
+
+
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import GoogleButton from 'react-google-button'
 
 // this.textInput = React.createRef();
 
@@ -33,15 +36,15 @@ const customStyle1 = {
     }),
     control: () => ({
         // none of react-select's styles are passed to <Control />
-        width: 450,
+        width: '70vw',
         height: 50,
         display: 'flex',
         backgroundColor: 'black',
         fontFamily: 'MainFont',
         fontSize: 20,
-        borderRadius: 20,
+        borderRadius: 10,
         alignItems: 'center',
-        color: '#fff',
+        color: '#fff !important',
         marginBottom: 20,
         marginTop: 10,
         paddingLeft: 5,
@@ -67,15 +70,15 @@ const customStyle2 = {
     }),
     control: () => ({
         // none of react-select's styles are passed to <Control />
-        width: 450,
+        width: '70vw',
         height: 50,
         display: 'flex',
         backgroundColor: 'black',
         fontFamily: 'MainFont',
         fontSize: 20,
-        borderRadius: 20,
+        borderRadius: 10,
         alignItems: 'center',
-        color: 'red',
+        color: '#fff !important',
         marginBottom: 10,
         paddingLeft: 5,
     }),
@@ -198,8 +201,13 @@ function SignUpXS() {
         setcollege(selectedOption);
     }
 
+    const clickGoogleIcon = () => {
+        window.location = `${baseURL}${url_gAuth}`
+        // history.push()
+    }
+
     return (
-        <div className={styles.register_form_wrapper}>
+        <div id="goto-sign-up" className={styles.register_form_wrapper}>
             <div className={styles.register_container}>
                 <Heading text="REGISTER" fontSize="35px"></Heading>
                 <div className={styles.register_form_container}>
@@ -212,8 +220,8 @@ function SignUpXS() {
                     <input className={styles.register_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                     <input className={styles.register_input_field} type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                 </div>
-                {validationError ? (<div className="validation-output">{validationError}</div>) : null}
-                <i class="fa fa-google" style={{ fontSize: '50px' }}></i>
+                {validationError ? (<div className={styles.register_validation_output}>{validationError}</div>) : null}
+                <GoogleButton className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
                 <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
             </div>
         </div>

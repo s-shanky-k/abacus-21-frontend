@@ -1,7 +1,7 @@
 import React, { Component, useContext, useState } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
-import { apiRegister } from "../../../../api/api";
+import { apiRegister, baseURL, url_gAuth } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
 import Select from "react-select";
@@ -12,7 +12,7 @@ import { useHistory, withRouter } from 'react-router-dom';
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
-
+import GoogleButton from 'react-google-button'
 
 
 const customStyle1 = {
@@ -205,6 +205,11 @@ function SignUp() {
         setcollege(selectedOption);
     }
 
+    const clickGoogleIcon = () => {
+        window.location = `${baseURL}${url_gAuth}`
+        // history.push()
+    }
+
 
     return (
         <div className="form-container sign-up-container">
@@ -221,7 +226,7 @@ function SignUp() {
                 <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
             </div>
             {validationError ? (<div className="validation-output">{validationError}</div>) : null}
-            <i class="fa fa-google" style={{ fontSize: '50px' }}></i>
+            <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
             <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
         </div>
     );
