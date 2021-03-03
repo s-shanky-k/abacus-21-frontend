@@ -1,11 +1,11 @@
 import React from 'react'
 import { useParams ,useHistory} from 'react-router-dom'
-import { Events } from "./EventData"
+import { TechEvents } from "../../../assets/Data/Tech-EventsData"
 import EventTemplate from "../../../components/EventTemplate/EventTemplate"
 
 export default function Event() {
     const { title } = useParams()
-    const data = Events[title]
+    const data = TechEvents[title]
     const history = useHistory()
     if(!data) {
         console.log("EMPTy")

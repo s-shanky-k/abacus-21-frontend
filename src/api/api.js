@@ -8,6 +8,9 @@ export const url_forgotPassword = "auth/forgotPassword"
 export const url_resetPassword = "auth/resetPassword"
 export const url_googledata = "auth/googledata"
 export const url_gAuth = "auth/googlesignin"
+export const url_getRegistrations = "event/getRegistrations"
+export const url_registerEvent = "event/register"
+export const url_payment = "payment/pay"
 
 const api = axios.create({
     baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
@@ -101,6 +104,64 @@ export const apiGoogleDataForm = async (credentials) => {
         })
         return response.data
 
+    } catch (error) {
+        return error.response.data
+    }
+}
+
+export const apiGetRegistrations = async (credentials) => {
+    try {
+        const response = await api.post(
+            `${url_getRegistrations}`, {}, {
+            headers: {
+                Authorization: credentials.token
+            }
+        }
+        )
+
+        console.log("REGISTRAIONS", response.data)
+        return response.data
+    }
+
+    catch (error) {
+        console.log("REGISTRAIONS", error.response.data)
+        return error.response.data
+    }
+}
+
+export const apiRegisterEvent = async (data) => {
+    try {
+        const response = await api.post(
+            `${url_registerEvent}`,
+            {
+                "event": data.event
+            },
+            {
+                headers: {
+                    Authorization: data.token
+                }
+            }
+        )
+        return response
+    } catch (error) {
+        return error.response.data
+    }
+}
+
+export const apiPayment = async (data) => {
+    try {
+        const response = await api.post(
+            `${url_payment}`,
+            {
+                "event": data.event
+            },
+            {
+                headers: {
+                    Authorization: data.token
+                }
+            }
+        )
+        return response
     } catch (error) {
         return error.response.data
     }

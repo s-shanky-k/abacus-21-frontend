@@ -22,6 +22,7 @@ import Navbar from './components/Navbar/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 
+
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
@@ -45,6 +46,11 @@ function App() {
   const history = useHistory()
 
   useEffect(() => {
+
+    if (Cookies.get("token") !== undefined) {
+      setauth(true)
+    }
+
     updateWindowDimensions();
     window.addEventListener('resize', updateWindowDimensions);
     return () => {
@@ -57,7 +63,7 @@ function App() {
     setwidth(window.innerWidth)
     setheight(window.innerHeight)
   }
-  
+
 
   return (
     <div className="App">

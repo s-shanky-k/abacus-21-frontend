@@ -1,6 +1,6 @@
 import React, { Component, useRef } from 'react'
 import styles from "./Homepage.module.css"
-import {ScrollUpButton} from 'react-scroll-up-button'
+import { ScrollUpButton } from 'react-scroll-up-button'
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -19,42 +19,54 @@ import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Dev from '../../components/Dev/Dev';
 import GlowCircle from '../../components/GlowCircle/GlowCircle';
 import { ArrowBackIosOutlined } from '@material-ui/icons';
+import { toast } from "react-toastify"
 
 
 
 function demoAsyncCall() {
     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-  }
+}
 
 
 
 class Homepage extends Component {
-   
-    state = {
-        loading: true
-      };
-      componentDidMount() {
-        demoAsyncCall().then(() => this.setState({ loading: false })); 
-        
-      }
+    constructor(props) {
+        super(props)
 
- render() {
+        this.state = {
+            loading: true,
+            queryParams: {}
+        }
+    }
 
-    const { loading } = this.state;
-    if(loading) { // if your component doesn't have to wait for an async action, remove this block 
-          return <Load />; // render null when app is not ready
+    componentDidMount() {
+        demoAsyncCall().then(() => this.setState({ loading: false }));
+        let queryString = require('query-string')
+        let params = queryString.parse(this.props.location.search)
+        if (!(Object.keys(params).length === 0)) {
+            toast.success(params.message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            })
+        }
+    }
+
+    render() {
+
+        const { loading } = this.state;
+        if (loading) { // if your component doesn't have to wait for an async action, remove this block 
+            return <Load />; // render null when app is not ready
         }
         const { is_visible } = this.state;
         return (
 
-            
+
             <>
-        
+
                 <Loader />
-             
+
                 {/* Child Class */}
-              
-                
+
+
                 <section id="homepage">
 
                 
@@ -132,11 +144,11 @@ class Homepage extends Component {
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
                     <div className={`${styles._homepage_container}`}>
-                       SPONSERS
+                        SPONSERS
 
-                    </div> 
+                    </div>
                     {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
-                    
+
                 </div>
 
                 {/* Child Class */}

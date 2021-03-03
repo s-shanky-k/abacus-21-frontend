@@ -1,4 +1,4 @@
-export const Events = {
+export const TechEvents = {
     // Tenet
     "tenet": {
         name: "Tenet",
