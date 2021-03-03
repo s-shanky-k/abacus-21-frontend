@@ -86,7 +86,7 @@ const Routes = () => {
   const Auth = React.useContext(AuthApi)
   return (
     <Switch>
-      <Route path="/" exact>
+      <Route path="/abacus-21-frontend" exact>
         <Redirect to="/homepage" />
       </Route>
       <Route path="/homepage" exact component={Homepage} />
