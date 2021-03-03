@@ -9,7 +9,7 @@ class TechEvents extends Component {
 
                 <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
                     <GlowCardResponsive props={{ title: "TENET", titleFontFamily:"Iceland",content: "A challenge where the participants have to identify and resolve bugs", img:"events/tenet.svg", href: "/events/tech/tenet" }} />
-                    <GlowCardResponsive props={{ title: "NOVICE.INIT()", titleFontFamily:"Iceland", content: "Exclusive event for the first year students ",img:"events/novice.svg", href: "/events" }} />
+                    <GlowCardResponsive props={{ title: "NOVICE.INIT()", titleFontFamily:"Iceland", content: "Exclusive event for the first year students ",img:"events/novice.svg", href: "/events/tech/novice" }} />
                 </div>
 
                 {/* Child Class */}
