@@ -187,7 +187,7 @@ function GoogleFormData(props) {
                     <input className={styles.google_form_data_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
                 </div>
                 {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}
-                <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />
+                <NeonButton props={{ text: "Submit", color: "#26a0da", onClick: onSubmit }} />
             </div>
         </div>
     )
