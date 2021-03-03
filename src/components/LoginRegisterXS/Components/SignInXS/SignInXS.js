@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Notification from '../../../../components/Notification/Notification.js';
 import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
+import GoogleButton from 'react-google-button'
 
 
 // this.textInput = React.createRef();
@@ -100,11 +101,10 @@ function SignInXS() {
                     <input className={styles.login_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     <input className={styles.login_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                 </div>
-                { validationError ? (<div className="validation-output">{validationError}</div>) : null}
-                <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
+                { validationError ? (<div className={styles.login_validation_output}>{validationError}</div>) : null}
+                <Link to="/forgot-password"><div className={styles.forgot_password} >Forgot password?</div></Link>
 
-                {_Width < 1100 && <HashLink to="/login-register#register"><div className="forgot-password" >Not Registered Yet?</div></HashLink>}
-                <i class="fa fa-google" style={{ fontSize: '50px' }} onClick={clickGoogleIcon}></i>
+                <GoogleButton className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
                 <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
             </div>
         </div>

@@ -327,3 +327,7 @@ button.ghost {
     color: #fff;
     letter-spacing: 0.5px;
 }
+
+.google-button {
+    margin: 20px 0px;
+}

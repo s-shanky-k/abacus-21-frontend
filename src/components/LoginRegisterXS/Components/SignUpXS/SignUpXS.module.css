@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     scroll-snap-align: start;
+    margin: 70px;
 }
 
 .register_container {
@@ -11,14 +11,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 65vh;
     text-align: center;
 }
 
 .register_form_container {
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    width: 100vw;
+    align-items: center;
 }
 
 .register_input_field {
@@ -26,17 +26,22 @@
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
-    width: 100%;
-    font-family: 'MainFont', cursive !important;
+    width: 70%;
     height: 50px;
+    font-family: 'MainFont', cursive !important;
     font-size: 20px;
     color: #fff;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .register_validation_output{
     font-family: 'MainFont', cursive;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     letter-spacing: 0.5px;
+}
+
+.google_button {
+    margin: 20px 0px;
 }

@@ -12,6 +12,8 @@ import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Notification from '../../../../components/Notification/Notification.js';
+import GoogleButton from 'react-google-button'
+
 
 toast.configure()
 function SignIn(props) {
@@ -97,7 +99,7 @@ function SignIn(props) {
             <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
 
             {_Width < 1100 && <HashLink to="/login-register#register"><div className="forgot-password" >Not Registered Yet?</div></HashLink>}
-            <i class="fa fa-google" style={{ fontSize: '50px' }} onClick={clickGoogleIcon}></i>
+            <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
         </div>
     )

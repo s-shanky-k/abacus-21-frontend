@@ -1,6 +1,6 @@
 import styles from './NeonButton.module.css';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 // import FadeInSection from '../FadeInSection/FadeInSection';
 
 /*
@@ -30,11 +30,6 @@ function NeonButton({ props }) {
   )
 }
 
-// NeonButton.propTypes = {
-//   text: PropTypes.string.isRequired,
-//   color: PropTypes.string.isRequired,
-//   href: PropTypes.string  
-// }
 
 export default NeonButton
 

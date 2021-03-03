@@ -9,6 +9,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 
 import { AuthApi, SetAuthApi, Width } from "../../App"
 import Cookies from "js-cookie"
+import LoginRegisterXS from "../../components/LoginRegisterXS/LoginRegisterXS"
 
 
 
@@ -95,21 +96,21 @@ const App = (props) => {
     }, [])
 
     return (
-        <div className="Login-Register-App">
-            <Container>
-                <Container.SignIn />
-                <Container.SignUp />
-                <Container.Overlay>
-                    <Container.Overlay.Left>
-                        <LeftComponent />
-                    </Container.Overlay.Left>
-                    <Container.Overlay.Right>
-                        <RightComponent />
-                    </Container.Overlay.Right>
-                </Container.Overlay>
-            </Container>
+        _Width > 1100 ? <div className="Login-Register-App">
+        <Container>
+            <Container.SignIn />
+            <Container.SignUp />
+            <Container.Overlay>
+                <Container.Overlay.Left>
+                    <LeftComponent />
+                </Container.Overlay.Left>
+                <Container.Overlay.Right>
+                    <RightComponent />
+                </Container.Overlay.Right>
+            </Container.Overlay>
+        </Container>
 
-        </div>
+    </div> : <LoginRegisterXS></LoginRegisterXS>
     );
 };
 

@@ -73,7 +73,6 @@ function App() {
           <Width.Provider value={width}>
             <Router>
               <Navbar width={width} />
-
               <Routes />
             </Router>
           </Width.Provider>
@@ -107,7 +106,6 @@ const Routes = () => {
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
-      <Route path="/login-register-xs" exact component={LoginRegisterXS} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
       
     </Switch>
