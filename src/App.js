@@ -23,7 +23,6 @@ import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 import LoginRegisterXS from "./components/LoginRegisterXS/LoginRegisterXS.js"
 
-
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
