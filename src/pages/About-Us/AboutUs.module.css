@@ -8,13 +8,13 @@
     scroll-snap-align: start;
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 1281px) {
     ._homepage {
         height: fit-content;
         scroll-snap-align:none;
         scroll-snap-stop: always;
     }
-}
+} */
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;

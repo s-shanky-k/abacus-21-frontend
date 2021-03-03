@@ -60,6 +60,7 @@ function EventTemplate({ props }) {
 
   useEffect(() => {
     const fetchRegistrations = async (token) => {
+
       let response = await apiGetRegistrations({ "token": token })
       for (let i = 0; i < response.length; i++) {
         // Check if registered
@@ -76,12 +77,18 @@ function EventTemplate({ props }) {
         }
       }
       setloading(false)
+
+
     }
 
     if (Cookies.get('token') !== undefined) {
       setlogin(true)
       let token = Cookies.get('token')
       fetchRegistrations(token)
+    }
+    else {
+      setloading(false)
+
     }
     return () => {
 

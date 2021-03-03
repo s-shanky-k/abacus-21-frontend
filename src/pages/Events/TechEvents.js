@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./Events.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
+import Footer from '../../components/Footer/Footer'
 
 class TechEvents extends Component {
     render() {
@@ -17,6 +18,8 @@ class TechEvents extends Component {
                     <GlowCardResponsive props={{ title: "X-Domain Combat",titleFontFamily:"Iceland",titleFontFamily:"Iceland", content: "Explore new horizons in various technical domains",img:"events/xcombat.svg", href: "/events" }} />
                     <GlowCardResponsive props={{ title: "CODE FOR CROWN",titleFontFamily:"Iceland",titleFontFamily:"Iceland", content: "Online Programming Contest ",img:"events/crown.svg", href: "/events" }} />
                 </div>
+
+                <Footer />
             </>
         )
     }
