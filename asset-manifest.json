@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/abacus-21-frontend/static/css/main.b5547d9c.chunk.css",
-    "main.js": "/abacus-21-frontend/static/js/main.da0ddfa3.chunk.js",
-    "main.js.map": "/abacus-21-frontend/static/js/main.da0ddfa3.chunk.js.map",
+    "main.js": "/abacus-21-frontend/static/js/main.b489f7ca.chunk.js",
+    "main.js.map": "/abacus-21-frontend/static/js/main.b489f7ca.chunk.js.map",
     "runtime-main.js": "/abacus-21-frontend/static/js/runtime-main.e8ae0ed1.js",
     "runtime-main.js.map": "/abacus-21-frontend/static/js/runtime-main.e8ae0ed1.js.map",
     "static/css/2.d5b8b7d2.chunk.css": "/abacus-21-frontend/static/css/2.d5b8b7d2.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.d5b8b7d2.chunk.css",
     "static/js/2.da60a48e.chunk.js",
     "static/css/main.b5547d9c.chunk.css",
-    "static/js/main.da0ddfa3.chunk.js"
+    "static/js/main.b489f7ca.chunk.js"
   ]
 }
