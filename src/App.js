@@ -1,5 +1,5 @@
-import React, { Component, useState, useContext, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, withRouter } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import Cookies from "js-cookie"
 import './App.css';
 
@@ -7,12 +7,9 @@ import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
-import Footer from './components/Footer/Footer';
-import Load from './components/Load/Load'
 import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
-import Tenet from './pages/Events/Event/Tenet';
 import EventMiddleware from './pages/Events/Event/EventMiddleware';
 import Dashboard from './pages/Dashboard/Dashboard'
 
@@ -21,9 +18,7 @@ import ResetPassword from './pages/ResetPassword/ResetPassword.js'
 import Navbar from './components/Navbar/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
-import LoginRegisterXS from "./components/LoginRegisterXS/LoginRegisterXS.js"
 
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 // import AuthApi from "./api/AuthApi"
@@ -106,7 +101,7 @@ const Routes = () => {
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
-      
+
     </Switch>
   )
 }

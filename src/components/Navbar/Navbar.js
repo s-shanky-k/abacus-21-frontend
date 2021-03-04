@@ -21,8 +21,9 @@ function Navbar({ width }) {
 
     const logout = () => {
         if (Auth) {
-            if (Cookies.get("token")) {
+            if (Cookies.get("token") && Cookies.get("details")) {
                 Cookies.remove("token")
+                Cookies.remove("details")
             }
             SetAuth(false)
             toast.success("Logged Out Successfully", {

@@ -13,6 +13,7 @@ import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
 import Footer from "../Footer/Footer"
+import { _register, _paymentConfirmation } from "../../api/payment"
 
 /* 
 <EventTemplate props = {name:"Tenet",
@@ -102,55 +103,13 @@ function EventTemplate({ props }) {
 
   // Payment
   const paymentConfirmation = async () => {
-    if (Cookies.get("token") === undefined) {
-      toast.success("Login First", {
-        position: toast.POSITION.BOTTOM_CENTER
-      })
-      history.push("/login-register")
-    }
-    else {
-      let token = Cookies.get("token")
-      let response = await apiPayment({
-        "event": "EVENTS",
-        "token": token
-      })
-
-      if (response.status === 200) {
-        setpaymentDetails(response.data)
-        toggleModal()
-      }
-    }
+    _paymentConfirmation(history, setpaymentDetails, toggleModal)
 
   }
 
-  const register = async () => {
-    // Redirect to Login Page
-    if (Cookies.get("token") === undefined) {
-      toast.success("Login First", {
-        position: toast.POSITION.BOTTOM_CENTER
-      })
-      history.push("/login-register")
-    }
-    // Register Fun
-    else {
-      let token = Cookies.get("token")
-      let response = await apiRegisterEvent({
-        "event": "EVENTS",
-        "token": token
-      })
-
-      if (response.status === 200) {
-        toast.success("Registration Successfull", {
-          position: toast.POSITION.BOTTOM_CENTER
-        })
-        setregistered(true)
-      }
-      else {
-        toast.success(response.message, {
-          position: toast.POSITION.BOTTOM_CENTER
-        })
-      }
-    }
+  // Register
+  const register = () => {
+    _register(history, setregistered);
   }
 
   return (

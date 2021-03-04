@@ -181,7 +181,18 @@ function SignUp() {
         if (isValid) {
             const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
             if (response.auth) {
+                let obj = {
+                    name: response.name,
+                    abacusid: response.abacusid,
+                    email: response.email,
+                    phone: response.phone,
+                    college: response.college,
+                    dept: response.dept,
+                    year: response.year
+                }
+                let obj_str = JSON.stringify(obj)
                 Cookies.set("token", response.token)
+                Cookies.set("details", obj_str)
                 SetAuth(true)
                 toast.success("Registration Successfull", {
                     position: toast.POSITION.BOTTOM_LEFT

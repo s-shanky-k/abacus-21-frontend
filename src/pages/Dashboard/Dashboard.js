@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useRef, useState } from 'react'
 import styles from "./Dashboard.module.css"
-import { useLocation } from 'react-router-dom'
+import { useLocation, withRouter } from 'react-router-dom'
 import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import Heading from "../../components/Heading/Heading"
 import MainTableDiv from "../../components/TableComponents/MainTableDiv/MainTableDiv"
@@ -9,13 +9,14 @@ import Cookies from "js-cookie"
 import Load from "../../components/Load/Load"
 import Footer from "../../components/Footer/Footer"
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
 
 
     constructor(props) {
         super(props)
         this.state = {
             response: [],
+            details: {},
             loading: true
         }
 
@@ -23,28 +24,35 @@ export default class Dashboard extends Component {
 
     fetchRegistrations = async () => {
         let token = Cookies.get("token")
+        let details = JSON.parse(Cookies.get("details"))
+
+        this.setState({ ...this.state, details: details })
         const response = await apiGetRegistrations({ "token": token })
         this.setState({ ...this.state, response: response }, () => {
-            console.log(this.state.response, "RESPONSE FROM SERVER")
+
         })
         this.setState({ loading: false })
     }
 
     componentDidMount() {
-        this.fetchRegistrations();
+        if (Cookies.get("token") === undefined) {
+            this.props.history.push("/login-register")
+        }
+        else {
+            this.fetchRegistrations();
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log("COMPONENT DID MOUNT")
     }
 
 
 
     render() {
 
-        const events = ['All']
-        const workshops = ['Cloud', 'Security', 'Placements']
-        const hackathon = ['Hackathon']
+        const events = [{ "title": 'All', "purpose": "EVENTS" }]
+        const workshops = [{ "title": 'Cloud', "purpose": "CLOUD" }, { "title": 'Security', "purpose": "NETSEC" }, { "title": 'Placements', "purpose": "PLACEMENT" }]
+        const hackathon = [{ "title": 'Hackathon', "purpose": "HACKATHON" }]
 
         if (this.state.loading) {
             return <Load />
@@ -56,34 +64,37 @@ export default class Dashboard extends Component {
 
                     {/* Profile */}
                     < div className={styles.profile_wrapper}>
-                        <DashboardCard props={{ title: "Profile" }} />
+                        <DashboardCard props={{ title: "Profile", details: this.state.details }} />
                     </div>
 
-                    {/* Registrations */}
-                    <div className={styles._dashboard_display_template}>
-                        {/* Events */}
-                        {/* <div className={styles.data_display_div}>
-                        <Heading text="Events" fontSize="30px" />
-                        <MainTableDiv data={events} ></MainTableDiv>
-                    </div> */}
+                    {this.state.response !== [] &&
+                        <>
+                            {/* Registrations */}
+                            <div className={styles._dashboard_display_template}>
+                                {/* Events */}
+                                <div className={styles.data_display_div}>
+                                    <Heading text="Events" fontSize="30px" />
+                                    <MainTableDiv data={events} registrationDetails={this.state.response}></MainTableDiv>
+                                </div>
 
-                        {/* Workshops */}
-                        {/* <div className={styles.data_display_div}>
-                        <Heading text="Workshops" fontSize="30px" />
-                        <MainTableDiv data={workshops}></MainTableDiv>
-                    </div> */}
-                        {/* Hackathon */}
-                        {/* <div className={styles.data_display_div}>
-                        <Heading text="Hackathon" fontSize="30px" />
-                        <MainTableDiv data={hackathon}></MainTableDiv>
-                    </div> */}
-                        {this.state.response !== [] &&
-                            <div className={styles.data_display_div}>
-                                <Heading text="Test" fontSize="30px" />
-                                <MainTableDiv data={this.state.response}></MainTableDiv>
+                                {/* Workshops */}
+                                <div className={styles.data_display_div}>
+                                    <Heading text="Workshops" fontSize="30px" />
+                                    <MainTableDiv data={workshops} registrationDetails={this.state.response}></MainTableDiv>
+                                </div>
+
+                                {/* Hackathon */}
+                                <div className={styles.data_display_div}>
+                                    <Heading text="Hackathon" fontSize="30px" />
+                                    <MainTableDiv data={hackathon} registrationDetails={this.state.response}></MainTableDiv>
+                                </div>
+
+
+                                {/* <MainTableDiv data={this.state.response}></MainTableDiv> */}
+
                             </div>
-                        }
-                    </div>
+                        </>
+                    }
 
 
                 </div>
@@ -93,4 +104,4 @@ export default class Dashboard extends Component {
     }
 }
 
-
+export default withRouter(Dashboard)
