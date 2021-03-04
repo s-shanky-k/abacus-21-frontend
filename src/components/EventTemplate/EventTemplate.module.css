@@ -14,7 +14,18 @@
         scroll-snap-align: none;
     }
 }
-
+.bg{
+    background-color:#060c21;
+    background-image:url('Asset 5event.svg');
+    background-repeat:no-repeat;
+    background-size:cover
+}
+.bg1{
+    background-color:#060c21;
+    background-image:url('Asset 5event_variation.svg');
+    background-repeat:no-repeat;
+    background-size:cover
+}
 /* About Event */
 ._about_event {
     display: flex;
@@ -85,10 +96,37 @@
 }
 
 ._rulesDiv {
+    width: 100% !important;
+    flex-basis: 100% !important;
+}
+._rulesDivContainer1 {
+    display: flex;
+    justify-content: space-evenly !important;
+    align-items: center ;
+    flex-direction: column !important;
+    width: 100%;
+}
+
+._rulesDiv1 {
     width: 85% !important;
     flex-basis: 85% !important;
 }
+@media only screen and (max-width:1025px){
+    .bg{
+        background-color:#060c21;
+        background-image:url('asset_pattern_16 9.svg');
+        background-repeat:no-repeat;
+        background-size:cover
+    }
+    .bg1{
+        background-color:#060c21;
+        background-image:url('asset_pattern_16 9_variation.svg');
+        background-repeat:no-repeat;
+        background-size:cover
+    }
 
+}
+  
 
 /* Pattern styles */
 /* .eventCard {

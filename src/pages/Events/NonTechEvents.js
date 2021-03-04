@@ -20,7 +20,7 @@ class NonTechEvents extends Component {
         return (
             <>
 
-                <div id="sec1" className={`${styles._homepage} ${styles._responsive}`} style={{ backgroundColor: '#060c21' }}>
+                <div id="sec1" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`} >
                     <GlowCardResponsive props={{ title: "Cam", content: "A challenge where the participants have to identify and resolve bugs",img:"events/cam.svg", href: "/events" }} />
                     <GlowCardResponsive props={{ title: "Design", content: "Innovate and develop influential solutions to a problem using technology",img:"events/design.svg", href: "/events" }} />
                 </div>

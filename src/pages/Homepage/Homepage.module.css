@@ -226,4 +226,19 @@
         color:#26a0da;
        
     }
+    @media only screen and (max-width:1025px){
+        .bg{
+            background-color:#060c21;
+            background-image:url('asset_pattern_16 9.svg');
+            background-repeat:no-repeat;
+            background-size:cover
+        }
+        .bg1{
+            background-color:#060c21;
+            background-image:url('asset_pattern_16 9_variation.svg');
+            background-repeat:no-repeat;
+            background-size:cover
+        }
+
+    }
       

@@ -58,12 +58,15 @@
 
 .bg{
     background-color:#060c21;
-    background-image:url('transparent-01.svg');
-   
-    /* background-image:url('bricks.svg'); */
-    width: 100%;
+    background-image:url('Asset 5event.svg');
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:cover
+}
+.bg1{
+    background-color:#060c21;
+    background-image:url('Asset 5event_variation.svg');
+    background-repeat:no-repeat;
+    background-size:cover
 }
 .countup{
     display: block;
@@ -96,3 +99,19 @@
     flex-wrap: wrap;
     align-items: center;
 }
+@media only screen and (max-width:1025px){
+    .bg{
+        background-color:#060c21;
+        background-image:url('asset_pattern_16 9.svg');
+        background-repeat:no-repeat;
+        background-size:cover
+    }
+    .bg1{
+        background-color:#060c21;
+        background-image:url('asset_pattern_16 9_variation.svg');
+        background-repeat:no-repeat;
+        background-size:cover
+    }
+
+}
+  

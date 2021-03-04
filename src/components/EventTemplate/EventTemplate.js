@@ -159,8 +159,8 @@ function EventTemplate({ props }) {
         <>
           {/*About Event*/}
           <div
-            className={`${styles._homepage}`}
-            style={{ backgroundColor: "#060c21" }}
+            className={`${styles._homepage} ${styles.bg1}`}
+           
           >
             <div className={`${styles._about_event}`}>
               <div className={`${styles._glowCardDiv}`}>
@@ -180,8 +180,8 @@ function EventTemplate({ props }) {
 
           {/* Contact-Sponsor-Platform */}
           <div
-            className={`${styles._homepage}`}
-            style={{ backgroundColor: "#060c21" }}
+            className={`${styles._homepage} ${styles.bg}`}
+           
           >
             <div className={`${styles._about_event}`}>
               <div className={`${styles._child}`}>
@@ -191,7 +191,7 @@ function EventTemplate({ props }) {
                 }} />
               </div>
 
-              <div className={`${styles._child}`}>
+              <div className={`${styles._child} `}>
                 <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
               </div>
 
@@ -206,8 +206,8 @@ function EventTemplate({ props }) {
 
           {/* Rules */}
           <div
-            className={`${styles._homepage}`}
-            style={{ backgroundColor: "#060c21" }}
+            className={`${styles._homepage} ${styles.bg1}`}
+           
           >
             <div className={`${styles._rulesDivContainer}`}>
               <div className={`${styles._rulesDiv}`}>
@@ -224,11 +224,11 @@ function EventTemplate({ props }) {
 
           {/* Rounds */}
           <div
-            className={`${styles._homepage}`}
-            style={{ backgroundColor: "#060c21" }}
+            className={`${styles._homepage} ${styles.bg}`}
+            
           >
-            <div className={`${styles._rulesDivContainer}`}>
-              <div className={`${styles._rulesDiv}`}>
+            <div className={`${styles._rulesDivContainer1}`}>
+              <div className={`${styles._rulesDiv1}`}>
                 <GlowCardSimple props={{
                   title: "Rounds",
                   rounds: props.rounds,

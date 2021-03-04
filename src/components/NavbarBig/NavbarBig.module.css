@@ -89,9 +89,11 @@
 ._navbar_main_link:hover:after {
     opacity: 1;
     transform: translateX(0px);
+    
 }
 
 ._navbar_main_link:hover {
     /* text-shadow: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000; */
     color: #ff2483;
+    text-decoration: none;
 }

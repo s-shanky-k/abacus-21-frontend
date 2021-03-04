@@ -15,7 +15,7 @@ class AboutUs extends Component {
 
 
                 {/* Child Class */}
-                <div ref={this.myRef} id="aboutus" className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
+                <div ref={this.myRef} id="aboutus" className={`${styles._homepage} ${styles.bg1}`} >
 
                     <GlowCard props={{
                         title: "ABACUS",
@@ -27,7 +27,7 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
+                <div className={`${styles._homepage} ${styles.bg}`} >
                     <GlowCard props={{
                         title: "CSEA",
                         content: "The Computer Science and Engineering Association, CEG is a team of students and faculty members. We perform multiple activities throughout the year, the most notable ones being SYNC (intra college symposium), periodic coding contests to encourage students to code more and weekly classes for juniors for subjects they find difficult, placement assistance and competitive coding. CSEA is a forum of dedicated members who want to inculcate interest and good programming practices amongst the students.",
@@ -37,7 +37,7 @@ class AboutUs extends Component {
                 </div>
 
                 {/* Child Class */}
-                <div className={`${styles._homepage}`} style={{ backgroundColor: '#060c21' }}>
+                <div className={`${styles._homepage} ${styles.bg1}`}>
                     <GlowCard props={{
                         title: "CEG",
                         content: "Located at the Heart of Chennai, is our very own College of Engineering Guindy, a dream and desire that students all across Tamil Nadu aspire to touch. Founded in 1794, CEG holds laurels of being amongst the top ten institutions in the country, with a rich history spanning over 225 years. Living up to its motto of 'PROGRESS THROUGH KNOWLEDGE', it has been at the fore with it’s cutting-edge research, technology and innovation in shaping the world. True to its esteem, even today CEG stands as a beacon of light to students who wish to make a change in the world.",
