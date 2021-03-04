@@ -2,7 +2,8 @@ import {React, useState} from 'react'
 import styles from './LoginRegisterXS.module.css'
 import SignInXS from './Components/SignInXS/SignInXS'
 import SignUpXS from './Components/SignUpXS/SignUpXS'
-import NeonButton from '../../components/NeonButton/NeonButton'
+import Heading from '../Heading/Heading'
+import Heading1 from '../Heading1/Heading1'
 
 export default function LoginRegisterXS() {
 
@@ -22,8 +23,8 @@ export default function LoginRegisterXS() {
     return (
         <div className={styles.formWrapper}>
             <div className={styles.toggleDiv}>
-                <div className={styles.toggleButton}><NeonButton props={{ text: "Login", color: "#26a0da", onClick: handleLoginClick }} /></div>
-                <div className={styles.toggleButton}><NeonButton props={{ text: "Register", color: "#26a0da", onClick: handleRegisterClick }} /></div>
+                {login ? <div className={styles.toggleButton} onClick={handleLoginClick}><Heading text="LOGIN" fontSize="35px" /></div> : <div className={styles.toggleButton} onClick={handleLoginClick}><Heading1 text="LOGIN" fontSize="35px" /></div>}
+                {register ? <div className={styles.toggleButton} onClick={handleRegisterClick}><Heading text="REGISTER" fontSize="35px" /></div> : <div className={styles.toggleButton} onClick={handleRegisterClick}><Heading1 text="REGISTER" fontSize="35px" /></div>}
             </div>
             { login ? <SignInXS></SignInXS> : <SignUpXS></SignUpXS> }
         </div>
