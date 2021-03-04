@@ -23,6 +23,8 @@ import GoogleButton from 'react-google-button'
 //     this.textInput.current.focus();
 // }
 
+const years = [1,2,3,4];
+
 const customStyle1 = {
     option: (provided, state) => ({
         ...provided,
@@ -30,8 +32,8 @@ const customStyle1 = {
         color: state.isSelected ? '#ff65bd' : '#060c21',
         padding: 10,
         fontFamily: 'MainFont',
-        backgroundColor: 'black',
-        color: '#fff',
+        backgroundColor: '#fff',
+        color: '#000',
         fontSize: 20,
     }),
     control: () => ({
@@ -39,12 +41,12 @@ const customStyle1 = {
         width: '70vw',
         height: 50,
         display: 'flex',
-        backgroundColor: 'black',
+        backgroundColor: '#fff',
         fontFamily: 'MainFont',
         fontSize: 20,
         borderRadius: 10,
         alignItems: 'center',
-        color: '#fff !important',
+        color: '#000',
         marginBottom: 20,
         marginTop: 10,
         paddingLeft: 5,
@@ -64,8 +66,8 @@ const customStyle2 = {
         color: state.isSelected ? '#ff65bd' : '#060c21',
         padding: 10,
         fontFamily: 'MainFont',
-        backgroundColor: 'black',
-        color: '#fff',
+        backgroundColor: '#fff',
+        color: '#000',
         fontSize: 20,
     }),
     control: () => ({
@@ -73,13 +75,47 @@ const customStyle2 = {
         width: '70vw',
         height: 50,
         display: 'flex',
-        backgroundColor: 'black',
+        backgroundColor: '#fff',
         fontFamily: 'MainFont',
         fontSize: 20,
         borderRadius: 10,
         alignItems: 'center',
-        color: '#fff !important',
+        color: '#000 !important',
         marginBottom: 10,
+        paddingLeft: 5,
+    }),
+    singleValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+
+        return { ...provided, opacity, transition };
+    }
+}
+
+const customStyle3 = {
+    option: (provided, state) => ({
+        ...provided,
+        borderBottom: '1px solid #fff',
+        color: state.isSelected ? '#ff65bd' : '#060c21',
+        padding: 10,
+        fontFamily: 'MainFont',
+        backgroundColor: '#fff',
+        color: '#000',
+        fontSize: 20,
+    }),
+    control: () => ({
+        // none of react-select's styles are passed to <Control />
+        width: '70vw',
+        height: 50,
+        display: 'flex',
+        backgroundColor: '#fff',
+        fontFamily: 'MainFont',
+        fontSize: 20,
+        borderRadius: 10,
+        alignItems: 'center',
+        color: '#000 !important',
+        marginBottom: 10,
+        marginTop: 10,
         paddingLeft: 5,
     }),
     singleValue: (provided, state) => {
@@ -110,7 +146,7 @@ function SignUpXS() {
     const history = useHistory()
 
     const [name, setname] = useState('')
-    const [year, setyear] = useState(1)
+    const [year, setyear] = useState()
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
     const [email, setemail] = useState('')
@@ -201,6 +237,10 @@ function SignUpXS() {
         setcollege(selectedOption);
     }
 
+    const handleYearChange = (selectedOption) => {
+        setyear(selectedOption);
+    }
+
     const clickGoogleIcon = () => {
         window.location = `${baseURL}${url_gAuth}`
         // history.push()
@@ -209,10 +249,9 @@ function SignUpXS() {
     return (
         <div id="goto-sign-up" className={styles.register_form_wrapper}>
             <div className={styles.register_container}>
-                <Heading text="REGISTER" fontSize="35px"></Heading>
-                <div className={styles.register_form_container}>
+               <div className={styles.register_form_container}>
                     <input ref={textInput} className={styles.register_input_field} type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required />
-                    <input className={styles.register_input_field} type="number" placeholder="Year" required value={year} onChange={(e) => setyear(e.target.value)} />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
                     <input className={styles.register_input_field} type="number" placeholder="Phone" required value={email} onChange={(e) => setemail(e.target.value)} />
