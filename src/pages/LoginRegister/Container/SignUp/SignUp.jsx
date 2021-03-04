@@ -23,22 +23,8 @@ import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
 
-const years = [1,2,3,4];
+const years = [1,2,3,4]
 
-// const cusStyle = {
-//     width: 465,
-//     height: 50,
-//     display: 'flex',
-//     backgroundColor: '#000',
-//     fontFamily: 'MainFont',
-//     fontSize: 20,
-//     borderRadius: 10,
-//     alignItems: 'center',
-//     color: '#fff',
-//     marginBottom: 20,
-//     marginTop: 10,
-//     paddingLeft: 5,
-// }
 
 const customStyle = {
     menu: (provided, state) => ({
@@ -183,6 +169,47 @@ const customStyle = {
 //     };
 //     return Object.assign(base, changes);
 // };
+const customStyle3 = {
+    option: (provided, state) => ({
+        ...provided,
+        borderBottom: '1px solid #fff',
+        color: state.isSelected ? '#ff65bd' : '#060c21',
+        padding: 10,
+        fontFamily: 'MainFont',
+        backgroundColor: '#fff',
+        color: '#000000',
+        fontSize: 20,
+    }),
+    control: () => ({
+        // none of react-select's styles are passed to <Control />
+        width: 465,
+        height: 50,
+        display: 'flex',
+        backgroundColor: 'white',
+        fontFamily: 'MainFont',
+        fontSize: 20,
+        borderRadius: 10,
+        alignItems: 'center',
+        color: '#000000',
+        marginBottom: 20,
+        marginTop: 10,
+        paddingLeft: 5,
+    }),
+    singleValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+
+        return { ...provided, opacity, transition };
+    }
+}
+
+const dropdownIndicatorStyles = (base, state) => {
+    let changes = {
+        // all your override styles
+        backgroundColor: 'blue',
+    };
+    return Object.assign(base, changes);
+};
 
 
 
@@ -208,7 +235,7 @@ function SignUp() {
     const history = useHistory()
 
     const [name, setname] = useState('')
-    const [year, setyear] = useState(null)
+    const [year, setyear] = useState()
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
     const [email, setemail] = useState('')
@@ -312,8 +339,8 @@ function SignUp() {
         setcollege(selectedOption);
     }
 
-    const handleYearChange = (selectValue) => {
-        setyear(selectValue);
+    const handleYearChange = (selectedOption) => {
+        setyear(selectedOption);
     }
 
     const clickGoogleIcon = () => {
