@@ -71,13 +71,24 @@ const App = (props) => {
     const [queryParams, setqueryParams] = useState({})
 
     useEffect(() => {
-        console.log(location.state)
+
 
         // Redirect to Dashboard after Google Login
         let queryString = require('query-string')
         let params = queryString.parse(props.location.search)
         if (!(Object.keys(params).length === 0)) {
             SetAuth(true)
+            let obj = {
+                name: params.name,
+                abacusid: params.abacusid,
+                email: params.email,
+                phone: params.phone,
+                college: params.college,
+                dept: params.dept,
+                year: params.year
+            }
+            let obj_str = JSON.stringify(obj)
+            Cookies.set("details", obj_str)
             Cookies.set("token", params.token)
             history.push({
                 pathname: "/dashboard",
@@ -97,20 +108,20 @@ const App = (props) => {
 
     return (
         _Width > 1100 ? <div className="Login-Register-App">
-        <Container>
-            <Container.SignIn />
-            <Container.SignUp />
-            <Container.Overlay>
-                <Container.Overlay.Left>
-                    <LeftComponent />
-                </Container.Overlay.Left>
-                <Container.Overlay.Right>
-                    <RightComponent />
-                </Container.Overlay.Right>
-            </Container.Overlay>
-        </Container>
+            <Container>
+                <Container.SignIn />
+                <Container.SignUp />
+                <Container.Overlay>
+                    <Container.Overlay.Left>
+                        <LeftComponent />
+                    </Container.Overlay.Left>
+                    <Container.Overlay.Right>
+                        <RightComponent />
+                    </Container.Overlay.Right>
+                </Container.Overlay>
+            </Container>
 
-    </div> : <LoginRegisterXS></LoginRegisterXS>
+        </div> : <LoginRegisterXS></LoginRegisterXS>
     );
 };
 
