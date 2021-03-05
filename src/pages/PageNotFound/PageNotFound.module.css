@@ -16,13 +16,13 @@
 }
 
 ._404_img {
-    flex-basis: 40%;
+    flex-basis: 30%;
     text-align: center;
 }
 
 ._404_text_wrapper {
     text-align: center;
-    flex-basis: 40%;
+    flex-basis: 30%;
 }
 
 ._404_text {
@@ -37,12 +37,20 @@
         0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
 }
 
+
+._404_text_addi p {
+    color: white;
+    font-size: 25px;
+    font-family: Iceland;
+    margin-bottom: 5px;
+}
+
 .normalFlicker {
     animation: flickerAnime 2s infinite;
 }
 
 .slowFlicker {
-    animation: slowFlickerAnime 1s infinite;
+    animation: slowFlickerAnime 2s infinite;
 }
 
 
@@ -186,3 +194,5 @@
             0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
     }
 }
+
+

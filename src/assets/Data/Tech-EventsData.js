@@ -58,7 +58,8 @@ export const TechEvents = {
                     description: "A reverse coding round where candidates have to analyze the given input-output sequences and decode the logic behind it. Write a code snippet that will generate the corresponding input output pattern. (30 mins)"
                 },
             ]
-        }
+        },
+        registration: true
     },
 
     // Novice
@@ -115,7 +116,8 @@ export const TechEvents = {
                     description: "Concentrates on programming, code debugging, algorithm, rapid-fire questions on puzzles (45 minutes)"
                 },
             ]
-        }
+        },
+        registration: true
     },
 
     // Code for Crown - OLPC
@@ -162,7 +164,8 @@ export const TechEvents = {
                     description: "Coding round where participants will be given 60 minutes to solve 4 programming questions."
                 },
             ]
-        }
+        },
+        registration: true
     },
 
     // X-Domain Combat
@@ -216,8 +219,9 @@ export const TechEvents = {
                     description: "Only those participants who cleared the cut-off in the Prelims round are qualified. This written round consists of 25 questions to answer the questions in 45 minutes which requires a logical thought process to solve the vexed questions and crunchers."
                 },
             ]
-        }
+        },
+        registration: true
     }
-    
+
 }
 

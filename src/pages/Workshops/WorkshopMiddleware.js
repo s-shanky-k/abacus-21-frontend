@@ -1,29 +1,13 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { TechEvents } from "../../../assets/Data/Tech-EventsData"
-import { NonTechEvents } from "../../../assets/Data/Non-Tech-EventsData"
-import { Workshops } from "../../../assets/Data/WorkshopsData"
-import EventTemplate from "../../../components/EventTemplate/EventTemplate"
 
-export default function Event() {
+import { Workshops } from "../../assets/Data/WorkshopsData"
+import EventTemplate from "../../components/EventTemplate/EventTemplate"
 
-    const { type, title } = useParams()
-    console.log("PARAMS MIDDLE", type, title)
+export default function WorkshopMiddleware() {
 
-
-    let Hash;
-
-    if (type === "tech") {
-        Hash = TechEvents
-    }
-    else if (type === "non-tech") {
-        Hash = NonTechEvents
-    }
-    else if (type === "workshops") {
-        Hash = Workshops
-    }
-
-    const data = Hash[title]
+    const { title } = useParams()
+    const data = Workshops[title]
     const history = useHistory()
     if (!data) {
         history.push("/404")
