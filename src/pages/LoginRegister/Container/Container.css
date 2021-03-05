@@ -72,7 +72,7 @@ button.ghost {
 .sign-in-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly !important;
+    justify-content: space-around !important;
     align-items: center;
     left: 0;
     width: 50%;
@@ -80,7 +80,9 @@ button.ghost {
     animation: toright 1.5s linear;
     /* animation: show 1.5s; */
     z-index: 2 !important;
-    height: 100vh !important;
+    height: 72vh !important;
+    position: absolute;
+    top: 20%;
 }
 
 
@@ -98,7 +100,7 @@ button.ghost {
 .sign-up-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly !important;
+    justify-content: space-around !important;
     align-items: center;
     opacity: 0;
     right: 50%;
@@ -106,8 +108,8 @@ button.ghost {
     animation: toleft 1.5s linear;
     z-index: 1 !important;
     position: absolute;
-    top: 0%;
-    height: 100vh !important;
+    top: 20%;
+    height: 72vh !important;
 }
 
 .login-register-container.right-panel-active .sign-up-container {

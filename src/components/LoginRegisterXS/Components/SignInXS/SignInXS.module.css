@@ -19,6 +19,7 @@
     flex-direction: column;
     width: 100vw;
     align-items: center;
+    margin: 20px;
 }
 
 .login_input_field {
@@ -38,8 +39,9 @@
 .login_validation_output{
     font-family: 'MainFont', cursive;
     font-size: 16px;
-    color: #fff;
+    color: red;
     letter-spacing: 0.5px;
+    margin-bottom: 1px;
 }
 
 .forgot_password {
@@ -52,4 +54,20 @@
 
 .google_button {
     margin: 20px 0px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .login_input_field {
+        background-color: #fff;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 70% !important;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #232323;
+        border-radius: 10px;
+        margin: 10px;
+    }
 }
