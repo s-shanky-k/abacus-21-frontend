@@ -46,8 +46,8 @@ export default function NavbarSmall({clickLogout}) {
                         <button className="abacus-nav-btn abacus-close-btn" onClick={clickCloseBtn}><i className="fa fa-times"></i></button>
 
                         {/* <img className="netflix-logo" src="https://logos-download.com/wp-content/uploads/2016/03/Netflix_logo.png" alt="Netflix Logo" /> */}
-                        <p className="abacus-logo">
-                            <Heading text="Abacus" /></p>
+                        <div className="abacus-logo">
+                            <Heading text="Abacus" /></div>
 
                         <ul className="abacus-list">
                             <li>

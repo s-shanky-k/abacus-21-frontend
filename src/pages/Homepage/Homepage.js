@@ -82,9 +82,9 @@ class Homepage extends Component {
                 paddingBottom: "20px",
               }}
             />
-            <div class="container-fluid  ml-sm-0  justify-content-center align-self-center">
-              <div class="row justify-content-center align-self-center ">
-                <div class="col col-lg-3 col-md-4   mt-5   text-center">
+            <div className="container-fluid  ml-sm-0  justify-content-center align-self-center">
+              <div className="row justify-content-center align-self-center ">
+                <div className="col col-lg-3 col-md-4   mt-5   text-center">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={5} redraw={true} suffix=" +">
                       {({ countUpRef, start }) => (
@@ -96,7 +96,7 @@ class Homepage extends Component {
                   </div>{" "}
                   <Heading1 text="Events" fontSize="20px" />
                 </div>
-                <div class="col mt-5   col-lg-3 col-md-4 text-center">
+                <div className="col mt-5   col-lg-3 col-md-4 text-center">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={3} redraw={true} suffix=" +">
                       {({ countUpRef, start }) => (
@@ -108,7 +108,7 @@ class Homepage extends Component {
                   </div>
                   <Heading1 text="Workshops" fontSize="20px" />
                 </div>
-                <div class="col col-lg-3 col-md-4 mt-5 text-center ">
+                <div className="col col-lg-3 col-md-4 mt-5 text-center ">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={1} redraw={true} suffix=" ">
                       {({ countUpRef, start }) => (
@@ -120,7 +120,7 @@ class Homepage extends Component {
                   </div>
                   <Heading1 text=" Mega Hackathon" fontSize="20px" />
                 </div>
-                <div class="col col-lg-3 col-md-4  mt-5  text-center">
+                <div className="col col-lg-3 col-md-4  mt-5  text-center">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={8} redraw={true} suffix=" L+">
                       {({ countUpRef, start }) => (
@@ -138,12 +138,12 @@ class Homepage extends Component {
         </section>
         {/* Child Class */}
         <div className={`${styles._homepage} ${styles.bg}`}>
-          <div class="embed-responsive embed-responsive-21by9 m-lg-5 m-sm-1 m-xs-1 m-md-5">
+          <div className="embed-responsive embed-responsive-21by9 m-lg-5 m-sm-1 m-xs-1 m-md-5">
             <iframe
               src="https://www.youtube.com/embed/aQ8rsGYszOE"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>
@@ -160,12 +160,12 @@ class Homepage extends Component {
         <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
-          <div class="text-center">
+          <div className="text-center">
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>
-          <div class="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
-            <div class="row  d-flex justify-content-center align-self-center pb-5">
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+          <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
+            <div className="row  d-flex justify-content-center align-self-center pb-5">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
@@ -177,7 +177,7 @@ class Homepage extends Component {
                 />
               </div>
 
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
                 <Dev
                   props={{
                     title: "Darrshana",
@@ -189,7 +189,7 @@ class Homepage extends Component {
                 />
               </div>
 
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
                 <Dev
                   props={{
                     title: "Paargav Shanker",
@@ -200,7 +200,7 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                 <Dev
                   props={{
                     title: "Umar Ahmed",
@@ -211,7 +211,7 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
@@ -220,7 +220,7 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
@@ -229,7 +229,7 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
@@ -238,7 +238,7 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
