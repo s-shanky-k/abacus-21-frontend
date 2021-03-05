@@ -160,7 +160,7 @@ class Homepage extends Component {
         <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
-          <div className="text-center">
+          <div className="text-center mt-5">
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
@@ -250,6 +250,85 @@ class Homepage extends Component {
             </div>
           </div>
         </div>
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}
+        >
+          <div className="text-center mt-5">
+            <Heading text="Developers and Design Team" fontSize="40px" />
+          </div>
+          <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
+            <div className="row  d-flex justify-content-center align-self-center pb-5">
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+                <Dev
+                  props={{
+                    title: "Shankar Kumar",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                    href:
+                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                  }}
+                />
+              </div>
+
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+                <Dev
+                  props={{
+                    title: "Darrshana",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                    href:
+                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                  }}
+                />
+              </div>
+
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+                <Dev
+                  props={{
+                    title: "Paargav Shanker",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                    href:
+                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                  }}
+                />
+              </div>
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+                <Dev
+                  props={{
+                    title: "Umar Ahmed",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                    href:
+                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                  }}
+                />
+              </div>
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+                <Dev
+                  props={{
+                    title: "Shankar Kumar",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                  }}
+                />
+              </div>
+              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  ">
+                <Dev
+                  props={{
+                    title: "Shankar Kumar",
+                    title1: "Frontend",
+                    img: "dev/darrshana.jpeg",
+                  }}
+                />
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+        
+
+        
 
         <Footer />
       </>
