@@ -22,6 +22,7 @@ class Dashboard extends Component {
 
     }
 
+
     fetchRegistrations = async () => {
         let token = Cookies.get("token")
         let details = JSON.parse(Cookies.get("details"))
@@ -51,7 +52,7 @@ class Dashboard extends Component {
     render() {
 
         const events = [{ "title": 'All', "purpose": "EVENTS" }]
-        const workshops = [{ "title": 'Cloud', "purpose": "CLOUD" }, { "title": 'Security', "purpose": "NETSEC" }, { "title": 'Placements', "purpose": "PLACEMENT" }]
+        const workshops = [{ "title": 'Cloud', "purpose": "CLOUD" }, { "title": 'Security', "purpose": "NETSEC" }, { "title": 'Placements', "purpose": "DUMMY" }]
         const hackathon = [{ "title": 'Hackathon', "purpose": "HACKATHON" }]
 
         if (this.state.loading) {
@@ -74,19 +75,19 @@ class Dashboard extends Component {
                                 {/* Events */}
                                 <div className={styles.data_display_div}>
                                     <Heading text="Events" fontSize="30px" />
-                                    <MainTableDiv data={events} registrationDetails={this.state.response}></MainTableDiv>
+                                    <MainTableDiv data={events} registrationDetails={this.state.response} ></MainTableDiv>
                                 </div>
 
                                 {/* Workshops */}
                                 <div className={styles.data_display_div}>
                                     <Heading text="Workshops" fontSize="30px" />
-                                    <MainTableDiv data={workshops} registrationDetails={this.state.response}></MainTableDiv>
+                                    <MainTableDiv data={workshops} registrationDetails={this.state.response} ></MainTableDiv>
                                 </div>
 
                                 {/* Hackathon */}
                                 <div className={styles.data_display_div}>
                                     <Heading text="Hackathon" fontSize="30px" />
-                                    <MainTableDiv data={hackathon} registrationDetails={this.state.response}></MainTableDiv>
+                                    <MainTableDiv data={hackathon} registrationDetails={this.state.response} ></MainTableDiv>
                                 </div>
 
 

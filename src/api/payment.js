@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { apiRegisterEvent, apiPayment } from "./api"
 
 
-export const _register = async (history, setregistered) => {
+export const _register = async (history, setregistered, data) => {
     // Redirect to Login Page
     if (Cookies.get("token") === undefined) {
         toast.success("Login First", {
@@ -16,7 +16,7 @@ export const _register = async (history, setregistered) => {
     else {
         let token = Cookies.get("token")
         let response = await apiRegisterEvent({
-            "event": "EVENTS",
+            "event": data.purpose,
             "token": token
         })
 
@@ -42,9 +42,10 @@ export const _paymentConfirmation = async (history, setpaymentDetails, toggleMod
         history.push("/login-register")
     }
     else {
+
         let token = Cookies.get("token")
         let response = await apiPayment({
-            "event": "EVENTS",
+            "event": data.purpose,
             "token": token
         })
 

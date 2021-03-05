@@ -26,7 +26,7 @@ export class MainTableDiv extends Component {
         if (this.props.data && this.props.data.length > 0) {
             for (let i = 0; i < this.props.data.length; i++) {
                 render_data.push(
-                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails} />
+                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails}/>
                     // <div key={i} style={{ color: "white" }}>{this.props.data[i]}</div>
                 )
             }

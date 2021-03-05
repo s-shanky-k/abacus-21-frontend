@@ -1,55 +1,86 @@
-import React, { Component } from 'react'
+import { Component, useState, useEffect } from 'react'
 import styles from './RowTableDiv.module.css'
 import { _register, _paymentConfirmation } from "../../../api/payment"
+import Modal from "react-modal"
+import PaymentConfirmation from "../../PaymentConfirmation/PaymentConfirmation";
+import { useHistory } from 'react-router-dom';
 
 
-export class RowTableDiv extends Component {
-    constructor(props) {
-        super(props)
 
-        this.state = {
+import React from 'react'
+
+function RowTableDiv(props) {
+
+    const history = useHistory()
+    const [modalIsOpen, setmodalIsOpen] = useState(false)
+    const [paymentDetails, setpaymentDetails] = useState({})
+    const [registered, setregistered] = useState(false)
+
+    useEffect(() => {
+
+        return () => {
 
         }
+    }, [])
+
+
+
+
+    const toggleModal = () => {
+        setmodalIsOpen(!modalIsOpen)
+    }
+
+    // Payment
+    const paymentConfirmation = async () => {
+        console.log("ACBCSHJDBFHBHJDJEHJF")
+        _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.item.purpose })
 
     }
 
-    componentDidMount() {
+    // Register
+    const register = () => {
+        _register(history, setregistered, { "purpose": props.item.purpose });
     }
 
-    render() {
+    let render_data1 = [<p>Not Registered</p>]
+    let render_data2 = [<p onClick={register}>Register Link</p>]
 
-        let render_data1 = [<p>Not Registered</p>]
-        let render_data2 = [<p>Register Link</p>]
-
-        if (this.props.item && this.props.registrationDetails) {
-            for (let i = 0; i < this.props.registrationDetails.length; i++) {
-                if (this.props.registrationDetails[i].purpose === this.props.item.purpose) {
-                    render_data1 = []
-                    // Paid
-                    if (this.props.registrationDetails[i].status === "Credit") {
-                        render_data1.push(
-                            <p>Paid</p>
-                        )
-                        render_data2.push(
-                            <p>Transaction ID</p>
-                        )
-                    }
-                    else if (this.props.registrationDetails[i].status === null) {
-                        render_data1.push(
-                            <p>Payment Link</p>
-                        )
-                    }
-
-
+    if (props.item && props.registrationDetails) {
+        for (let i = 0; i < props.registrationDetails.length; i++) {
+            if (props.registrationDetails[i].purpose === props.item.purpose) {
+                render_data1 = []
+                render_data2 = []
+                // Paid
+                if (props.registrationDetails[i].status === "Credit") {
+                    render_data1.push(
+                        <p>Paid</p>
+                    )
+                    render_data2.push(
+                        <p>Transaction ID</p>
+                    )
                 }
+                else if (props.registrationDetails[i].status === null) {
+                    render_data1.push(
+                        <p>Not Paid</p>
+                    )
+                    render_data2.push(
+                        <p onClick={paymentConfirmation}>Payment Link</p>
+                    )
+                }
+
+
             }
         }
+    }
 
 
-        return (
+
+
+    return (
+        <>
             <div className={styles.rowTableDiv}>
                 <div className={styles.cellTableDiv}>
-                    <p>{this.props.item.title}</p>
+                    <p>{props.item.title}</p>
                 </div>
 
                 <div className={styles.cellTableDiv}>
@@ -60,9 +91,21 @@ export class RowTableDiv extends Component {
                     {render_data2}
                 </div>
             </div>
-        )
-    }
+            {/* Modal */}
+            <Modal isOpen={modalIsOpen} style={{
+                content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999'
+                },
+                overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                }
+            }}>
+                <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
+            </Modal>
+        </>
+    )
 }
 
 export default RowTableDiv
-

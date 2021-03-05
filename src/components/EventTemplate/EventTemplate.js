@@ -103,13 +103,13 @@ function EventTemplate({ props }) {
 
   // Payment
   const paymentConfirmation = async () => {
-    _paymentConfirmation(history, setpaymentDetails, toggleModal)
+    _paymentConfirmation(history, setpaymentDetails, toggleModal,{"purpose":"EVENTS"})
 
   }
 
   // Register
   const register = () => {
-    _register(history, setregistered);
+    _register(history, setregistered,{"purpose":"EVENTS"});
   }
 
   return (
