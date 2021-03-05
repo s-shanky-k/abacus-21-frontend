@@ -8,7 +8,6 @@ export default function Event() {
     const data = TechEvents[title]
     const history = useHistory()
     if(!data) {
-        console.log("EMPTy")
         history.push("/homepage")
     }
     

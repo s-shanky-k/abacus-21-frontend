@@ -215,7 +215,7 @@ function EventTemplate({ props }) {
                 <GlowCard props={{
                   title: "Rules",
                   list: props.rules,
-                  img: "events/" + `${props.refName}` + `_rules.svg`,
+                  img: "events/rules.svg",
                   textAlign: 'left'
                 }} />
               </div>
@@ -266,7 +266,7 @@ function EventTemplate({ props }) {
           </div>
         </>
       }
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }
