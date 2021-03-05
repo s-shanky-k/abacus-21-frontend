@@ -8,11 +8,13 @@ import { apiGetRegistrations } from "../../api/api"
 import Cookies from "js-cookie"
 import Load from "../../components/Load/Load"
 import Footer from "../../components/Footer/Footer"
+import Modal from "react-modal"
+
 
 
 import React from 'react'
 
-
+Modal.setAppElement('#root')
 function Dashboard() {
 
     const events = [{ "title": 'All', "purpose": "EVENTS", "url": "/events" }]
@@ -55,7 +57,7 @@ function Dashboard() {
     return (
         <>
             {
-                loading ? <Load /> : <div className={styles._dashboard_wrapper}>
+                loading ? <Load /> : <> <div className={styles._dashboard_wrapper}>
 
 
                     <div className={styles._dashboard_container}>
@@ -92,6 +94,9 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
+
+                    <Footer scroll_snap={false}/>
+                </>
             }
 
 

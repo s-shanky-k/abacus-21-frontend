@@ -1,5 +1,10 @@
-._footer_container {
+._footer_container_scroll_snap {
     scroll-snap-align: start;
+    text-align: center;
+    font-family: "Iceland";
+}
+
+._footer_container {
     text-align: center;
     font-family: "Iceland";
 }

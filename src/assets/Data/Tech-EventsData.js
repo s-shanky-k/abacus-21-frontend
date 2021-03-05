@@ -59,7 +59,8 @@ export const TechEvents = {
                 },
             ]
         },
-        registration: true
+        registration: true,
+        purpose: "EVENTS"
     },
 
     // Novice
@@ -117,7 +118,8 @@ export const TechEvents = {
                 },
             ]
         },
-        registration: true
+        registration: true,
+        purpose: "EVENTS"
     },
 
     // Code for Crown - OLPC
@@ -165,7 +167,8 @@ export const TechEvents = {
                 },
             ]
         },
-        registration: true
+        registration: true,
+        purpose: "EVENTS"
     },
 
     // X-Domain Combat
@@ -220,7 +223,8 @@ export const TechEvents = {
                 },
             ]
         },
-        registration: true
+        registration: true,
+        purpose: "EVENTS"
     }
 
 }

@@ -32,7 +32,7 @@ class Loader extends Component {
                     </div>
 
                     </div>
-                    <Link spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></Link>
+                    <Link to="#homepage" smooth={true}><i className="fa fa-angle-double-down"></i></Link>
 
                 </div>
 
