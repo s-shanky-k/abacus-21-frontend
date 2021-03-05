@@ -50,7 +50,11 @@
 }
 
 .slowFlicker {
+<<<<<<< Updated upstream
     animation: slowFlickerAnime 2s infinite;
+=======
+    animation: slowFlickerAnime 1.5s infinite;
+>>>>>>> Stashed changes
 }
 
 
