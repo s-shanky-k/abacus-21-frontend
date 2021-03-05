@@ -208,9 +208,18 @@ const customStyle = {
     }
 }
 
-const customStyle3 = {
-    option: (provided, state) => ({
+// const dropdownIndicatorStyles = (base, state) => {
+//     let changes = {
+//         // all your override styles
+//         backgroundColor: 'blue',
+//     };
+//     return Object.assign(base, changes);
+// };
+
+const customStyle = {
+    menu: (provided, state) => ({
         ...provided,
+        width: '70vw',
         borderBottom: '1px solid #fff',
         color: state.isSelected ? '#ff65bd' : '#060c21',
         padding: 10,

@@ -23,8 +23,22 @@ import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
 
-const years = [1,2,3,4]
+const years = [1,2,3,4];
 
+// const cusStyle = {
+//     width: 465,
+//     height: 50,
+//     display: 'flex',
+//     backgroundColor: '#000',
+//     fontFamily: 'MainFont',
+//     fontSize: 20,
+//     borderRadius: 10,
+//     alignItems: 'center',
+//     color: '#fff',
+//     marginBottom: 20,
+//     marginTop: 10,
+//     paddingLeft: 5,
+// }
 
 const customStyle = {
     menu: (provided, state) => ({
@@ -194,7 +208,7 @@ function SignUp() {
     const history = useHistory()
 
     const [name, setname] = useState('')
-    const [year, setyear] = useState()
+    const [year, setyear] = useState(null)
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
     const [email, setemail] = useState('')
@@ -298,8 +312,8 @@ function SignUp() {
         setcollege(selectedOption);
     }
 
-    const handleYearChange = (selectedOption) => {
-        setyear(selectedOption);
+    const handleYearChange = (selectValue) => {
+        setyear(selectValue);
     }
 
     const clickGoogleIcon = () => {
