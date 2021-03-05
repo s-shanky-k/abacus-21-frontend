@@ -118,7 +118,7 @@ function EventTemplate({ props }) {
       {loading ? <Load /> :
         <>
           {/*About Event*/}
-          <div
+          <div id="#"
             className={`${styles._homepage} ${styles.bg1}`}
 
           >

@@ -21,8 +21,9 @@ class NonTechEvents extends Component {
             <>
 
                 <div id="#" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`} >
-                    <GlowCardResponsive props={{ title: "CAM",titleFontFamily:"Iceland", content: "A challenge where the participants have to identify and resolve bugs",img:"events/cam.svg", href: "/events/non-tech/cam" }} />
-                    <GlowCardResponsive props={{ title: "DESIGN",titleFontFamily:"Iceland", content: "Innovate and develop influential solutions to a problem using technology",img:"events/design.svg", href: "/events/non-tech/design" }} />
+                    <GlowCardResponsive props={{ title: "IMAGENATION",titleFontFamily:"Iceland", content: "An online photography contest",img:"events/imagenation.svg", href: "/events/non-tech/imagenation" }} />
+                    <GlowCardResponsive props={{ title: "GRAPHIC TRAFFIC",titleFontFamily:"Iceland", content: "An online poster designing contest",img:"events/graphic-traffic.svg", href: "/events/non-tech/graphic-traffic" }} />
+                    <GlowCardResponsive props={{ title: "HOUSE FULL",titleFontFamily:"Iceland", content: "An event for all the non-technical pros out there",img:"events/housefull.svg", href: "/events/non-tech/housefull" }} />
                 </div>
 
                 <Footer />
