@@ -34,7 +34,7 @@ export const _register = async (history, setregistered, data) => {
     }
 }
 
-export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, data) => {
+export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, data, setloading) => {
     if (Cookies.get("token") === undefined) {
         toast.success("Login First", {
             position: toast.POSITION.BOTTOM_CENTER
@@ -51,7 +51,14 @@ export const _paymentConfirmation = async (history, setpaymentDetails, toggleMod
 
         if (response.status === 200) {
             setpaymentDetails(response.data)
+            setloading(false)
             toggleModal()
+        }
+        else {
+            setloading(false)
+            toast.success(response.message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            })
         }
     }
 

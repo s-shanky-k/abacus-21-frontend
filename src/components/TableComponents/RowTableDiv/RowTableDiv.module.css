@@ -36,3 +36,8 @@
         word-wrap: break-word !important;
     }
 }
+
+.link:hover {
+    text-decoration: none;
+    color: #8E32FF;
+}

@@ -21,6 +21,7 @@ import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 // import AuthApi from "./api/AuthApi"
 
 // componentWillUnmount() {
@@ -42,7 +43,7 @@ function App() {
 
   useEffect(() => {
 
-    if (Cookies.get("token") !== undefined) {
+    if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
     }
 
@@ -101,6 +102,7 @@ const Routes = () => {
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
+      <Route  component={PageNotFound} />
 
     </Switch>
   )
@@ -120,6 +122,7 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
       }} />
   )
 }
+
 
 const ProtectFromLogin = ({ auth, component: Component, ...rest }) => {
   return (

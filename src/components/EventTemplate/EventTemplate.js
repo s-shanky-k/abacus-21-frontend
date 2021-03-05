@@ -103,7 +103,8 @@ function EventTemplate({ props }) {
 
   // Payment
   const paymentConfirmation = async () => {
-    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": "EVENTS" })
+    setloading(true)
+    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": "EVENTS" },setloading)
 
   }
 
@@ -211,7 +212,8 @@ function EventTemplate({ props }) {
               <Modal isOpen={modalIsOpen} style={{
                 content: {
                   backgroundColor: "#060c21",
-                  zIndex: '999'
+                  zIndex: '999',
+                  overflowY:'hidden'
                 },
                 overlay: {
                   backgroundColor: "black",

@@ -3,11 +3,15 @@ import styles from './RowTableDiv.module.css'
 import { _register, _paymentConfirmation } from "../../../api/payment"
 import Modal from "react-modal"
 import PaymentConfirmation from "../../PaymentConfirmation/PaymentConfirmation";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import Tooltip from '@material-ui/core/Tooltip';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 
 
 import React from 'react'
+import Load from '../../Load/Load';
 
 function RowTableDiv(props) {
 
@@ -15,6 +19,7 @@ function RowTableDiv(props) {
     const [modalIsOpen, setmodalIsOpen] = useState(false)
     const [paymentDetails, setpaymentDetails] = useState({})
     const [registered, setregistered] = useState(false)
+    const [loading, setloading] = useState(false)
 
     useEffect(() => {
 
@@ -32,19 +37,17 @@ function RowTableDiv(props) {
 
     // Payment
     const paymentConfirmation = async () => {
-        console.log("ACBCSHJDBFHBHJDJEHJF")
-        _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.item.purpose })
-
+        setloading(true)
+        _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.item.purpose }, setloading)
     }
 
     // Register
     const register = (forceUpdate) => {
         _register(history, setregistered, { "purpose": props.item.purpose });
-        forceUpdate()
     }
 
     let render_data1 = [<p>Not Registered</p>]
-    let render_data2 = [<p onClick={() => register(props.forceUpdate)}>Register Link</p>]
+    let render_data2 = [<Link to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></Link>]
 
     if (props.item && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {
@@ -57,7 +60,10 @@ function RowTableDiv(props) {
                         <p>Paid</p>
                     )
                     render_data2.push(
-                        <p className={`${styles.wordBreak}`}>{props.registrationDetails[i].paymentid}</p>
+                        <Tooltip title="Payment ID" arrow placement="right">
+                            <p className={`${styles.wordBreak}`}>{props.registrationDetails[i].paymentid}</p>
+                        </Tooltip>
+
                     )
                 }
                 else if (props.registrationDetails[i].status === null) {
@@ -65,7 +71,7 @@ function RowTableDiv(props) {
                         <p>Not Paid</p>
                     )
                     render_data2.push(
-                        <p onClick={paymentConfirmation}>Payment Link</p>
+                        <Link onClick={paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></Link>
                     )
                 }
 
@@ -93,9 +99,10 @@ function RowTableDiv(props) {
                 </div>
             </div>
 
-            <hr className={`${styles.hrBreak}`}/>
+            {props.hr && <hr className={`${styles.hrBreak}`} />}
+
             {/* Modal */}
-            <Modal isOpen={modalIsOpen} style={{
+            {loading ? <Load /> : <Modal isOpen={modalIsOpen} style={{
                 content: {
                     backgroundColor: "#060c21",
                     zIndex: '999'
@@ -106,7 +113,8 @@ function RowTableDiv(props) {
                 }
             }}>
                 <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
-            </Modal>
+            </Modal>}
+
         </>
     )
 }

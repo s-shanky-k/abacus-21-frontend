@@ -255,9 +255,6 @@ function SignUp() {
         else if (!year) {
             validationError = 'Year field cannot be blank'
         }
-        else if (!(year <= 5 && year >= 1)) {
-            validationError = 'Choose valid academic year'
-        }
 
 
         if (!validationError && (cpwd !== pwd)) {
@@ -313,7 +310,7 @@ function SignUp() {
     }
 
     const handleYearChange = (selectValue) => {
-        setyear(selectValue);
+        setyear(selectValue.value);
     }
 
     const clickGoogleIcon = () => {

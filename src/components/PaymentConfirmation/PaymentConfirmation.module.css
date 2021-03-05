@@ -16,6 +16,7 @@
     .buttonDiv {
         display: flex;
         flex-direction: column !important;
+        width: 100% !important;
     }
 
     .userDetails {
@@ -25,29 +26,50 @@
     .userDetailsTextBreak {
         word-break: break-all !important;
     }
-}
 
+    .icon {
+        color: #8E32FF !important;
+        margin-right: 10px;
+        font-size: 20px !important;
+    }
 
+    .userDetailsText {
+        color: white;
+        font-size: 21px;
+        margin: 10px 0px;
+    }
 
-@media only screen and (max-height: 568px) and (max-width:1100px) {
-    .paymentWrapper {
-        padding-top: 100%;
+    .paymentDetailsTitle {
+        font-size: 25px;
+        color: #8E32FF;
     }
 }
 
-/* @media only screen and (max-height: 540px) {
+@media only screen and (max-width: 1100px) {
     .paymentWrapper {
-        padding-top: 40%;
+        padding-top: 50vh;
+    }
+
+    .headingWrapper {}
+}
+
+@media only screen and (max-width: 540px) {
+    .paymentWrapper {
+        padding-top: 75vh;
     }
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-width: 331px) {
     .paymentWrapper {
-        padding-top: 60%;
+        padding-top: 85vh;
     }
-} */
+}
+
+
+
 
 .buttonDiv {
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -73,15 +95,25 @@
 .icon {
     color: #8E32FF !important;
     margin-right: 10px;
+    font-size: 25px !important;
 }
 
 .userDetailsText {
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px 0px;
 }
 
 .paymentDetailsTitle {
-    font-size: 24px;
+    font-size: 28px;
     color: #8E32FF;
+}
+
+.noteWrapper {
+    color: white;
+    font-size: 20px;
+}
+
+.noteWrapper span {
+    color: #8E32FF !important;
 }

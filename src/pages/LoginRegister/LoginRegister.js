@@ -95,12 +95,19 @@ const App = (props) => {
                 state: params
             })
         }
-        // setqueryParams({
-        //     "auth": params.auth,
-        //     "email": params.email,
-        //     "name": params.name,
-        //     "token": params.token
-        // })
+        else {
+            if (Cookies.get('token') !== undefined && Cookies.get('details') !== undefined) {
+                history.push({
+                    pathname: "/dashboard",
+                    state: params
+                })
+            }
+            else {
+                Cookies.remove('token')
+                Cookies.remove('details')
+            }
+        }
+
         return () => {
 
         }
