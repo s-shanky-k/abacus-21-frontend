@@ -9,23 +9,47 @@ import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
+
+import VirtualizedSelect from 'react-virtualized-select'
+
+// import 'react-select/dist/react-select.css'
+// import 'react-virtualized/styles.css'
+// import 'react-virtualized-select/styles.css'
+
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
 
-const years = [1,2,3,4]
+const years = [1,2,3,4];
 
+// const cusStyle = {
+//     width: 465,
+//     height: 50,
+//     display: 'flex',
+//     backgroundColor: '#000',
+//     fontFamily: 'MainFont',
+//     fontSize: 20,
+//     borderRadius: 10,
+//     alignItems: 'center',
+//     color: '#fff',
+//     marginBottom: 20,
+//     marginTop: 10,
+//     paddingLeft: 5,
+// }
 
-const customStyle1 = {
-    option: (provided, state) => ({
+const customStyle = {
+    menu: (provided, state) => ({
         ...provided,
+        width: 465,
         borderBottom: '1px solid #fff',
         color: state.isSelected ? '#ff65bd' : '#060c21',
         padding: 10,
         fontFamily: 'MainFont',
         backgroundColor: '#fff',
-        color: '#000000',
+        color: '#000',
         fontSize: 20,
     }),
     control: () => ({
@@ -38,7 +62,7 @@ const customStyle1 = {
         fontSize: 20,
         borderRadius: 10,
         alignItems: 'center',
-        color: '#000000',
+        color: '#000',
         marginBottom: 20,
         marginTop: 10,
         paddingLeft: 5,
@@ -49,82 +73,116 @@ const customStyle1 = {
 
         return { ...provided, opacity, transition };
     }
-}
+}       
 
-const customStyle2 = {
-    option: (provided, state) => ({
-        ...provided,
-        borderBottom: '1px solid #fff',
-        color: state.isSelected ? '#ff65bd' : '#060c21',
-        padding: 10,
-        fontFamily: 'MainFont',
-        backgroundColor: '#fff',
-        color: '#000000',
-        fontSize: 20,
-    }),
-    control: () => ({
-        // none of react-select's styles are passed to <Control />
-        width: 465,
-        height: 50,
-        display: 'flex',
-        backgroundColor: '#fff',
-        fontFamily: 'MainFont',
-        fontSize: 20,
-        borderRadius: 10,
-        alignItems: 'center',
-        color: '#000000',
-        marginBottom: 10,
-        paddingLeft: 5,
-    }),
-    singleValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
+// const customStyle1 = {
+//     option: (provided, state) => ({
+//         ...provided,
+//         borderBottom: '1px solid #fff',
+//         color: state.isSelected ? '#ff65bd' : '#060c21',
+//         padding: 10,
+//         fontFamily: 'MainFont',
+//         backgroundColor: '#fff',
+//         color: '#000000',
+//         fontSize: 20,
+//     }),
+//     control: () => ({
+//         // none of react-select's styles are passed to <Control />
+//         width: 465,
+//         height: 50,
+//         display: 'flex',
+//         backgroundColor: '#fff',
+//         fontFamily: 'MainFont',
+//         fontSize: 20,
+//         borderRadius: 10,
+//         alignItems: 'center',
+//         color: '#000000',
+//         marginBottom: 20,
+//         marginTop: 10,
+//         paddingLeft: 5,
+//     }),
+//     singleValue: (provided, state) => {
+//         const opacity = state.isDisabled ? 0.5 : 1;
+//         const transition = 'opacity 300ms';
 
-        return { ...provided, opacity, transition };
-    }
-}
+//         return { ...provided, opacity, transition };
+//     }
+// }
 
-const customStyle3 = {
-    option: (provided, state) => ({
-        ...provided,
-        borderBottom: '1px solid #fff',
-        color: state.isSelected ? '#ff65bd' : '#060c21',
-        padding: 10,
-        fontFamily: 'MainFont',
-        backgroundColor: '#fff',
-        color: '#000000',
-        fontSize: 20,
-    }),
-    control: () => ({
-        // none of react-select's styles are passed to <Control />
-        width: 465,
-        height: 50,
-        display: 'flex',
-        backgroundColor: 'white',
-        fontFamily: 'MainFont',
-        fontSize: 20,
-        borderRadius: 10,
-        alignItems: 'center',
-        color: '#000000',
-        marginBottom: 20,
-        marginTop: 10,
-        paddingLeft: 5,
-    }),
-    singleValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
+// const customStyle2 = {
+//     option: (provided, state) => ({
+//         ...provided,
+//         borderBottom: '1px solid #fff',
+//         color: state.isSelected ? '#ff65bd' : '#060c21',
+//         padding: 10,
+//         fontFamily: 'MainFont',
+//         backgroundColor: '#fff',
+//         color: '#000000',
+//         fontSize: 20,
+//     }),
+//     control: () => ({
+//         // none of react-select's styles are passed to <Control />
+//         width: 465,
+//         height: 50,
+//         display: 'flex',
+//         backgroundColor: '#fff',
+//         fontFamily: 'MainFont',
+//         fontSize: 20,
+//         borderRadius: 10,
+//         alignItems: 'center',
+//         color: '#000000',
+//         marginBottom: 10,
+//         paddingLeft: 5,
+//     }),
+//     singleValue: (provided, state) => {
+//         const opacity = state.isDisabled ? 0.5 : 1;
+//         const transition = 'opacity 300ms';
 
-        return { ...provided, opacity, transition };
-    }
-}
+//         return { ...provided, opacity, transition };
+//     }
+// }
 
-const dropdownIndicatorStyles = (base, state) => {
-    let changes = {
-        // all your override styles
-        backgroundColor: 'blue',
-    };
-    return Object.assign(base, changes);
-};
+// const customStyle3 = {
+//     option: (provided, state) => ({
+//         ...provided,
+//         borderBottom: '1px solid #fff',
+//         color: state.isSelected ? '#ff65bd' : '#060c21',
+//         padding: 10,
+//         fontFamily: 'MainFont',
+//         backgroundColor: '#fff',
+//         color: '#000000',
+//         fontSize: 20,
+//     }),
+//     control: () => ({
+//         // none of react-select's styles are passed to <Control />
+//         width: 465,
+//         height: 50,
+//         display: 'flex',
+//         backgroundColor: 'white',
+//         fontFamily: 'MainFont',
+//         fontSize: 20,
+//         borderRadius: 10,
+//         alignItems: 'center',
+//         color: '#000000',
+//         marginBottom: 20,
+//         marginTop: 10,
+//         paddingLeft: 5,
+//     }),
+//     singleValue: (provided, state) => {
+//         const opacity = state.isDisabled ? 0.5 : 1;
+//         const transition = 'opacity 300ms';
+
+//         return { ...provided, opacity, transition };
+//     }
+// }
+
+// const dropdownIndicatorStyles = (base, state) => {
+//     let changes = {
+//         // all your override styles
+//         backgroundColor: 'blue',
+//     };
+//     return Object.assign(base, changes);
+// };
 
 
 
@@ -150,7 +208,7 @@ function SignUp() {
     const history = useHistory()
 
     const [name, setname] = useState('')
-    const [year, setyear] = useState()
+    const [year, setyear] = useState(null)
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
     const [email, setemail] = useState('')
@@ -158,6 +216,8 @@ function SignUp() {
     const [pwd, setpwd] = useState('')
     const [cpwd, setcpwd] = useState('')
     const [validationError, setvalidationError] = useState('')
+    // const [inputValue, setInputValue] = useState('');
+
 
     const giveFocus = () => {
         this.textInput.current.focus();
@@ -252,8 +312,8 @@ function SignUp() {
         setcollege(selectedOption);
     }
 
-    const handleYearChange = (selectedOption) => {
-        setyear(selectedOption);
+    const handleYearChange = (selectValue) => {
+        setyear(selectValue);
     }
 
     const clickGoogleIcon = () => {
@@ -267,16 +327,35 @@ function SignUp() {
             <Heading text="REGISTER" fontSize="35px"></Heading>
             <div className="form-class align-form" id="style-2">
                 <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                {/* <Autocomplete
+        value={year}
+        onChange={(event, newValue) => {
+          setyear(newValue);
+        }}
+        inputValue={inputValue}
+        onInputChange={(event, newInputValue) => {
+          setInputValue(newInputValue);
+        }}
+        options={years}
+        style={{ width: 300, backgroundColor: '#fff', color: '#000' }}
+        renderInput={(params) => <TextField {...params} label="Controllable" variant="outlined" />}
+      /> */}
+                {/* <VirtualizedSelect
+                    options={years.map(opt => ({ label: opt, value: opt }))}
+                    onChange= {handleYearChange}
+                    value={year}
+                    style={cusStyle}
+                /> */}
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
                 <input className="input-field-style" type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
                 <input className="input-field-style" type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
                 <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                 <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
             </div>
             {validationError ? (<div className="validation-output">{validationError}</div>) : null}
-            <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
+            <GoogleButton label="Register with Google" className="google-button" onClick={clickGoogleIcon} type="dark" />
             <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
         </div>
     );

@@ -22,7 +22,7 @@
 }
 
 .login_input_field {
-    background-color: #000;
+    background-color: #fff;
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
@@ -30,7 +30,7 @@
     font-family: 'MainFont', cursive !important;
     height: 50px;
     font-size: 20px;
-    color: #fff;
+    color: #232323;
     border-radius: 10px;
     margin: 10px;
 }
