@@ -7,7 +7,7 @@ import departments from "../../../../assets/departments.js"
 import years from "../../../../assets/years.js"
 import Select from "react-select";
 import Cookies from "js-cookie"
-import { AuthApi, SetAuthApi } from "../../../../App"
+import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 
 // import TextField from '@material-ui/core/TextField';
@@ -37,161 +37,7 @@ import GoogleButton from 'react-google-button'
 //     paddingLeft: 5,
 // }
 
-const customStyle = {
-    menu: (provided, state) => ({
-        ...provided,
-        width: 465,
-        borderBottom: '1px solid #fff',
-        color: state.isSelected ? '#ff65bd' : '#060c21',
-        padding: 10,
-        fontFamily: 'MainFont',
-        backgroundColor: '#fff',
-        color: '#000',
-        fontSize: 20,
-    }),
-    control: () => ({
-        // none of react-select's styles are passed to <Control />
-        width: 465,
-        height: 50,
-        display: 'flex',
-        backgroundColor: '#fff',
-        fontFamily: 'MainFont',
-        fontSize: 20,
-        borderRadius: 10,
-        alignItems: 'center',
-        color: '#000',
-        marginBottom: 20,
-        marginTop: 10,
-        paddingLeft: 5,
-    }),
-    singleValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
 
-        return { ...provided, opacity, transition };
-    }
-}       
-
-// const customStyle1 = {
-//     option: (provided, state) => ({
-//         ...provided,
-//         borderBottom: '1px solid #fff',
-//         color: state.isSelected ? '#ff65bd' : '#060c21',
-//         padding: 10,
-//         fontFamily: 'MainFont',
-//         backgroundColor: '#fff',
-//         color: '#000000',
-//         fontSize: 20,
-//     }),
-//     control: () => ({
-//         // none of react-select's styles are passed to <Control />
-//         width: 465,
-//         height: 50,
-//         display: 'flex',
-//         backgroundColor: '#fff',
-//         fontFamily: 'MainFont',
-//         fontSize: 20,
-//         borderRadius: 10,
-//         alignItems: 'center',
-//         color: '#000000',
-//         marginBottom: 20,
-//         marginTop: 10,
-//         paddingLeft: 5,
-//     }),
-//     singleValue: (provided, state) => {
-//         const opacity = state.isDisabled ? 0.5 : 1;
-//         const transition = 'opacity 300ms';
-
-//         return { ...provided, opacity, transition };
-//     }
-// }
-
-// const customStyle2 = {
-//     option: (provided, state) => ({
-//         ...provided,
-//         borderBottom: '1px solid #fff',
-//         color: state.isSelected ? '#ff65bd' : '#060c21',
-//         padding: 10,
-//         fontFamily: 'MainFont',
-//         backgroundColor: '#fff',
-//         color: '#000000',
-//         fontSize: 20,
-//     }),
-//     control: () => ({
-//         // none of react-select's styles are passed to <Control />
-//         width: 465,
-//         height: 50,
-//         display: 'flex',
-//         backgroundColor: '#fff',
-//         fontFamily: 'MainFont',
-//         fontSize: 20,
-//         borderRadius: 10,
-//         alignItems: 'center',
-//         color: '#000000',
-//         marginBottom: 10,
-//         paddingLeft: 5,
-//     }),
-//     singleValue: (provided, state) => {
-//         const opacity = state.isDisabled ? 0.5 : 1;
-//         const transition = 'opacity 300ms';
-
-//         return { ...provided, opacity, transition };
-//     }
-// }
-
-// const customStyle3 = {
-//     option: (provided, state) => ({
-//         ...provided,
-//         borderBottom: '1px solid #fff',
-//         color: state.isSelected ? '#ff65bd' : '#060c21',
-//         padding: 10,
-//         fontFamily: 'MainFont',
-//         backgroundColor: '#fff',
-//         color: '#000000',
-//         fontSize: 20,
-//     }),
-//     control: () => ({
-//         // none of react-select's styles are passed to <Control />
-//         width: 465,
-//         height: 50,
-//         display: 'flex',
-//         backgroundColor: 'white',
-//         fontFamily: 'MainFont',
-//         fontSize: 20,
-//         borderRadius: 10,
-//         alignItems: 'center',
-//         color: '#000000',
-//         marginBottom: 20,
-//         marginTop: 10,
-//         paddingLeft: 5,
-//     }),
-//     singleValue: (provided, state) => {
-//         const opacity = state.isDisabled ? 0.5 : 1;
-//         const transition = 'opacity 300ms';
-
-//         return { ...provided, opacity, transition };
-//     }
-// }
-
-// const dropdownIndicatorStyles = (base, state) => {
-//     let changes = {
-//         // all your override styles
-//         backgroundColor: 'blue',
-//     };
-//     return Object.assign(base, changes);
-// };
-
-
-
-
-
-
-
-// this.textInput = React.createRef();
-
-// componentDidMount() {
-//     this.textInput.current.focus();
-// }
 
 
 toast.configure()
@@ -202,7 +48,111 @@ function SignUp() {
 
     const Auth = useContext(AuthApi)
     const SetAuth = useContext(SetAuthApi)
+    const _Width = useContext(Width)
     const history = useHistory()
+
+    const customStyle1 = {
+        menu: (provided, state) => ({
+            ...provided,
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            borderBottom: '1px solid #fff',
+            color: state.isSelected ? '#ff65bd' : '#060c21',
+            padding: 10,
+            fontFamily: 'MainFont',
+            backgroundColor: '#fff',
+            color: '#000',
+            fontSize: 20,
+        }),
+        control: () => ({
+            // none of react-select's styles are passed to <Control />
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            height: 50,
+            display: 'flex',
+            backgroundColor: '#fff',
+            fontFamily: 'MainFont',
+            fontSize: 20,
+            borderRadius: 10,
+            alignItems: 'center',
+            color: '#000',
+            marginTop: 10,
+            paddingLeft: 5,
+        }),
+        singleValue: (provided, state) => {
+            const opacity = state.isDisabled ? 0.5 : 1;
+            const transition = 'opacity 300ms';
+    
+            return { ...provided, opacity, transition };
+        }
+    }
+    
+    const customStyle2 = {
+        menu: (provided, state) => ({
+            ...provided,
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            borderBottom: '1px solid #fff',
+            color: state.isSelected ? '#ff65bd' : '#060c21',
+            padding: 10,
+            fontFamily: 'MainFont',
+            backgroundColor: '#fff',
+            color: '#000',
+            fontSize: 20,
+        }),
+        control: () => ({
+            // none of react-select's styles are passed to <Control />
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            height: 50,
+            display: 'flex',
+            backgroundColor: '#fff',
+            fontFamily: 'MainFont',
+            fontSize: 20,
+            borderRadius: 10,
+            alignItems: 'center',
+            color: '#000',
+            marginTop: 20,
+            marginBottom: 20,
+            paddingLeft: 5,
+        }),
+        singleValue: (provided, state) => {
+            const opacity = state.isDisabled ? 0.5 : 1;
+            const transition = 'opacity 300ms';
+    
+            return { ...provided, opacity, transition };
+        }
+    }   
+    
+    const customStyle3 = {
+        menu: (provided, state) => ({
+            ...provided,
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            borderBottom: '1px solid #fff',
+            color: state.isSelected ? '#ff65bd' : '#060c21',
+            padding: 10,
+            fontFamily: '3ainFont',
+            backgroundColor: '#fff',
+            color: '#000',
+            fontSize: 20,
+        }),
+        control: () => ({
+            // none of react-select's styles are passed to <Control />
+            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            height: 50,
+            display: 'flex',
+            backgroundColor: '#fff',
+            fontFamily: 'MainFont',
+            fontSize: 20,
+            borderRadius: 10,
+            alignItems: 'center',
+            color: '#000',
+            marginBottom: 10,
+            paddingLeft: 5,
+        }),
+        singleValue: (provided, state) => {
+            const opacity = state.isDisabled ? 0.5 : 1;
+            const transition = 'opacity 300ms';
+    
+            return { ...provided, opacity, transition };
+        }
+    }   
 
     const [name, setname] = useState('')
     const [year, setyear] = useState(null)
@@ -319,9 +269,9 @@ function SignUp() {
             <Heading text="REGISTER" fontSize="35px"></Heading>
             <div className="form-class align-form" id="style-2">
                 <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
                 <input className="input-field-style" type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
                 <input className="input-field-style" type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
                 <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
