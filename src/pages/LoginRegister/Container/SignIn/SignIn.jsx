@@ -107,9 +107,8 @@ function SignIn(props) {
             </div>
             { validationError ? (<div className="validation-output">{validationError}</div>) : null
             }
-            <Link to="/forgot-password"><div className="forgot-password" >Forgot password?</div></Link>
+            <Link className="forgot-password" to="/forgot-password">Forgot password?</Link>
 
-            {_Width < 1100 && <HashLink to="/login-register#register"><div className="forgot-password" >Not Registered Yet?</div></HashLink>}
             <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
             <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
         </div>

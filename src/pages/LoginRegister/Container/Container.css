@@ -108,8 +108,8 @@ button.ghost {
     animation: toleft 1.5s linear;
     z-index: 1 !important;
     position: absolute;
-    top: 20%;
-    height: 72vh !important;
+    top: 15%;
+    height: 80vh !important;
 }
 
 .login-register-container.right-panel-active .sign-up-container {
@@ -260,12 +260,17 @@ button.ghost {
 .align-form {
     overflow-y: scroll !important;
     height: 50vh;
+    margin-top: 20px;
 }
 
 .forgot-password {
     font-family: 'MainFont', cursive !important;
-    font-size: 18px !important;
-    color: #fff !important;
+    font-size: 20px !important;
+    color: #8E32FF !important;
+}
+
+.forgot-password:hover {
+    text-decoration: none !important;
 }
 
 /* .effect-3 {
@@ -325,9 +330,10 @@ button.ghost {
 
 .validation-output {
     font-family: 'MainFont', cursive;
-    font-size: 18px;
-    color: #fff;
+    font-size: 20px !important;
+    color: red;
     letter-spacing: 0.5px;
+    margin: 10px;
 }
 
 .google-button {
