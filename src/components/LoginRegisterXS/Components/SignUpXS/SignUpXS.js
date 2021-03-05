@@ -23,7 +23,7 @@ import GoogleButton from 'react-google-button'
 //     this.textInput.current.focus();
 // }
 
-const years = [1,2,3,4];
+const years = [1, 2, 3, 4];
 
 // const customStyle1 = {
 //     option: (provided, state) => ({
@@ -163,14 +163,21 @@ const customStyle = {
     singleValue: (provided, state) => {
         const opacity = state.isDisabled ? 0.5 : 1;
         const transition = 'opacity 300ms';
-
-        return { ...provided, opacity, transition };
     }
 }
 
-const customStyle3 = {
-    option: (provided, state) => ({
+// const dropdownIndicatorStyles = (base, state) => {
+//     let changes = {
+//         // all your override styles
+//         backgroundColor: 'blue',
+//     };
+//     return Object.assign(base, changes);
+// };
+
+const customStyle = {
+    menu: (provided, state) => ({
         ...provided,
+        width: '70vw',
         borderBottom: '1px solid #fff',
         color: state.isSelected ? '#ff65bd' : '#060c21',
         padding: 10,
@@ -200,7 +207,7 @@ const customStyle3 = {
 
         return { ...provided, opacity, transition };
     }
-}    
+}
 
 toast.configure()
 function SignUpXS() {
@@ -316,7 +323,7 @@ function SignUpXS() {
     return (
         <div id="goto-sign-up" className={styles.register_form_wrapper}>
             <div className={styles.register_container}>
-               <div className={styles.register_form_container}>
+                <div className={styles.register_form_container}>
                     <input ref={textInput} className={styles.register_input_field} type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
