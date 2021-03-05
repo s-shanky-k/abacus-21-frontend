@@ -21,7 +21,7 @@
       
     font-family: NavbarMain;
     letter-spacing: 5px;
-  text-align: center;
+    text-align: center;
     font-size: 18px;
     color:#8E32FF;
     padding-top: 10px;
@@ -36,4 +36,9 @@
     color:#26a0da;
     
    
+}
+@media only screen and (max-width:540px){
+  .inner{
+    display: none;
+  }
 }

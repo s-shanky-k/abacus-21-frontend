@@ -137,15 +137,22 @@ class Homepage extends Component {
           </div>
         </section>
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles.bg}`}>
-          <div className="embed-responsive embed-responsive-21by9 m-lg-5 m-sm-1 m-xs-1 m-md-5">
-            <iframe
-              src="https://www.youtube.com/embed/aQ8rsGYszOE"
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+          <div className={`${styles.container}`}>
+            <iframe className={`${styles.responsive_iframe}`}
+              src="https://youtu.be/W0eDjWr3ATI"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+
           </div>
+          <GlowCard props={{
+                        title: "CSEA",
+                        content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
+                        img: "about-us/csea_white.png",
+                        degree: "25deg"
+                    }} />
         </div>
 
         {/* Child Class */}
