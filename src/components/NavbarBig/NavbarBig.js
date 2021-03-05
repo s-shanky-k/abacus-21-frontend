@@ -14,7 +14,7 @@ function NavbarBig({ clickLogout }) {
         <div className={`${styles._navbar}`}>
             <div className={`${styles._navbar_brand}`}>
                 <Link to="/homepage" className={`${styles._navbar_brand_link}`}>
-                    <Heading text='Abacus'/>
+                    <Heading text="Abacus'21"/>
                 </Link>
             </div>
 
