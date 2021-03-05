@@ -15,7 +15,7 @@ class AboutUs extends Component {
 
 
                 {/* Child Class */}
-                <div ref={this.myRef} id="aboutus" className={`${styles._homepage} ${styles.bg1}`} >
+                <div ref={this.myRef} id="#" className={`${styles._homepage} ${styles.bg1}`} >
 
                     <GlowCard props={{
                         title: "ABACUS",

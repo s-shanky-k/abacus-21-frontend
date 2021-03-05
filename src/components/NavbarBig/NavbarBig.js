@@ -19,19 +19,19 @@ function NavbarBig({ clickLogout }) {
             </div>
 
             <div className={`${styles._navbar_main}`}>
-                <HashLink className={`${styles._navbar_main_link}`} to="/homepage#homepage">
+                <HashLink className={`${styles._navbar_main_link}`} to="/homepage##">
                     <span className={`${styles._navbar_main_link_text}`}>Homepage</span>
                 </HashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/about-us#aboutus">
+                <HashLink className={`${styles._navbar_main_link}`} to="/about-us##">
                     <span className={`${styles._navbar_main_link_text}`}>About Us</span>
                 </HashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/events#events">
+                <HashLink className={`${styles._navbar_main_link}`} to="/events##">
                     <span className={`${styles._navbar_main_link_text}`}>Events</span>
                 </HashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/workshops#workshops">
+                <HashLink className={`${styles._navbar_main_link}`} to="/workshops##">
                     <span className={`${styles._navbar_main_link_text}`}>Workshops</span>
                 </HashLink>
 

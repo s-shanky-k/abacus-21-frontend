@@ -55,16 +55,16 @@ export default function NavbarSmall({clickLogout}) {
 
                         <ul className="abacus-list">
                             <li onClick={closeOnClick}>
-                                <HashLink to="/homepage#homepage" className="abacus-list-link">Homepage</HashLink>
+                                <HashLink to="/homepage##" className="abacus-list-link">Homepage</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <HashLink to="/about-us#aboutus" className="abacus-list-link">About Us</HashLink>
+                                <HashLink to="/about-us##" className="abacus-list-link">About Us</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <HashLink to="/events#events" className="abacus-list-link">Events</HashLink>
+                                <HashLink to="/events##" className="abacus-list-link">Events</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <HashLink to="/workshops#workshops" className="abacus-list-link">Workshops</HashLink>
+                                <HashLink to="/workshops##" className="abacus-list-link">Workshops</HashLink>
                             </li>
 
                             {/* Conditionally Rendering based on Auth */}
