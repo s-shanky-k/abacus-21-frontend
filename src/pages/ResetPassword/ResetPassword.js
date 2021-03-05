@@ -17,6 +17,7 @@ toast.configure()
 
 function ResetPassword(props) {
 
+    const [email, setemail] = useState('')
     const [pwd, setpwd] = useState('')
     const [cpwd, setcpwd] = useState('')
     const [validationError, setvalidationError] = useState('')
@@ -28,9 +29,11 @@ function ResetPassword(props) {
         let queryString = require('query-string')
         let params = queryString.parse(props.location.search)
         setqueryParams({
+            "email": params.email,
             "user": params.user,
             "key": params.key
         })
+        setemail(params.email);
         return () => {
 
         }
@@ -82,7 +85,7 @@ function ResetPassword(props) {
             <div className={styles.forgot_password_container}>
                 <Heading text="Reset Password" fontSize="35px"></Heading>
                 <div className={styles.forgot_password_form_container}>
-                    {/* <input ref={this.textInput} className={styles.forgot_password_input_field} type="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} /> */}
+                    <input className={styles.forgot_password_input_field} type="email" placeholder="Email" disabled value={email} />
                     <input className={styles.forgot_password_input_field} type="password" placeholder="New Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                     <input className={styles.forgot_password_input_field} type="password" placeholder="Confirm New Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                 </div>

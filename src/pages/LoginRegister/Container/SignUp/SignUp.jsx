@@ -4,6 +4,7 @@ import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { apiRegister, baseURL, url_gAuth } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
+import years from "../../../../assets/years.js"
 import Select from "react-select";
 import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
@@ -11,9 +12,6 @@ import { useHistory, withRouter } from 'react-router-dom';
 
 // import TextField from '@material-ui/core/TextField';
 // import Autocomplete from '@material-ui/lab/Autocomplete';
-
-import VirtualizedSelect from 'react-virtualized-select'
-
 // import 'react-select/dist/react-select.css'
 // import 'react-virtualized/styles.css'
 // import 'react-virtualized-select/styles.css'
@@ -23,7 +21,6 @@ import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
 
-const years = [1,2,3,4];
 
 // const cusStyle = {
 //     width: 465,
@@ -216,7 +213,6 @@ function SignUp() {
     const [pwd, setpwd] = useState('')
     const [cpwd, setcpwd] = useState('')
     const [validationError, setvalidationError] = useState('')
-    // const [inputValue, setInputValue] = useState('');
 
 
     const giveFocus = () => {
@@ -255,7 +251,6 @@ function SignUp() {
         else if (!year) {
             validationError = 'Year field cannot be blank'
         }
-
 
         if (!validationError && (cpwd !== pwd)) {
             validationError = 'Passwords do not match';
@@ -309,8 +304,8 @@ function SignUp() {
         setcollege(selectedOption);
     }
 
-    const handleYearChange = (selectValue) => {
-        setyear(selectValue.value);
+    const handleYearChange = (selectedOption) => {
+        setyear(selectedOption.value);
     }
 
     const clickGoogleIcon = () => {
@@ -324,25 +319,6 @@ function SignUp() {
             <Heading text="REGISTER" fontSize="35px"></Heading>
             <div className="form-class align-form" id="style-2">
                 <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                {/* <Autocomplete
-        value={year}
-        onChange={(event, newValue) => {
-          setyear(newValue);
-        }}
-        inputValue={inputValue}
-        onInputChange={(event, newInputValue) => {
-          setInputValue(newInputValue);
-        }}
-        options={years}
-        style={{ width: 300, backgroundColor: '#fff', color: '#000' }}
-        renderInput={(params) => <TextField {...params} label="Controllable" variant="outlined" />}
-      /> */}
-                {/* <VirtualizedSelect
-                    options={years.map(opt => ({ label: opt, value: opt }))}
-                    onChange= {handleYearChange}
-                    value={year}
-                    style={cusStyle}
-                /> */}
                 <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                 <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
                 <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />

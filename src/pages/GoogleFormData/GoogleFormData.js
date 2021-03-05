@@ -5,86 +5,12 @@ import NeonButton from "../../components/NeonButton/NeonButton.js"
 import Select from "react-select";
 import colleges from "../../assets/colleges"
 import departments from "../../assets/departments"
+import years from "../../assets/years"
 import Cookies from "js-cookie"
-import { AuthApi, SetAuthApi } from "../../App"
+import { AuthApi, SetAuthApi, Width } from "../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 import { apiGoogleDataForm } from "../../api/api"
 
-
-const customStyle1 = {
-    option: (provided, state) => ({
-        ...provided,
-        borderBottom: '1px solid #fff',
-        color: state.isSelected ? '#ff65bd' : '#060c21',
-        padding: 10,
-        fontFamily: 'MainFont',
-        backgroundColor: 'black',
-        color: '#fff',
-        fontSize: 20,
-    }),
-    control: () => ({
-        // none of react-select's styles are passed to <Control />
-        width: 450,
-        height: 50,
-        display: 'flex',
-        backgroundColor: 'black',
-        fontFamily: 'MainFont',
-        fontSize: 20,
-        borderRadius: 20,
-        alignItems: 'center',
-        color: '#fff',
-        marginBottom: 20,
-        marginTop: 10,
-        paddingLeft: 5,
-    }),
-    singleValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
-
-        return { ...provided, opacity, transition };
-    }
-}
-
-const customStyle2 = {
-    option: (provided, state) => ({
-        ...provided,
-        borderBottom: '1px solid #fff',
-        color: state.isSelected ? '#ff65bd' : '#060c21',
-        padding: 10,
-        fontFamily: 'MainFont',
-        backgroundColor: 'black',
-        color: '#fff',
-        fontSize: 20,
-    }),
-    control: () => ({
-        // none of react-select's styles are passed to <Control />
-        width: 450,
-        height: 50,
-        display: 'flex',
-        backgroundColor: 'black',
-        fontFamily: 'MainFont',
-        fontSize: 20,
-        borderRadius: 20,
-        alignItems: 'center',
-        color: 'red',
-        marginBottom: 10,
-        paddingLeft: 5,
-    }),
-    singleValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
-
-        return { ...provided, opacity, transition };
-    }
-}
-
-const dropdownIndicatorStyles = (base, state) => {
-    let changes = {
-        // all your override styles
-        backgroundColor: 'blue',
-    };
-    return Object.assign(base, changes);
-};
 
 function GoogleFormData(props) {
 
@@ -94,12 +20,13 @@ function GoogleFormData(props) {
     const Auth = useContext(AuthApi)
     const SetAuth = useContext(SetAuthApi)
     const history = useHistory()
+    const _Width = useContext(Width)
 
-    const [name, setname] = useState('')
-    const [year, setyear] = useState(1)
+    const [name, setname] = useState()
+    const [year, setyear] = useState(null)
     const [dept, setdept] = useState(null)
     const [college, setcollege] = useState(null)
-    const [phone, setphone] = useState('')
+    const [phone, setphone] = useState(null)
     const [queryParams, setqueryParams] = useState({})
     const [validationError, setvalidationError] = useState('')
 
@@ -113,12 +40,80 @@ function GoogleFormData(props) {
             "name": params.name,
             "token": params.token
         })
-
+        setname(params.name);
     }, [])
 
     const giveFocus = () => {
         this.textInput.current.focus();
     }
+
+    const customStyle1 = {
+        menu: (provided, state) => ({
+            ...provided,
+            width: _Width < 1100 ? '70vw' : '30vw',
+            borderBottom: '1px solid #fff',
+            color: state.isSelected ? '#ff65bd' : '#060c21',
+            padding: 10,
+            fontFamily: 'MainFont',
+            backgroundColor: '#fff',
+            color: '#000',
+            fontSize: 20,
+        }),
+        control: () => ({
+            // none of react-select's styles are passed to <Control />
+            width: _Width < 1100 ? '70vw' : '30vw',
+            height: 50,
+            display: 'flex',
+            backgroundColor: '#fff',
+            fontFamily: 'MainFont',
+            fontSize: 20,
+            borderRadius: 10,
+            alignItems: 'center',
+            color: '#000',
+            paddingLeft: 5,
+        }),
+        singleValue: (provided, state) => {
+            const opacity = state.isDisabled ? 0.5 : 1;
+            const transition = 'opacity 300ms';
+    
+            return { ...provided, opacity, transition };
+        }
+    }
+
+    const customStyle2 = {
+        menu: (provided, state) => ({
+            ...provided,
+            width: _Width < 1100 ? '70vw' : '30vw',
+            borderBottom: '1px solid #fff',
+            color: state.isSelected ? '#ff65bd' : '#060c21',
+            padding: 10,
+            fontFamily: 'MainFont',
+            backgroundColor: '#fff',
+            color: '#000',
+            fontSize: 20,
+        }),
+        control: () => ({
+            // none of react-select's styles are passed to <Control />
+            width: _Width < 1100 ? '70vw' : '30vw',
+            height: 50,
+            display: 'flex',
+            backgroundColor: '#fff',
+            fontFamily: 'MainFont',
+            fontSize: 20,
+            borderRadius: 10,
+            alignItems: 'center',
+            color: '#000',
+            paddingLeft: 5,
+            margin: 25,
+        }),
+        singleValue: (provided, state) => {
+            const opacity = state.isDisabled ? 0.5 : 1;
+            const transition = 'opacity 300ms';
+    
+            return { ...provided, opacity, transition };
+        }
+    }   
+    
 
     const validate = () => {
         let validationError = '';
@@ -126,15 +121,20 @@ function GoogleFormData(props) {
         if (!name) {
             validationError = 'Name field cannot be blank';
         }
-        else {
-            if (!phone) {
-                validationError = 'Phone field cannot be blank';
-            }
-            else {
-                if (phone < 1000000000 || phone > 9999999999) {
-                    validationError = 'Invalid Phone Number';
-                }
-            }
+        else if (!year) {
+            validationError = 'Year field cannot be blank';
+        }
+        else if (!dept) {
+            validationError = 'Department field cannot be blank';
+        }
+        else if(!college) {
+            validationError = 'College field cannot be blank'
+        }
+        else if(!phone) {
+            validationError = 'Phone field cannot be blank';
+        }
+        else if (phone < 1000000000 || phone > 9999999999) {
+            validationError = 'Invalid Phone Number';
         }
 
         if (validationError) {
@@ -175,15 +175,19 @@ function GoogleFormData(props) {
         setcollege(selectedOption);
     }
 
+    const handleYearChange = (selectedOption) => {
+        setyear(selectedOption.value);
+    }
+
     return (
         <div className={styles.google_form_data_form_wrapper}>
             <div className={styles.google_form_data_container}>
                 <Heading text="Register" fontSize="35px"></Heading>
                 <div className={styles.google_form_data_form_container}>
                     <input className={styles.google_form_data_input_field} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                    <input className={styles.google_form_data_input_field} type="text" placeholder="Year" required value={year} onChange={(e) => setyear(e.target.value)} />
-                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
-                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
                     <input className={styles.google_form_data_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
                 </div>
                 {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}

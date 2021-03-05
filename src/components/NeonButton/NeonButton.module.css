@@ -181,11 +181,11 @@
  .a_n2 {
      z-index: -999 !important;
  }
- @media only screen and (max-width:1024px){
+ @media only screen and (max-width:1100px){
     .a_n3{
     background: var(--color);
      color: #fff;
-     box-shadow: 0px 0px 10px var(--color), 0px 0px 40px var(--color), 0px 0px 80px var(--color);
+     box-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 20px var(--color);
      transition-delay: 0.2s;
     }
     .a_n3 span:nth-child(1) {
