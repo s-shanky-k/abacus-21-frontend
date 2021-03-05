@@ -27,10 +27,10 @@ function GlowCardSimple({ props }) {
                                 ? (props.list === undefined) 
                                     ? (props.contact === undefined) 
                                         ? props.rounds.roundDetails.map((round,index)=>
-                                            <p key={index + 1} className={styles.glowCardName}>{round.title} -<span style={{color:'#fff'}}>{round.description}</span></p>
+                                            <p key={index + 1} className={styles.glowCardName}>{round.title} - <span style={{color:'#fff'}}>{round.description}</span></p>
                                         )
                                         : props.contact.map((person, index) =>
-                                            <p key={index + 1} className={styles.glowCardName}>{person.name} -<i class="fa fa-phone"></i><span style={{color:'#fff'}}>{person.mobile}</span></p>
+                                            <p key={index + 1} className={styles.glowCardName}>{person.name} - <i class="fa fa-phone"></i> <span style={{color:'#fff'}}>{person.mobile}</span></p>
                                         )
                                     : props.list.map((item, index) =>
                                             <p key={index + 1} className={styles.dateTime}>{item}</p>
