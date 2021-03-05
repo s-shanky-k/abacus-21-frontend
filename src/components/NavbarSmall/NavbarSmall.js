@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
 import "./NavbarSmall.css"
 import { AuthApi } from "../../App"
-
+import Heading from "../Heading/Heading"
 
 // this.navLinkRef1 = React.createRef()
 // this.navLinkRef2 = React.createRef()
@@ -46,7 +46,8 @@ export default function NavbarSmall({clickLogout}) {
                         <button className="abacus-nav-btn abacus-close-btn" onClick={clickCloseBtn}><i className="fa fa-times"></i></button>
 
                         {/* <img className="netflix-logo" src="https://logos-download.com/wp-content/uploads/2016/03/Netflix_logo.png" alt="Netflix Logo" /> */}
-                        <p className="abacus-logo">Abacus</p>
+                        <p className="abacus-logo">
+                            <Heading text="Abacus" /></p>
 
                         <ul className="abacus-list">
                             <li>
