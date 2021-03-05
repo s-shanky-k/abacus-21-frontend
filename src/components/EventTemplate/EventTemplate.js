@@ -66,7 +66,7 @@ function EventTemplate({ props }) {
       let response = await apiGetRegistrations({ "token": token })
       for (let i = 0; i < response.length; i++) {
         // Check if registered
-        if (response[i].purpose === "EVENTS") {
+        if (response[i].purpose === props.purpose) {
           setregistered(true)
           // Paid
           if (response[i].status === "Credit") {
@@ -104,13 +104,13 @@ function EventTemplate({ props }) {
   // Payment
   const paymentConfirmation = async () => {
     setloading(true)
-    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": "EVENTS" },setloading)
+    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.purpose }, setloading)
 
   }
 
   // Register
   const register = () => {
-    _register(history, setregistered, { "purpose": "EVENTS" });
+    _register(history, setregistered, { "purpose": props.purpose });
   }
 
   return (
@@ -195,17 +195,19 @@ function EventTemplate({ props }) {
                   rounds: props.rounds,
                 }} />
               </div>
-              <div className="my-5">
-                {
-                  !registered ?
-                    (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
-                    :
-                    (!paid ?
-                      (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+              {props.registration &&
+                <div className="my-5">
+                  {
+                    !registered ?
+                      (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
                       :
-                      <p style={{ color: "white" }}>Already Paid</p>)
-                }
-              </div>
+                      (!paid ?
+                        (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                        :
+                        <p style={{ color: "white" }}>Already Paid</p>)
+                  }
+                </div>
+              }
 
 
               {/* Modal */}
@@ -213,7 +215,7 @@ function EventTemplate({ props }) {
                 content: {
                   backgroundColor: "#060c21",
                   zIndex: '999',
-                  overflowY:'hidden'
+                  overflowY: 'hidden'
                 },
                 overlay: {
                   backgroundColor: "black",

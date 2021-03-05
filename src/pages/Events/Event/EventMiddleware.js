@@ -30,7 +30,7 @@ export default function Event() {
     }
 
     return (
-        <EventTemplate props={data} />
+        <EventTemplate props={data}  />
         // <EventTemplate props={{
         //     name: "Tenet",
         //     refName: "tenet",

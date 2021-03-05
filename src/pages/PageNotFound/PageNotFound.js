@@ -1,8 +1,15 @@
 import React from 'react'
 import styles from "./PageNotFound.module.css"
 import NeonButton from "../../components/NeonButton/NeonButton"
+import { useHistory } from "react-router-dom";
 
 function PageNotFound() {
+    const history = useHistory()
+
+    const redirect = () => {
+        history.push("/homepage")
+    }
+
     return (
         <div className={`${styles._404_wrapper}`}>
             <div className={`${styles._404}`}>
@@ -18,7 +25,7 @@ function PageNotFound() {
                     </div>
                     <div className={`${styles._404_text_addi}`}>
                         <p>The page you requested could not be found.</p>
-                        <NeonButton props={{ text: "Homepage", href: "/homepage", color: "#26a0da" }} />
+                        <NeonButton props={{ text: "Homepage", color: "#26a0da", onClick: redirect }} />
                     </div>
                 </div>
             </div>

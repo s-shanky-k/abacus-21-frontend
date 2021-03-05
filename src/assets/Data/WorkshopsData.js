@@ -48,7 +48,8 @@ export const Workshops = {
                 },
             ]
         },
-        registration:true
+        registration: true,
+        purpose: "PLACEMENTS"
     },
 
     // Cyber Security
@@ -99,7 +100,8 @@ export const Workshops = {
                 },
             ]
         },
-        registration:true
+        registration: true,
+        purpose: "NETSEC"
     },
 
     // Cloud Computing
@@ -150,6 +152,7 @@ export const Workshops = {
                 },
             ]
         },
-        registration:true
+        registration: true,
+        purpose: "CLOUD"
     },
 }

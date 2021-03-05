@@ -56,6 +56,13 @@
     border-radius: 1.5rem;
 }
 
+
+.date {
+    color: white !important;
+    font-size: 30px !important;
+}
+
+
 @media only screen and (max-width: 940px) {
     ._loader_sign {
         font-size: 100px;
@@ -67,6 +74,10 @@
         font-size: 60px;
         /* margin-bottom: 50px !important; */
     }
+
+    .date {
+        font-size: 25px !important;
+    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -74,6 +85,10 @@
         font-size: 50px;
         padding: 20px;
         margin-bottom: 100px;
+    }
+
+    .date {
+        font-size: 20px !important;
     }
 
 }
@@ -353,7 +368,3 @@
     position: absolute !important;
 } */
 
-.date {
-    color: white !important;
-    font-size: 30px !important;
-}

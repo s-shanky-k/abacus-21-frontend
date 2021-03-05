@@ -5,12 +5,6 @@ import "./NavbarSmall.css"
 import { AuthApi } from "../../App"
 import Heading from "../Heading/Heading"
 
-// this.navLinkRef1 = React.createRef()
-// this.navLinkRef2 = React.createRef()
-// this.navLinkRef3 = React.createRef()
-// this.clickOpenBtn = this.clickOpenBtn.bind(this)
-// this.clickCloseBtn = this.clickCloseBtn.bind(this)
-
 
 export default function NavbarSmall({clickLogout}) {
 
@@ -51,7 +45,7 @@ export default function NavbarSmall({clickLogout}) {
 
                         {/* <img className="netflix-logo" src="https://logos-download.com/wp-content/uploads/2016/03/Netflix_logo.png" alt="Netflix Logo" /> */}
                         <div className="abacus-logo">
-                            <Heading text="Abacus" /></div>
+                            <Heading text="Abacus'21" /></div>
 
                         <ul className="abacus-list">
                             <li onClick={closeOnClick}>

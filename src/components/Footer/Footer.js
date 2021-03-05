@@ -8,7 +8,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 export default class Footer extends Component {
     render() {
         return (
-            <div className={`${styles._footer_container}`}>
+            <div className={this.props.scroll_snap ? `${styles._footer_container_scroll_snap}` : `${styles._footer_container}`}>
                 <div className={`${styles._footer_icons_div}`}>
                    <a href="https://instagram.com/csea_ceg?igshid=1ez05lkwkupnx"> <InstagramIcon className={`${styles._icon}` } /></a>
                     {/*<TwitterIcon className={`${styles._icon}`} />*/}
@@ -22,4 +22,8 @@ export default class Footer extends Component {
         )
     }
 }
+
+Footer.defaultProps = {
+    scroll_snap: true,
+};
 
