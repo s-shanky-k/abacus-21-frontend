@@ -12,6 +12,7 @@ import Modal from "react-modal"
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
+import Footer from "../Footer/Footer"
 
 /* 
 <EventTemplate props = {name:"Tenet",
@@ -265,7 +266,7 @@ function EventTemplate({ props }) {
           </div>
         </>
       }
-
+    <Footer />
     </>
   );
 }

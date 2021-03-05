@@ -120,10 +120,12 @@
     color: grey !important;
     text-decoration: none;
     text-transform: uppercase;
+    
 }
 
 .abacus-list-link:hover {
     color: #ff2483 !important;
+    text-decoration: none;
 }
 @keyframes flicker {
     from {

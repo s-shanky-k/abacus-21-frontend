@@ -35,6 +35,10 @@
     font-size: 25px;
 }
 
+._navbar_brand_link:hover {
+    text-decoration: none;
+}
+
 
 ._navbar_main {
     flex: 1;

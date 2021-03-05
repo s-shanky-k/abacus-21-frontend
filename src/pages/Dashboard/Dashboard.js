@@ -7,6 +7,7 @@ import MainTableDiv from "../../components/TableComponents/MainTableDiv/MainTabl
 import { apiGetRegistrations } from "../../api/api"
 import Cookies from "js-cookie"
 import Load from "../../components/Load/Load"
+import Footer from "../../components/Footer/Footer"
 
 export default class Dashboard extends Component {
 
@@ -86,7 +87,7 @@ export default class Dashboard extends Component {
 
 
                 </div>
-
+            <Footer />              
             </>
         )
     }
