@@ -96,7 +96,6 @@ function SignInXS() {
     return (
         <div className={styles.login_form_wrapper}>
             <div className={styles.login_container}>
-                <Heading text="LOGIN" fontSize="35px"></Heading>
                 <div className={styles.login_form_container}>
                     <input className={styles.login_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     <input className={styles.login_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />

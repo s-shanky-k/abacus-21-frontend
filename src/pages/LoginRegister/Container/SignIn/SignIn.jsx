@@ -65,7 +65,18 @@ function SignIn(props) {
         if (validate()) {
             const response = await apiSignin({ email: email, pwd: pwd })
             if (response.auth) {
+                let obj = {
+                    name: response.name,
+                    abacusid: response.abacusid,
+                    email: response.email,
+                    phone: response.phone,
+                    college: response.college,
+                    dept: response.dept,
+                    year: response.year
+                }
+                let obj_str = JSON.stringify(obj)
                 Cookies.set("token", response.token)
+                Cookies.set("details", obj_str)
                 SetAuth(true)
                 toast.success("Login Successful", {
                     position: toast.POSITION.BOTTOM_CENTER

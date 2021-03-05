@@ -3,7 +3,7 @@ import { Link, useHistory, withRouter } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
 import styles from "./NavbarBig.module.css"
 import { AuthApi } from "../../App"
-
+import Heading from "../Heading/Heading"
 
 function NavbarBig({ clickLogout }) {
 
@@ -13,8 +13,8 @@ function NavbarBig({ clickLogout }) {
     return (
         <div className={`${styles._navbar}`}>
             <div className={`${styles._navbar_brand}`}>
-                <Link className={`${styles._navbar_brand_link}`}>
-                    Abacus
+                <Link to="/homepage" className={`${styles._navbar_brand_link}`}>
+                    <Heading text='Abacus'/>
                 </Link>
             </div>
 
@@ -40,9 +40,9 @@ function NavbarBig({ clickLogout }) {
                     (<><Link className={`${styles._navbar_main_link}`} to="/dashboard">
                         <span className={`${styles._navbar_main_link_text}`}>Dashboard</span>
                     </Link>
-                        <Link className={`${styles._navbar_main_link}`} onClick={clickLogout}>
-                            <span className={`${styles._navbar_main_link_text}`}>Logout</span>
-                        </Link></>
+                    <Link className={`${styles._navbar_main_link}`} onClick={clickLogout}>
+                        <span className={`${styles._navbar_main_link_text}`}>Logout</span>
+                    </Link></>
                     )
                     :
                     (<Link className={`${styles._navbar_main_link}`} to="/login-register">

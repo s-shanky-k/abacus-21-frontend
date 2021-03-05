@@ -7,6 +7,22 @@
     scroll-snap-align: start;
 }
 
+.registrationDetails_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.profile_wrapper {
+    display: flex;
+    flex-basis: 30%;
+}
+
+.data_display_div {
+    display: flex;
+    flex-direction: column;
+}
+
 ._homepage {
     min-height: 100vh !important;
     width: 100% !important;
@@ -17,9 +33,20 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    ._homepage {
+    ._dashboard_wrapper {
         height: fit-content;
         scroll-snap-align: none;
+        flex-direction: column;
+        min-height: fit-content !important;
+        padding-top: 50px;
+    }
+
+    .registrationDetails_wrapper {
+        padding-top: 50px;
+    }
+
+    .data_display_div {
+        text-align: center;
     }
 }
 
@@ -37,15 +64,4 @@
     justify-content: space-evenly;
     scroll-snap-align: start;
     flex-direction: row;
-}
-
-._dashboard_display_template{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 40%;
-}
-
-.profile_wrapper {
-    display: flex;
-    flex-basis: 40%;
 }

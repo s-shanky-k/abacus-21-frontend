@@ -12,6 +12,8 @@ import Modal from "react-modal"
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
+import Footer from "../Footer/Footer"
+import { _register, _paymentConfirmation } from "../../api/payment"
 
 /* 
 <EventTemplate props = {name:"Tenet",
@@ -101,55 +103,13 @@ function EventTemplate({ props }) {
 
   // Payment
   const paymentConfirmation = async () => {
-    if (Cookies.get("token") === undefined) {
-      toast.success("Login First", {
-        position: toast.POSITION.BOTTOM_CENTER
-      })
-      history.push("/login-register")
-    }
-    else {
-      let token = Cookies.get("token")
-      let response = await apiPayment({
-        "event": "EVENTS",
-        "token": token
-      })
-
-      if (response.status === 200) {
-        setpaymentDetails(response.data)
-        toggleModal()
-      }
-    }
+    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": "EVENTS" })
 
   }
 
-  const register = async () => {
-    // Redirect to Login Page
-    if (Cookies.get("token") === undefined) {
-      toast.success("Login First", {
-        position: toast.POSITION.BOTTOM_CENTER
-      })
-      history.push("/login-register")
-    }
-    // Register Fun
-    else {
-      let token = Cookies.get("token")
-      let response = await apiRegisterEvent({
-        "event": "EVENTS",
-        "token": token
-      })
-
-      if (response.status === 200) {
-        toast.success("Registration Successfull", {
-          position: toast.POSITION.BOTTOM_CENTER
-        })
-        setregistered(true)
-      }
-      else {
-        toast.success(response.message, {
-          position: toast.POSITION.BOTTOM_CENTER
-        })
-      }
-    }
+  // Register
+  const register = () => {
+    _register(history, setregistered, { "purpose": "EVENTS" });
   }
 
   return (
@@ -160,7 +120,7 @@ function EventTemplate({ props }) {
           {/*About Event*/}
           <div
             className={`${styles._homepage} ${styles.bg1}`}
-           
+
           >
             <div className={`${styles._about_event}`}>
               <div className={`${styles._glowCardDiv}`}>
@@ -181,7 +141,7 @@ function EventTemplate({ props }) {
           {/* Contact-Sponsor-Platform */}
           <div
             className={`${styles._homepage} ${styles.bg}`}
-           
+
           >
             <div className={`${styles._about_event}`}>
               <div className={`${styles._child}`}>
@@ -207,14 +167,14 @@ function EventTemplate({ props }) {
           {/* Rules */}
           <div
             className={`${styles._homepage} ${styles.bg1}`}
-           
+
           >
             <div className={`${styles._rulesDivContainer}`}>
               <div className={`${styles._rulesDiv}`}>
                 <GlowCard props={{
                   title: "Rules",
                   list: props.rules,
-                  img: "events/" + `${props.refName}` + `_rules.svg`,
+                  img: "events/rules.svg",
                   textAlign: 'left'
                 }} />
               </div>
@@ -225,7 +185,7 @@ function EventTemplate({ props }) {
           {/* Rounds */}
           <div
             className={`${styles._homepage} ${styles.bg}`}
-            
+
           >
             <div className={`${styles._rulesDivContainer1}`}>
               <div className={`${styles._rulesDiv1}`}>
@@ -234,15 +194,17 @@ function EventTemplate({ props }) {
                   rounds: props.rounds,
                 }} />
               </div>
-              {
-                !registered ?
-                  (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
-                  :
-                  (!paid ?
-                    (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+              <div className="my-5">
+                {
+                  !registered ?
+                    (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
                     :
-                    <p style={{ color: "white" }}>Already Paid</p>)
-              }
+                    (!paid ?
+                      (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                      :
+                      <p style={{ color: "white" }}>Already Paid</p>)
+                }
+              </div>
 
 
               {/* Modal */}
@@ -263,6 +225,7 @@ function EventTemplate({ props }) {
               </div>
             </div>
           </div>
+          <Footer />
         </>
       }
 

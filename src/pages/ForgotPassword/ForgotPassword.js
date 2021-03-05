@@ -8,7 +8,7 @@ import { apiForgotPassword } from "../../api/api"
 import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
-
+import Footer from "../../components/Footer/Footer"
 
 
 // this.textInput = React.createRef();
@@ -64,6 +64,7 @@ function ForgotPassword(props) {
     }
 
     return (
+        <>
         <div className={styles.forgot_password_form_wrapper}>
             <div className={styles.forgot_password_container}>
                 <Heading text="Forgot Password" fontSize="35px"></Heading>
@@ -74,6 +75,8 @@ function ForgotPassword(props) {
                 <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />
             </div>
         </div>
+        <Footer />
+        </>
     );
 }
 
