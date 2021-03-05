@@ -11,8 +11,8 @@
 }
 
 @font-face {
-    font-family: clip;
-    src: url(./Clip.ttf);
+    font-family: NeonFont;
+    src: url(./Clip.woff2);
 }
 @media only screen and (max-width: 1300px) {
     ._homepage {
@@ -35,7 +35,7 @@
             transparent); */
     /* transform: translate(-50%, -50%); */
     letter-spacing: 2;
-    font-family: "Clip";
+    font-family: NeonFont;
     text-transform: uppercase;
     font-size: 150px;
     color: #ffe6ff;
