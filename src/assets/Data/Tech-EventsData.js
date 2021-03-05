@@ -14,7 +14,7 @@ export const TechEvents = {
         contact: [
             {
                 name: "Arshak Shan ",
-                mobile:"  8129583239"
+                mobile: "  8129583239"
             },
             {
                 name: "Shruthi S ",
@@ -131,7 +131,7 @@ export const TechEvents = {
         ],
 
         contact: [
-            
+
         ],
 
         sponsor: "",
@@ -163,6 +163,61 @@ export const TechEvents = {
                 },
             ]
         }
+    },
+
+    // X-Domain Combat
+    "x-domain-combat": {
+        name: "X-Domain Combat",
+        refName: "x-domain-combat",
+        about: `X - Domain Combat mainly focuses on the sound knowledge and solid familiarity of the participants in 3 known topics DBMS, Networks and Operating Systems.`,
+
+        dateTime: [
+
+        ],
+
+        contact: [
+            {
+                name: "Aparna G",
+                mobile: "8903570838"
+            },
+            {
+                name: "Nidya M",
+                mobile: "9003854208"
+            },
+            {
+                name: "Thivyha Siv",
+                mobile: "6383645287"
+            },
+            {
+                name: "Sarikaa S",
+                mobile: "9487433066"
+            },
+        ],
+
+        sponsor: "",
+
+        rules: [
+            "This event allows only individual participants.",
+            "The participants are not allowed to use any other sources. They can access only the exam platform and the MS Teams meet.",
+            "Participants involved in any kind of malpractice will be disqualified immediately.",
+            "Top performing participants in the first round will qualify for the final round.",
+            "Decisions made by the administrators will be final",
+        ],
+
+        rounds: {
+            number: 2,
+            roundDetails: [
+                {
+                    title: "Prelims",
+                    description: "Participants will have 30 minutes to steer through the quiz and solve the 45 questions. The questions will be MCQ based on the 3 topics."
+                },
+                {
+                    title: "Finals",
+                    description: "Only those participants who cleared the cut-off in the Prelims round are qualified. This written round consists of 25 questions to answer the questions in 45 minutes which requires a logical thought process to solve the vexed questions and crunchers."
+                },
+            ]
+        }
     }
+    
 }
 

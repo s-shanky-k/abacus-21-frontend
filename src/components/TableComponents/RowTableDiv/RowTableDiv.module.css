@@ -6,7 +6,33 @@
 
 .cellTableDiv {
     font-size: 24px;
-	color: #fff;
-	font-family: 'Iceland';
+    color: #fff;
+    font-family: 'Iceland';
     text-align: left;
+    flex-basis: 33%;
+}
+
+.title {
+    color: #8E32FF;
+}
+
+.hrBreak {
+    color: #8E32FF;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .rowTableDiv {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .cellTableDiv {
+        text-align: center;
+    }
+
+    .wordBreak {
+        word-wrap: break-word !important;
+    }
 }

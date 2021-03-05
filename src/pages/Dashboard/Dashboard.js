@@ -1,6 +1,6 @@
-import React, { Component, useEffect, useRef, useState } from 'react'
+import { Component, useEffect, useRef, useState, useCallback } from 'react'
 import styles from "./Dashboard.module.css"
-import { useLocation, withRouter } from 'react-router-dom'
+import { useHistory, useLocation, withRouter } from 'react-router-dom'
 import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import Heading from "../../components/Heading/Heading"
 import MainTableDiv from "../../components/TableComponents/MainTableDiv/MainTableDiv"
@@ -9,100 +9,122 @@ import Cookies from "js-cookie"
 import Load from "../../components/Load/Load"
 import Footer from "../../components/Footer/Footer"
 
-class Dashboard extends Component {
+
+import React from 'react'
+
+function Dashboard() {
+
+    const history = useHistory()
+
+    const [details, setdetails] = useState({})
 
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            response: [],
-            details: {},
-            loading: true
-        }
+    useEffect(() => {
 
-    }
-
-
-    fetchRegistrations = async () => {
-        let token = Cookies.get("token")
-        let details = JSON.parse(Cookies.get("details"))
-
-        this.setState({ ...this.state, details: details })
-        const response = await apiGetRegistrations({ "token": token })
-        this.setState({ ...this.state, response: response }, () => {
-
-        })
-        this.setState({ loading: false })
-    }
-
-    componentDidMount() {
         if (Cookies.get("token") === undefined) {
-            this.props.history.push("/login-register")
+            history.push("/login-register")
         }
         else {
-            this.fetchRegistrations();
+            let token = Cookies.get("token")
+            let details = JSON.parse(Cookies.get("details"))
+            setdetails(details)
         }
-    }
+        return () => {
 
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-
-
-    render() {
-
-        const events = [{ "title": 'All', "purpose": "EVENTS" }]
-        const workshops = [{ "title": 'Cloud', "purpose": "CLOUD" }, { "title": 'Security', "purpose": "NETSEC" }, { "title": 'Placements', "purpose": "DUMMY" }]
-        const hackathon = [{ "title": 'Hackathon', "purpose": "HACKATHON" }]
-
-        if (this.state.loading) {
-            return <Load />
         }
+    }, [])
 
-        return (
-            <>
-                <div className={styles._dashboard_wrapper}>
+    return (
+        <>
+            <div className={styles._dashboard_wrapper}>
 
-                    {/* Profile */}
-                    < div className={styles.profile_wrapper}>
-                        <DashboardCard props={{ title: "Profile", details: this.state.details }} />
-                    </div>
-
-                    {this.state.response !== [] &&
-                        <>
-                            {/* Registrations */}
-                            <div className={styles._dashboard_display_template}>
-                                {/* Events */}
-                                <div className={styles.data_display_div}>
-                                    <Heading text="Events" fontSize="30px" />
-                                    <MainTableDiv data={events} registrationDetails={this.state.response} ></MainTableDiv>
-                                </div>
-
-                                {/* Workshops */}
-                                <div className={styles.data_display_div}>
-                                    <Heading text="Workshops" fontSize="30px" />
-                                    <MainTableDiv data={workshops} registrationDetails={this.state.response} ></MainTableDiv>
-                                </div>
-
-                                {/* Hackathon */}
-                                <div className={styles.data_display_div}>
-                                    <Heading text="Hackathon" fontSize="30px" />
-                                    <MainTableDiv data={hackathon} registrationDetails={this.state.response} ></MainTableDiv>
-                                </div>
-
-
-                                {/* <MainTableDiv data={this.state.response}></MainTableDiv> */}
-
-                            </div>
-                        </>
-                    }
-
-
+                {/* Profile */}
+                < div className={styles.profile_wrapper}>
+                    <DashboardCard props={{ title: "Profile", details: details }} />
                 </div>
-            <Footer />              
-            </>
-        )
-    }
+
+                <div className={styles.registrationDetails_wrapper}>
+                    <RegistrationDetails />
+                </div>
+            </div>
+
+        </>
+    )
 }
 
-export default withRouter(Dashboard)
+export const RegistrationDetails = () => {
+
+    const events = [{ "title": 'All', "purpose": "EVENTS" }]
+    const workshops = [{ "title": 'Cloud', "purpose": "CLOUD" }, { "title": 'Security', "purpose": "NETSEC" }, { "title": 'Placements', "purpose": "DUMMY" }]
+    const hackathon = [{ "title": 'Hackathon', "purpose": "HACKATHON" }]
+
+    const useForceUpdate = () => {
+        const [value, setValue] = useState(0); // integer state
+        return () => setValue(value => value + 1); // update the state to force render
+    }
+
+    const [loading, setloading] = useState(true)
+    const [response, setresponse] = useState([])
+    const [rerender, setrerender] = useState()
+
+    const forceUpdate = useForceUpdate();
+
+
+
+    const history = useHistory()
+
+    useEffect(() => {
+        const fetchRegistrations = async () => {
+            let token = Cookies.get("token")
+            const response = await apiGetRegistrations({ "token": token })
+            setresponse(response)
+            setloading(false)
+        }
+
+        if (Cookies.get("token") === undefined) {
+            history.push("/login-register")
+        }
+        else {
+            fetchRegistrations();
+        }
+
+        return () => {
+
+        }
+    }, [])
+
+    return (
+        <>
+
+            {/* Events */}
+            <div className={styles.data_display_div}>
+
+                <Heading text="Events" fontSize="30px" />
+
+                <MainTableDiv data={events} registrationDetails={response} forceUpdate={forceUpdate}></MainTableDiv>
+            </div>
+
+            {/* Workshops */}
+            <div className={styles.data_display_div}>
+
+                <Heading text="Workshops" fontSize="30px" />
+
+                <MainTableDiv data={workshops} registrationDetails={response} forceUpdate={forceUpdate}></MainTableDiv>
+            </div>
+
+            {/* Hackathon */}
+            <div className={styles.data_display_div}>
+
+                <Heading text="Hackathon" fontSize="30px" />
+
+                <MainTableDiv data={hackathon} registrationDetails={response} forceUpdate={forceUpdate}></MainTableDiv>
+            </div>
+
+
+        </>
+    )
+
+}
+
+export default Dashboard
+

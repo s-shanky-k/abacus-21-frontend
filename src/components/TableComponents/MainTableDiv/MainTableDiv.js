@@ -13,11 +13,9 @@ export class MainTableDiv extends Component {
     }
 
     componentDidMount() {
-        // console.log('CHILD DATA', this.props.data);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        // console.log('props in child component', this.props.data);
     }
 
     render() {
@@ -26,7 +24,7 @@ export class MainTableDiv extends Component {
         if (this.props.data && this.props.data.length > 0) {
             for (let i = 0; i < this.props.data.length; i++) {
                 render_data.push(
-                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails}/>
+                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails} forceUpdate={this.props.forceUpdate} />
                     // <div key={i} style={{ color: "white" }}>{this.props.data[i]}</div>
                 )
             }

@@ -38,12 +38,13 @@ function RowTableDiv(props) {
     }
 
     // Register
-    const register = () => {
+    const register = (forceUpdate) => {
         _register(history, setregistered, { "purpose": props.item.purpose });
+        forceUpdate()
     }
 
     let render_data1 = [<p>Not Registered</p>]
-    let render_data2 = [<p onClick={register}>Register Link</p>]
+    let render_data2 = [<p onClick={() => register(props.forceUpdate)}>Register Link</p>]
 
     if (props.item && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {
@@ -56,7 +57,7 @@ function RowTableDiv(props) {
                         <p>Paid</p>
                     )
                     render_data2.push(
-                        <p>Transaction ID</p>
+                        <p className={`${styles.wordBreak}`}>{props.registrationDetails[i].paymentid}</p>
                     )
                 }
                 else if (props.registrationDetails[i].status === null) {
@@ -80,17 +81,19 @@ function RowTableDiv(props) {
         <>
             <div className={styles.rowTableDiv}>
                 <div className={styles.cellTableDiv}>
-                    <p>{props.item.title}</p>
+                    <p className={`${styles.title}`}>{props.item.title}</p>
                 </div>
 
                 <div className={styles.cellTableDiv}>
                     {render_data1}
                 </div>
 
-                <div className={styles.cellTableDiv}>
+                <div className={`${styles.cellTableDiv} ${styles.wordBreak}`}>
                     {render_data2}
                 </div>
             </div>
+
+            <hr className={`${styles.hrBreak}`}/>
             {/* Modal */}
             <Modal isOpen={modalIsOpen} style={{
                 content: {

@@ -27,6 +27,10 @@ export default function NavbarSmall({clickLogout}) {
         navLinkRef3.current.classList.add('visible');
     }
 
+    const closeOnClick = () => {
+        clickCloseBtn()
+    }
+
     const clickCloseBtn = () => {
         navLinkRef1.current.classList.remove('visible');
         navLinkRef2.current.classList.remove('visible');
@@ -50,16 +54,16 @@ export default function NavbarSmall({clickLogout}) {
                             <Heading text="Abacus" /></div>
 
                         <ul className="abacus-list">
-                            <li>
+                            <li onClick={closeOnClick}>
                                 <HashLink to="/homepage#homepage" className="abacus-list-link">Homepage</HashLink>
                             </li>
-                            <li>
+                            <li onClick={closeOnClick}>
                                 <HashLink to="/about-us#aboutus" className="abacus-list-link">About Us</HashLink>
                             </li>
-                            <li>
+                            <li onClick={closeOnClick}>
                                 <HashLink to="/events#events" className="abacus-list-link">Events</HashLink>
                             </li>
-                            <li>
+                            <li onClick={closeOnClick}>
                                 <HashLink to="/workshops#workshops" className="abacus-list-link">Workshops</HashLink>
                             </li>
 
@@ -67,15 +71,15 @@ export default function NavbarSmall({clickLogout}) {
                             {Auth ?
                                 (
                                     <>
-                                        <li>
+                                        <li onClick={closeOnClick}>
                                             <HashLink to="/dashboard" className="abacus-list-link">Dashboard</HashLink>
                                         </li>
-                                        <li>
+                                        <li onClick={closeOnClick}>
                                             <HashLink className="abacus-list-link" onClick={clickLogout}>Logout</HashLink>
                                         </li>
                                     </>
                                 ) : (
-                                    <li>
+                                    <li onClick={closeOnClick}>
                                         <HashLink to="/login-register" className="abacus-list-link">Login</HashLink>
                                     </li>)
 
