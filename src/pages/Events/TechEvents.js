@@ -15,8 +15,8 @@ class TechEvents extends Component {
 
                 {/* Child Class */}
                 <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-                    <GlowCardResponsive props={{ title: "X-Domain Combat",titleFontFamily:"Iceland",titleFontFamily:"Iceland", content: "Explore new horizons in various technical domains",img:"events/xcombat.svg", href: "/events/tech/combat" }} />
-                    <GlowCardResponsive props={{ title: "CODE FOR CROWN",titleFontFamily:"Iceland",titleFontFamily:"Iceland", content: "Online Programming Contest ",img:"events/crown.svg", href: "/events/tech/code-for-crown-olpc" }} />
+                    <GlowCardResponsive props={{ title: "X-Domain Combat",titleFontFamily:"Iceland", content: "Explore new horizons in various technical domains",img:"events/xcombat.svg", href: "/events/tech/combat" }} />
+                    <GlowCardResponsive props={{ title: "CODE FOR CROWN",titleFontFamily:"Iceland", content: "Online Programming Contest ",img:"events/code-for-crown.svg", href: "/events/tech/code-for-crown-olpc" }} />
                 </div>
 
                 <Footer />
