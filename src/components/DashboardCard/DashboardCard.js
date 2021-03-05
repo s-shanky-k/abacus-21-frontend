@@ -9,6 +9,8 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PhoneIcon from '@material-ui/icons/Phone';
 import BrandingWatermarkRoundedIcon from '@material-ui/icons/BrandingWatermarkRounded';
 
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 /*
 Usage:
@@ -26,25 +28,33 @@ function GlowCardSimple({ props }) {
                         <div className={styles.glowCardContent}>
                             <Heading text={props.title} fontSize="30px" />
                             <div className={styles.profile_data_div}>
-                                <p className={`${styles.userDetails}`}>
-                                    <BrandingWatermarkRoundedIcon className={`${styles.icon}`} />{props.details.abacusid}
-                                </p>
-                                <p className={`${styles.userDetails}`}>
-                                    <PersonIcon className={`${styles.icon}`} />{props.details.name}
-                                </p>
-                                <p className={`${styles.userDetails}`}>
-                                    <MailOutlineIcon className={`${styles.icon}`} />{props.details.email}
-                                </p>
-                                <p className={`${styles.userDetails}`}>
-                                    <PhoneIcon className={`${styles.icon}`} />{props.details.phone}
-                                </p>
+                                <Tooltip title="Abacus ID" arrow placement="right">
+                                    <p className={`${styles.userDetails}`}>
+                                        <BrandingWatermarkRoundedIcon className={`${styles.icon}`} />{props.details.abacusid}
+                                    </p>
+                                </Tooltip>
+                                <Tooltip title="Name" arrow placement="right">
+                                    <p className={`${styles.userDetails}`}>
+                                        <PersonIcon className={`${styles.icon}`} />{props.details.name}
+                                    </p>
+                                </Tooltip>
+                                <Tooltip title="Email" arrow placement="right">
+                                    <p className={`${styles.userDetails}`}>
+                                        <MailOutlineIcon className={`${styles.icon}`} />{props.details.email}
+                                    </p>
+                                </Tooltip>
+                                <Tooltip title="Phone Number" arrow placement="right">
+                                    <p className={`${styles.userDetails}`}>
+                                        <PhoneIcon className={`${styles.icon}`} />{props.details.phone}
+                                    </p>
+                                </Tooltip>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             {/* </AnimatedCard> */}
-        </FadeInSection>
+        </FadeInSection >
 
     )
 }

@@ -27,6 +27,11 @@ class Loader extends Component {
                                 a<span className={`${styles.flickerStart3}`}>
                             <span className={`${styles.flicker3}`}>c</span></span>u
                                 <span className={`${styles.flicker2}`}>s</span><span className={`${styles.flickerStart2}`}>'21</span>
+
+                        <div className={`${styles.date}`}>
+                            March 25,26,27
+                    </div>
+
                     </div>
                     <HashLink to="/homepage##" spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></HashLink>
 

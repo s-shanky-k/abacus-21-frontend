@@ -1,10 +1,18 @@
 ._dashboard_wrapper {
-    min-height: 100vh !important;
-    height: 100vh;
+    /* min-height: 100vh !important;
+    height: 100vh; */
+    min-height: 100vh!important;
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
+}
+
+._dashboard_container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px !important;
 }
 
 .registrationDetails_wrapper {
@@ -33,12 +41,13 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    ._dashboard_wrapper {
+    ._dashboard_container {
         height: fit-content;
         scroll-snap-align: none;
         flex-direction: column;
         min-height: fit-content !important;
         padding-top: 50px;
+        margin-top: 0px !important;
     }
 
     .registrationDetails_wrapper {
