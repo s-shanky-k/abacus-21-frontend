@@ -47,12 +47,13 @@ export const NonTechEvents = {
                     description: "A round in round robin fashion. Based on Kollywood (60 minutes)"
                 },
             ]
-        }
+        },
+        registration:true
     },
 
-    // Cam
-    "house-full": {
-        name: "House Full",
+    // Imagenation
+    "imagenation": {
+        name: "Imagenation",
         refName: "house-full",
         about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
 
@@ -97,12 +98,13 @@ export const NonTechEvents = {
                     description: "A round in round robin fashion. Based on Kollywood (60 minutes)"
                 },
             ]
-        }
+        },
+        registration: false
     },
 
-    // Design
-    "house-full": {
-        name: "House Full",
+    // Graphic Traffiic
+    "graphic-traffic": {
+        name: "Graphic Traffic",
         refName: "house-full",
         about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
 
@@ -147,6 +149,7 @@ export const NonTechEvents = {
                     description: "A round in round robin fashion. Based on Kollywood (60 minutes)"
                 },
             ]
-        }
+        },
+        registration: false
     },
 }

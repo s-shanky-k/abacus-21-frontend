@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage/Homepage';
 import AboutUs from './pages/About-Us/AboutUs';
 import Events from './pages/Events/Events';
 import Workshops from './pages/Workshops/Workshops';
+import WorkshopMiddleware from "./pages/Workshops/WorkshopMiddleware"
 import EventTemplate from './components/EventTemplate/EventTemplate';
 import TechEvents from './pages/Events/TechEvents';
 import NonTechEvents from './pages/Events/NonTechEvents';
@@ -22,6 +23,7 @@ import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import PageNotFound from './pages/PageNotFound/PageNotFound';
+import Hackathon from './pages/Hackathon/Hackathon';
 // import AuthApi from "./api/AuthApi"
 
 // componentWillUnmount() {
@@ -92,8 +94,15 @@ const Routes = () => {
 
 
       <Route path="/events/tech" exact component={TechEvents} />
-      <Route path="/events/tech/:title" exact component={EventMiddleware} />
       <Route path="/events/non-tech" exact component={NonTechEvents} />
+      <Route path="/events/:type/:title" exact component={EventMiddleware} />
+
+      <Route path="/workshops/:title" exact component={WorkshopMiddleware} />
+      
+      <Route path="/hackathon" exact component={Hackathon} />
+
+
+
 
       <Route path="/event-template" exact component={EventTemplate} />
 
@@ -102,7 +111,8 @@ const Routes = () => {
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
-      <Route  component={PageNotFound} />
+      <Route component={PageNotFound} />
+
 
     </Switch>
   )

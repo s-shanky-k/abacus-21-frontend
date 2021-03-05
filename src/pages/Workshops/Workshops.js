@@ -15,6 +15,7 @@ class Workshops extends Component {
                     <GlowCardResponsive props={{ title: "Cyber Security", titleFontFamily: "Iceland", content: "A cyber security workshop", img: "workshops/cyber-security.svg", href: "/workshops/cyber-security" }} />
                 </div>
 
+
                 <Footer />
 
             </>
