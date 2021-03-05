@@ -67,7 +67,7 @@ function ForgotPassword(props) {
         <>
         <div className={styles.forgot_password_form_wrapper}>
             <div className={styles.forgot_password_container}>
-                <Heading text="Forgot Password" fontSize="35px"></Heading>
+                <Heading text="Forgot Password" fontSize="30px"></Heading>
                 <div className={styles.forgot_password_form_container}>
                     <input className={styles.forgot_password_input_field} type="email" placeholder="Registered Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                 </div>

@@ -5,6 +5,7 @@ import NeonButton from "../../../NeonButton/NeonButton"
 import { apiRegister, baseURL, url_gAuth } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
 import departments from "../../../../assets/departments.js"
+import years from "../../../../assets/years.js"
 import Select from "react-select";
 import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi } from "../../../../App"
@@ -23,7 +24,6 @@ import GoogleButton from 'react-google-button'
 //     this.textInput.current.focus();
 // }
 
-const years = [1, 2, 3, 4];
 
 // const customStyle1 = {
 //     option: (provided, state) => ({
@@ -197,7 +197,7 @@ const customStyle = {
         borderRadius: 10,
         alignItems: 'center',
         color: '#000 !important',
-        marginBottom: 10,
+        marginTop: 10,
         paddingLeft: 5,
     }),
     singleValue: (provided, state) => {
@@ -244,10 +244,21 @@ function SignUpXS() {
     const validate = () => {
         let validationError = '';
 
+        console.log(email);
+
         if (!name) {
             validationError = 'Name field cannot be blank';
         } else if (!email) {
             validationError = 'Email field cannot be blank';
+        }
+        else if (!dept) {
+            validationError = 'Department field cannot be blank'
+        }
+        else if (!college) {
+            validationError = 'College field cannot be blank'
+        }
+        else if (!year) {
+            validationError = 'Year field cannot be blank'
         }
         else if (!email.includes('@')) {
             validationError = 'Invalid Email! Try a different one!';
@@ -263,18 +274,6 @@ function SignUpXS() {
         }
         else if (!cpwd) {
             validationError = 'Confirm Password field cannot be blank';
-        }
-        else if (!dept) {
-            validationError = 'Department field cannot be blank'
-        }
-        else if (!college) {
-            validationError = 'College field cannot be blank'
-        }
-        else if (!year) {
-            validationError = 'Year field cannot be blank'
-        }
-        else if (!(year <= 5 && year >= 1)) {
-            validationError = 'Choose valid academic year'
         }
 
 
@@ -295,7 +294,18 @@ function SignUpXS() {
         if (isValid) {
             const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
             if (response.auth) {
+                let obj = {
+                    name: response.name,
+                    abacusid: response.abacusid,
+                    email: response.email,
+                    phone: response.phone,
+                    college: response.college,
+                    dept: response.dept,
+                    year: response.year
+                }
+                let obj_str = JSON.stringify(obj)
                 Cookies.set("token", response.token)
+                Cookies.set("details", obj_str)
                 SetAuth(true)
                 toast.success("Registration Successfull", {
                     position: toast.POSITION.BOTTOM_LEFT
@@ -306,8 +316,6 @@ function SignUpXS() {
                 setvalidationError(response.message)
             }
             // api
-
-
         }
     }
 
@@ -320,7 +328,7 @@ function SignUpXS() {
     }
 
     const handleYearChange = (selectedOption) => {
-        setyear(selectedOption);
+        setyear(selectedOption.value);
     }
 
     const clickGoogleIcon = () => {
@@ -336,8 +344,8 @@ function SignUpXS() {
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
-                    <input className={styles.register_input_field} type="number" placeholder="Phone" required value={email} onChange={(e) => setemail(e.target.value)} />
-                    <input className={styles.register_input_field} type="email" placeholder="Email" required value={phone} onChange={(e) => setphone(e.target.value)} />
+                    <input className={styles.register_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
+                    <input className={styles.register_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     <input className={styles.register_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                     <input className={styles.register_input_field} type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                 </div>
