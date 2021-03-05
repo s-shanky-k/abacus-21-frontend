@@ -8,7 +8,7 @@ class TechEvents extends Component {
         return (
             <>
 
-                <div id="sec1" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
+                <div id="#" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
                     <GlowCardResponsive props={{ title: "TENET", titleFontFamily: "Iceland", content: "A challenge where the participants have to identify and resolve bugs", img: "events/tenet.svg", href: "/events/tech/tenet" }} />
                     <GlowCardResponsive props={{ title: "NOVICE.INIT()", titleFontFamily: "Iceland", content: "Exclusive event for the first year students ", img: "events/novice.svg", href: "/events/tech/novice-init" }} />
                 </div>

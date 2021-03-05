@@ -19,12 +19,12 @@ function NavbarBig({ clickLogout }) {
             </div>
 
             <div className={`${styles._navbar_main}`}>
-                <NavHashLink className={`${styles._navbar_main_link}`}  to="/homepage#homepage" activeClassName="selected"
+                <NavHashLink className={`${styles._navbar_main_link}`}  to="/homepage##" activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Homepage</span>
                 </NavHashLink>
 
-                <NavHashLink className={`${styles._navbar_main_link}`} to="/about-us#aboutus" activeClassName="selected"
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/about-us##" activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>About Us</span> 
                 </NavHashLink>
@@ -34,7 +34,7 @@ function NavbarBig({ clickLogout }) {
                     <span className={`${styles._navbar_main_link_text}`}>Events</span>
                 </NavHashLink>
 
-                <NavHashLink className={`${styles._navbar_main_link}`} to="/workshops#workshops" activeClassName="selected"
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/workshops##" activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Workshops</span>
                 </NavHashLink>

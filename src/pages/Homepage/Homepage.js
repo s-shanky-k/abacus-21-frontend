@@ -45,7 +45,7 @@ class Homepage extends Component {
 
         {/* Child Class */}
 
-        <section id="homepage">
+        <section id="#">
           <div
             className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}
           > 

@@ -1,6 +1,6 @@
 import React, { Component, createRef, useContext } from 'react'
 import { Link } from "react-router-dom"
-import { NavHashLink } from "react-router-hash-link"
+import { HashLink } from "react-router-hash-link"
 import "./NavbarSmall.css"
 import { AuthApi } from "../../App"
 import Heading from "../Heading/Heading"
@@ -55,20 +55,16 @@ export default function NavbarSmall({clickLogout}) {
 
                         <ul className="abacus-list">
                             <li onClick={closeOnClick}>
-                                <NavHashLink to="/homepage#homepage" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Homepage</NavHashLink>
+                                <HashLink to="/homepage##" className="abacus-list-link">Homepage</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <NavHashLink to="/about-us#aboutus" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>About Us</NavHashLink>
+                                <HashLink to="/about-us##" className="abacus-list-link">About Us</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <NavHashLink to="/events#events" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Events</NavHashLink>
+                                <HashLink to="/events##" className="abacus-list-link">Events</HashLink>
                             </li>
                             <li onClick={closeOnClick}>
-                                <NavHashLink to="/workshops#workshops" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Workshops</NavHashLink>
+                                <HashLink to="/workshops##" className="abacus-list-link">Workshops</HashLink>
                             </li>
 
                             {/* Conditionally Rendering based on Auth */}
@@ -76,18 +72,18 @@ export default function NavbarSmall({clickLogout}) {
                                 (
                                     <>
                                         <li onClick={closeOnClick}>
-                                            <NavHashLink to="/dashboard" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Dashboard</NavHashLink>
+                                            <HashLink to="/dashboard" className="abacus-list-link" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>Dashboard</HashLink>
                                         </li>
                                         <li onClick={closeOnClick}>
-                                            <NavHashLink className="abacus-list-link" to="/homepage" onClick={clickLogout} activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Logout</NavHashLink>
+                                            <HashLink className="abacus-list-link" to="/homepage" onClick={clickLogout} activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>Logout</HashLink>
                                         </li>
                                     </>
                                 ) : (
                                     <li onClick={closeOnClick}>
-                                        <NavHashLink to="/login-register" className="abacus-list-link" activeClassName="selected"
-  activeStyle={{ color: '#ff2483' }}>Login</NavHashLink>
+                                        <HashLink to="/login-register" className="abacus-list-link" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>Login</HashLink>
                                     </li>)
 
                             }
