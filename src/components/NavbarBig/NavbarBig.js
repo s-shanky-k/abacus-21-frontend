@@ -45,7 +45,7 @@ function NavbarBig({ clickLogout }) {
                     activeStyle={{ color: '#ff2483' }}>
                         <span className={`${styles._navbar_main_link_text}`}>Dashboard</span>
                     </NavHashLink>
-                    <NavHashLink className={`${styles._navbar_main_link}`} onClick={clickLogout} activeClassName="selected"
+                    <NavHashLink to="/homepage" className={`${styles._navbar_main_link}`} onClick={clickLogout} activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>
                         <span className={`${styles._navbar_main_link_text}`}>Logout</span>
                     </NavHashLink></>

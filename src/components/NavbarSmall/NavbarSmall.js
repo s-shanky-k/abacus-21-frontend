@@ -80,7 +80,7 @@ export default function NavbarSmall({clickLogout}) {
   activeStyle={{ color: '#ff2483' }}>Dashboard</NavHashLink>
                                         </li>
                                         <li onClick={closeOnClick}>
-                                            <NavHashLink className="abacus-list-link" onClick={clickLogout} activeClassName="selected"
+                                            <NavHashLink className="abacus-list-link" to="/homepage" onClick={clickLogout} activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>Logout</NavHashLink>
                                         </li>
                                     </>
