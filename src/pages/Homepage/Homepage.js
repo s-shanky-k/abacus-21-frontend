@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //NeonButton
 import NeonButton from "../../components/NeonButton/NeonButton";
 import GlowCardResponsive from "../../components/GlowCardResponsive/GlowCardResponsive";
-import GlowCard from "../../components/GlowCard/GlowCard";
+import GlowCardSimple from "../../components/GlowCardSimple/GlowCardSimple";
 import Loader from "../../components/Loader/Loader";
 import Load from "../../components/Load/Load";
 import Heading from "../../components/Heading/Heading";
@@ -138,23 +138,16 @@ class Homepage extends Component {
         </section>
         {/* Child Class */}
         <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-          <div className={`${styles.container}`}>
-            <iframe className={`${styles.responsive_iframe}`}
-              src="https://youtu.be/W0eDjWr3ATI"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-
-          </div>
-          <GlowCard props={{
+        <div class="embed-responsive embed-responsive-21by9 my-5 mx-lg-5 mx-md-4 mx-sm-0 mx-xs=0">
+          <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+         <div  className={`${styles.visible}`} >
+     <GlowCardSimple props={{
                         title: "CSEA",
                         content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
-                        img: "about-us/csea_white.png",
-                        degree: "25deg"
-                    }} />
-        </div>
-
+                        }} />
+                </div>
+</div>
         {/* Child Class */}
         <div
           className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}
