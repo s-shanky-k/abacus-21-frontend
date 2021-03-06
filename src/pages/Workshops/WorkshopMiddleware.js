@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
 import { Workshops } from "../../assets/Data/WorkshopsData"
-import EventTemplate from "../../components/EventTemplate/EventTemplate"
+import WorkshopTemplate from "../../components/WorkshopTemplate/WorkshopTemplate"
 
 export default function WorkshopMiddleware() {
 
@@ -14,7 +14,7 @@ export default function WorkshopMiddleware() {
     }
 
     return (
-        <EventTemplate props={data} />
+        <WorkshopTemplate props={data} />
         // <EventTemplate props={{
         //     name: "Tenet",
         //     refName: "tenet",

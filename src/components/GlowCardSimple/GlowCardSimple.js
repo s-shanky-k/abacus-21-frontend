@@ -26,9 +26,37 @@ function GlowCardSimple({ props }) {
                                 {props.content === undefined
                                 ? (props.list === undefined) 
                                     ? (props.contact === undefined) 
-                                        ? props.rounds.roundDetails.map((round,index)=>
-                                            <p key={index + 1} className={styles.glowCardName}>{round.title} - <span style={{color:'#fff'}}>{round.description}</span></p>
-                                        )
+                                        ? (props.rounds === undefined) 
+                                            ? <> {props.agenda.sessionDetails.map((session,index)=>{ 
+                                                    return (
+                                                        <>
+                                                        <p key={index + 1}  className={styles.glowCardName}>{session.title}</p>
+                                                            {session.description.map((item, index2) =>
+                                                            <p key={index2 + 1} style={{color:'#fff'}}>{item}</p>
+                                                            )}
+                                                        </>
+                                                )
+                                                }
+                                                )
+                                                }
+                                            </>
+                                            /* props.agenda.sessionDetails.map((session,index) => {
+                                                console.log(session);
+                                                <p>{session.title}</p>    
+                                            }) */
+                                            /* props.agenda.sessionDetails.map((session,index)=>{ 
+                                                <p key={index + 1} className={styles.glowCardName}>{session.title}</p>
+                                            }) */
+                                            /* props.agenda.sessionDetails.map((session,index)=>{ 
+                                                <p key={index + 1} className={styles.glowCardName}>{session.title}</p>
+                                                session.description.map((item, index2) =>
+                                                    <p key={index2 + 1} style={{color:'#fff'}}>{item}</p>
+                                                )
+                                                }
+                                            ) */
+                                            : props.rounds.roundDetails.map((round,index)=>
+                                                <p key={index + 1} className={styles.glowCardName}>{round.title} - <span style={{color:'#fff'}}>{round.description}</span></p>
+                                            )
                                         : props.contact.map((person, index) =>
                                             <p key={index + 1} className={styles.glowCardName}>{person.name} - <i class="fa fa-phone"></i> <span style={{color:'#fff'}}>{person.mobile}</span></p>
                                         )

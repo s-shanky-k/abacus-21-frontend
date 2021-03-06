@@ -4,7 +4,6 @@ import GlowCard from "../GlowCard/GlowCard";
 import GlowCardSimple from "../GlowCardSimple/GlowCardSimple"
 import GlowCardResponsive from "../GlowCardResponsive/GlowCardResponsive"
 import NeonButton from "../NeonButton/NeonButton";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from "js-cookie"
 import { apiGetRegistrations, apiRegisterEvent, apiPayment } from "../../api/api"
 import Load from "../Load/Load";
@@ -16,7 +15,7 @@ import Footer from "../Footer/Footer"
 import { _register, _paymentConfirmation } from "../../api/payment"
 import Dev from "../Dev/Dev";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Heading from "../Heading/Heading"
 /* 
 <WorkshopTemplate props = {name:"Tenet",
                         refName:"tenet",
@@ -178,7 +177,7 @@ function WorkshopTemplate({ props }) {
           </div>
 
           {/* Rules */}
-          <div
+         {/*  <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
@@ -192,14 +191,14 @@ function WorkshopTemplate({ props }) {
                 }} />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Speakers */}
           <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
           <div className="text-center">
-            <Heading text="Developers and Design Team" fontSize="40px" />
+            <Heading text="Speakers" fontSize="40px" />
           </div>
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
             <div className="row  d-flex justify-content-center align-self-center pb-5">
@@ -209,9 +208,7 @@ function WorkshopTemplate({ props }) {
                 props={{
                   title: speaker.name,
                   title1: speaker.profession,
-                  img: `workshop/`+`${speaker.name}`+`.jpeg`,
-                  href:
-                    "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba"
+                  img: `workshop/`+`${speaker.name}`+`.jpeg`
                 }}
                 />
               </div>
@@ -221,8 +218,39 @@ function WorkshopTemplate({ props }) {
           </div>
         </div>
 
-          {/* Rounds or Instructions*/}
+          {/* Agenda */}
           <div
+            className={`${styles._homepage} ${styles.bg}`}
+
+          >
+          <div className={`${styles._rulesDivContainer1}`}>
+              <div className={`${styles._rulesDiv1}`}>
+                <GlowCardSimple props={{
+                  title: "Agenda",
+                  agenda: props.agenda,
+                }} />
+              </div>
+            </div>
+          </div>
+          
+          {/*Prereq*/}
+          <div
+            className={`${styles._homepage} ${styles.bg1}`}
+
+          >
+    
+            <div className={`${styles._child}`}>
+                <GlowCardSimple props={{
+                  title: "Prerequisites",
+                  list: props.prerequisite
+                }} />
+              </div>
+            </div>
+          
+
+
+          {/* Rounds or Instructions*/}
+         {/*  <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -261,7 +289,7 @@ function WorkshopTemplate({ props }) {
               }
 
 
-              {/* Modal */}
+              
               <Modal isOpen={modalIsOpen} style={{
                 content: {
                   backgroundColor: "#060c21",
@@ -281,7 +309,7 @@ function WorkshopTemplate({ props }) {
             </div>
             }
             
-          </div>
+          </div> */}
           <Footer />
         </>
       }
