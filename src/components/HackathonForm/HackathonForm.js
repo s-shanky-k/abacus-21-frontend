@@ -19,6 +19,7 @@ export default function HackathonForm() {
     const useStyles = makeStyles((theme) => ({
         root: {
             width: _Width>600 ? (_Width<800 ? '40%' : _Width<1100 ? '30%' : _Width>800 ? '29%' : '28.5%') : '75%',
+            boxShadow : '0px 0px 10px #FE13BE, 0px 0px 15px #000052, 0px 0px 15px #8E32FF',
         },
         heading: {
           fontSize: 20,
@@ -114,7 +115,6 @@ export default function HackathonForm() {
                 <div className={classes.root}>
                 <Accordion expanded>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
@@ -128,7 +128,6 @@ export default function HackathonForm() {
                 </Accordion>
                 <Accordion expanded>
                     <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                     >
