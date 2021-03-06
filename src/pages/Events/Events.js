@@ -5,24 +5,24 @@ import Footer from '../../components/Footer/Footer'
 class Events extends Component {
     constructor(props) {
         super(props)
-    
+
         this.state = {
-             
+
         }
 
-        
+
     }
-    
+
     render() {
-        const {width} = this.props
+        const { width } = this.props
         return (
             <>
-                <div id="sec1" className={`${styles._homepage} ${styles._responsive} ${styles.bg}`} >
-                    <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily:"Iceland",href: "events/tech", img:"events/tech.svg" }} />
-                    <GlowCardResponsive props={{ title: "Hackathon", titleFontFamily:"Iceland",href: "/hackathon", img:"events/hackathon.svg"}} />
-                    <GlowCardResponsive props={{ title: "Non-Tech Events", titleFontFamily:"Iceland",href: "events/non-tech", img:"events/nontech.svg"}} />
+                <div id="sec1" className={`${styles._homepage} ${styles._responsive} ${styles.bg} ${styles._last_div}`} >
+                    <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily: "Iceland", href: "events/tech", img: "events/tech.svg" }} />
+                    <GlowCardResponsive props={{ title: "Hackathon", titleFontFamily: "Iceland", href: "/hackathon", img: "events/hackathon.svg" }} />
+                    <GlowCardResponsive props={{ title: "Non-Tech Events", titleFontFamily: "Iceland", href: "events/non-tech", img: "events/nontech.svg" }} />
                 </div>
-                <Footer/>
+                <Footer />
             </>
         )
     }

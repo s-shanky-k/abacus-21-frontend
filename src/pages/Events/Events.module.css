@@ -4,14 +4,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* scroll-snap-align: start; */
 }
 
 @media only screen and (max-width: 1100px) {
     ._homepage {
-        height: fit-content;
-        /* scroll-snap-align:none;
-        scroll-snap-stop: always; */
+        min-height: max-content !important;
+    }
+
+    ._last_div {
+        min-height: max-content !important;
     }
 }
 
@@ -39,12 +40,13 @@
         flex-wrap: wrap;
     }
 }
-.bg{
-   
+
+.bg {
+
     /* background-image:url('bricks.svg'); */
     width: 100%;
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -58,30 +60,34 @@
     }
 }
 
-.bg{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+.bg {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
-.bg1{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event_variation.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+
+.bg1 {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event_variation.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
-.countup{
+
+.countup {
     display: block;
     font-size: large;
     font-weight: bolder;
     padding: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 ._responsive {
     flex: 3;
     flex-wrap: wrap;
     align-items: center;
 }
+
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;
@@ -101,19 +107,20 @@
     flex-wrap: wrap;
     align-items: center;
 }
-@media only screen and (max-width:1025px){
-    .bg{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+
+@media only screen and (max-width:1025px) {
+    .bg {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
-    .bg1{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+
+    .bg1 {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
 
 }
-  

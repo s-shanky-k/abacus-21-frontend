@@ -1,7 +1,7 @@
 ._dashboard_wrapper {
     /* min-height: 100vh !important;
     height: 100vh; */
-    min-height: 100vh!important;
+    min-height: 100vh !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,15 +37,15 @@
     display: flex;
     align-items: center !important;
     justify-content: center;
-    scroll-snap-align: start;
 }
 
 @media only screen and (max-width: 1100px) {
+    ._dashboard_wrapper {
+        min-height: max-content !important;
+    }
+
     ._dashboard_container {
-        height: fit-content;
-        scroll-snap-align: none;
         flex-direction: column;
-        min-height: fit-content !important;
         padding-top: 50px;
         margin-top: 0px !important;
     }

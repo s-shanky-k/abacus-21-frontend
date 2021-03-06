@@ -25,6 +25,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Hackathon from './pages/Hackathon/Hackathon';
 import ScrollSnap from "scroll-snap"
+import Footer from './components/Footer/Footer';
 // import AuthApi from "./api/AuthApi"
 
 // componentWillUnmount() {
@@ -97,6 +98,7 @@ const AppBig = () => {
 
   useEffect(() => {
 
+    console.log("BUGGGGGGGGGGG")
     // Scroll Snap
     bindScrollSnap()
 
@@ -147,7 +149,7 @@ const AppSmall = () => {
 
 
   useEffect(() => {
-
+    console.log("SMULLLLLLLLLLLL")
     // Scroll Snap
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
@@ -205,17 +207,13 @@ const Routes = () => {
 
       <Route path="/hackathon" exact component={Hackathon} />
 
-
-
-
-      <Route path="/event-template" exact component={EventTemplate} />
-
       <Route path="/reset-password" exact component={ResetPassword} />
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
       <Route component={PageNotFound} />
+ 
 
 
     </Switch>

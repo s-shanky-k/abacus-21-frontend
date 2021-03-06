@@ -13,7 +13,7 @@ class TechEvents extends Component {
                     <GlowCardResponsive props={{ title: "NOVICE.INIT()", titleFontFamily: "Iceland", content: "Exclusive event for the first year students ", img: "events/novice.svg", href: "/events/tech/novice-init" }} />
                 </div>
 
-                <div className={`${styles._homepage} ${styles._responsive}  ${styles.bg}`}>
+                <div className={`${styles._homepage} ${styles._responsive}  ${styles.bg} ${styles._last_div}`}>
                     <GlowCardResponsive props={{ title: "X-Domain Combat", titleFontFamily: "Iceland", titleFontFamily: "Iceland", content: "Explore new horizons in various technical domains", img: "events/x-domain-combat.svg", href: "/events/tech/x-domain-combat" }} />
                     <GlowCardResponsive props={{ title: "CODE FOR CROWN", titleFontFamily: "Iceland", titleFontFamily: "Iceland", content: "Online Programming Contest ", img: "events/code-for-crown.svg", href: "/events/tech/code-for-crown-olpc" }} />
                 </div>

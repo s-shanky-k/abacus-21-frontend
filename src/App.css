@@ -28,8 +28,8 @@
   height: 100%;
 }
 
-@media only screen and (max-width: 1281px) {
+/* @media only screen and (max-width: 1281px) {
   .App {
     scroll-snap-type: none;
   }
-}
+} */

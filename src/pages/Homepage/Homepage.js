@@ -19,25 +19,30 @@ import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import Dev from "../../components/Dev/Dev";
 import GlowCircle from "../../components/GlowCircle/GlowCircle";
 import { ArrowBackIosOutlined } from "@material-ui/icons";
+import { toast } from "react-toastify"
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
 }
 
+toast.configure()
 class Homepage extends Component {
   state = {
     loading: true,
   };
   componentDidMount() {
-    demoAsyncCall().then(() => this.setState({ loading: false }));
+    let queryString = require('query-string')
+    let params = queryString.parse(this.props.location.search)
+    if (!(Object.keys(params).length === 0)) {
+      console.log("BOOOOM")
+      toast.success(params.message, {
+        position: toast.POSITION.BOTTOM_CENTER
+      })
+    }
   }
 
   render() {
     const { loading } = this.state;
-    if (loading) {
-      // if your component doesn't have to wait for an async action, remove this block
-      return <Load />; // render null when app is not ready
-    }
     const { is_visible } = this.state;
     return (
       <>
@@ -158,7 +163,7 @@ class Homepage extends Component {
 
         {/* Child Class */}
         <div
-          className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
+          className={`${styles._homepage} ${styles._responsive} ${styles.bg} ${styles._last_div}`}
         >
           <div className="text-center">
             <Heading text="Developers and Design Team" fontSize="40px" />

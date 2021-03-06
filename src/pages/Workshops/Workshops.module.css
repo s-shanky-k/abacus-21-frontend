@@ -18,42 +18,47 @@
 
 @media only screen and (max-width: 1100px) {
     ._homepage {
-        min-height: fit-content !important;
+        min-height: max-content !important;
     }
 }
 
 ._homepage_container {
     font-size: 50px;
 }
-.countup{
+
+.countup {
     display: block;
     font-size: large;
     font-weight: bolder;
     padding: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.bg{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+
+.bg {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
-.bg1{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event_variation.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+
+.bg1 {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event_variation.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
+
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
+
 @media only screen and (min-width:1291) and (max-width: 1300px) {
     ._homepage {
         padding-top: 50px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
 
@@ -63,19 +68,19 @@
     align-items: center;
 }
 
-@media only screen and (max-width:1025px){
-    .bg{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+@media only screen and (max-width:1025px) {
+    .bg {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
-    .bg1{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+
+    .bg1 {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
 
 }
-  

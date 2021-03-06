@@ -107,12 +107,17 @@ function GoogleFormData(props) {
     useEffect(() => {
         let queryString = require('query-string')
         let params = queryString.parse(props.location.search)
-        setqueryParams({
-            "auth": params.auth,
-            "email": params.email,
-            "name": params.name,
-            "token": params.token
-        })
+        if (Object.keys(params).length === 0) {
+            history.push("/login-register")
+        }
+        else {
+            setqueryParams({
+                "auth": params.auth,
+                "email": params.email,
+                "name": params.name,
+                "token": params.token
+            })
+        }
 
     }, [])
 

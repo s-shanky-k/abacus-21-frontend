@@ -185,7 +185,7 @@ function EventTemplate({ props }) {
 
           {/* Rounds */}
           <div
-            className={`${styles._homepage} ${styles.bg}`}
+            className={`${styles._homepage} ${styles.bg} ${styles._last_div}`}
 
           >
             <div className={`${styles._rulesDivContainer1}`}>
