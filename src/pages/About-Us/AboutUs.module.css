@@ -1,11 +1,20 @@
 /* Code for scroll snapping - Child */
-._homepage {
+/* ._homepage {
     min-height: 100vh !important;
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+} */
+
+._homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+   
+    min-height: 100%;
 }
 
 /* @media only screen and (max-width: 1281px) {
@@ -15,28 +24,31 @@
         scroll-snap-stop: always;
     }
 } */
-.bg{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+.bg {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
-.bg1{
-    background-color:#060c21;
-    background-image:url('../../assets/Images/Asset\ 5event_variation.svg');
-    background-repeat:no-repeat;
-    background-size:cover
+
+.bg1 {
+    background-color: #060c21;
+    background-image: url('../../assets/Images/Asset\ 5event_variation.svg');
+    background-repeat: no-repeat;
+    background-size: cover
 }
+
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
+
 @media only screen and (min-width:1291) and (max-width: 1300px) {
     ._homepage {
         padding-top: 50px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
 
@@ -48,19 +60,20 @@
     flex-wrap: wrap;
     align-items: center;
 }
-@media only screen and (max-width:1025px){
-    .bg{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+
+@media only screen and (max-width:1025px) {
+    .bg {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
-    .bg1{
-        background-color:#060c21;
-        background-image:url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
-        background-repeat:no-repeat;
-        background-size:cover
+
+    .bg1 {
+        background-color: #060c21;
+        background-image: url('../../assets/Images/asset_pattern_16\ 9_variation.svg');
+        background-repeat: no-repeat;
+        background-size: cover
     }
 
 }
-  

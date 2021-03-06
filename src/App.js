@@ -24,6 +24,7 @@ import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Hackathon from './pages/Hackathon/Hackathon';
+import ScrollSnap from "scroll-snap"
 // import AuthApi from "./api/AuthApi"
 
 // componentWillUnmount() {
@@ -43,7 +44,26 @@ function App() {
 
   const history = useHistory()
 
+  let containerRef = React.createRef()
+
+  const callback = () => {
+    console.log("SNAPPED SNAPPED")
+  }
+
+  const bindScrollSnap = () => {
+    const element = containerRef.current
+    const snapElement = new ScrollSnap(element, {
+      snapDestinationY: '100%',
+      threshold: 0.05
+    })
+
+    snapElement.bind(callback)
+  }
+
   useEffect(() => {
+
+    // Scroll Snap
+    bindScrollSnap()
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
@@ -64,7 +84,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" ref={containerRef}>
       <AuthApi.Provider value={auth}>
         <SetAuthApi.Provider value={setauth}>
           <Width.Provider value={width}>
@@ -98,7 +118,7 @@ const Routes = () => {
       <Route path="/events/:type/:title" exact component={EventMiddleware} />
 
       <Route path="/workshops/:title" exact component={WorkshopMiddleware} />
-      
+
       <Route path="/hackathon" exact component={Hackathon} />
 
 
