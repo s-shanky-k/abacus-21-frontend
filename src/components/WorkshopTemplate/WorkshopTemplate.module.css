@@ -107,7 +107,11 @@
     flex-direction: column !important;
     width: 100%;
 }
-
+._responsive {
+    flex: 3;
+    flex-wrap: wrap;
+    align-items: center;
+}
 ._rulesDiv1 {
     width: 85% !important;
     flex-basis: 85% !important;

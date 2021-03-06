@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { TechEvents } from "../../../assets/Data/Tech-EventsData"
 import { NonTechEvents } from "../../../assets/Data/Non-Tech-EventsData"
-import { Workshops } from "../../../assets/Data/WorkshopsData"
 import EventTemplate from "../../../components/EventTemplate/EventTemplate"
 
 export default function Event() {
@@ -18,9 +17,6 @@ export default function Event() {
     }
     else if (type === "non-tech") {
         Hash = NonTechEvents
-    }
-    else if (type === "workshops") {
-        Hash = Workshops
     }
 
     const data = Hash[title]
