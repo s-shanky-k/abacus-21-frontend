@@ -42,6 +42,64 @@ function App() {
   const [width, setwidth] = useState(0)
   const [height, setheight] = useState(0)
 
+  // const history = useHistory()
+
+  // let containerRef = React.createRef()
+
+  // const callback = () => {
+  //   console.log("SNAPPED SNAPPED")
+  // }
+
+  // const bindScrollSnap = () => {
+  //   const element = containerRef.current
+  //   const snapElement = new ScrollSnap(element, {
+  //     snapDestinationY: '100%',
+  //     threshold: 0.2
+  //   })
+
+  //   snapElement.bind(callback)
+  // }
+
+  useEffect(() => {
+
+    // Scroll Snap
+    // bindScrollSnap()
+
+
+
+    if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
+      setauth(true)
+    }
+
+    updateWindowDimensions();
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => {
+      window.removeEventListener('resize', updateWindowDimensions);
+    }
+  }, [])
+
+
+  const updateWindowDimensions = () => {
+    setwidth(window.innerWidth)
+    setheight(window.innerHeight)
+  }
+
+
+  return (
+    <>
+      {
+        width > 1100 ? <AppBig /> : <AppSmall />
+      }
+    </>
+  )
+}
+
+const AppBig = () => {
+
+  const [auth, setauth] = useState(false)
+  const [width, setwidth] = useState(0)
+  const [height, setheight] = useState(0)
+
   const history = useHistory()
 
   let containerRef = React.createRef()
@@ -54,7 +112,7 @@ function App() {
     const element = containerRef.current
     const snapElement = new ScrollSnap(element, {
       snapDestinationY: '100%',
-      threshold: 0.05
+      threshold: 0.2
     })
 
     snapElement.bind(callback)
@@ -64,6 +122,8 @@ function App() {
 
     // Scroll Snap
     bindScrollSnap()
+
+
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
@@ -85,6 +145,72 @@ function App() {
 
   return (
     <div className="App" ref={containerRef}>
+      <AuthApi.Provider value={auth}>
+        <SetAuthApi.Provider value={setauth}>
+          <Width.Provider value={width}>
+            <Router>
+              <Navbar width={width} />
+              <Routes />
+            </Router>
+          </Width.Provider>
+        </SetAuthApi.Provider>
+      </AuthApi.Provider>
+
+    </div>
+  )
+}
+
+
+const AppSmall = () => {
+
+
+  const [auth, setauth] = useState(false)
+  const [width, setwidth] = useState(0)
+  const [height, setheight] = useState(0)
+
+  const history = useHistory()
+
+  let containerRef = React.createRef()
+
+  const callback = () => {
+    console.log("SNAPPED SNAPPED")
+  }
+
+  const bindScrollSnap = () => {
+    const element = containerRef.current
+    const snapElement = new ScrollSnap(element, {
+      snapDestinationY: '100%',
+      threshold: 0.2
+    })
+
+    snapElement.bind(callback)
+  }
+
+  useEffect(() => {
+
+    // Scroll Snap
+
+
+
+    if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
+      setauth(true)
+    }
+
+    updateWindowDimensions();
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => {
+      window.removeEventListener('resize', updateWindowDimensions);
+    }
+  }, [])
+
+
+  const updateWindowDimensions = () => {
+    setwidth(window.innerWidth)
+    setheight(window.innerHeight)
+  }
+
+  return (
+    <div className="App">
       <AuthApi.Provider value={auth}>
         <SetAuthApi.Provider value={setauth}>
           <Width.Provider value={width}>
