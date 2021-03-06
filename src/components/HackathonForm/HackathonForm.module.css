@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    scroll-snap-align: start;
+    min-height: 100vh;
     margin: 50px;
 }
 
@@ -21,4 +20,129 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
+}
+
+.hackathon_form_data_container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.hackathon_form_input_field {
+    background-color: black;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 30%;
+    font-family: 'MainFont', cursive !important;
+    height: 50px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+.hackathon_form_data_validation_output_1{
+    font-family: 'MainFont', cursive;
+    font-size: 18px;
+    color: red;
+    letter-spacing: 0.5px; 
+    margin-bottom: 1px;
+}
+
+.hackathon_form_data_validation_output_2{
+    font-family: 'MainFont', cursive;
+    font-size: 18px;
+    color: red;
+    letter-spacing: 0.5px; 
+    margin-bottom: 1px;
+}
+
+.hackathon_form_data_validation_output_3{
+    font-family: 'MainFont', cursive;
+    font-size: 18px;
+    color: red;
+    letter-spacing: 0.5px; 
+    margin-bottom: 1px;
+}
+
+@media only screen and (min-width: 1100px) {
+    .hackathon_form_input_field {
+        background-color: #000;
+        border: none;
+        width: 25%;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px ) and (min-width:600px ) {
+    .hackathon_form_input_field {
+        background-color: #000;
+        border: none;
+        width: 33%;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 800px) {
+    .hackathon_form_input_field {
+        background-color: #000;
+        border: none;
+        width: 25%;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hackathon_form_input_field {
+        background-color: #000;
+        border: none;
+        width: 65%;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    .hackathon_form_data_validation_output_1{
+        font-family: 'MainFont', cursive;
+        font-size: 16px;
+        color: red;
+        letter-spacing: 0.5px; 
+        margin-bottom: 1px;
+    }
+    
+    .hackathon_form_data_validation_output_2{
+        font-family: 'MainFont', cursive;
+        font-size: 16px;
+        color: red;
+        letter-spacing: 0.5px; 
+        margin-bottom: 1px;
+    }
+    
+    .hackathon_form_data_validation_output_3{
+        font-family: 'MainFont', cursive;
+        font-size: 16px;
+        color: red;
+        letter-spacing: 0.5px; 
+        margin-bottom: 1px;
+    }
 }
