@@ -11,6 +11,9 @@ export const url_gAuth = "auth/googlesignin"
 export const url_getRegistrations = "event/getRegistrations"
 export const url_registerEvent = "event/register"
 export const url_payment = "payment/pay"
+export const url_registerHackathon = "hackathon/register"
+export const url_paymentHackathon = "hackathon/pay"
+export const url_getRegistrationHackathon = "hackathon/getRegistration"
 
 const api = axios.create({
     baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
@@ -164,5 +167,30 @@ export const apiPayment = async (data) => {
         return response
     } catch (error) {
         return error.response.data
+    }
+}
+
+export const apiRegisterHackathon = async (data) => {
+    try {
+        console.log(data,"APIAPI")
+        const response = await api.post(
+            `${url_registerHackathon}`,
+            {
+                "user2": data.user2,
+                "name2": data.name2,
+                "user3": data.user3,
+                "name3": data.name3
+            },
+            {
+                headers: {
+                    Authorization: data.token
+                }
+            }
+        )
+        console.log(response)
+        // return response
+    } catch (error) {
+        // return error.response.data
+        console.log(error.response.data)
     }
 }
