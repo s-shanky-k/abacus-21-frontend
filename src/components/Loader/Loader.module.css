@@ -1,4 +1,22 @@
 ._homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(./brick-wall-dark.png) !important;
+    background-color: black !important;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 1100px) {
+    ._homepage {
+        min-height: fit-content !important;
+    }
+}
+
+/* ._homepage {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -8,23 +26,25 @@
     background-color: black !important;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 @font-face {
     font-family: NeonFont;
     src: url(./Clip.woff2);
 }
+
 @media only screen and (max-width: 1300px) {
     ._homepage {
         padding-top: 90px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
 
 ._loader_box {
-    
+
     text-align: center;
 }
+
 /* Copied */
 ._loader_sign {
     /* display: flex;
@@ -367,4 +387,3 @@
 /* ._loader_arrow {
     position: absolute !important;
 } */
-

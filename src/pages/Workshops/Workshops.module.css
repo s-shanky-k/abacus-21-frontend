@@ -1,10 +1,25 @@
 /* Code for scroll snapping - Child */
-._homepage {
+/* ._homepage {
     min-height: 100vh !important;
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+} */
+
+._homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 1100px) {
+    ._homepage {
+        min-height: fit-content !important;
+    }
 }
 
 ._homepage_container {

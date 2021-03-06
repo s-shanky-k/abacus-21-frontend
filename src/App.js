@@ -42,30 +42,8 @@ function App() {
   const [width, setwidth] = useState(0)
   const [height, setheight] = useState(0)
 
-  // const history = useHistory()
-
-  // let containerRef = React.createRef()
-
-  // const callback = () => {
-  //   console.log("SNAPPED SNAPPED")
-  // }
-
-  // const bindScrollSnap = () => {
-  //   const element = containerRef.current
-  //   const snapElement = new ScrollSnap(element, {
-  //     snapDestinationY: '100%',
-  //     threshold: 0.2
-  //   })
-
-  //   snapElement.bind(callback)
-  // }
 
   useEffect(() => {
-
-    // Scroll Snap
-    // bindScrollSnap()
-
-
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
@@ -105,7 +83,6 @@ const AppBig = () => {
   let containerRef = React.createRef()
 
   const callback = () => {
-    console.log("SNAPPED SNAPPED")
   }
 
   const bindScrollSnap = () => {
@@ -122,8 +99,6 @@ const AppBig = () => {
 
     // Scroll Snap
     bindScrollSnap()
-
-
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
@@ -170,27 +145,10 @@ const AppSmall = () => {
 
   const history = useHistory()
 
-  let containerRef = React.createRef()
-
-  const callback = () => {
-    console.log("SNAPPED SNAPPED")
-  }
-
-  const bindScrollSnap = () => {
-    const element = containerRef.current
-    const snapElement = new ScrollSnap(element, {
-      snapDestinationY: '100%',
-      threshold: 0.2
-    })
-
-    snapElement.bind(callback)
-  }
 
   useEffect(() => {
 
     // Scroll Snap
-
-
 
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
