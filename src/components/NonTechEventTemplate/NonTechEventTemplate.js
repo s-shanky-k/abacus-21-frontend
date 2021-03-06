@@ -16,7 +16,7 @@ import Footer from "../Footer/Footer"
 import { _register, _paymentConfirmation } from "../../api/payment"
 
 /* 
-<EventTemplate props = {name:"Tenet",
+<NonTechEventTemplate props = {name:"Tenet",
                         refName:"tenet",
                         about:"TENET is a challenge where the participants have to identify and resolve bugs, which makes the system unproblematic. Logical thinking of the programmer is tested through this event where the participant has to come up with unique solutions to produce an expected output.",
                         rules:["A domain will be given on the day of hackathon",
@@ -119,7 +119,7 @@ function EventTemplate({ props }) {
       {loading ? <Load /> :
         <>
           {/*About Event*/}
-          <div id="#"
+          <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
@@ -139,7 +139,7 @@ function EventTemplate({ props }) {
 
 
 
-          {/* Contact-Sponsor/Theme-Platform */}
+          {/* Contact-Sponsor-Platform */}
           <div
             className={`${styles._homepage} ${styles.bg}`}
 
@@ -151,20 +151,10 @@ function EventTemplate({ props }) {
                   contact: props.contact
                 }} />
               </div>
-              
-              {
-                props.sponsor === undefined 
-                ?
-                  props.theme !== undefined &&
-                  <div className={`${styles._child} `}>
-                    <GlowCardSimple props={{ title: "Theme",content:props.theme}} />
-                  </div>
-                :
-                <div className={`${styles._child} `}>
-                  <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
-                </div>
-              }
-              
+
+              <div className={`${styles._child} `}>
+                <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
+              </div>
 
               <div className={`${styles._child}`}>
                 <GlowCardSimple props={{
@@ -193,24 +183,11 @@ function EventTemplate({ props }) {
           </div>
 
 
-          {/* Rounds or Instructions*/}
+          {/* Rounds */}
           <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
-            {props.rounds === undefined 
-            ?
-            <div className={`${styles._rulesDivContainer}`}>
-              <div className={`${styles._rulesDiv}`}>
-                <GlowCard props={{
-                  title: "Instructions",
-                  un_list: props.instructions,
-                  img: "events/rules.svg",
-                  textAlign: 'left'
-                }} />
-              </div>
-            </div>
-            :
             <div className={`${styles._rulesDivContainer1}`}>
               <div className={`${styles._rulesDiv1}`}>
                 <GlowCardSimple props={{
@@ -251,8 +228,6 @@ function EventTemplate({ props }) {
 
               </div>
             </div>
-            }
-            
           </div>
           <Footer />
         </>

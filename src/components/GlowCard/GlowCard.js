@@ -47,9 +47,13 @@ function GlowCard({ props }) {
                                     )
                                     : <p className={styles.glowCardText}>{props.content}</p>
                                 : (props.content === undefined)
-                                    ? props.list.map((item, index) =>
-                                        <p key={index + 1} className={styles.glowCardText} style={{textAlign:`${props.textAlign}`}}>{index+1}) {item}</p>
-                                    )
+                                    ? (props.list !== undefined)
+                                        ? props.list.map((item, index) =>
+                                            <p key={index + 1} className={styles.glowCardText} style={{textAlign:`${props.textAlign}`}}>{index+1}) {item}</p>
+                                        )
+                                        : props.un_list.map((item, index) =>
+                                            <p key={index + 1} className={styles.glowCardText} style={{textAlign:`${props.textAlign}`}}>{item}</p>
+                                        )
                                     : <p className={styles.glowCardText}>{props.content}</p>
                                 }
 
