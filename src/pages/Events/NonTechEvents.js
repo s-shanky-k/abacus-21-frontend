@@ -22,7 +22,7 @@ class NonTechEvents extends Component {
 
                 <div id="#" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`} >
                     <GlowCardResponsive props={{ title: "IMAGENATION",titleFontFamily:"Iceland", content: "An online photography contest",img:"events/imagenation.svg", href: "/events/non-tech/imagenation" }} />
-                    <GlowCardResponsive props={{ title: "HOUSE FULL",titleFontFamily:"Iceland", content: "An event for all the non-technical pros out there",img:"events/housefull.svg", href: "/events/non-tech/housefull" }} />
+                    <GlowCardResponsive props={{ title: "HOUSE FULL",titleFontFamily:"Iceland", content: "An event for all the non-technical pros out there",img:"events/house-full.svg", href: "/events/non-tech/house-full" }} />
                     <GlowCardResponsive props={{ title: "GRAPHIC TRAFFIC",titleFontFamily:"Iceland", content: "An online poster designing contest",img:"events/graphic-traffic.svg", href: "/events/non-tech/graphic-traffic" }} />
                 </div>
 

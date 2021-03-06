@@ -145,28 +145,28 @@ function EventTemplate({ props }) {
 
           >
             <div className={`${styles._about_event}`}>
-              <div className={`${styles._child}`}>
+              <div className={`${styles._child}  ${styles._sponsorMargin}`}>
                 <GlowCardSimple props={{
                   title: "Contact",
                   contact: props.contact
                 }} />
               </div>
-              
+
               {
-                props.sponsor === undefined 
-                ?
+                props.sponsor === undefined
+                  ?
                   props.theme !== undefined &&
                   <div className={`${styles._child} `}>
-                    <GlowCardSimple props={{ title: "Theme",content:props.theme}} />
+                    <GlowCardSimple props={{ title: "Theme", content: props.theme }} />
                   </div>
-                :
-                <div className={`${styles._child} `}>
-                  <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
-                </div>
+                  :
+                  <div className={`${styles._child}`}>
+                    <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
+                  </div>
               }
-              
 
-              <div className={`${styles._child}`}>
+
+              <div className={`${styles._child}  ${styles._sponsorMargin}`}>
                 <GlowCardSimple props={{
                   title: "Time & Platform",
                   list: props.dateTime
@@ -198,61 +198,61 @@ function EventTemplate({ props }) {
             className={`${styles._homepage} ${styles.bg}`}
 
           >
-            {props.rounds === undefined 
-            ?
-            <div className={`${styles._rulesDivContainer}`}>
-              <div className={`${styles._rulesDiv}`}>
-                <GlowCard props={{
-                  title: "Instructions",
-                  un_list: props.instructions,
-                  img: "events/rules.svg",
-                  textAlign: 'left'
-                }} />
-              </div>
-            </div>
-            :
-            <div className={`${styles._rulesDivContainer1}`}>
-              <div className={`${styles._rulesDiv1}`}>
-                <GlowCardSimple props={{
-                  title: "Rounds",
-                  rounds: props.rounds,
-                }} />
-              </div>
-              {props.registration &&
-                <div className="my-5">
-                  {
-                    !registered ?
-                      (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
-                      :
-                      (!paid ?
-                        (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
-                        :
-                        <p style={{ color: "white" }}>Already Paid</p>)
-                  }
+            {props.rounds === undefined
+              ?
+              <div className={`${styles._rulesDivContainer}`}>
+                <div className={`${styles._rulesDiv}`}>
+                  <GlowCard props={{
+                    title: "Instructions",
+                    un_list: props.instructions,
+                    img: "events/rules.svg",
+                    textAlign: 'left'
+                  }} />
                 </div>
-              }
-
-
-              {/* Modal */}
-              <Modal isOpen={modalIsOpen} style={{
-                content: {
-                  backgroundColor: "#060c21",
-                  zIndex: '999',
-                  overflowY: 'hidden'
-                },
-                overlay: {
-                  backgroundColor: "black",
-                  zIndex: '999'
-                }
-              }}>
-                <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
-              </Modal>
-              <div>
-
               </div>
-            </div>
+              :
+              <div className={`${styles._rulesDivContainer1}`}>
+                <div className={`${styles._rulesDiv1}`}>
+                  <GlowCardSimple props={{
+                    title: "Rounds",
+                    rounds: props.rounds,
+                  }} />
+                </div>
+                {props.registration &&
+                  <div className="my-5">
+                    {
+                      !registered ?
+                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                        :
+                        (!paid ?
+                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                          :
+                          <p style={{ color: "white" }}>Already Paid</p>)
+                    }
+                  </div>
+                }
+
+
+                {/* Modal */}
+                <Modal isOpen={modalIsOpen} style={{
+                  content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999',
+                    overflowY: 'hidden'
+                  },
+                  overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                  }
+                }}>
+                  <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
+                </Modal>
+                <div>
+
+                </div>
+              </div>
             }
-            
+
           </div>
           <Footer />
         </>
