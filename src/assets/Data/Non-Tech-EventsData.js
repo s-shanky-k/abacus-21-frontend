@@ -25,8 +25,6 @@ export const NonTechEvents = {
             }
         ],
 
-        sponsor: "",
-
         rules: [
             "This event is for individual participant only",
             "Member involved in any kind of malpractice will be disqualified immediately",
@@ -48,36 +46,36 @@ export const NonTechEvents = {
                 },
             ]
         },
-        registration: true,
-        purpose: "EVENTS"
+        registration:true
     },
 
     // Imagenation
     "imagenation": {
         name: "Imagenation",
-        refName: "house-full",
-        about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
+        refName: "imagenation",
+        about: `Hello Photographers, get your cam ready and start capturing the moment.
+                Abacus’21 brings you the online photography contest.
+                It is a social media based (Instagram) event where the contestant competes to
+                showcase their photography talent. The photos will be displayed in the abacus 
+                official social media handle`,
 
         dateTime: [
-
+            "Last Date - ",
+            "Instagram"
         ],
 
         contact: [
             {
-                name: "Guru Naveen K",
-                mobile: "6383357656"
+                name: "Ritika M",
+                mobile: "7538825268"
             },
             {
-                name: "Muralikrishnan S",
-                mobile: "9092432578"
-            },
-            {
-                name: "Surya N",
-                mobile: "9500372299"
+                name: "Preeth G",
+                mobile: "9087449366"
             }
         ],
 
-        sponsor: "",
+        theme: "This is theme",
 
         rules: [
             "This event is for individual participant only",
@@ -87,58 +85,66 @@ export const NonTechEvents = {
             "Participants must ensure that they have microsoft account"
         ],
 
-        rounds: {
-            number: 2,
-            roundDetails: [
-                {
-                    title: "Prelims",
-                    description: "Participants will be given 30 minutes to answer questions from familiar topics."
-                },
-                {
-                    title: "Finals",
-                    description: "A round in round robin fashion. Based on Kollywood (60 minutes)"
-                },
-            ]
-        },
+        instructions: [
+            "The contestant must enclose the photo along with the personal details in the format:",
+            "Name",
+            "Year",
+            "Department",
+            "College",
+            "Email Id : events@abacus.org.in (tentative)",
+            "Last date for sending the photo:",
+            "Send your entries to (email id) :"
+        ],
         registration: false
     },
 
-    // Graphic Traffiic
+    // Graphic Traffic
     "graphic-traffic": {
         name: "Graphic Traffic",
-        refName: "house-full",
-        about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
-
+        refName: "graphic-traffic",
+        about: `Hello Designers, get your sketch ready and start portraying the moment.
+                Abacus’21 brings you the online poster designing contest.
+                It is a social media based (Instagram) event where the contestant competes 
+                to showcase their designing talent. The posters will be displayed in the abacus 
+                official social media handle.`,
         dateTime: [
-
+            "Last Date - 20-03-2021",
+            "Instagram"
         ],
 
         contact: [
             {
-                name: "Guru Naveen K",
-                mobile: "6383357656"
+                name: "Adhithya K",
+                mobile: "8883018311"
             },
             {
-                name: "Muralikrishnan S",
-                mobile: "9092432578"
-            },
-            {
-                name: "Surya N",
-                mobile: "9500372299"
+                name: "Usha Varshini Saravanan",
+                mobile: "9894560778"
             }
         ],
 
-        sponsor: "",
+        theme: "This is theme",
 
         rules: [
-            "This event is for individual participant only",
-            "Member involved in any kind of malpractice will be disqualified immediately",
-            "Decisions made by the administrators will be final",
-            "Participants must ensure that they have laptop with good internet connectivity for their convenience",
-            "Participants must ensure that they have microsoft account"
+            "Only one entry is allowed per contestant",
+            "The poster must be originally designed by the contestant",
+            "The judge’s decisions are final based on the number of likes, shares, and creativity",
+            "Submissions will be not accepted once the deadline lapses",
+            "Posters which portray out of the theme mentioned or having vulgar content will be disqualified",
+            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified"
         ],
 
-        rounds: {
+        instructions: [
+            "The contestant must enclose the poster along with the personal details in the format:",
+            "Name",
+            "Year",
+            "Department",
+            "College",
+            "Email Id : events@abacus.org.in (tentative)",
+            "Last date for sending the poster: 20-03-2021",
+            "Send your entries to (email id) :"
+        ],
+        /* rounds: {
             number: 2,
             roundDetails: [
                 {
@@ -150,7 +156,7 @@ export const NonTechEvents = {
                     description: "A round in round robin fashion. Based on Kollywood (60 minutes)"
                 },
             ]
-        },
+        }, */
         registration: false
     },
 }
