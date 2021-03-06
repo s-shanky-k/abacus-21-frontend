@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import styles from "./AboutUs.module.css"
-import Heading from '../../components/Heading/Heading'
 import GlowCard from '../../components/GlowCard/GlowCard'
-import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
-import ScrollToTop from 'react-scroll-up'
 import Footer from '../../components/Footer/Footer'
 
 class AboutUs extends Component {

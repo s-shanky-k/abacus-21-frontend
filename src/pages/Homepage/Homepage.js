@@ -1,24 +1,17 @@
 import React, { Component, useRef } from "react";
 import styles from "./Homepage.module.css";
-import { ScrollUpButton } from "react-scroll-up-button";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //NeonButton
-import NeonButton from "../../components/NeonButton/NeonButton";
-import GlowCardResponsive from "../../components/GlowCardResponsive/GlowCardResponsive";
 import GlowCardSimple from "../../components/GlowCardSimple/GlowCardSimple";
 import Loader from "../../components/Loader/Loader";
 import Load from "../../components/Load/Load";
 import Heading from "../../components/Heading/Heading";
 import Heading1 from "../../components/Heading1/Heading1";
 import Footer from "../../components/Footer/Footer";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
-import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import Dev from "../../components/Dev/Dev";
-import GlowCircle from "../../components/GlowCircle/GlowCircle";
-import { ArrowBackIosOutlined, Block } from "@material-ui/icons";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));

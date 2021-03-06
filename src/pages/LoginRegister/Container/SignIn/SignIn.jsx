@@ -1,17 +1,13 @@
-import React, { Component, useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { Link, useHistory } from "react-router-dom"
-import { HashLink } from "react-router-hash-link"
 import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { withRouter } from "react-router-dom"
 import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
-
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
-import Notification from '../../../../components/Notification/Notification.js';
 import GoogleButton from 'react-google-button'
 
 

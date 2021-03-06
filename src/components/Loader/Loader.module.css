@@ -14,17 +14,19 @@
     font-family: NeonFont;
     src: url(./Clip.woff2);
 }
+
 @media only screen and (max-width: 1300px) {
     ._homepage {
         padding-top: 90px;
-       margin-bottom: auto;
+        margin-bottom: auto;
     }
 }
 
 ._loader_box {
-    
+
     text-align: center;
 }
+
 /* Copied */
 ._loader_sign {
     /* display: flex;
@@ -367,4 +369,3 @@
 /* ._loader_arrow {
     position: absolute !important;
 } */
-

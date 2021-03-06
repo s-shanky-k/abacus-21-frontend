@@ -1,15 +1,11 @@
 import React, { Component, useState, useContext, useEffect } from 'react';
 import styles from "./SignInXS.module.css"
-import Heading from "../../../Heading/Heading"
 import NeonButton from "../../../NeonButton/NeonButton"
 import { Link, useHistory } from "react-router-dom"
-import { HashLink } from "react-router-hash-link"
 import { withRouter } from "react-router-dom"
 import Cookies from "js-cookie"
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
-import Notification from '../../../../components/Notification/Notification.js';
 import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import GoogleButton from 'react-google-button'

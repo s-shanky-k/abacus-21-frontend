@@ -4,8 +4,6 @@ import Heading from "../../components/Heading/Heading.js"
 import NeonButton from "../../components/NeonButton/NeonButton.js"
 import { useHistory, withRouter } from 'react-router-dom';
 import { apiForgotPassword } from "../../api/api"
-
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from "../../components/Footer/Footer"

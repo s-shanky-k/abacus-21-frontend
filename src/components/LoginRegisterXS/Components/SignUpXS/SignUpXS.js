@@ -1,6 +1,5 @@
 import React, { Component, useState, useContext } from 'react';
 import styles from "./SignUpXS.module.css"
-import Heading from "../../../Heading/Heading"
 import NeonButton from "../../../NeonButton/NeonButton"
 import { apiRegister, baseURL, url_gAuth } from "../../../../api/api";
 import colleges from "../../../../assets/colleges.js"
@@ -11,9 +10,6 @@ import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 
-
-
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'

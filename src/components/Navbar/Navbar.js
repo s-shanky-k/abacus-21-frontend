@@ -8,7 +8,6 @@ import { SetAuthApi } from "../../App"
 import { AuthApi } from "../../App"
 import Cookies from "js-cookie"
 
-import { css } from "glamor"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 

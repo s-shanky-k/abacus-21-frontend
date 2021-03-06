@@ -29,7 +29,7 @@ function NavbarBig({ clickLogout }) {
                     <span className={`${styles._navbar_main_link_text}`}>About Us</span> 
                 </NavHashLink>
 
-                <NavHashLink className={`${styles._navbar_main_link}`} to="/events#events" activeClassName="selected"
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/events##" activeClassName="selected"
   activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Events</span>
                 </NavHashLink>

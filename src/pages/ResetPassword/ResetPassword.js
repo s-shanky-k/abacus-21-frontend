@@ -1,10 +1,9 @@
-import React, { Component, useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./ResetPassword.module.css"
 import Heading from "../../components/Heading/Heading.js"
 import NeonButton from "../../components/NeonButton/NeonButton.js"
 import { apiResetPassword } from "../../api/api"
-import {useHistory} from "react-router-dom"
-import { css } from "glamor"
+import { useHistory } from "react-router-dom"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -73,7 +72,7 @@ function ResetPassword(props) {
                 "key": queryParams.key
             })
             toast.success("Reset Password Successful", {
-                position:toast.POSITION.BOTTOM_LEFT
+                position: toast.POSITION.BOTTOM_LEFT
             })
             history.push("/login-register")
         }

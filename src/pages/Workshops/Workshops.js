@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styles from "./Workshops.module.css"
 import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResponsive'
-import ScrollUpButton from 'react-scroll-up-button'
-import LoginRegister from "../LoginRegister/LoginRegister.js";
 import Footer from '../../components/Footer/Footer'
 class Workshops extends Component {
     render() {

@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ScrollUpButton from 'react-scroll-up-button'
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <ScrollUpButton/>
   </React.StrictMode>,
   document.getElementById('root')
 );
