@@ -28,7 +28,7 @@ class Loader extends Component {
                             <span className={`${styles.flicker3}`}>c</span></span>u
                                 <span className={`${styles.flicker2}`}>s</span><span className={`${styles.flickerStart2}`}>'21</span>
                     </div>
-                    <HashLink to="/homepage#homepage" spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></HashLink>
+                    <HashLink to="/homepage##" spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></HashLink>
 
                 </div>
 
