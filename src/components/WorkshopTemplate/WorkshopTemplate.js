@@ -133,6 +133,37 @@ function WorkshopTemplate({ props }) {
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
                 <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+
+                {/* Button */}
+
+                {props.registration &&
+                  <div className="my-5">
+                    {
+                      !registered ?
+                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                        :
+                        (!paid ?
+                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                          :
+                          <p style={{ color: "white" }}>Already Paid</p>)
+                    }
+                  </div>
+                }
+
+                <Modal isOpen={modalIsOpen} style={{
+                  content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999',
+                    overflowY: 'hidden'
+                  },
+                  overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                  }
+                }}>
+                  <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
+                </Modal>
+
               </div>
             </div>
           </div>
@@ -200,7 +231,7 @@ function WorkshopTemplate({ props }) {
             </div>
           </div>
         </div> */}
- 
+
           {/* Agenda */}
           {/* <div
             className={`${styles._homepage} ${styles.bg}`}
@@ -215,7 +246,7 @@ function WorkshopTemplate({ props }) {
               </div>
             </div>
           </div> */}
-          
+
           {/*Prereq*/}
           {/* <div
             className={`${styles._homepage} ${styles.bg1}`}
@@ -229,11 +260,11 @@ function WorkshopTemplate({ props }) {
                 }} />
               </div>
             </div> */}
-          
+
 
 
           {/* Rounds or Instructions*/}
-         {/*  <div
+          {/* <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
