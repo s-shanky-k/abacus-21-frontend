@@ -141,7 +141,7 @@ function WorkshopTemplate({ props }) {
 
 
           {/* Contact-Sponsor/Theme-Platform */}
-          <div
+          {/* <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -174,7 +174,7 @@ function WorkshopTemplate({ props }) {
                 }} />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Speakers */}
           {/* <div
