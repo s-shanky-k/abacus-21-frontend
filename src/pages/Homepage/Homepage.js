@@ -18,7 +18,7 @@ import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import Dev from "../../components/Dev/Dev";
 import GlowCircle from "../../components/GlowCircle/GlowCircle";
-import { ArrowBackIosOutlined } from "@material-ui/icons";
+import { ArrowBackIosOutlined, Block } from "@material-ui/icons";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
@@ -48,41 +48,20 @@ class Homepage extends Component {
         <section id="homepage">
           <div
             className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}
-          >
+          > 
             <img
-              src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`}
+              src={`${process.env.PUBLIC_URL}/images/about-us/abacus logo website.svg`}
               alt=""
               style={{
-                width: "250px",
-                height: "250px",
-                margin: "auto",
-                paddingTop: "20px",
-                paddingBottom: "20px",
+                width: "330px",
+                height: "350px",
+                marginLeft: "auto",
+                marginRight:"auto"
+                
               }}
             />
-            <img
-              src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`}
-              alt=""
-              style={{
-                width: "250px",
-                height: "250px",
-                margin: "auto",
-                paddingTop: "20px",
-                paddingBottom: "20px",
-              }}
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/images/about-us/abacus.svg`}
-              alt=""
-              style={{
-                width: "250px",
-                height: "250px",
-                margin: "auto",
-                paddingTop: "20px",
-                paddingBottom: "20px",
-              }}
-            />
-            <div className="container-fluid  ml-sm-0  justify-content-center align-self-center">
+           
+            <div className="container-fluid  ml-sm-0  justify-content-center align-self-center pb-5">
               <div className="row justify-content-center align-self-center ">
                 <div className="col col-lg-3 col-md-4   mt-5   text-center">
                   <div className={`${styles.countup}`}>
@@ -122,7 +101,7 @@ class Homepage extends Component {
                 </div>
                 <div className="col col-lg-3 col-md-4  mt-5  text-center">
                   <div className={`${styles.countup}`}>
-                    <CountUp start={0} end={8} redraw={true} suffix=" L+">
+                    <CountUp start={0} end={50} redraw={true} suffix=" K+">
                       {({ countUpRef, start }) => (
                         <VisibilitySensor onChange={start} delayedCall>
                           <span ref={countUpRef} />
@@ -149,17 +128,30 @@ class Homepage extends Component {
                 </div>
 </div>
         {/* Child Class */}
-        <div
-          className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}
-        >
-          <div className={`${styles._homepage_container}`}>SPONSERS</div>
-          {/* <GlowCard props={{ title: "Boom", content: "This is Everything", degree: "180deg"}} /> */}
-        </div>
+        <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
+       <div className="text-center">
+            <Heading text="Sponsors" fontSize="60px" />
+            <Heading text="Title Sponsors" fontSize="30px" />
+          </div>
+          
+          
+          <div className="container-fluid m-auto d-flex justify-content-center align-self-center">
+            <div className="row  d-flex justify-content-center align-self-center pb-5">
+              <div className="col col-lg-5 col-sm-12 col-xs-12">
+              <img src={`${process.env.PUBLIC_URL}/images/about-us/motorq.png`} class="img-fluid" alt="Mptorq"/>
+              </div>
+              <div className="col col-lg-5 col-sm-12 col-xs-12">
+              <img src={`${process.env.PUBLIC_URL}/images/about-us/visa.png`} class="img-fluid" alt="Visa"/>
+              </div></div></div>
+          
+           
+            </div>
+            
+           
+        
 
         {/* Child Class */}
-        <div
-          className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
-        >
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
           <div className="text-center mt-5">
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>
