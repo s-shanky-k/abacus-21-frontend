@@ -19,6 +19,7 @@ import ResetPassword from './pages/ResetPassword/ResetPassword.js'
 import Navbar from './components/Navbar/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import GoogleFormData from "./pages/GoogleFormData/GoogleFormData"
+import HackathonForm from './components/HackathonForm/HackathonForm'
 
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
@@ -110,6 +111,7 @@ const Routes = () => {
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/login-register" exact component={LoginRegister} />
       <Route path="/google-form-data" exact component={GoogleFormData} />
+      <Route path="/hackathon-form" exact component={HackathonForm} />
       <ProtectedRoute path="/dashboard" auth={Auth} exact component={Dashboard} />
       <Route component={PageNotFound} />
 
