@@ -40,6 +40,8 @@
 
 ._eventCardImgDiv {
     /* flex-basis: 60% !important; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
 }

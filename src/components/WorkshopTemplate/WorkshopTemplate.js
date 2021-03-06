@@ -132,12 +132,12 @@ function WorkshopTemplate({ props }) {
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
-                <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                <img src={`${process.env.PUBLIC_URL}/images/workshops/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
 
                 {/* Button */}
 
                 {props.registration &&
-                  <div className="my-5">
+                  <div >
                     {
                       !registered ?
                         (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
