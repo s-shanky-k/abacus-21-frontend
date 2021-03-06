@@ -115,29 +115,62 @@ class Homepage extends Component {
             </div>{" "}
           </div>
         </section>
+     {/* Child Class */}
+     <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+     <div  className={`${styles.visible}`} >
+        
+        <GlowCardSimple props={{
+                           
+                           content:"ABACUS is the annual intercollege technical symposium of the Department of Computer Science and Engineering conducted by the Computer Science and Engineering Association (CSEA), College of Engineering, Guindy.",
+                           }} />
+                   </div>
+     
+     <GlowCardSimple props={{
+                        
+                        content: "Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes. ",
+                        }} />
+               
+   
+                <div className={`${styles._rulesDivContainer1}`}>
+              <div className={`${styles._rulesDiv}`}>
+         <div  className={`${styles.vis}`} >
+        
+     <GlowCardSimple props={{
+       link:"https://cseaceg.org.in/",
+                        title: "CSEA",
+                        content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
+                        }} />
+                </div>
+</div>  </div></div> 
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
         <div class="embed-responsive embed-responsive-21by9 my-5 mx-lg-5 mx-md-4 mx-sm-0 mx-xs=0">
           <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
          <div  className={`${styles.visible}`} >
-     <GlowCardSimple props={{
+  <GlowCardSimple props={{
+    link:"https://cseaceg.org.in/",
                         title: "CSEA",
                         content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
                         }} />
                 </div>
 </div>
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
-       <div className="text-center mt-0">
+      <div className={`${styles._homepage} ${styles.bg} ${styles._responsive}`}>
+      <div className="text-center">
             <Heading text="Sponsors" fontSize="60px" />
+            <div class="mt-5">
             <Heading text="Title Sponsors" fontSize="30px" />
+            </div>
           </div>
+          
+            
+               
           
           
           <div className="container-fluid mx-auto d-flex justify-content-center align-self-center">
             <div className="row  d-flex justify-content-center align-self-center pb-5">
-              <div className="col col-lg-6  col-md-6 col-sm-6 col-xs-12 pr-lg-5 pt-lg-5 pt-md-5 pt-sm-0">
+              <div className="col col-lg-6  col-md-6 col-sm-6 col-xs-12 pr-lg-5 pt-lg-5 pt-md-5 pt-sm-5 pt-xs-5">
               <img src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`} class="img-fluid" style={{width:'100%',height:'auto'}}
               alt="Motorq"/>
               </div>
@@ -152,23 +185,13 @@ class Homepage extends Component {
         
 
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
           <div className="text-center mt-5">
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
             <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5  d-flex justify-content-center align-self-center pb-5">
-              <div className="col  pb-5 ">
-                <Dev
-                  props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/shankar.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/shankar-kumar-s",
-                  }}
-                />
-              </div>
+              
 
               <div className="col   pb-5 ">
                 <Dev
@@ -196,14 +219,16 @@ class Homepage extends Component {
               <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Umar Ahmed",
+                    title: "Shankar Kumar",
                     title1: "Frontend",
-                    img: "dev/umar.jpeg",
+                    img: "dev/shankar.jpeg",
                     href:
-                      "https://www.linkedin.com/in/umar-ahmed-6892481b3",
+                      "https://www.linkedin.com/in/shankar-kumar-s",
                   }}
                 />
               </div>
+              
+                
               <div className="col  pb-5 ">
                 <Dev
                   props={{
@@ -211,6 +236,17 @@ class Homepage extends Component {
                     title1: "Backend",
                     img: "dev/Srinath.jpg",
                     href:"https://www.linkedin.com/in/srinath-sureshkumar-3467331a5/"
+                  }}
+                />
+              </div>
+              <div className="col  pb-5 ">
+              <Dev
+                  props={{
+                    title: "Umar Ahmed",
+                    title1: "Frontend",
+                    img: "dev/umar.jpeg",
+                    href:
+                      "https://www.linkedin.com/in/umar-ahmed-6892481b3",
                   }}
                 />
               </div>
@@ -234,27 +270,27 @@ class Homepage extends Component {
                   }}
                 />
               </div>
-              <div className="col  pb-5 ">
-                <Dev
-                  props={{
-                    title: "Rohini",
-                    title1: "Frontend",
-                    img: "dev/Rohini R.jpg",
-                    href:"https://www.linkedin.com/in/rohini-raja/"
-                  }}
-                />
-              </div>
+              
               <div className="col  pb-5 ">
                 <Dev
                   props={{
                     title: "Deepak",
-                    title1: "Frontend",
+                    title1: "Design",
                     img: "dev/deepak.jpeg",
                     href:"https://www.linkedin.com/in/deepak24899/"
                   }}
                 />
               </div>
-             
+              <div className="col  pb-5 ">
+                <Dev
+                  props={{
+                    title: "Rohini",
+                    title1: "Design",
+                    img: "dev/Rohini R.jpg",
+                    href:"https://www.linkedin.com/in/rohini-raja/"
+                  }}
+                />
+              </div>
               
             </div>
           </div>

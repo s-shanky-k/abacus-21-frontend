@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from "./Loader.module.css"
 import "./Loader2.css"
 import { Link } from 'react-scroll'
+import { HashLink } from "react-router-hash-link"
 import AnimatedCard from "@rihor/react-3d-card/dist/AnimatedCard"
 
 class Loader extends Component {
@@ -27,7 +28,7 @@ class Loader extends Component {
                             <span className={`${styles.flicker3}`}>c</span></span>u
                                 <span className={`${styles.flicker2}`}>s</span><span className={`${styles.flickerStart2}`}>'21</span>
                     </div>
-                    <Link spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></Link>
+                    <HashLink to="/homepage#homepage" spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></HashLink>
 
                 </div>
 

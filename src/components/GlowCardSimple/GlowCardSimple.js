@@ -13,12 +13,15 @@ function GlowCardSimple({ props }) {
 
         <FadeInSection>
             <AnimatedCard weight={0.05}>
+                
                 <div className={styles.bg}>
                     <div className={styles.box}>
                         <div className={`${styles.content}`}>
                             <div className={styles.glowCardContent}>
+                                
                                 <div style={{ textAlign: 'center' }}>
-                                    <Heading text={props.title} fontSize="30px" />
+                                    <a href={props.link} target="_blank" style={{textDecoration:'none'}}>
+                                    <Heading text={props.title} fontSize="30px" /></a>
                                 </div>
 
 
