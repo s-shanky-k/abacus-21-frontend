@@ -1,10 +1,10 @@
 import React from 'react'
-import EventTemplate from "../../components/EventTemplate/EventTemplate";
+import HackathonTemplate from "../../components/HackathonTemplate/HackathonTemplate";
 import {Hackathon as HackData} from "../../assets/Data/HackathonData"
 
 function Hackathon() {
     return (
-        <EventTemplate props={HackData} />
+        <HackathonTemplate props={HackData} />
     )
 }
 

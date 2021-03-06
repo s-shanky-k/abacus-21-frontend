@@ -1,9 +1,10 @@
-import styles from "./WorkshopTemplate.module.css";
+import styles from "./HackathonTemplate.module.css";
 import React, { useState, useEffect } from "react";
 import GlowCard from "../GlowCard/GlowCard";
 import GlowCardSimple from "../GlowCardSimple/GlowCardSimple"
 import GlowCardResponsive from "../GlowCardResponsive/GlowCardResponsive"
 import NeonButton from "../NeonButton/NeonButton";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from "js-cookie"
 import { apiGetRegistrations, apiRegisterEvent, apiPayment } from "../../api/api"
 import Load from "../Load/Load";
@@ -13,43 +14,9 @@ import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
 import Footer from "../Footer/Footer"
 import { _register, _paymentConfirmation } from "../../api/payment"
-import Dev from "../Dev/Dev";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Heading from "../Heading/Heading"
-/* 
-<WorkshopTemplate props = {name:"Tenet",
-                        refName:"tenet",
-                        about:"TENET is a challenge where the participants have to identify and resolve bugs, which makes the system unproblematic. Logical thinking of the programmer is tested through this event where the participant has to come up with unique solutions to produce an expected output.",
-                        rules:["A domain will be given on the day of hackathon",
-                              "The teams should develop a software in the same domain.",
-                              "A team must consist of 2 members.",
-                              "The team members need not necessarily be from the same institution/college.",
-                              "Participants can not be a member of more than a team",
-                              "Teams involved in any kind of malpractice will be disqualified immediately",
-                              "The decision of the judges will be final"
-                              ],
-                        contact:["Person Name - 9876543210",
-                                  "Person Name - 9876543210",
-                                  "Person Name - 9876543210"
-                                ],
-                        venueTime:["1. The event is the best event",
-                                    "2. All participants need to be there",
-                                    "3. Max four in a group only"]
-                      } />
-  props.name --> string [Actual Event Name]
-  props.refName --> string [the name in which images are stores]
-  props.about --> string
-  props.rules --> array of strings
-  props.contact --> array of strings
-  props.venueTime --> array of strings
-
-  Images need to save in the public/images/events/refName_rules.svg
-                             public/images/events/refName_about.svg
-                             public/images/events/refName_sponsor.svg    
-*/
 
 Modal.setAppElement('#root')
-function WorkshopTemplate({ props }) {
+function EventTemplate({ props }) {
 
   const history = useHistory()
 
@@ -119,7 +86,7 @@ function WorkshopTemplate({ props }) {
 
       {loading ? <Load /> :
         <>
-          {/*About Workshop*/}
+          {/*About Hackathon*/}
           <div
             className={`${styles._homepage} ${styles.bg1}`}
 
@@ -132,16 +99,14 @@ function WorkshopTemplate({ props }) {
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
-                <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                <img src={`${process.env.PUBLIC_URL}/images/hackathon/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
               </div>
             </div>
           </div>
 
 
-
-
           {/* Contact-Sponsor/Theme-Platform */}
-          <div
+          {/* <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -169,71 +134,33 @@ function WorkshopTemplate({ props }) {
 
               <div className={`${styles._child}`}>
                 <GlowCardSimple props={{
-                  title: "Time & Platform",
+                  title: "Time",
                   list: props.dateTime
                 }} />
               </div>
             </div>
-          </div>
-
-          {/* Speakers */}
-          {/* <div
-          className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
-        >
-          <div className="text-center">
-            <Heading text="Speakers" fontSize="40px" />
-          </div>
-          <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
-            <div className="row  d-flex justify-content-center align-self-center pb-5">
-              {props.speakers.map((speaker, index) =>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
-                <Dev
-                props={{
-                  title: speaker.name,
-                  title1: speaker.profession,
-                  img: `workshop/`+`${speaker.name}`+`.jpeg`
-                }}
-                />
-              </div>
-              )
-              }
-            </div>
-          </div>
-        </div> */}
- 
-          {/* Agenda */}
-          {/* <div
-            className={`${styles._homepage} ${styles.bg}`}
-
-          >
-          <div className={`${styles._rulesDivContainer1}`}>
-              <div className={`${styles._rulesDiv1}`}>
-                <GlowCardSimple props={{
-                  title: "Agenda",
-                  agenda: props.agenda,
-                }} />
-              </div>
-            </div>
           </div> */}
-          
-          {/*Prereq*/}
+
+          {/* Rules */}
           {/* <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
-    
-            <div className={`${styles._child}`}>
-                <GlowCardSimple props={{
-                  title: "Prerequisites",
-                  list: props.prerequisite
+            <div className={`${styles._rulesDivContainer}`}>
+              <div className={`${styles._rulesDiv}`}>
+                <GlowCard props={{
+                  title: "Rules",
+                  list: props.rules,
+                  img: "events/rules.svg",
+                  textAlign: 'left'
                 }} />
               </div>
-            </div> */}
-          
+            </div>
+          </div> */}
 
 
           {/* Rounds or Instructions*/}
-         {/*  <div
+          {/* <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -269,11 +196,11 @@ function WorkshopTemplate({ props }) {
                         <p style={{ color: "white" }}>Already Paid</p>)
                   }
                 </div>
-              }
+              } */}
 
 
-              
-              <Modal isOpen={modalIsOpen} style={{
+              {/* Modal */}
+              {/* <Modal isOpen={modalIsOpen} style={{
                 content: {
                   backgroundColor: "#060c21",
                   zIndex: '999',
@@ -301,4 +228,4 @@ function WorkshopTemplate({ props }) {
   );
 }
 
-export default WorkshopTemplate;
+export default EventTemplate;
