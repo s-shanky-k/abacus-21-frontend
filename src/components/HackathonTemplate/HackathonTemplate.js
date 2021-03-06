@@ -99,7 +99,7 @@ function EventTemplate({ props }) {
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
-                <img src={`${process.env.PUBLIC_URL}/images/hackathon/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
               </div>
             </div>
           </div>

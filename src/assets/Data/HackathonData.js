@@ -1,6 +1,6 @@
 export const Hackathon = {
     name: "HACKATHON!!!!",
-    refName: "tenet",
+    refName: "hackathon",
     about: `HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA .`,
 
     dateTime: [
