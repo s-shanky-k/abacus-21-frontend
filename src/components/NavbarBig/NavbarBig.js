@@ -1,6 +1,6 @@
 import React, { Component, useContext } from 'react'
 import { Link, useHistory, withRouter } from "react-router-dom"
-import { HashLink } from "react-router-hash-link"
+import { NavHashLink } from "react-router-hash-link"
 import styles from "./NavbarBig.module.css"
 import { AuthApi } from "../../App"
 import Heading from "../Heading/Heading"
@@ -19,35 +19,42 @@ function NavbarBig({ clickLogout }) {
             </div>
 
             <div className={`${styles._navbar_main}`}>
-                <HashLink className={`${styles._navbar_main_link}`} to="/homepage#homepage">
+                <NavHashLink className={`${styles._navbar_main_link}`}  to="/homepage#homepage" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Homepage</span>
-                </HashLink>
+                </NavHashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/about-us#aboutus">
-                    <span className={`${styles._navbar_main_link_text}`}>About Us</span>
-                </HashLink>
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/about-us#aboutus" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>
+                    <span className={`${styles._navbar_main_link_text}`}>About Us</span> 
+                </NavHashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/events#events">
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/events#events" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Events</span>
-                </HashLink>
+                </NavHashLink>
 
-                <HashLink className={`${styles._navbar_main_link}`} to="/workshops#workshops">
+                <NavHashLink className={`${styles._navbar_main_link}`} to="/workshops#workshops" activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>
                     <span className={`${styles._navbar_main_link_text}`}>Workshops</span>
-                </HashLink>
+                </NavHashLink>
 
                 {/* Conditionally rendering based on Authentication */}
                 {Auth ?
-                    (<><Link className={`${styles._navbar_main_link}`} to="/dashboard">
+                    (<><NavHashLink className={`${styles._navbar_main_link}`} to="/dashboard" activeClassName="selected"
+                    activeStyle={{ color: '#ff2483' }}>
                         <span className={`${styles._navbar_main_link_text}`}>Dashboard</span>
-                    </Link>
-                    <Link className={`${styles._navbar_main_link}`} onClick={clickLogout}>
+                    </NavHashLink>
+                    <NavHashLink className={`${styles._navbar_main_link}`} onClick={clickLogout} activeClassName="selected"
+  activeStyle={{ color: '#ff2483' }}>
                         <span className={`${styles._navbar_main_link_text}`}>Logout</span>
-                    </Link></>
+                    </NavHashLink></>
                     )
                     :
-                    (<Link className={`${styles._navbar_main_link}`} to="/login-register">
+                    (<NavHashLink className={`${styles._navbar_main_link}`} to="/login-register" activeClassName="selected"
+                    activeStyle={{ color: '#ff2483' }}>
                         <span className={`${styles._navbar_main_link_text}`}>Login</span>
-                    </Link>)}
+                    </NavHashLink>)}
 
 
             </div>

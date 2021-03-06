@@ -50,7 +50,7 @@ class Homepage extends Component {
             className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}
           > 
             <img
-              src={`${process.env.PUBLIC_URL}/images/about-us/abacus logo website.svg`}
+              src={`${process.env.PUBLIC_URL}/images/about-us/abacus logo sponsors page.png`}
               alt=""
               style={{
                 width: "330px",
@@ -129,19 +129,20 @@ class Homepage extends Component {
 </div>
         {/* Child Class */}
         <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
-       <div className="text-center">
+       <div className="text-center mt-0">
             <Heading text="Sponsors" fontSize="60px" />
             <Heading text="Title Sponsors" fontSize="30px" />
           </div>
           
           
-          <div className="container-fluid m-auto d-flex justify-content-center align-self-center">
+          <div className="container-fluid mx-auto d-flex justify-content-center align-self-center">
             <div className="row  d-flex justify-content-center align-self-center pb-5">
-              <div className="col col-lg-5 col-sm-12 col-xs-12">
-              <img src={`${process.env.PUBLIC_URL}/images/about-us/motorq.png`} class="img-fluid" alt="Mptorq"/>
+              <div className="col col-lg-6  col-md-6 col-sm-6 col-xs-12 pr-lg-5 pt-lg-5 pt-md-5 pt-sm-0">
+              <img src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`} class="img-fluid" style={{width:'100%',height:'auto'}}
+              alt="Motorq"/>
               </div>
-              <div className="col col-lg-5 col-sm-12 col-xs-12">
-              <img src={`${process.env.PUBLIC_URL}/images/about-us/visa.png`} class="img-fluid" alt="Visa"/>
+              <div className="col col-lg-6 col-md-6 col-sm-6 col-xs-12 pl-lg-5">
+              <img src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`} class="img-fluid" style={{width:'100%',height:'auto'}} alt="Visa"/>
               </div></div></div>
           
            
@@ -156,20 +157,20 @@ class Homepage extends Component {
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
-            <div className="row  d-flex justify-content-center align-self-center pb-5">
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+            <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5  d-flex justify-content-center align-self-center pb-5">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
                     title: "Shankar Kumar",
                     title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    img: "dev/shankar.jpeg",
                     href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                      "https://www.linkedin.com/in/shankar-kumar-s",
                   }}
                 />
               </div>
 
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+              <div className="col   pb-5 ">
                 <Dev
                   props={{
                     title: "Darrshana",
@@ -181,145 +182,84 @@ class Homepage extends Component {
                 />
               </div>
 
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
+              <div className="col   pb-5 ">
                 <Dev
                   props={{
                     title: "Paargav Shanker",
                     title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    img: "dev/paargav.jpeg",
                     href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                      "https://www.linkedin.com/in/paargav-shanker-b6708a194/",
                   }}
                 />
               </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
                     title: "Umar Ahmed",
                     title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    img: "dev/umar.jpeg",
                     href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                      "https://www.linkedin.com/in/umar-ahmed-6892481b3",
                   }}
                 />
               </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    title: "Srinath",
+                    title1: "Backend",
+                    img: "dev/Srinath.jpg",
+                    href:"https://www.linkedin.com/in/srinath-sureshkumar-3467331a5/"
                   }}
                 />
               </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  ">
+              <div className="col  pb-5  ">
                 <Dev
                   props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    title: "Adhithya",
+                    title1: "Design",
+                    img: "dev/Adhithya_K.jpg",
+                    href:"https://www.linkedin.com/in/adhithya-karthikeyan/"
                   }}
                 />
               </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    title: "Akash",
+                    title1: "Design",
+                    img: "dev/Akash.jpg",
+                    href:"https://www.linkedin.com/in/akash-murugesh-0151531ab/"
                   }}
                 />
               </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Shankar Kumar",
+                    title: "Rohini",
                     title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
+                    img: "dev/Rohini R.jpg",
+                    href:"https://www.linkedin.com/in/rohini-raja/"
                   }}
                 />
               </div>
-            </div>
-          </div>
-        </div>
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}
-        >
-          <div className="text-center mt-5">
-            <Heading text="Developers and Design Team" fontSize="40px" />
-          </div>
-          <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
-            <div className="row  d-flex justify-content-center align-self-center pb-5">
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Shankar Kumar",
+                    title: "Deepak",
                     title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                    img: "dev/deepak.jpeg",
+                    href:"https://www.linkedin.com/in/deepak24899/"
                   }}
                 />
               </div>
-
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
-                <Dev
-                  props={{
-                    title: "Darrshana",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
-                  }}
-                />
-              </div>
-
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12  pb-5 ">
-                <Dev
-                  props={{
-                    title: "Paargav Shanker",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
-                  }}
-                />
-              </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
-                <Dev
-                  props={{
-                    title: "Umar Ahmed",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
-                  }}
-                />
-              </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
-                <Dev
-                  props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                  }}
-                />
-              </div>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5  ">
-                <Dev
-                  props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                  }}
-                />
-              </div>
-              
+             
               
             </div>
           </div>
         </div>
         
-
         
 
         <Footer />
