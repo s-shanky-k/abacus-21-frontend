@@ -126,7 +126,6 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
     <Route
       {...rest}
       render={() => {
-        console.log(auth, "AUTHHHHHHHHH")
         if (auth) {
           return <Component />
         }

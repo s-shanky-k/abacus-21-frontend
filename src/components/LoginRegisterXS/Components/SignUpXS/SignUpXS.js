@@ -154,7 +154,6 @@ function SignUpXS() {
     const validate = () => {
         let validationError = '';
 
-        console.log(email);
 
         if (!name) {
             validationError = 'Name field cannot be blank';

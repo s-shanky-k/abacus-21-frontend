@@ -48,10 +48,8 @@ function ForgotPassword(props) {
 
 
     const onSubmit = async () => {
-        console.log("CAME")
         const isValid = validate();
         if (isValid) {
-            console.log("VALID", email)
             const response = await apiForgotPassword({ email: email })
             toast.success("Check Registered Email", {
                 position: toast.POSITION.BOTTOM_LEFT

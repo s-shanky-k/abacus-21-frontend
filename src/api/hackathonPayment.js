@@ -19,8 +19,6 @@ export const _register = async (history, setregistered) => {
             "token": token
         })
 
-        console.log(response)
-
         if (response.status === 200) {
             toast.success("Registration Successfull", {
                 position: toast.POSITION.BOTTOM_CENTER

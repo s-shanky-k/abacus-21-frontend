@@ -96,9 +96,7 @@ const App = (props) => {
             })
         }
         else {
-            // console.log(Cookies.get('details'),"HENLo")
             if (Cookies.get('token') !== undefined && Cookies.get('details') !== undefined) {
-                console.log("BACBACBCACBACB")
                 history.push("/dashboard")
             }
             else {

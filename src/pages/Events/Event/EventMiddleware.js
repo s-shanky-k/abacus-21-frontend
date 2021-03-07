@@ -7,7 +7,6 @@ import EventTemplate from "../../../components/EventTemplate/EventTemplate"
 export default function Event() {
 
     const { type, title } = useParams()
-    console.log("PARAMS MIDDLE", type, title)
 
 
     let Hash;

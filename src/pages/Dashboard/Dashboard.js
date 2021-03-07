@@ -46,7 +46,6 @@ function Dashboard(props) {
 
     useEffect(() => {
 
-        console.log("USEEFFECTTTTTTTTTT")
         const fetchRegistrations = async () => {
             let token = Cookies.get("token")
             const response1 = await apiGetRegistrations({ "token": token })
@@ -58,7 +57,6 @@ function Dashboard(props) {
 
 
         if (Cookies.get("token") === undefined || Cookies.get("details") === undefined) {
-            console.log("IFFFFFFFFFFFFFFFFFFFFFFF")
             Cookies.remove('token')
             Cookies.remove('details')
             history.push("/login-register")
