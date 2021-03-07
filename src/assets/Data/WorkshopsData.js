@@ -71,11 +71,11 @@ export const Workshops = {
     },
 
     // Cyber Security
-    "cyber-security": {
-        name: "Cyber Security",
-        refName: "cyber-security",
+    "entrepreneurship": {
+        name: "Entrepreneurship",
+        refName: "entrepreneurship",
 
-        about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
+        about: `Have you ever dreamt of building your own business? Here is your cup of tea. Entrepreneurship is the key to unlock your future. Brush up the basic skill sets and knowledge required to embark on an entrepreneurial journey with the workshop conducted by ----. Also learn how to build effective relationships and other tactics to launch your own business . Awaken the Entrepreneur in you and make your ideas come alive.`,
         /*
         dateTime: [
 
@@ -127,7 +127,7 @@ export const Workshops = {
     "cloud-computing": {
         name: "Cloud Computing",
         refName: "cloud-computing",
-        about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
+        about: `Unlock the future of data storage and computing power through our cloud computing workshop. You will learn how to apply concepts with cloud services and work with relevant tools and platforms like AWS, Azure, Google Cloud and DevOps from experts at Walmart.`,
 
         /*  dateTime: [
  

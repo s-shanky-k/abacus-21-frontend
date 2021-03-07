@@ -10,7 +10,7 @@ class Workshops extends Component {
                 <div id="#" className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`} >
                     <GlowCardResponsive props={{ title: "Cloud Computing", titleFontFamily: "Iceland", content: "A cloud computing workshop", img: "workshops/cloud-computing.svg", href: "/workshops/cloud-computing" }} />
                     <GlowCardResponsive props={{ title: "Job Readiness", titleFontFamily: "Iceland", content: "A placement workshop", img: "workshops/job-readiness.svg", href: "/workshops/job-readiness" }} />
-                    <GlowCardResponsive props={{ title: "Cyber Security", titleFontFamily: "Iceland", content: "A cyber security workshop", img: "workshops/cyber-security.svg", href: "/workshops/cyber-security" }} />
+                    <GlowCardResponsive props={{ title: "Entrepreneurship", titleFontFamily: "Iceland", content: "An entrepreneurship workshop", img: "workshops/entrepreneurship.svg", href: "/workshops/entrepreneurship" }} />
                 </div>
 
 
