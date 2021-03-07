@@ -60,8 +60,8 @@ export const NonTechEvents = {
                 official social media handle`,
 
         dateTime: [
-            "Last Date - ",
-            "Instagram"
+            "Last Date - 20 March 2021",
+            "Instagram - Imagenation_Abacus"
         ],
 
         contact: [
@@ -92,8 +92,8 @@ export const NonTechEvents = {
             "Department",
             "College",
             "Email Id : events@abacus.org.in (tentative)",
-            "Last date for sending the photo:",
-            "Send your entries to (email id) :"
+            "Last date for sending the photo: 20-03-2021",
+            "Send your entries to (email id) : abacus.imagenation@gmail.com"
         ],
         registration: false
     },
@@ -108,8 +108,8 @@ export const NonTechEvents = {
                 to showcase their designing talent. The posters will be displayed in the abacus 
                 official social media handle.`,
         dateTime: [
-            "Last Date - 20-03-2021",
-            "Instagram"
+            "Last Date - 20 March 2021",
+            "Instagram - GraphicTraffic_Abacus"
         ],
 
         contact: [
@@ -142,7 +142,7 @@ export const NonTechEvents = {
             "College",
             "Email Id : events@abacus.org.in (tentative)",
             "Last date for sending the poster: 20-03-2021",
-            "Send your entries to (email id) :"
+            "Send your entries to (email id) : abacus.graphictraffic@gmail.com"
         ],
         /* rounds: {
             number: 2,
