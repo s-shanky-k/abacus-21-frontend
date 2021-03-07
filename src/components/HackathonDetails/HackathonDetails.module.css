@@ -34,7 +34,7 @@
 }
 
 ._name {
-    font-size: 25px;
+    font-size: 21px ;
     color: white;
     flex-basis: 30%;
 }
@@ -45,7 +45,7 @@
 }
 
 ._name_val {
-    font-size: 20px;
+    font-size: 21px;
     color: white;
     flex-basis: 60%;
 }
@@ -67,5 +67,11 @@ hr {
 
     ._hackWrapper {
         height: 100%;
+    }
+}
+
+@media only screen and (max-height: 650px) {
+    ._hackWrapper {
+        padding-top: 100px;
     }
 }
