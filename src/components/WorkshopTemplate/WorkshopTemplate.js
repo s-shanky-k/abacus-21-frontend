@@ -145,7 +145,7 @@ function WorkshopTemplate({ props }) {
                         (!paid ?
                           (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
                           :
-                          <p style={{ color: "white" }}>Already Paid</p>)
+                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
                     }
                   </div>
                 }

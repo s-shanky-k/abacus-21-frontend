@@ -129,6 +129,12 @@
 }
   
 
+._paymentText {
+    font-family: Iceland;
+    font-size: 30px;
+    color: white;
+}
+
 /* Pattern styles */
 /* .eventCard {
     display: flex;
