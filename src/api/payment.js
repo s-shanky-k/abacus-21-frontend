@@ -36,7 +36,7 @@ export const _register = async (history, setregistered, data) => {
 
 export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, data, setloading) => {
     if (Cookies.get("token") === undefined) {
-        toast.success("Login First", {
+        toast.success("Login Required", {
             position: toast.POSITION.BOTTOM_CENTER
         })
         history.push("/login-register")
