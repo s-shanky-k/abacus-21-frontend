@@ -151,11 +151,11 @@ class Homepage extends Component {
           
           <div className="container-fluid mx-auto d-flex justify-content-center align-self-center">
             <div className="row  d-flex justify-content-center align-self-center pb-5">
-              <div className="col col-lg-6  col-md-6 col-sm-6 col-xs-12 pr-lg-5 pt-lg-5 pt-md-5 pt-sm-5 pt-xs-5">
+              <div className="col-lg-6  col-md-6 col-sm-6 col-xs-12 pr-lg-5 pt-lg-5 pt-md-5 pt-sm-5 pt-xs-5 pb-5">
               <img src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`} class="img-fluid" style={{width:'100%',height:'auto'}}
               alt="Motorq"/>
               </div>
-              <div className="col col-lg-6 col-md-6 col-sm-6 col-xs-12 pl-lg-5">
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 pl-lg-5">
               <img src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`} class="img-fluid" style={{width:'100%',height:'auto'}} alt="Visa"/>
               </div></div></div>
           
