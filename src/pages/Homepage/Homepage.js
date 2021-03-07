@@ -5,13 +5,14 @@ import VisibilitySensor from "react-visibility-sensor";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //NeonButton
-import GlowCardSimple from "../../components/GlowCardSimple/GlowCardSimple";
+import GlowCard from "../../components/GlowCard/GlowCard";
 import Loader from "../../components/Loader/Loader";
 import Load from "../../components/Load/Load";
 import Heading from "../../components/Heading/Heading";
 import Heading1 from "../../components/Heading1/Heading1";
 import Footer from "../../components/Footer/Footer";
 import Dev from "../../components/Dev/Dev";
+import DashboardCard from "../../components/DashboardCard/DashboardCard";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
@@ -108,48 +109,35 @@ class Homepage extends Component {
             </div>{" "}
           </div>
         </section>
-     {/* Child Class */}
-     <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-     <div  className={`${styles.visible}`} >
-        
-        <GlowCardSimple props={{
-                           
-                           content:"ABACUS is the annual intercollege technical symposium of the Department of Computer Science and Engineering conducted by the Computer Science and Engineering Association (CSEA), College of Engineering, Guindy.",
-                           }} />
-                   </div>
      
-     <GlowCardSimple props={{
-                        
-                        content: "Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes. ",
-                        }} />
-               
-   
-                <div className={`${styles._rulesDivContainer1}`}>
-              <div className={`${styles._rulesDiv}`}>
-         <div  className={`${styles.vis}`} >
-        
-     <GlowCardSimple props={{
-       link:"https://cseaceg.org.in/",
-                        title: "CSEA",
-                        content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
-                        }} />
-                </div>
-</div>  </div></div> 
+
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
-        <div class="embed-responsive embed-responsive-21by9 my-5 mx-lg-5 mx-md-4 mx-sm-0 mx-xs=0">
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+           <div class="container justify-content-center align-self-center">
+             <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+               <div class="embed-responsive embed-responsive-21by9 ">
           <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-         <div  className={`${styles.visible}`} >
-  <GlowCardSimple props={{
-    link:"https://cseaceg.org.in/",
-                        title: "CSEA",
-                        content: "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. ",
-                        }} />
-                </div>
-</div>
+               </div>
+               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 align-self-center">
+               <GlowCard props={{degree: "25deg",title:"abacus'21",content:"Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."}} />    
+                 </div>
+             </div>
+           </div>
+            </div>
+            
+
+
+
+              
+              
+              
+              
+          
+
         {/* Child Class */}
-      <div className={`${styles._homepage} ${styles.bg} ${styles._responsive}`}>
+      <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
       <div className="text-center">
             <Heading text="Sponsors" fontSize="60px" />
             <div class="mt-5">
@@ -178,7 +166,7 @@ class Homepage extends Component {
         
 
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg1}`}>
+        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
           <div className="text-center mt-5">
             <Heading text="Developers and Design Team" fontSize="40px" />
           </div>

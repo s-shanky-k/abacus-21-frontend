@@ -264,15 +264,16 @@
 
     }
     ._rulesDiv {
-        width: 85% !important;
-        flex-basis: 85% !important;
+        font-size: x-small;
+        width: 50% !important;
+        flex-basis: 50% !important;
     }
     ._rulesDivContainer1 {
         display: flex;
         justify-content: space-evenly !important;
         align-items: center ;
         flex-direction: column !important;
-        width: 100%;
+        width: 70%;
     }
     
     @media only screen and (max-width:1024px){
@@ -283,6 +284,24 @@
     @media only screen and (max-width:1024px){
         .vis{
             display: none;
+        }
+    }
+    #player{
+        margin: auto;
+    }
+    #card{
+        margin: auto;
+    }
+    @media only screen and (max-width:541px){
+        #player{
+            display: none;
+           
+        }
+        #card{
+            display: block;
+            
+           
+            margin: auto;
         }
     }
 
