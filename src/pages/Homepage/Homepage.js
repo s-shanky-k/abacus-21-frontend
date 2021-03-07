@@ -13,6 +13,8 @@ import Heading1 from "../../components/Heading1/Heading1";
 import Footer from "../../components/Footer/Footer";
 import Dev from "../../components/Dev/Dev";
 import DashboardCard from "../../components/DashboardCard/DashboardCard";
+import { Autocomplete } from "@material-ui/lab";
+import FadeInSection from "../../components/FadeInSection/FadeInSection";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
@@ -49,8 +51,7 @@ class Homepage extends Component {
               style={{
                 width: "330px",
                 height: "350px",
-                marginLeft: "auto",
-                marginRight:"auto"
+                margin:"auto"
                 
               }}
             />
@@ -59,7 +60,7 @@ class Homepage extends Component {
               <div className="row justify-content-center align-self-center ">
                 <div className="col col-lg-3 col-md-4   mt-5   text-center">
                   <div className={`${styles.countup}`}>
-                    <CountUp start={0} end={5} redraw={true} suffix=" +">
+                    <CountUp start={0} end={7} redraw={true} suffix=" +">
                       {({ countUpRef, start }) => (
                         <VisibilitySensor onChange={start} delayedCall>
                           <span ref={countUpRef} />
@@ -113,15 +114,17 @@ class Homepage extends Component {
 
         {/* Child Class */}
         <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
-           <div class="container justify-content-center align-self-center">
-             <div class="row">
+        
+           <div class="container justify-content-center align-self-center ">
+             <div class="row justify-content-center align-self-center">
                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-               <div class="embed-responsive embed-responsive-21by9 ">
+                 <FadeInSection>
+               <div class="embed-responsive embed-responsive-21by9">
           <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+</div> </FadeInSection>
                </div>
-               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 align-self-center">
-               <GlowCard props={{degree: "25deg",title:"abacus'21",content:"Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."}} />    
+               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+               <GlowCard props={{degree: "25deg",title:"Abacus'21",content:"Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."}} />    
                  </div>
              </div>
            </div>
@@ -213,7 +216,7 @@ class Homepage extends Component {
               <div className="col  pb-5 ">
                 <Dev
                   props={{
-                    title: "Srinath",
+                    title: "Srinath Sureshkumar",
                     title1: "Backend",
                     img: "dev/Srinath.jpg",
                     href:"https://www.linkedin.com/in/srinath-sureshkumar-3467331a5/"
