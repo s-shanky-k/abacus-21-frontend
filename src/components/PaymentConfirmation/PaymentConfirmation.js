@@ -33,7 +33,7 @@ export default function PaymentConfirmation({ data, onClose }) {
                 {/* Payment Details */}
                 <div className={`${styles.paymentDetails}`}>
                     <span className={`${styles.paymentDetailsTitle}`}>Payment Request <PaymentIcon className={`${styles.icon}`} /></span><p className={`${styles.userDetailsText} ${styles.userDetailsTextBreak}`}>{data.paymentrequestid}</p>
-                    <p className={`${styles.userDetailsText}`}><AttachMoneySharpIcon className={`${styles.icon}`} />{data.amount}</p>
+                    <p className={`${styles.userDetailsText}`}><span style={{color: "#8E32FF", marginRight: "10px", fontSize: "20px !important"}}><i class="fa fa-inr" aria-hidden="true"></i></span>{data.amount}</p>
                     <span className={`${styles.paymentDetailsTitle}`}>Purpose</span><p className={`${styles.userDetailsText}`}>{data.purpose}</p>
                 </div>
             </div>

@@ -37,7 +37,7 @@ function GlowCard({ props }) {
 
                                 <div className={styles.glowCardContent}>
                                     <div style={{ textAlign: 'center' }}>
-                                        <Heading text={props.title} fontSize="30px" />
+                                        <a target="blank" href={props.href} style={{textDecoration:"none"}}><Heading text={props.title} fontSize="30px" /></a>
                                     </div>
                                     {/* {props.content === undefined 
                                 ? props.list.map((item) => 
