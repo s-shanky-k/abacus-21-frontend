@@ -37,7 +37,13 @@
     }
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+}
+
 .link:hover {
     text-decoration: none;
     color: #8E32FF;
+    cursor: pointer;
 }

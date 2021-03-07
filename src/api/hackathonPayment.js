@@ -1,10 +1,10 @@
 import Cookies from "js-cookie"
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
-import { apiRegisterEvent, apiPayment } from "./api"
+import { apiRegisterHackathon, apiHackathonPayment } from "./api"
 
 
-export const _register = async (history, setregistered, data) => {
+export const _register = async (history, setregistered) => {
     // Redirect to Login Page
     if (Cookies.get("token") === undefined) {
         toast.error("Login Required", {
@@ -15,10 +15,11 @@ export const _register = async (history, setregistered, data) => {
     // Register Fun
     else {
         let token = Cookies.get("token")
-        let response = await apiRegisterEvent({
-            "event": data.purpose,
+        let response = await apiRegisterHackathon({
             "token": token
         })
+
+        console.log(response)
 
         if (response.status === 200) {
             toast.success("Registration Successfull", {
@@ -34,9 +35,9 @@ export const _register = async (history, setregistered, data) => {
     }
 }
 
-export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, data, setloading) => {
+export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, setloading) => {
     if (Cookies.get("token") === undefined) {
-        toast.success("Login First", {
+        toast.success("Login Required", {
             position: toast.POSITION.BOTTOM_CENTER
         })
         history.push("/login-register")
@@ -44,8 +45,7 @@ export const _paymentConfirmation = async (history, setpaymentDetails, toggleMod
     else {
 
         let token = Cookies.get("token")
-        let response = await apiPayment({
-            "event": data.purpose,
+        let response = await apiHackathonPayment({
             "token": token
         })
 
@@ -56,7 +56,7 @@ export const _paymentConfirmation = async (history, setpaymentDetails, toggleMod
         }
         else {
             setloading(false)
-            toast.success(response.message, {
+            toast.error(response.message, {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         }

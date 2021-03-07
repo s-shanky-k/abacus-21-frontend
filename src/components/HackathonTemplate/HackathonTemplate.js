@@ -6,14 +6,14 @@ import GlowCardResponsive from "../GlowCardResponsive/GlowCardResponsive"
 import NeonButton from "../NeonButton/NeonButton";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from "js-cookie"
-import { apiGetRegistrations, apiRegisterEvent, apiPayment } from "../../api/api"
+import { apiGetHackathonRegistration, apiRegisterEvent, apiPayment } from "../../api/api"
 import Load from "../Load/Load";
 import Modal from "react-modal"
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom"
 import Footer from "../Footer/Footer"
-import { _register, _paymentConfirmation } from "../../api/payment"
+import { _register, _paymentConfirmation } from "../../api/hackathonPayment"
 
 Modal.setAppElement('#root')
 function EventTemplate({ props }) {
@@ -31,23 +31,21 @@ function EventTemplate({ props }) {
   useEffect(() => {
     const fetchRegistrations = async (token) => {
 
-      let response = await apiGetRegistrations({ "token": token })
-      for (let i = 0; i < response.length; i++) {
-        // Check if registered
-        if (response[i].purpose === props.purpose) {
-          setregistered(true)
-          // Paid
-          if (response[i].status === "Credit") {
-            setpaid(true)
-          }
-          // Registered but not paid
-          else if (response[i].status === "null") {
-            setpaid(false)
-          }
+      let response = await apiGetHackathonRegistration({ "token": token })
+      // Check if registered
+      if (response.team !== null) {
+        setregistered(true)
+        // Paid
+        if (response.team.status === "Credit") {
+          setpaid(true)
+        }
+        // Registered but not paid
+        else if (response.team.status === "null") {
+          setpaid(false)
         }
       }
-      setloading(false)
 
+      setloading(false)
 
     }
 
@@ -72,13 +70,14 @@ function EventTemplate({ props }) {
   // Payment
   const paymentConfirmation = async () => {
     setloading(true)
-    _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.purpose }, setloading)
+    _paymentConfirmation(history, setpaymentDetails, toggleModal, setloading)
 
   }
 
   // Register
   const register = () => {
-    _register(history, setregistered, { "purpose": props.purpose });
+    history.push("/hackathon-form")
+    // _register(history, setregistered);
   }
 
   return (
@@ -100,6 +99,32 @@ function EventTemplate({ props }) {
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
                 <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                {props.registration &&
+                  <div className="my-5">
+                    {
+                      !registered ?
+                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                        :
+                        (!paid ?
+                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                          :
+                          <p style={{ color: "white" }}>Already Paid</p>)
+                    }
+                  </div>
+                }
+                <Modal isOpen={modalIsOpen} style={{
+                  content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999',
+                    overflowY: 'hidden'
+                  },
+                  overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                  }
+                }}>
+                  <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
+                </Modal>
               </div>
             </div>
           </div>
@@ -199,8 +224,8 @@ function EventTemplate({ props }) {
               } */}
 
 
-              {/* Modal */}
-              {/* <Modal isOpen={modalIsOpen} style={{
+          {/* Modal */}
+          {/* <Modal isOpen={modalIsOpen} style={{
                 content: {
                   backgroundColor: "#060c21",
                   zIndex: '999',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom'
 import Cookies from "js-cookie"
 import './App.css';
 
@@ -83,6 +83,7 @@ function App() {
 
 const Routes = () => {
   const Auth = React.useContext(AuthApi)
+  const location = useLocation()
   return (
     <Switch>
       <Route path="/" exact>
@@ -99,7 +100,7 @@ const Routes = () => {
       <Route path="/events/:type/:title" exact component={EventMiddleware} />
 
       <Route path="/workshops/:title" exact component={WorkshopMiddleware} />
-      
+
       <Route path="/hackathon" exact component={Hackathon} />
 
 
@@ -125,6 +126,7 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
     <Route
       {...rest}
       render={() => {
+        console.log(auth, "AUTHHHHHHHHH")
         if (auth) {
           return <Component />
         }
@@ -132,23 +134,6 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
           return <Redirect to="/login-register"></Redirect>
         }
       }} />
-  )
-}
-
-
-const ProtectFromLogin = ({ auth, component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        if (auth) {
-          return <Redirect to="/dashboard"></Redirect>
-        }
-        else {
-          return <Component />
-        }
-      }}
-    />
   )
 }
 

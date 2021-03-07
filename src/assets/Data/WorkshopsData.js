@@ -120,7 +120,7 @@ export const Workshops = {
             ]
         },  */
         registration: true,
-        purpose: "NETSEC"
+        purpose: "ENTREPRENEURSHIP"
     },
 
     // Cloud Computing

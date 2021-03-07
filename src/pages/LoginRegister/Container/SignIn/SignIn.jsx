@@ -9,6 +9,7 @@ import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
+import Load from '../../../../components/Load/Load.js';
 
 
 toast.configure()
@@ -22,6 +23,7 @@ function SignIn(props) {
     const [email, setemail] = useState("")
     const [pwd, setpwd] = useState("")
     const [validationError, setvalidationError] = useState("")
+    const [loading, setloading] = useState(false)
 
     // Refs
     let textInput = null;
@@ -59,7 +61,9 @@ function SignIn(props) {
 
     const onSubmit = async (SetAuth) => {
         if (validate()) {
+            setloading(true)
             const response = await apiSignin({ email: email, pwd: pwd })
+            setloading(false)
             if (response.auth) {
                 let obj = {
                     name: response.name,
@@ -95,19 +99,22 @@ function SignIn(props) {
     }
 
     return (
-        <div className="form-container sign-in-container" >
-            <Heading text="LOGIN" fontSize="35px"></Heading>
-            <div className="form-class">
-                <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
-                <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-            </div>
-            { validationError ? (<div className="validation-output">{validationError}</div>) : null
-            }
-            <Link className="forgot-password" to="/forgot-password">Forgot password?</Link>
+        <>
+            {loading ? <Load /> : <div className="form-container sign-in-container" >
+                <Heading text="LOGIN" fontSize="35px"></Heading>
+                <div className="form-class">
+                    <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
+                    <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
+                </div>
+                {validationError ? (<div className="validation-output">{validationError}</div>) : null
+                }
+                <Link className="forgot-password" to="/forgot-password">Forgot password?</Link>
 
-            <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
-            <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
-        </div>
+                <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
+                <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
+            </div>}
+        </>
+
     )
 }
 

@@ -90,7 +90,6 @@ function EventTemplate({ props }) {
     }
     else {
       setloading(false)
-
     }
     return () => {
 

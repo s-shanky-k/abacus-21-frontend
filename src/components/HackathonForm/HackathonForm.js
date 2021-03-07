@@ -13,7 +13,8 @@ import Cookies from "js-cookie"
 import { AuthApi } from "../../App"
 import { useHistory } from 'react-router';
 import { toast } from "react-toastify"
-import { apiRegisterHackathon } from "../../api/api"
+import { apiRegisterHackathon, apiGetHackathonRegistration } from "../../api/api"
+import Load from '../Load/Load';
 
 
 toast.configure()
@@ -44,48 +45,51 @@ export default function HackathonForm() {
     const [validationError1, setvalidationError1] = useState('')
     const [validationError2, setvalidationError2] = useState('')
     const [validationError3, setvalidationError3] = useState('')
+    const [loading, setloading] = useState(true)
 
     const classes = useStyles();
     let userDetails;
 
     useEffect(() => {
-        // if (!_Auth || Cookies.get("token") === undefined || Cookies.get("details") === undefined) {
-        //     history.push("/login-register")
-        //     toast.success("Login Required", {
-        //         position: toast.POSITION.BOTTOM_CENTER
-        //     })
-        // }
-        // else {
-        let userDetails_str = Cookies.get("details")
-        userDetails = JSON.parse(userDetails_str)
-        console.log(userDetails, "FROM COOKIE")
-        setname1(userDetails.name)
-        setemail1(userDetails.email)
 
+        const fetchRegistrations = async () => {
+            let token = Cookies.get("token")
+            const response = await apiGetHackathonRegistration({ "token": token })
+
+            // If already registered
+            if (response.team !== null) {
+                history.push("/hackathon")
+                toast.error("Already Registered", {
+                    position: toast.POSITION.BOTTOM_CENTER
+                })
+            }
+
+            // Else
+            else {
+                setloading(false)
+            }
+        }
+
+        // Only logged in users can register for hackathon
+        if (Cookies.get("token") === undefined || Cookies.get("details") === undefined) {
+            history.push("/login-register")
+            toast.error("Login Required", {
+                position: toast.POSITION.BOTTOM_CENTER
+            })
+        }
+        else {
+            // Check if already registered
+            fetchRegistrations()
+            let userDetails_str = Cookies.get("details")
+            userDetails = JSON.parse(userDetails_str)
+            setname1(userDetails.name)
+            setemail1(userDetails.email)
+        }
 
         return () => {
 
         }
     }, [])
-
-    // const validate1 = () => {
-    //     let validationError1 = '';
-
-    //     if (!name1) {
-    //         validationError1 = 'Name field cannot be blank';
-    //     } else if (!email1) {
-    //         validationError1 = 'Email field cannot be blank';
-    //     } else if (!email1.includes('@')) {
-    //         validationError1 = 'Invalid Email! Try a different one!';
-    //     }
-
-    //     if (validationError1) {
-    //         setvalidationError1(validationError1);
-    //         return false;
-    //     }
-
-    //     return true;
-    // }
 
     const validate2 = () => {
         let validationError2 = '';
@@ -143,11 +147,21 @@ export default function HackathonForm() {
             "user3": _email3,
             "name3": _name3,
         })
+
+        if (response.status === 200) {
+            history.push("/hackathon")
+            toast.success(response.data.message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            })
+        }
+        else {
+            toast.error(response.message, {
+                position: toast.POSITION.BOTTOM_CENTER
+            })
+        }
     }
 
     const onSubmit = () => {
-
-        // const isValid1 = validate1();
         setvalidationError1('')
         setvalidationError2('')
         setvalidationError3('')
@@ -156,67 +170,64 @@ export default function HackathonForm() {
         const isValid3 = validate3();
 
         if (isValid2 && isValid3) {
-            console.log("BOOM", name2, email2, name3, email3);
-            if (name3 === "" || email3 === "") {
-                console.log("CUMARJKFDJNFD")
-                setname3(null)
-                setemail3(null)
-            }
             register()
         }
 
     }
 
     return (
-        <div className={styles.hackathon_form_wrapper}>
-            <div className={styles.hackathon_form_container}>
-                <Heading text="Hackathon Registration" fontSize="24px"></Heading>
-                <div className={styles.hackathon_form_accordian_container}>
-                    <div className={classes.root}>
-                        <Accordion expanded>
-                            <AccordionSummary
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                            >
-                                <Typography className={classes.heading}>Participant 1 *</Typography>
-                            </AccordionSummary>
-                            <div className={styles.hackathon_form_data_container}>
-                                <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" disabled value={name1} onChange={(e) => setname1(e.target.value)} />
-                                <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" disabled value={email1} onChange={(e) => setemail1(e.target.value)} />
-                                {validationError1 ? (<div className={styles.hackathon_form_data_validation_output_1}>{validationError1}</div>) : null}
-                            </div>
-                        </Accordion>
-                        <Accordion expanded>
-                            <AccordionSummary
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                            >
-                                <Typography className={classes.heading}>Participant 2 *</Typography>
-                            </AccordionSummary>
-                            <div className={styles.hackathon_form_data_container} style={{ textAlign: 'center !important' }}>
-                                <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" required value={name2} onChange={(e) => setname2(e.target.value)} />
-                                <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" required value={email2} onChange={(e) => setemail2(e.target.value)} />
-                                {validationError2 ? (<div className={styles.hackathon_form_data_validation_output_2}>{validationError2}</div>) : null}
-                            </div>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                            >
-                                <Typography className={classes.heading}>Participant 3 (Optional)</Typography>
-                            </AccordionSummary>
-                            <div className={styles.hackathon_form_data_container}>
-                                <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" value={name3} onChange={(e) => setname3(e.target.value)} />
-                                <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" value={email3} onChange={(e) => setemail3(e.target.value)} />
-                                {validationError3 ? (<div className={styles.hackathon_form_data_validation_output_3}>{validationError3}</div>) : null}
-                            </div>
-                        </Accordion>
+        <>
+            {loading ? <Load /> : <div className={styles.hackathon_form_wrapper}>
+                <div className={styles.hackathon_form_container}>
+                    <Heading text="Hackathon Registration" fontSize="24px"></Heading>
+                    <div className={styles.hackathon_form_accordian_container}>
+                        <div className={classes.root}>
+                            <Accordion expanded>
+                                <AccordionSummary
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                >
+                                    <Typography className={classes.heading}>Participant 1 *</Typography>
+                                </AccordionSummary>
+                                <div className={styles.hackathon_form_data_container}>
+                                    <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" disabled value={name1} onChange={(e) => setname1(e.target.value)} />
+                                    <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" disabled value={email1} onChange={(e) => setemail1(e.target.value)} />
+                                    {validationError1 ? (<div className={styles.hackathon_form_data_validation_output_1}>{validationError1}</div>) : null}
+                                </div>
+                            </Accordion>
+                            <Accordion expanded>
+                                <AccordionSummary
+                                    aria-controls="panel2a-content"
+                                    id="panel2a-header"
+                                >
+                                    <Typography className={classes.heading}>Participant 2 *</Typography>
+                                </AccordionSummary>
+                                <div className={styles.hackathon_form_data_container} style={{ textAlign: 'center !important' }}>
+                                    <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" required value={name2} onChange={(e) => setname2(e.target.value)} />
+                                    <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" required value={email2} onChange={(e) => setemail2(e.target.value)} />
+                                    {validationError2 ? (<div className={styles.hackathon_form_data_validation_output_2}>{validationError2}</div>) : null}
+                                </div>
+                            </Accordion>
+                            <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel2a-content"
+                                    id="panel2a-header"
+                                >
+                                    <Typography className={classes.heading}>Participant 3 (Optional)</Typography>
+                                </AccordionSummary>
+                                <div className={styles.hackathon_form_data_container}>
+                                    <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" value={name3} onChange={(e) => setname3(e.target.value)} />
+                                    <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" value={email3} onChange={(e) => setemail3(e.target.value)} />
+                                    {validationError3 ? (<div className={styles.hackathon_form_data_validation_output_3}>{validationError3}</div>) : null}
+                                </div>
+                            </Accordion>
+                        </div>
                     </div>
+                    <NeonButton props={{ text: "Register", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-                <NeonButton props={{ text: "Register", color: "#26a0da", onClick: onSubmit }} />
-            </div>
-        </div>
+            </div>}
+        </>
+
     )
 }

@@ -122,12 +122,10 @@ export const apiGetRegistrations = async (credentials) => {
         }
         )
 
-        console.log("REGISTRAIONS", response.data)
         return response.data
     }
 
     catch (error) {
-        console.log("REGISTRAIONS", error.response.data)
         return error.response.data
     }
 }
@@ -172,7 +170,7 @@ export const apiPayment = async (data) => {
 
 export const apiRegisterHackathon = async (data) => {
     try {
-        console.log(data,"APIAPI")
+        console.log(data, "APIAPI")
         const response = await api.post(
             `${url_registerHackathon}`,
             {
@@ -187,10 +185,41 @@ export const apiRegisterHackathon = async (data) => {
                 }
             }
         )
-        console.log(response)
-        // return response
+        return response
     } catch (error) {
-        // return error.response.data
-        console.log(error.response.data)
+        return error.response.data
+    }
+}
+
+export const apiGetHackathonRegistration = async (data) => {
+    try {
+        const response = await api.post(
+            `${url_getRegistrationHackathon}`, {},
+            {
+                headers: {
+                    Authorization: data.token
+                }
+            }
+        )
+        console.log(response.data)
+        return response.data
+    } catch (error) {
+        return error.response.data
+    }
+}
+
+export const apiHackathonPayment = async (data) => {
+    try {
+        const response = await api.post(
+            `${url_paymentHackathon}`, {},
+            {
+                headers: {
+                    Authorization: data.token
+                }
+            }
+        )
+        return response
+    } catch (error) {
+        return error.response.data
     }
 }

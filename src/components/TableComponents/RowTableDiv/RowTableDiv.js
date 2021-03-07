@@ -1,6 +1,7 @@
 import { Component, useState, useEffect } from 'react'
 import styles from './RowTableDiv.module.css'
 import { _register, _paymentConfirmation } from "../../../api/payment"
+import { _paymentConfirmation as hack_pay } from "../../../api/hackathonPayment"
 import Modal from "react-modal"
 import PaymentConfirmation from "../../PaymentConfirmation/PaymentConfirmation";
 import { useHistory, Link } from 'react-router-dom';
@@ -12,11 +13,13 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 import React from 'react'
 import Load from '../../Load/Load';
+import HackathonDetails from '../../HackathonDetails/HackathonDetails';
 
 function RowTableDiv(props) {
 
     const history = useHistory()
     const [modalIsOpen, setmodalIsOpen] = useState(false)
+    const [hack_modalIsOpen, sethack_modalIsOpen] = useState(false)
     const [paymentDetails, setpaymentDetails] = useState({})
     const [registered, setregistered] = useState(false)
     const [loading, setloading] = useState(false)
@@ -35,10 +38,19 @@ function RowTableDiv(props) {
         setmodalIsOpen(!modalIsOpen)
     }
 
+    const hack_toggleModal = () => {
+        sethack_modalIsOpen(!hack_modalIsOpen)
+    }
+
     // Payment
     const paymentConfirmation = async () => {
         setloading(true)
         _paymentConfirmation(history, setpaymentDetails, toggleModal, { "purpose": props.item.purpose }, setloading)
+    }
+
+    const hack_paymentConfirmation = async () => {
+        setloading(true)
+        hack_pay(history, setpaymentDetails, toggleModal, setloading)
     }
 
     // Register
@@ -46,10 +58,11 @@ function RowTableDiv(props) {
         _register(history, setregistered, { "purpose": props.item.purpose });
     }
 
+
     let render_data1 = [<p>Not Registered</p>]
     let render_data2 = [<Link to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></Link>]
 
-    if (props.item && props.registrationDetails) {
+    if (props.item && props.type === "events" && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {
             if (props.registrationDetails[i].purpose === props.item.purpose) {
                 render_data1 = []
@@ -79,6 +92,39 @@ function RowTableDiv(props) {
             }
         }
     }
+    else if (props.item && props.type === "hackathon") {
+        if (props.registrationDetails.team === null) {
+
+        }
+        else {
+            if (props.registrationDetails.team.status === "Credit") {
+                render_data1 = []
+                render_data2 = []
+                render_data1.push(
+                    // <p>Paid</p>
+                    <p onClick={hack_toggleModal}>Team Details</p>
+                )
+                render_data2.push(
+                    <Tooltip title="Payment ID" arrow placement="right">
+                        <p className={`${styles.wordBreak}`}>{props.registrationDetails.paymentid}</p>
+                    </Tooltip>
+
+                )
+            }
+            else if (props.registrationDetails.team.status === null) {
+                render_data1 = []
+                render_data2 = []
+                render_data1.push(
+                    // <p>Not Paid</p>
+                    <p onClick={hack_toggleModal} className={`${styles.link}`}>Team Details</p>
+                )
+                render_data2.push(
+                    <Link onClick={hack_paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></Link>
+                )
+            }
+        }
+
+    }
 
 
 
@@ -100,6 +146,20 @@ function RowTableDiv(props) {
             </div>
 
             {props.hr && <hr className={`${styles.hrBreak}`} />}
+
+            {props.type === "hackathon" && <Modal isOpen={hack_modalIsOpen} style={{
+                content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999'
+                },
+                overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                }
+            }}>
+                <HackathonDetails data={props.registrationDetails.team} onClose={hack_toggleModal} />
+            </Modal>}
+
 
             {/* Modal */}
             {loading ? <Load /> : <Modal isOpen={modalIsOpen} style={{

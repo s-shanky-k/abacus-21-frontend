@@ -1,0 +1,71 @@
+._hackWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    font-family: Iceland;
+    text-align: center;
+}
+
+._detailWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+}
+
+._participantWrapper {
+    flex-basis: 40% !important;
+
+}
+
+._detail {
+    /* display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: flex-start; */
+}
+
+._participant {
+    font-size: 30px;
+    color: white;
+}
+
+._name {
+    font-size: 25px;
+    color: white;
+    flex-basis: 30%;
+}
+
+._title {
+    color: #8E32FF !important;
+    font-size: 25px;
+}
+
+._name_val {
+    font-size: 20px;
+    color: white;
+    flex-basis: 60%;
+}
+
+._buttonWrapper {
+    text-align: center;
+}
+
+hr {
+    width: 100%;
+    color: #8E32FF;
+    text-align: center !important;
+}
+
+@media only screen and (max-width: 1100px) {
+    ._detailWrapper {
+        flex-direction: column;
+    }
+
+    ._hackWrapper {
+        height: 100%;
+    }
+}

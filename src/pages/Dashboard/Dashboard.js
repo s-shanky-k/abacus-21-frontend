@@ -4,45 +4,73 @@ import { useHistory, useLocation, withRouter } from 'react-router-dom'
 import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import Heading from "../../components/Heading/Heading"
 import MainTableDiv from "../../components/TableComponents/MainTableDiv/MainTableDiv"
-import { apiGetRegistrations } from "../../api/api"
+import { apiGetRegistrations, apiGetHackathonRegistration } from "../../api/api"
 import Cookies from "js-cookie"
 import Load from "../../components/Load/Load"
 import Footer from "../../components/Footer/Footer"
 import Modal from "react-modal"
+import { toast } from "react-toastify"
 
 
 
 import React from 'react'
 
 Modal.setAppElement('#root')
-function Dashboard() {
+toast.configure()
+function Dashboard(props) {
 
     const events = [{ "title": 'All', "purpose": "EVENTS", "url": "/events" }]
-    const workshops = [{ "title": 'Cloud', "purpose": "CLOUD", "url": "/workshops/cloud" }, { "title": 'Security', "purpose": "NETSEC", "url": "/workshops/security" }, { "title": 'Placements', "purpose": "DUMMY", "url": "/workshops/placements" }]
-    const hackathon = [{ "title": 'Hackathon', "purpose": "HACKATHON", "url": "/hackathon" }]
+    const workshops = [{
+        "title": 'Cloud Computing',
+        "purpose": "CLOUD",
+        "url": "/workshops/cloud-computing"
+    }, {
+        "title": 'Entrepreneurship',
+        "purpose": "ENTREPRENEURSHIP",
+        "url": "/workshops/cyber-security"
+    }, {
+        "title": 'Job Readiness',
+        "purpose": "PLACEMENTS",
+        "url": "/workshops/job-readiness"
+    }]
+    const hackathon = { "title": 'Hackathon', "purpose": "HACKATHON", "url": "/hackathon" }
 
     const history = useHistory()
+    const location = useLocation()
 
     const [details, setdetails] = useState({})
     const [loading, setloading] = useState(true)
-    const [response, setresponse] = useState([])
+    const [response1, setresponse1] = useState([])
+    const [response2, setresponse2] = useState({})
 
 
     useEffect(() => {
 
+        console.log("USEEFFECTTTTTTTTTT")
         const fetchRegistrations = async () => {
             let token = Cookies.get("token")
-            const response = await apiGetRegistrations({ "token": token })
-            setresponse(response)
+            const response1 = await apiGetRegistrations({ "token": token })
+            const response2 = await apiGetHackathonRegistration({ 'token': token })
+            setresponse1(response1)
+            setresponse2(response2)
             setloading(false)
         }
 
+
         if (Cookies.get("token") === undefined || Cookies.get("details") === undefined) {
+            console.log("IFFFFFFFFFFFFFFFFFFFFFFF")
             Cookies.remove('token')
             Cookies.remove('details')
             history.push("/login-register")
         }
         else {
+            let queryString = require('query-string')
+            let params = queryString.parse(location.search)
+            if (!(Object.keys(params).length === 0)) {
+                toast.success(params.message, {
+                    position: toast.POSITION.BOTTOM_CENTER
+                })
+            }
             let token = Cookies.get("token")
             let details = JSON.parse(Cookies.get("details"))
             setdetails(details)
@@ -73,7 +101,7 @@ function Dashboard() {
 
                                 <Heading text="Events" fontSize="30px" />
 
-                                <MainTableDiv data={events} registrationDetails={response}></MainTableDiv>
+                                <MainTableDiv data={events} registrationDetails={response1} type="events"></MainTableDiv>
                             </div>
 
                             {/* Workshops */}
@@ -81,7 +109,7 @@ function Dashboard() {
 
                                 <Heading text="Workshops" fontSize="30px" />
 
-                                <MainTableDiv data={workshops} registrationDetails={response}></MainTableDiv>
+                                <MainTableDiv data={workshops} registrationDetails={response1} type="events"></MainTableDiv>
                             </div>
 
                             {/* Hackathon */}
@@ -89,13 +117,13 @@ function Dashboard() {
 
                                 <Heading text="Hackathon" fontSize="30px" />
 
-                                <MainTableDiv data={hackathon} registrationDetails={response}></MainTableDiv>
+                                <MainTableDiv data={hackathon} registrationDetails={response2} type="hackathon"></MainTableDiv>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                    <Footer scroll_snap={false}/>
+                    <Footer scroll_snap={false} />
                 </>
             }
 

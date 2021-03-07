@@ -19,14 +19,18 @@ export class MainTableDiv extends Component {
     }
 
     render() {
-
         let render_data = [];
-        if (this.props.data && this.props.data.length > 0) {
+        if (this.props.data && this.props.type === "events" && this.props.data.length > 0) {
             for (let i = 0; i < this.props.data.length; i++) {
                 render_data.push(
-                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails} hr={(i === this.props.data.length - 1) ? false : true} />
+                    < RowTableDiv key={i} item={this.props.data[i]} registrationDetails={this.props.registrationDetails} hr={(i === this.props.data.length - 1) ? false : true} type={this.props.type} />
                 )
             }
+        }
+        else if (this.props.data && this.props.type === "hackathon") {
+            render_data.push(
+                < RowTableDiv item={this.props.data} registrationDetails={this.props.registrationDetails} type={this.props.type} />
+            )
         }
 
         return (
