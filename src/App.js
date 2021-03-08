@@ -74,12 +74,12 @@ function App() {
         <SetAuthApi.Provider value={setauth}>
           <Width.Provider value={width}>
             <NewLoad.Provider value={newload}>
-              <SetNewLoad value={setnewload}>
+              <SetNewLoad.Provider value={setnewload}>
                 <Router>
                   <Navbar width={width} />
                   <Routes />
                 </Router>
-              </SetNewLoad>
+              </SetNewLoad.Provider>
             </NewLoad.Provider>
           </Width.Provider>
         </SetAuthApi.Provider>
