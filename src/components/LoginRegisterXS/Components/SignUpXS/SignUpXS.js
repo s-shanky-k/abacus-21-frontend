@@ -9,7 +9,7 @@ import Select from "react-select";
 import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import { useHistory, withRouter } from 'react-router-dom';
-
+import Load from '../../../../components/Load/Load.js';
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
@@ -76,10 +76,11 @@ function SignUpXS() {
             borderBottom: '1px solid #fff',
             color: state.isSelected ? '#ff65bd' : '#060c21',
             padding: 10,
-            fontFamily: 'MainFont',
+            fontFamily: 'MainFont !important',
             backgroundColor: '#fff',
             color: '#000',
             fontSize: 20,
+            marginLeft: 20,
         }),
         control: () => ({
             // none of react-select's styles are passed to <Control />
@@ -87,7 +88,7 @@ function SignUpXS() {
             height: 50,
             display: 'flex',
             backgroundColor: '#fff',
-            fontFamily: 'MainFont',
+            fontFamily: 'MainFont !important',
             fontSize: 20,
             borderRadius: 10,
             alignItems: 'center',
@@ -110,7 +111,7 @@ function SignUpXS() {
             borderBottom: '1px solid #fff',
             color: state.isSelected ? '#ff65bd' : '#060c21',
             padding: 10,
-            fontFamily: 'MainFont',
+            fontFamily: 'MainFont !important',
             backgroundColor: '#fff',
             color: '#000',
             fontSize: 20,
@@ -121,7 +122,7 @@ function SignUpXS() {
             height: 50,
             display: 'flex',
             backgroundColor: '#fff',
-            fontFamily: 'MainFont',
+            fontFamily: 'MainFont !important',
             fontSize: 20,
             borderRadius: 10,
             alignItems: 'center',
@@ -137,6 +138,7 @@ function SignUpXS() {
         }
     }
 
+    const [loading, setloading] = useState(false)
     const [name, setname] = useState('')
     const [year, setyear] = useState()
     const [dept, setdept] = useState(null)
@@ -201,7 +203,9 @@ function SignUpXS() {
     const onSubmit = async () => {
         const isValid = validate();
         if (isValid) {
+            setloading(true)
             const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
+            setloading(false)
             if (response.auth) {
                 let obj = {
                     name: response.name,

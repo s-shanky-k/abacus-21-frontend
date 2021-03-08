@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import { apiSignin, baseURL, url_gAuth } from "../../../../api/api"
 import { AuthApi, SetAuthApi, Width } from "../../../../App"
 import GoogleButton from 'react-google-button'
+import Load from '../../../../components/Load/Load.js';
+
 
 
 // this.textInput = React.createRef();
@@ -28,6 +30,7 @@ function SignInXS() {
     const [email, setemail] = useState("")
     const [pwd, setpwd] = useState("")
     const [validationError, setvalidationError] = useState("")
+    const [loading, setloading] = useState(false)
 
     // Refs
     let textInput = null;
@@ -65,7 +68,9 @@ function SignInXS() {
 
     const onSubmit = async (SetAuth) => {
         if (validate()) {
+            setloading(true)
             const response = await apiSignin({ email: email, pwd: pwd })
+            setloading(false)
             if (response.auth) {
                 let obj = {
                     name: response.name,
@@ -101,7 +106,9 @@ function SignInXS() {
     }
 
     return (
-        <div className={styles.login_form_wrapper}>
+        <>
+            {loading ? <Load /> :
+            <div className={styles.login_form_wrapper}>
             <div className={styles.login_container}>
                 <div className={styles.login_form_container}>
                     <input className={styles.login_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
@@ -114,6 +121,9 @@ function SignInXS() {
                 <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
             </div>
         </div>
+
+            }
+        </>
     );
 }
 
