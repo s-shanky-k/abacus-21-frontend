@@ -4,7 +4,6 @@ import NeonButton from '../NeonButton/NeonButton'
 import styles from "./HackathonDetails.module.css"
 
 function HackathonDetails(props) {
-    console.log(props, "HACk MODAL")
     return (
 
         <div className={`${styles._hackWrapper}`}>

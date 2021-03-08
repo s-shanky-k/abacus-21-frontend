@@ -61,15 +61,12 @@ export const apiRegister = async (credentials) => {
 export const apiForgotPassword = async (credentials) => {
 
     try {
-        console.log("creds", credentials)
         const response = await api.post(
             `${url_forgotPassword}`, {
             email: credentials.email,
         })
-        console.log(response)
 
     } catch (error) {
-        console.log(error.response.data, "ERROR")
     }
 }
 
@@ -82,10 +79,8 @@ export const apiResetPassword = async (credentials) => {
             key: credentials.key,
             pwd: credentials.pwd,
         })
-        console.log(response)
 
     } catch (error) {
-        console.log(error.response.data, "ERROR")
     }
 }
 
@@ -170,7 +165,6 @@ export const apiPayment = async (data) => {
 
 export const apiRegisterHackathon = async (data) => {
     try {
-        console.log(data, "APIAPI")
         const response = await api.post(
             `${url_registerHackathon}`,
             {
@@ -201,7 +195,6 @@ export const apiGetHackathonRegistration = async (data) => {
                 }
             }
         )
-        console.log(response.data)
         return response.data
     } catch (error) {
         return error.response.data
