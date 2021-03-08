@@ -34,7 +34,21 @@
     font-size: 20px;
     color: #232323;
     border-radius: 10px;
-    margin: 25px;
+    margin: 10px;
+}
+
+.google_form_data_input_field1 {
+    background-color: #fff;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 70%;
+    font-family: 'MainFont', cursive !important;
+    height: 50px;
+    font-size: 20px;
+    color: #232323;
+    border-radius: 10px;
+    margin: 0px;
 }
 
 .google_form_data_validation_output{
@@ -58,5 +72,19 @@
         color: #232323;
         border-radius: 10px;
         margin: 10px;
+    }
+
+    .google_form_data_input_field1 {
+        background-color: #fff;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 30%;
+        font-family: 'MainFont', cursive !important;
+        height: 50px;
+        font-size: 20px;
+        color: #232323;
+        border-radius: 10px;
+        margin: 0px;
     }
 }
