@@ -60,7 +60,7 @@ function RowTableDiv(props) {
 
 
     let render_data1 = [<p>Not Registered</p>]
-    let render_data2 = [<Link to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></Link>]
+    let render_data2 = [<p to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></p>]
 
     if (props.item && props.type === "events" && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {
@@ -84,7 +84,7 @@ function RowTableDiv(props) {
                         <p>Not Paid</p>
                     )
                     render_data2.push(
-                        <Link onClick={paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></Link>
+                        <p onClick={paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></p>
                     )
                 }
 
@@ -93,7 +93,7 @@ function RowTableDiv(props) {
                         <p>Payment Failed</p>
                     )
                     render_data2.push(
-                        <Link onClick={paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></Link>
+                        <p onClick={paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></p>
                     )
                 }
 
@@ -128,7 +128,7 @@ function RowTableDiv(props) {
                     <p onClick={hack_toggleModal} className={`${styles.link}`}>Team Details</p>
                 )
                 render_data2.push(
-                    <Link onClick={hack_paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></Link>
+                    <p onClick={hack_paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></p>
                 )
             }
 
@@ -139,7 +139,7 @@ function RowTableDiv(props) {
                     <p>Payment Failed</p>
                 )
                 render_data2.push(
-                    <Link onClick={hack_paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></Link>
+                    <p onClick={hack_paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></p>
                 )
             }
         }

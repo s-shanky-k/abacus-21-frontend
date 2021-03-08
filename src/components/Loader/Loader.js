@@ -33,7 +33,7 @@ class Loader extends Component {
                     </div>
 
                     </div>
-                    <HashLink to="/homepage##" spy={true} smooth={true}><i className="fa fa-angle-double-down"></i></HashLink>
+                    <HashLink to="/homepage##" spy="true" smooth={true}><i className=" fa fa-angle-double-down"></i></HashLink>
 
                 </div>
 

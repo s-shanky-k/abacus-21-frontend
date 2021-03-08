@@ -4,6 +4,14 @@ import GlowCardResponsive from '../../components/GlowCardResponsive/GlowCardResp
 import Footer from '../../components/Footer/Footer'
 
 class TechEvents extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             
+        }
+    }
+    
     render() {
         return (
             <>
