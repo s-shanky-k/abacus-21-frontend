@@ -30,7 +30,8 @@ export const NonTechEvents = {
             "Member involved in any kind of malpractice will be disqualified immediately",
             "Decisions made by the administrators will be final",
             "Participants must ensure that they have laptop with good internet connectivity for their convenience",
-            "Participants must ensure that they have microsoft account"
+            "Participants must ensure that they have microsoft account",
+            "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
         ],
 
         rounds: {
@@ -83,7 +84,8 @@ export const NonTechEvents = {
             "The judge’s decisions are final based on the number of likes, shares, and creativity.",
             "Submissions will be not accepted once the deadline lapses.",
             "Photos which portray out of the theme mentioned or having vulgar content will be disqualified.",
-            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified."
+            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified.",
+            "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
         ],
 
         instructions: [
@@ -132,7 +134,8 @@ export const NonTechEvents = {
             "The judge’s decisions are final based on the number of likes, shares, and creativity",
             "Submissions will be not accepted once the deadline lapses",
             "Posters which portray out of the theme mentioned or having vulgar content will be disqualified",
-            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified"
+            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified",
+            "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
         ],
 
         instructions: [

@@ -55,6 +55,9 @@ export const TechEvents = {
                     title: "Finals",
                     description: "A reverse coding round where candidates have to analyze the given input-output sequences and decode the logic behind it. Write a code snippet that will generate the corresponding input output pattern. (30 mins)"
                 },
+                {   title : "Prize",
+                    description: "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
+                }
             ]
         },
         registration: true,
@@ -112,6 +115,9 @@ export const TechEvents = {
                     title: "Finals",
                     description: "Concentrates on programming, code debugging, algorithm, rapid-fire questions on puzzles (45 minutes)"
                 },
+                {   title : "Prize",
+                    description: "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
+                }
             ]
         },
         registration: true,
@@ -159,6 +165,9 @@ export const TechEvents = {
                     title: "Finals",
                     description: "Coding round where participants will be given 60 minutes to solve 4 programming questions."
                 },
+                {   title : "Prize",
+                    description: "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
+                }
             ]
         },
         registration: true,
@@ -215,6 +224,9 @@ export const TechEvents = {
                     title: "Finals",
                     description: "Only those participants who cleared the cut-off in the Prelims round are qualified. This written round consists of 25 questions to answer the questions in 45 minutes which requires a logical thought process to solve the vexed questions and crunchers."
                 },
+                {   title : "Prize",
+                    description: "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"
+                }
             ]
         },
         registration: true,
