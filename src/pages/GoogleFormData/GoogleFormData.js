@@ -93,6 +93,7 @@ function GoogleFormData(props) {
             backgroundColor: '#fff',
             color: '#000',
             fontSize: 20,
+            marginLeft: 10,
         }),
         control: () => ({
             // none of react-select's styles are passed to <Control />
@@ -106,7 +107,7 @@ function GoogleFormData(props) {
             alignItems: 'center',
             color: '#000',
             paddingLeft: 5,
-            margin: 25,
+            margin:10,
         }),
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
@@ -186,7 +187,7 @@ function GoogleFormData(props) {
             <div className={styles.google_form_data_container}>
                 <Heading text="Register" fontSize="35px"></Heading>
                 <div className={styles.google_form_data_form_container}>
-                    <input className={styles.google_form_data_input_field} type="email" placeholder="Email" disabled value={email} />
+                    <input className={styles.google_form_data_input_field1} type="email" placeholder="Email" disabled value={email} />
                     <input className={styles.google_form_data_input_field} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
