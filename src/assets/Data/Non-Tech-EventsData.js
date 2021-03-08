@@ -47,7 +47,8 @@ export const NonTechEvents = {
                 },
             ]
         },
-        registration:true
+        registration: true,
+        purpose: "EVENTS"
     },
 
     // Imagenation

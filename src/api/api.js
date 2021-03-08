@@ -119,7 +119,6 @@ export const apiGetRegistrations = async (credentials) => {
             }
         }
         )
-
         return response.data
     }
 

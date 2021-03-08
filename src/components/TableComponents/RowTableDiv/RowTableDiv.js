@@ -88,6 +88,15 @@ function RowTableDiv(props) {
                     )
                 }
 
+                else if (props.registrationDetails[i].status === "Failed") {
+                    render_data1.push(
+                        <p>Payment Failed</p>
+                    )
+                    render_data2.push(
+                        <Link onClick={paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></Link>
+                    )
+                }
+
 
             }
         }
@@ -120,6 +129,17 @@ function RowTableDiv(props) {
                 )
                 render_data2.push(
                     <Link onClick={hack_paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></Link>
+                )
+            }
+
+            else if (props.registrationDetails.team.status === "Failed") {
+                render_data1 = []
+                render_data2 = []
+                render_data1.push(
+                    <p>Payment Failed</p>
+                )
+                render_data2.push(
+                    <Link onClick={hack_paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></Link>
                 )
             }
         }
