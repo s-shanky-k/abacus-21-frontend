@@ -253,7 +253,7 @@ function SignUpXS() {
         <div id="goto-sign-up" className={styles.register_form_wrapper}>
             <div className={styles.register_container}>
                 <div className={styles.register_form_container}>
-                    <input ref={textInput} className={styles.register_input_field} type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required />
+                    <input autoFocus ref={textInput} className={styles.register_input_field} type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
                     <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />

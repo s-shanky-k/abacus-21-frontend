@@ -78,7 +78,7 @@ function ForgotPassword(props) {
                 <div className={styles.forgot_password_container}>
                     <Heading text="Forgot Password" fontSize="30px"></Heading>
                     <div className={styles.forgot_password_form_container}>
-                        <input className={styles.forgot_password_input_field} type="email" placeholder="Registered Email" required value={email} onChange={(e) => setemail(e.target.value)} />
+                        <input autoFocus className={styles.forgot_password_input_field} type="email" placeholder="Registered Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     </div>
                     {validationError ? (<div className={styles.forgot_password_validation_output}>{validationError}</div>) : null}
                     <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />

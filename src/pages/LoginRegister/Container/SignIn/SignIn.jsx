@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import Heading from '../../../../components/Heading/Heading.js';
 import NeonButton from '../../../../components/NeonButton/NeonButton.js';
 import { Link, useHistory } from "react-router-dom"
@@ -25,11 +25,7 @@ function SignIn(props) {
     const [validationError, setvalidationError] = useState("")
     const [loading, setloading] = useState(false)
 
-    // Refs
-    let textInput = null;
-
     useEffect(() => {
-        // textInput.current.focus();
         return () => {
 
         }
@@ -89,13 +85,8 @@ function SignIn(props) {
         }
     }
 
-    const giveFocus = () => {
-        this.textInput.current.focus();
-    }
-
     const clickGoogleIcon = () => {
         window.location = `${baseURL}${url_gAuth}`
-        // history.push()
     }
 
     return (
@@ -103,7 +94,7 @@ function SignIn(props) {
             {loading ? <Load /> : <div className="form-container sign-in-container" >
                 <Heading text="LOGIN" fontSize="35px"></Heading>
                 <div className="form-class">
-                    <input className="input-field-style" ref={(input) => { textInput = input; }} type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
+                    <input autoFocus className="input-field-style"  type="text" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                 </div>
                 {validationError ? (<div className="validation-output">{validationError}</div>) : null

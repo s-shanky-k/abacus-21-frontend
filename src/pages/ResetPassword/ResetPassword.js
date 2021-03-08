@@ -100,7 +100,7 @@ function ResetPassword(props) {
                     <Heading text="Reset Password" fontSize="35px"></Heading>
                     <div className={styles.forgot_password_form_container}>
                         <input className={styles.forgot_password_input_field} type="email" placeholder="Email" disabled value={email} />
-                        <input className={styles.forgot_password_input_field} type="password" placeholder="New Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
+                        <input autoFocus className={styles.forgot_password_input_field} type="password" placeholder="New Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                         <input className={styles.forgot_password_input_field} type="password" placeholder="Confirm New Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                     </div>
                     {validationError ? (<div className={styles.forgot_password_validation_output}>{validationError}</div>) : null}

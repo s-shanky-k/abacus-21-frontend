@@ -102,7 +102,6 @@ function SignInXS() {
 
     const clickGoogleIcon = () => {
         window.location = `${baseURL}${url_gAuth}`
-        // history.push()
     }
 
     return (
@@ -111,7 +110,7 @@ function SignInXS() {
             <div className={styles.login_form_wrapper}>
             <div className={styles.login_container}>
                 <div className={styles.login_form_container}>
-                    <input className={styles.login_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
+                    <input autoFocus className={styles.login_input_field} type="email" placeholder="Email" required value={email} onChange={(e) => setemail(e.target.value)} />
                     <input className={styles.login_input_field} type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
                 </div>
                 { validationError ? (<div className={styles.login_validation_output}>{validationError}</div>) : null}
