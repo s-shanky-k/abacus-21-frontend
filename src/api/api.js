@@ -65,8 +65,10 @@ export const apiForgotPassword = async (credentials) => {
             `${url_forgotPassword}`, {
             email: credentials.email,
         })
+        return response
 
     } catch (error) {
+        return error.response.data
     }
 }
 
@@ -79,8 +81,9 @@ export const apiResetPassword = async (credentials) => {
             key: credentials.key,
             pwd: credentials.pwd,
         })
-
+        return response
     } catch (error) {
+        return error.response.data
     }
 }
 

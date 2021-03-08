@@ -12,6 +12,7 @@ import { useHistory, withRouter } from 'react-router-dom';
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import GoogleButton from 'react-google-button'
+import Load from '../../../../components/Load/Load.js';
 
 
 // const cusStyle = {
@@ -46,7 +47,7 @@ function SignUp() {
     const customStyle1 = {
         menu: (provided, state) => ({
             ...provided,
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             borderBottom: '1px solid #fff',
             color: state.isSelected ? '#ff65bd' : '#060c21',
             padding: 10,
@@ -57,7 +58,7 @@ function SignUp() {
         }),
         control: () => ({
             // none of react-select's styles are passed to <Control />
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             height: 50,
             display: 'flex',
             backgroundColor: '#fff',
@@ -72,15 +73,15 @@ function SignUp() {
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-    
+
             return { ...provided, opacity, transition };
         }
     }
-    
+
     const customStyle2 = {
         menu: (provided, state) => ({
             ...provided,
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             borderBottom: '1px solid #fff',
             color: state.isSelected ? '#ff65bd' : '#060c21',
             padding: 10,
@@ -91,7 +92,7 @@ function SignUp() {
         }),
         control: () => ({
             // none of react-select's styles are passed to <Control />
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             height: 50,
             display: 'flex',
             backgroundColor: '#fff',
@@ -107,15 +108,15 @@ function SignUp() {
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-    
+
             return { ...provided, opacity, transition };
         }
-    }   
-    
+    }
+
     const customStyle3 = {
         menu: (provided, state) => ({
             ...provided,
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             borderBottom: '1px solid #fff',
             color: state.isSelected ? '#ff65bd' : '#060c21',
             padding: 10,
@@ -126,7 +127,7 @@ function SignUp() {
         }),
         control: () => ({
             // none of react-select's styles are passed to <Control />
-            width: _Width>1300 ? '30vw' : ( _Width > 1200 ? '29vw' : '28.5vw'),
+            width: _Width > 1300 ? '30vw' : (_Width > 1200 ? '29vw' : '28.5vw'),
             height: 50,
             display: 'flex',
             backgroundColor: '#fff',
@@ -141,11 +142,12 @@ function SignUp() {
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-    
+
             return { ...provided, opacity, transition };
         }
-    }   
+    }
 
+    const [loading, setloading] = useState(false)
     const [name, setname] = useState('')
     const [year, setyear] = useState(null)
     const [dept, setdept] = useState(null)
@@ -209,7 +211,9 @@ function SignUp() {
     const onSubmit = async () => {
         const isValid = validate();
         if (isValid) {
+            setloading(true)
             const response = await apiRegister({ name: name, year: year, dept: dept.value, college: college.value, email: email, phone: phone, pwd: pwd })
+            setloading(false)
             if (response.auth) {
                 let obj = {
                     name: response.name,
@@ -257,22 +261,25 @@ function SignUp() {
 
 
     return (
-        <div className="form-container sign-up-container">
-            <Heading text="REGISTER" fontSize="35px"></Heading>
-            <div className="form-class align-form" id="style-2">
-                <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
-                <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
-                <input className="input-field-style" type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
-                <input className="input-field-style" type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
-                <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-                <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
-            </div>
-            {validationError ? (<div className="validation-output">{validationError}</div>) : null}
-            <GoogleButton label="Register with Google" className="google-button" onClick={clickGoogleIcon} type="dark" />
-            <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
-        </div>
+        <>
+            {loading ? <Load /> : <div className="form-container sign-up-container">
+                <Heading text="REGISTER" fontSize="35px"></Heading>
+                <div className="form-class align-form" id="style-2">
+                    <input className="input-field-style" ref={textInput} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle3} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                    <input className="input-field-style" type="email" placeholder="Email-ID" required value={email} onChange={(e) => setemail(e.target.value)} />
+                    <input className="input-field-style" type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
+                    <input className="input-field-style" type="password" placeholder="Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
+                    <input className="input-field-style" type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
+                </div>
+                {validationError ? (<div className="validation-output">{validationError}</div>) : null}
+                <GoogleButton label="Register with Google" className="google-button" onClick={clickGoogleIcon} type="dark" />
+                <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
+            </div>}
+        </>
+
     );
 }
 

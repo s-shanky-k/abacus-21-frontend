@@ -6,10 +6,11 @@ import Heading from '../../components/Heading/Heading.js';
 import SignUp from './Container/SignUp/SignUp.jsx';
 import SignIn from './Container/SignIn/SignIn.jsx';
 import { useHistory, useLocation } from 'react-router-dom'
-
 import { AuthApi, SetAuthApi, Width } from "../../App"
 import Cookies from "js-cookie"
 import LoginRegisterXS from "../../components/LoginRegisterXS/LoginRegisterXS"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -90,10 +91,10 @@ const App = (props) => {
             let obj_str = JSON.stringify(obj)
             Cookies.set("details", obj_str)
             Cookies.set("token", params.token)
-            history.push({
-                pathname: "/dashboard",
-                state: params
+            toast.success(params.message, {
+                position: toast.POSITION.BOTTOM_CENTER
             })
+            history.push("/dashboard")
         }
         else {
             if (Cookies.get('token') !== undefined && Cookies.get('details') !== undefined) {

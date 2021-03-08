@@ -6,6 +6,8 @@ import { apiResetPassword } from "../../api/api"
 import { useHistory } from "react-router-dom"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import Load from '../../components/Load/Load';
+import Footer from '../../components/Footer/Footer';
 
 
 toast.configure()
@@ -21,6 +23,7 @@ function ResetPassword(props) {
     const [cpwd, setcpwd] = useState('')
     const [validationError, setvalidationError] = useState('')
     const [queryParams, setqueryParams] = useState({})
+    const [loading, setloading] = useState(false)
 
     const history = useHistory()
 
@@ -66,32 +69,46 @@ function ResetPassword(props) {
     const onSubmit = async () => {
         const isValid = validate();
         if (isValid) {
+            setloading(true)
             const response = await apiResetPassword({
                 "pwd": pwd,
                 "user": queryParams.user,
                 "key": queryParams.key
             })
-            toast.success("Reset Password Successful", {
-                position: toast.POSITION.BOTTOM_LEFT
-            })
-            history.push("/login-register")
+            setloading(false)
+
+            if (response.status === 200) {
+                toast.success(response.data.message, {
+                    position: toast.POSITION.BOTTOM_LEFT
+                })
+                history.push("/login-register")
+            }
+            else {
+                toast.error(response.message, {
+                    position: toast.POSITION.BOTTOM_LEFT
+                })
+            }
+
         }
     }
 
 
     return (
-        <div className={styles.forgot_password_form_wrapper}>
-            <div className={styles.forgot_password_container}>
-                <Heading text="Reset Password" fontSize="35px"></Heading>
-                <div className={styles.forgot_password_form_container}>
-                    <input className={styles.forgot_password_input_field} type="email" placeholder="Email" disabled value={email} />
-                    <input className={styles.forgot_password_input_field} type="password" placeholder="New Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
-                    <input className={styles.forgot_password_input_field} type="password" placeholder="Confirm New Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
+        <>
+            {loading ? <Load /> : <><div className={styles.forgot_password_form_wrapper}>
+                <div className={styles.forgot_password_container}>
+                    <Heading text="Reset Password" fontSize="35px"></Heading>
+                    <div className={styles.forgot_password_form_container}>
+                        <input className={styles.forgot_password_input_field} type="email" placeholder="Email" disabled value={email} />
+                        <input className={styles.forgot_password_input_field} type="password" placeholder="New Password" required value={pwd} onChange={(e) => setpwd(e.target.value)} />
+                        <input className={styles.forgot_password_input_field} type="password" placeholder="Confirm New Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
+                    </div>
+                    {validationError ? (<div className={styles.forgot_password_validation_output}>{validationError}</div>) : null}
+                    <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-                {validationError ? (<div className={styles.forgot_password_validation_output}>{validationError}</div>) : null}
-                <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />
-            </div>
-        </div>
+            </div><Footer scroll_snap={false} /></>}
+        </>
+
     );
 }
 

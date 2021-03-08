@@ -10,6 +10,9 @@ import Cookies from "js-cookie"
 import { AuthApi, SetAuthApi, Width } from "../../App"
 import { useHistory, withRouter } from 'react-router-dom';
 import { apiGoogleDataForm } from "../../api/api"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+import Load from '../../components/Load/Load';
 
 
 function GoogleFormData(props) {
@@ -30,6 +33,7 @@ function GoogleFormData(props) {
     const [phone, setphone] = useState(null)
     const [queryParams, setqueryParams] = useState({})
     const [validationError, setvalidationError] = useState('')
+    const [loading, setloading] = useState(false)
 
 
     useEffect(() => {
@@ -77,7 +81,7 @@ function GoogleFormData(props) {
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-    
+
             return { ...provided, opacity, transition };
         }
     }
@@ -112,11 +116,11 @@ function GoogleFormData(props) {
         singleValue: (provided, state) => {
             const opacity = state.isDisabled ? 0.5 : 1;
             const transition = 'opacity 300ms';
-    
+
             return { ...provided, opacity, transition };
         }
-    }   
-    
+    }
+
 
     const validate = () => {
         let validationError = '';
@@ -130,10 +134,10 @@ function GoogleFormData(props) {
         else if (!dept) {
             validationError = 'Department field cannot be blank';
         }
-        else if(!college) {
+        else if (!college) {
             validationError = 'College field cannot be blank'
         }
-        else if(!phone) {
+        else if (!phone) {
             validationError = 'Phone field cannot be blank';
         }
         else if (phone < 1000000000 || phone > 9999999999) {
@@ -151,6 +155,7 @@ function GoogleFormData(props) {
     const onSubmit = async () => {
         const isValid = validate();
         if (isValid) {
+            setloading(true)
             const response = await apiGoogleDataForm({
                 name: name,
                 year: year,
@@ -159,9 +164,24 @@ function GoogleFormData(props) {
                 phone: phone,
                 token: queryParams.token
             })
+            setloading(false)
             if (response.auth) {
+                let obj = {
+                    name: response.name,
+                    abacusid: response.abacusid,
+                    email: response.email,
+                    phone: response.phone,
+                    college: response.college,
+                    dept: response.dept,
+                    year: response.year
+                }
+                let obj_str = JSON.stringify(obj)
                 Cookies.set("token", response.token)
+                Cookies.set("details", obj_str)
                 SetAuth(true)
+                toast.success(response.message, {
+                    position: toast.POSITION.BOTTOM_CENTER
+                })
                 history.push("/dashboard")
             }
             else {
@@ -183,21 +203,24 @@ function GoogleFormData(props) {
     }
 
     return (
-        <div className={styles.google_form_data_form_wrapper}>
-            <div className={styles.google_form_data_container}>
-                <Heading text="Register" fontSize="35px"></Heading>
-                <div className={styles.google_form_data_form_container}>
-                    <input className={styles.google_form_data_input_field1} type="email" placeholder="Email" disabled value={email} />
-                    <input className={styles.google_form_data_input_field} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
-                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
-                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
-                    <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
-                    <input className={styles.google_form_data_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
+        <>
+            {loading ? <Load /> : <div className={styles.google_form_data_form_wrapper}>
+                <div className={styles.google_form_data_container}>
+                    <Heading text="Register" fontSize="35px"></Heading>
+                    <div className={styles.google_form_data_form_container}>
+                        <input className={styles.google_form_data_input_field} type="email" placeholder="Email" disabled value={email} />
+                        <input className={styles.google_form_data_input_field} type="text" placeholder="Name" required value={name} onChange={(e) => setname(e.target.value)} />
+                        <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={years.map(opt => ({ label: opt, value: opt }))} onChange={handleYearChange} placeholder="Year" />
+                        <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle2} options={departments.map(opt => ({ label: opt, value: opt }))} onChange={handleDeptChange} placeholder="Department" />
+                        <Select components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} styles={customStyle1} options={colleges.map(opt => ({ label: opt, value: opt }))} onChange={handleCollegeChange} placeholder="College" />
+                        <input className={styles.google_form_data_input_field} type="number" placeholder="Phone" required value={phone} onChange={(e) => setphone(e.target.value)} />
+                    </div>
+                    {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}
+                    <NeonButton props={{ text: "Submit", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-                {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}
-                <NeonButton props={{ text: "Submit", color: "#26a0da", onClick: onSubmit }} />
-            </div>
-        </div>
+            </div>}
+        </>
+
     )
 }
 

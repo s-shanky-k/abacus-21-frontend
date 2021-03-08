@@ -1,5 +1,5 @@
 ._404_wrapper {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -7,12 +7,28 @@
 }
 
 ._404 {
-    height: 60vh;
+    min-height: 60vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+    ._404 {
+        flex-direction: column;
+        min-height: max-content;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 578px) {
+    ._404 {
+        margin-top: 25px;
+    }
 }
 
 ._404_img {
@@ -182,7 +198,9 @@
 
 
 @keyframes slowFlickerAnime {
-    0%,100% {
+
+    0%,
+    100% {
         color: #6b1839;
         text-shadow: none;
     }
@@ -194,5 +212,3 @@
             0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
     }
 }
-
-
