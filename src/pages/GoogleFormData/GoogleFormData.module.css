@@ -1,9 +1,15 @@
+.bg {
+    background-color:#060c21;
+    background-image:url('../../assets/Images/Asset\ 5event.svg');
+    background-repeat:no-repeat;
+    background-size:cover
+}
+
 .google_form_data_form_wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 50px;
 }
 
 .google_form_data_container {
@@ -12,6 +18,7 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    margin: 50px;
 }
 
 .google_form_data_form_container {

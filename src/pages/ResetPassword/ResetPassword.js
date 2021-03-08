@@ -95,7 +95,7 @@ function ResetPassword(props) {
 
     return (
         <>
-            {loading ? <Load /> : <><div className={styles.forgot_password_form_wrapper}>
+            {loading ? <Load /> : <div className={`${styles.forgot_password_form_wrapper} ${styles.bg}`}>
                 <div className={styles.forgot_password_container}>
                     <Heading text="Reset Password" fontSize="35px"></Heading>
                     <div className={styles.forgot_password_form_container}>
@@ -106,9 +106,9 @@ function ResetPassword(props) {
                     {validationError ? (<div className={styles.forgot_password_validation_output}>{validationError}</div>) : null}
                     <NeonButton props={{ text: "Reset", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-            </div><Footer scroll_snap={false} /></>}
+            </div>
+            }
         </>
-
     );
 }
 

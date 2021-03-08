@@ -28,7 +28,7 @@ function GlowCardResponsive({props}) {
                     <h2>
                     <div style={{ textAlign: 'center' , paddingBottom:'5px'}}>
                             {props.titleFontFamily !== undefined 
-                            ?  <Heading text={props.title} fontSize="34px" fontFamily={props.titleFontFamily}/>
+                            ?  <Heading text={props.title} fontSize="31px" fontFamily={props.titleFontFamily}/>
                             :  <Heading text={props.title} fontSize="28px"/>
                             }
                           

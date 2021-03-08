@@ -15,6 +15,7 @@ import { useHistory } from 'react-router';
 import { toast } from "react-toastify"
 import { apiRegisterHackathon, apiGetHackathonRegistration } from "../../api/api"
 import Load from '../Load/Load';
+import Footer from '../Footer/Footer'
 
 
 toast.configure()
@@ -177,7 +178,7 @@ export default function HackathonForm() {
 
     return (
         <>
-            {loading ? <Load /> : <div className={styles.hackathon_form_wrapper}>
+            {loading ? <Load /> : <div className={`${styles.hackathon_form_wrapper} ${styles.bg}`}>
                 <div className={styles.hackathon_form_container}>
                     <Heading text="Hackathon Registration" fontSize="24px"></Heading>
                     <div className={styles.hackathon_form_accordian_container}>
@@ -203,7 +204,7 @@ export default function HackathonForm() {
                                     <Typography className={classes.heading}>Participant 2 *</Typography>
                                 </AccordionSummary>
                                 <div className={styles.hackathon_form_data_container} style={{ textAlign: 'center !important' }}>
-                                    <input className={styles.hackathon_form_input_field} type="text" placeholder="Name" required value={name2} onChange={(e) => setname2(e.target.value)} />
+                                    <input autoFocus className={styles.hackathon_form_input_field} type="text" placeholder="Name" required value={name2} onChange={(e) => setname2(e.target.value)} />
                                     <input className={styles.hackathon_form_input_field} type="email" placeholder="Email" required value={email2} onChange={(e) => setemail2(e.target.value)} />
                                     {validationError2 ? (<div className={styles.hackathon_form_data_validation_output_2}>{validationError2}</div>) : null}
                                 </div>
@@ -226,7 +227,8 @@ export default function HackathonForm() {
                     </div>
                     <NeonButton props={{ text: "Register", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-            </div>}
+            </div>
+            }
         </>
 
     )

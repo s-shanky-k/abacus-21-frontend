@@ -13,6 +13,7 @@ import { apiGoogleDataForm } from "../../api/api"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Load from '../../components/Load/Load';
+import Footer from "../../components/Footer/Footer"
 
 
 function GoogleFormData(props) {
@@ -204,7 +205,7 @@ function GoogleFormData(props) {
 
     return (
         <>
-            {loading ? <Load /> : <div className={styles.google_form_data_form_wrapper}>
+            {loading ? <Load /> : <div className={`${styles.google_form_data_form_wrapper} ${styles.bg}`}>
                 <div className={styles.google_form_data_container}>
                     <Heading text="Register" fontSize="35px"></Heading>
                     <div className={styles.google_form_data_form_container}>
@@ -218,7 +219,8 @@ function GoogleFormData(props) {
                     {validationError ? (<div className={styles.google_form_data_validation_output}>{validationError}</div>) : null}
                     <NeonButton props={{ text: "Submit", color: "#26a0da", onClick: onSubmit }} />
                 </div>
-            </div>}
+            </div>
+            }
         </>
 
     )
