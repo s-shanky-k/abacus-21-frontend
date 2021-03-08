@@ -7,7 +7,7 @@ export const NonTechEvents = {
         about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
 
         dateTime: [
-
+            "Will be updated soon!"
         ],
 
         contact: [
@@ -78,11 +78,12 @@ export const NonTechEvents = {
         theme: "This is theme",
 
         rules: [
-            "This event is for individual participant only",
-            "Member involved in any kind of malpractice will be disqualified immediately",
-            "Decisions made by the administrators will be final",
-            "Participants must ensure that they have laptop with good internet connectivity for their convenience",
-            "Participants must ensure that they have microsoft account"
+            "Only one entry is allowed per contestant",
+            "The photograph must be originally taken by the contestant. The photo must not contain any watermark or copyrights.",
+            "The judge’s decisions are final based on the number of likes, shares, and creativity.",
+            "Submissions will be not accepted once the deadline lapses.",
+            "Photos which portray out of the theme mentioned or having vulgar content will be disqualified.",
+            "In case of plagiarism or any kind of malpractice, the contestant will be disqualified."
         ],
 
         instructions: [
@@ -123,7 +124,7 @@ export const NonTechEvents = {
             }
         ],
 
-        theme: "This is theme",
+        theme: "Before, during and after lockdown",
 
         rules: [
             "Only one entry is allowed per contestant",

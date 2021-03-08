@@ -6,9 +6,7 @@ export const TechEvents = {
         about: `TENET is a challenge where the participants have to identify and resolve bugs, thus making the system unproblematic. Logical thinking of the programmer is tested through this event where the participant has to come up with unique solutions to produce an expected output.`,
 
         dateTime: [
-            "20 Jan 2000",
-            "6 AM",
-            "Microsoft Teams"
+            "Will be updated soon!"
         ],
 
         contact: [
@@ -30,10 +28,10 @@ export const TechEvents = {
             },
         ],
 
-        sponsor: "",
+        // sponsor: "",
 
         rules: [
-            "This event is for individual participant only.",
+            "This event is for individual participants only.",
             "Candidates involved in any kind of malpractice will be disqualified immediately",
             "Marks will be provided based on the efficiency of the solution and the number of test cases passed (debugging and reverse coding).",
             "There will be no negative marking for MCQs.",
@@ -70,9 +68,7 @@ export const TechEvents = {
         about: `Novice.init() is an exclusive event for the first year students of various colleges. It provides scope for the young minds to explore the coding world and to assess their logical reasoning abilities. This event introduces newbies to the technical contests.`,
 
         dateTime: [
-            "20 Jan 2000",
-            "6 AM",
-            "Microsoft Teams"
+            "Will be updated soon!"
         ],
 
         contact: [
@@ -90,7 +86,7 @@ export const TechEvents = {
             }
         ],
 
-        sponsor: "",
+        // sponsor: "",
 
         rules: [
             "Students other than first years are not allowed to take this event.",
@@ -129,16 +125,14 @@ export const TechEvents = {
         about: `Wallow yourself in the realm of coding. Experience a myriad of challenges. Come, conflate your ideas to deal with the conundrums and become the hegemonic coder.`,
 
         dateTime: [
-            "20 Jan 2000",
-            "6 AM",
-            "Microsoft Teams"
+            "Will be updated soon!"
         ],
 
         contact: [
 
         ],
 
-        sponsor: "",
+        // sponsor: "",
 
         rules: [
             "Only a team of two is allowed for this event.",
@@ -178,7 +172,7 @@ export const TechEvents = {
         about: `X - Domain Combat mainly focuses on the sound knowledge and solid familiarity of the participants in 3 known topics DBMS, Networks and Operating Systems.`,
 
         dateTime: [
-
+            "Will be updated soon!"
         ],
 
         contact: [
@@ -200,7 +194,7 @@ export const TechEvents = {
             },
         ],
 
-        sponsor: "",
+        // sponsor: "",
 
         rules: [
             "This event allows only individual participants.",

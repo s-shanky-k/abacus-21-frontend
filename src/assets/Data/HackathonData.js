@@ -1,46 +1,30 @@
 export const Hackathon = {
-    name: "HACKATHON!!!!",
+    name: "HACKATHON",
     refName: "hackathon",
-    about: `HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA HACK DATA .`,
-
+    about: `Are you a tech-savvy individual who can collaborate intensively to
+            innovate and develop influential solutions to a problem using technology?
+            Then why do you wait? Fasten your belts and bump into the signature event of Abacus,
+            where you need to team up and brainstorm your ideas to create a prototype.`,
     dateTime: [
-        "20 Jan 2000",
-        "6 AM",
-        "Microsoft Teams"
+        "Will be updated soon!"
     ],
 
     contact: [
         {
-            name: "Arshak Shan ",
-            mobile: "  8129583239"
-        },
-        {
-            name: "Shruthi S ",
-            mobile: "  7358325784"
-        },
-        {
-            name: "Darrshana R ",
-            mobile: "  9123590345"
-        },
-        {
-            name: "Shakkthi ",
-            mobile: "  7299084122"
+            name: "Kanika K",
+            mobile: "8300295535"
         },
     ],
 
-    sponsor: "",
+    // sponsor: "",
 
     rules: [
-        "This event is for individual participant only.",
-        "Candidates involved in any kind of malpractice will be disqualified immediately",
-        "Marks will be provided based on the efficiency of the solution and the number of test cases passed (debugging and reverse coding).",
-        "There will be no negative marking for MCQs.",
+        "The event is for a team of two participants.",
         "Decisions made by the administrators will be final",
-        "Participants must ensure that they have laptop with good internet connectivity for their convenience",
-        "Participants must ensure that they have microsoft account"
+        "Participants must ensure that they have laptop with good internet connectivity for their convenience"
     ],
 
-    rounds: {
+    /* rounds: {
         number: 3,
         roundDetails: [
             {
@@ -56,6 +40,6 @@ export const Hackathon = {
                 description: "A reverse coding round where candidates have to analyze the given input-output sequences and decode the logic behind it. Write a code snippet that will generate the corresponding input output pattern. (30 mins)"
             },
         ]
-    },
+    }, */
     registration: true
 }
