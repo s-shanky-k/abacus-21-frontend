@@ -14,7 +14,7 @@ function PageNotFound() {
 
     return (
         <>
-            <div className={`${styles._404_wrapper}`}>
+            <div className={`${styles._404_wrapper} ${styles.bg}`}>
                 <div className={`${styles._404}`}>
                     {/* Image */}
                     <div className={`${styles._404_img}`}>
