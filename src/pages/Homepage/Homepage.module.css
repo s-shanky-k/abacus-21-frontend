@@ -230,6 +230,10 @@
         }
 
     }
+    .img{
+        width:300px;
+        height:350px;
+    }
     ._rulesDiv {
         font-size: x-small;
         width: 50% !important;
