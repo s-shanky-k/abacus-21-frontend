@@ -58,8 +58,8 @@ class Homepage extends Component {
             />
            
             <div className="container-fluid  ml-sm-0  justify-content-center align-self-center pb-5">
-              <div className="row justify-content-center align-self-center ">
-                <div className="col col-lg-3 col-md-4   mt-5   text-center">
+              <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-2 justify-content-center align-self-center ">
+                <div className=" col mt-5   text-center">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={7} redraw={true} suffix=" +">
                       {({ countUpRef, start }) => (
@@ -71,7 +71,7 @@ class Homepage extends Component {
                   </div>{" "}
                   <Heading1 text="Events" fontSize="20px" />
                 </div>
-                <div className="col mt-5   col-lg-3 col-md-4 text-center">
+                <div className=" mt-5   col text-center">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={3} redraw={true} suffix=" +">
                       {({ countUpRef, start }) => (
@@ -83,7 +83,7 @@ class Homepage extends Component {
                   </div>
                   <Heading1 text="Workshops" fontSize="20px" />
                 </div>
-                <div className="col col-lg-3 col-md-4 mt-5 text-center ">
+                <div className="col mt-5 text-center ">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={1} redraw={true} suffix=" ">
                       {({ countUpRef, start }) => (
@@ -93,9 +93,9 @@ class Homepage extends Component {
                       )}
                     </CountUp>
                   </div>
-                  <Heading1 text=" Mega Hackathon" fontSize="20px" />
+                  <Heading1 text="Mega Hackathon" fontSize="20px" />
                 </div>
-                <div className="col col-lg-3 col-md-4  mt-5  text-center">
+                <div className="col text-center mt-5">
                   <div className={`${styles.countup}`}>
                     <CountUp start={0} end={50} redraw={true} suffix=" K+">
                       {({ countUpRef, start }) => (
@@ -131,7 +131,7 @@ class Homepage extends Component {
            </div>
             </div> */}
 
-          <div id="#"
+          <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -148,7 +148,7 @@ class Homepage extends Component {
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
                 <div className="embed-responsive embed-responsive-21by9" className={styles.eventCardImg}>
-                    <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" width = "100%" height="75%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" width = "100%" height="65%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 {/* <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} /> */}
               </div>

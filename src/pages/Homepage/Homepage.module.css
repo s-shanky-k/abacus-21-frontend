@@ -36,13 +36,7 @@
     background-size:cover
 }
 
-@media only screen and (max-width:1200px){
-    .dis{
-        
-      align-items: center;
-    }
-    
-}
+
 @media only screen and (min-width:850px) and (max-width: 1290px) {
     ._homepage {
         padding-top: 100px;
@@ -260,13 +254,15 @@
     }
     
     ._eventCardImgDiv {
-        flex-basis: 40% !important;
+        flex-basis: 45% !important;
         align-items: center !important;
         text-align: center;
         justify-content: center; 
     }
     
     .eventCardImg {
+        margin-top: 160px;
+       
         height: 85vh;
     }
     
@@ -299,7 +295,24 @@
         }
         
     }
+    @media only screen and (min-width:1200px) {
+        .eventCardImg{
+            margin-right:35px;
+            
+                }
+                
+
+
+    }
+    @media only screen and (max-width:1200px){
+        .dis{
+            
+          align-items: center;
+        } 
+       
     
+        
+    }
     @media only screen and (max-width: 700px) {
         .eventCardImg {
             width: 250px;

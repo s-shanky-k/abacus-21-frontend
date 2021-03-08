@@ -35,7 +35,10 @@
 }
 
 ._glowCardDiv {
-    flex-basis: 27% !important;
+    flex-basis: 29% !important;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    
 }
 
 ._eventCardImgDiv {
@@ -44,10 +47,12 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+   
 }
 
 .eventCardImg {
     height: 85vh;
+    padding-top: 30px;
 }
 
 @media only screen and (max-width: 1100px) {

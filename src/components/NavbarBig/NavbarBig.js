@@ -13,9 +13,9 @@ function NavbarBig({ clickLogout }) {
     return (
         <div className={`${styles._navbar}`}>
             <div className={`${styles._navbar_brand}`}>
-                <Link to="/homepage" className={`${styles._navbar_brand_link}`}>
+                <NavHashLink to="/homepage" className={`${styles._navbar_brand_link}`}>
                     <Heading text="Abacus'21"/>
-                </Link>
+                </NavHashLink>
             </div>
 
             <div className={`${styles._navbar_main}`}>

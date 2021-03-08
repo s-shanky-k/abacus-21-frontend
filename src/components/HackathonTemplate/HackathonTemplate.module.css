@@ -36,6 +36,7 @@
 
 ._glowCardDiv {
     flex-basis: 27% !important;
+    margin-bottom: 20px;
 }
 
 ._eventCardImgDiv {
@@ -45,7 +46,8 @@
 }
 
 .eventCardImg {
-    height: 85vh;
+    margin-top: 90px;
+    height: 70vh;
 }
 
 @media only screen and (max-width: 1100px) {
