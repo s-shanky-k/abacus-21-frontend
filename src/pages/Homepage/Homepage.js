@@ -56,6 +56,19 @@ class Homepage extends Component {
                 margin: "auto",
               }}
             />
+
+            {/* Hidden Images */}
+
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/cloud-computing.svg`}
+            />
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/entrepreneurship.svg`}
+            />
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/job-readiness.svg`}
+            />
+
             <div className="container-fluid  ml-sm-0  justify-content-center align-self-center pb-5">
               <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-2 justify-content-center align-self-center ">
                 <div className=" col mt-5   text-center">
