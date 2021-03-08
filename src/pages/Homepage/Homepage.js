@@ -15,6 +15,7 @@ import Dev from "../../components/Dev/Dev";
 import DashboardCard from "../../components/DashboardCard/DashboardCard";
 import { Autocomplete } from "@material-ui/lab";
 import FadeInSection from "../../components/FadeInSection/FadeInSection";
+import GlowCardSimple from "../../components/GlowCardSimple/GlowCardSimple";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2000));
@@ -113,7 +114,7 @@ class Homepage extends Component {
      
 
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
+        {/* <div className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}>
         
            <div class="container justify-content-center align-self-center ">
              <div class="row justify-content-center align-self-center">
@@ -124,11 +125,35 @@ class Homepage extends Component {
 </div> </FadeInSection>
                </div>
                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-               <GlowCard props={{degree: "25deg",title:"Abacus'21",content:"Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."}} />    
+               <GlowCardSimple props={{degree: "25deg",title:"Abacus'21",content:"CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."}} />    
                  </div>
              </div>
            </div>
+            </div> */}
+
+          <div id="#"
+            className={`${styles._homepage} ${styles.bg}`}
+
+          >
+            <div className={`${styles._about_event}`}>
+              <div className={`${styles._glowCardDiv}`}>
+                <GlowCard props={{
+                  title: "Abacus'21",
+                  /* content:"CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely organized online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships. Grab this opportunity and win cash prizes, Intern Opportunities , T shirts and many surprising prizes."
+                   */list:[
+                    "CSEA takes immense pleasure in organizing Abacus’21. This version is going to be one of its kind - a symposium completely online. We operate with a vision – to bring together students from multiple engineering colleges globally and give them a chance to demonstrate their technical prowess, ignite their passion for learning and to win exciting prizes and internships.",
+                    "Grab this opportunity and win cash prizes, Intern opportunities, Tshirts and many more prizes."
+                  ]
+                }} />
+              </div>
+              <div className={`${styles._eventCardImgDiv}`}>
+                <div className="embed-responsive embed-responsive-21by9" className={styles.eventCardImg}>
+                    <iframe src="https://www.youtube.com/embed/W0eDjWr3ATI" width = "100%" height="75%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                {/* <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} /> */}
+              </div>
             </div>
+          </div>
             
 
 

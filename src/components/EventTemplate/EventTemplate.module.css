@@ -73,6 +73,10 @@
         flex-basis: 100%;
     }
 
+    ._sponsorMargin{
+        padding-top: 30px;
+    }
+    
 }
 
 @media only screen and (max-width: 700px) {
@@ -135,6 +139,8 @@
     font-size: 30px;
     color: white;
 }
+
+
 
 /* Pattern styles */
 /* .eventCard {
