@@ -254,15 +254,24 @@
     }
     
     ._eventCardImgDiv {
+        /* display: flex; */
+        flex-basis: 45% !important;
+        align-items: center !important;
+        text-align: center;
+        /* justify-content: center;  */
+        width: 100%;
+    }
+    
+    .eventCardImg {
+        /* margin-top: 160px; */
+        height: 85vh;
+        display: flex;
         flex-basis: 45% !important;
         align-items: center !important;
         text-align: center;
         justify-content: center; 
-    }
-    
-    .eventCardImg {
-        margin-top: 160px;
-        height: 85vh;
+        width: 100%;
+
     }
     
     @media only screen and (max-width: 1100px) {
@@ -274,13 +283,13 @@
         }
     
         .eventCardImg {
-            width: 350px;
-            height: 350px;
+            width: 550px;
+            height: 450px;
         }
     
         ._glowCardDiv {
             /* width: 80%; */
-            flex-basis: 80% !important;
+            flex-basis: 100% !important;
             order: 2 !important;
         }
     
@@ -308,14 +317,22 @@
             
           align-items: center;
         } 
-       
-    
-        
+
     }
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 768px) {
         .eventCardImg {
-            width: 250px;
+            width: 340px;
             height: 250px;
+        }
+        ._glowCardDiv {
+            /* width: 80%; */
+            flex-basis: 100% !important;
+            order: 2 !important;
+        }
+    
+        ._eventCardImgDiv {
+            order: 1 !important;
+            flex-basis: 100%;
         }
     }
    
