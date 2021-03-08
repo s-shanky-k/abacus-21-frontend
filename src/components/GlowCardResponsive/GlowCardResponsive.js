@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './GlowCardResponsive.module.css'
 import FadeInSection from '../FadeInSection/FadeInSection'
 import {Link} from "react-router-dom";
-import massImg from '../../assets/Images/mass.png'
 import Heading from '../Heading/Heading'
 /*
 Usage: 
