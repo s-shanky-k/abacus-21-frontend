@@ -15,6 +15,7 @@ function Dev({ props }){
     <a href={`${props.href}`} target="_blank" style={{textDecoration:'none'}} className={`${styles.hover}`}>
       <p className={`${styles.text}`}>{props.title}</p></a>
         <p className={`${styles.text1}`}>{props.title1}</p>
+        <p className={`${styles.text1}`}>{props.company}</p>
         </div>
           
        

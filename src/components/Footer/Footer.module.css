@@ -15,12 +15,20 @@
         scroll-snap-align: none;
     }
 
-    ._footer_copyright_div {
-        margin-bottom: 100px !important;
-    }
+    
 
 }
+.contact{
+    color:  grey;
+    font-size: 20px;
 
+}
+.contact:hover{
+    color: hotpink;
+    cursor: pointer;
+    transform: scale(1.5);
+    text-decoration: none;  
+}
 ._footer_icons_div,
 ._footer_copyright_div {
     display: flex;

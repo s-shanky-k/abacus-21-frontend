@@ -16,6 +16,20 @@ export default class Footer extends Component {
                     <a href="https://www.linkedin.com/company/abacus-cse" target="_blank"><LinkedInIcon className={`${styles._icon}`} /></a>
                 </div>
                 <div className={`${styles._footer_copyright_div}`}>
+                    <p>CONTACT US</p>
+                </div>  
+                
+              <div class="container-fluid align-items-center text-center">
+                  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-xs-1">
+               
+                <div class="col text-center pb-3"><a href="tel:+91 9500702003" target="_blank" className={`${styles.contact}`}> Pothikkannan G - <i class="fa fa-phone" aria-hidden="true"></i> 9500702083</a></div>
+                <div class="col text-center pb-3"><a href="tel:+91 9626463345" target="_blank" className={`${styles.contact}`}> Raveena R - <i class="fa fa-phone" aria-hidden="true"></i> 9626463345</a></div>
+                 <div class="col text-center pb-3"><a href="tel:+91 9626930040" target="_blank" className={`${styles.contact}`}> Sidharth Ganesh - <i class="fa fa-phone" aria-hidden="true"></i> 9626930040</a></div>
+                   </div>   
+                   </div>
+                
+                
+                <div className={`${styles._footer_copyright_div}`}>
                     <p>&#169; 2021 Copyright ABACUS</p>
                 </div>
             </div>
