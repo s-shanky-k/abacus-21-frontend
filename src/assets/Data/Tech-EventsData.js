@@ -135,9 +135,9 @@ export const TechEvents = {
             "Will be updated soon!"
         ],
 
-        contact: [
+        /*contact: [
 
-        ],
+        ],*/
 
         sponsor: "Amazon",
 

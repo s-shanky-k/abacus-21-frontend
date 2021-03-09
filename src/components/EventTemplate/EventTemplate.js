@@ -145,7 +145,7 @@ function EventTemplate({ props }) {
 
           >
             <div className={`${styles._about_event}`}>
-            {props.speakers !== undefined && 
+            {props.contact !== undefined && 
               <div className={`${styles._child}  ${styles._sponsorMargin}`}>
                 <GlowCardSimple props={{
                   title: "Contact",
