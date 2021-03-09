@@ -175,8 +175,8 @@ class Homepage extends Component {
              
       <div class="col text-center">
       <Heading text="Merchandise Sponsors" fontSize="30px" />
-      <div class="row  d-flex justify-content-center align-self-center mt-5 pb-5">
-      <div className="col text-center  d-flex justify-content-center align-self-center">
+      <div class="row  d-flex justify-content-center align-self-center">
+      <div className="col text-center mt-5 pb-5 d-flex justify-content-center align-self-center">
       <FadeInSection>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/Career Crafter.jpg`}
@@ -192,7 +192,7 @@ class Homepage extends Component {
 <div class="col text-center">
              
               <Heading text="Title Sponsors" fontSize="30px" />
-           <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center ">
+           <div class="row row-cols-lg-2 d-flex justify-content-center align-self-center ">
            <div className="col text-center pr-lg-5 mt-5">
                 <FadeInSection>
                   <img
@@ -203,7 +203,7 @@ class Homepage extends Component {
                 </FadeInSection>
                 </div>
 
-              <div className="col text-center pl-lg-5 mt-5 pb-5 ">
+              <div className="col text-center pl-lg-5 mt-5 pb-5">
               <FadeInSection>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`}

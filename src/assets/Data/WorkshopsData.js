@@ -9,24 +9,30 @@ export const Workshops = {
             "Will be updated soon!"
         ],
 
-        /* speakers: [
+        speakers: [
             {
-                name: "Paargav",
-                profession: "xyz"
+                name: "Akshay Ramesh",
+                href:"https://www.linkedin.com/in/akshay-ramesh-309ab040/",
+                profession: "Lead BI Developer",
+                img:"Akshay.jpg",
+                company:"Visual BI Solutions"
             },
             {
-                name: "Paargav",
-                profession: "xyz"
+                href:"https://www.linkedin.com/mwlite/in/rangarajan-sridhar-6a3429192",
+                name: "Rangarajan Sridhar",
+                profession: "Tech Program App Dev 1",
+                img:"Rangarajan.jpeg",
+                company:"Citicorp Services India Pvt Ltd"
             },
-            {
-                name: "Paargav",
-                profession: "xyz"
-            },
-            {
-                name: "Paargav",
-                profession: "xyz"
-            }
-        ], */
+            //{
+              //  name: "Paargav",
+               // profession: "xyz"
+          //  },
+           // {
+              //  name: "Paargav",
+               // profession: "xyz"
+          //  }//
+        ], 
         // sponsor: "",
         contact: [
             {
@@ -82,8 +88,16 @@ export const Workshops = {
         dateTime: [
             "Will be updated soon!"
         ],
-        /* speakers: [
+         speakers: [
             {
+                 name:"Hariharan Ganesan",
+                href:"https://www.linkedin.com/in/4hari/",
+                profession: "Head of Digital & Engineering Capability",
+                img:"Hariharan.jpg",
+                company:"Rolls-Royce India Pvt. Ltd."
+                
+            },
+          /*  {
                 name: "Paargav",
                 profession: "xyz"
             },
@@ -94,12 +108,8 @@ export const Workshops = {
             {
                 name: "Paargav",
                 profession: "xyz"
-            },
-            {
-                name: "Paargav",
-                profession: "xyz"
-            }
-        ], */
+            }*/
+        ], 
         contact: [
             {
                 name: "Keerthana S",

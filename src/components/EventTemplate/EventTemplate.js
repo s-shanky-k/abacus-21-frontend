@@ -144,12 +144,13 @@ function EventTemplate({ props }) {
 
           >
             <div className={`${styles._about_event}`}>
+            {props.speakers !== undefined && 
               <div className={`${styles._child}  ${styles._sponsorMargin}`}>
                 <GlowCardSimple props={{
                   title: "Contact",
                   contact: props.contact
                 }} />
-              </div>
+              </div>}
 
               {
                 props.sponsor === undefined
@@ -160,7 +161,7 @@ function EventTemplate({ props }) {
                   </div>
                   :
                   <div className={`${styles._child}`}>
-                    <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
+                    <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.imgName}` }} />
                   </div>
               }
 

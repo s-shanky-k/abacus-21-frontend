@@ -7,7 +7,7 @@ import FadeInSection from '../FadeInSection/FadeInSection'
 function Dev({ props }){
             return (
                 <>
-        <FadeInSection></FadeInSection> 
+        <FadeInSection>
       <div style={{justifyContent: 'center',alignItems: 'center'}}>
         <div className= {`${styles.inner}`}>
            <img src={`${process.env.PUBLIC_URL}/images/` + `${props.img}`} alt="" style={{ borderRadius: '100%' ,
@@ -17,7 +17,7 @@ function Dev({ props }){
         <p className={`${styles.text1}`}>{props.title1}</p>
         <p className={`${styles.text1}`}>{props.company}</p>
         </div>
-          
+        </FadeInSection>      
        
 </>
         )

@@ -126,6 +126,7 @@ export const TechEvents = {
 
     // Code for Crown - OLPC
     "code-for-crown-olpc": {
+        imgName:"code-for-crown_sponsor1.jpeg",
         name: "Code for Crown - OLPC",
         refName: "code-for-crown",
         about: `Wallow yourself in the realm of coding. Experience a myriad of challenges. Come, conflate your ideas to deal with the conundrums and become the hegemonic coder.`,
@@ -138,7 +139,7 @@ export const TechEvents = {
 
         ],
 
-        // sponsor: "",
+        sponsor: "Amazon",
 
         rules: [
             "Only a team of two is allowed for this event.",

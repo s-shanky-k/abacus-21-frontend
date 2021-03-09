@@ -208,7 +208,8 @@ function WorkshopTemplate({ props }) {
           </div> */}
 
           {/* Speakers */}
-          {/* <div
+          {props.speakers !== undefined && 
+           <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
           <div className="text-center">
@@ -217,12 +218,14 @@ function WorkshopTemplate({ props }) {
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
             <div className="row  d-flex justify-content-center align-self-center pb-5">
               {props.speakers.map((speaker, index) =>
-              <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-5 ">
+              <div className="col col-lg-6 col-md-6 col-sm-12 col-xs-12 pb-5 ">
                 <Dev
                 props={{
+                  href: speaker.href,
                   title: speaker.name,
                   title1: speaker.profession,
-                  img: `workshop/`+`${speaker.name}`+`.jpeg`
+                  img: `about-us/`+`${speaker.img}`,
+                  company: speaker.company
                 }}
                 />
               </div>
@@ -230,7 +233,7 @@ function WorkshopTemplate({ props }) {
               }
             </div>
           </div>
-        </div> */}
+        </div> }
 
           {/* Agenda */}
           {/* <div
