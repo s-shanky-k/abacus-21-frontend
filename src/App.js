@@ -35,20 +35,24 @@ export const AuthApi = React.createContext();
 export const SetAuthApi = React.createContext();
 export const Width = React.createContext();
 export const Height = React.createContext();
+export const NewLoad = React.createContext()
+export const SetNewLoad = React.createContext()
 
 toast.configure()
 function App() {
   const [auth, setauth] = useState(false)
   const [width, setwidth] = useState(0)
   const [height, setheight] = useState(0)
+  const [newload, setnewload] = useState(true)
 
   const history = useHistory()
 
   useEffect(() => {
-
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
     }
+
+    setnewload(false)
 
     updateWindowDimensions();
     window.addEventListener('resize', updateWindowDimensions);
@@ -69,10 +73,14 @@ function App() {
       <AuthApi.Provider value={auth}>
         <SetAuthApi.Provider value={setauth}>
           <Width.Provider value={width}>
-            <Router>
-              <Navbar width={width} />
-              <Routes />
-            </Router>
+            <NewLoad.Provider value={newload}>
+              <SetNewLoad.Provider value={setnewload}>
+                <Router>
+                  <Navbar width={width} />
+                  <Routes />
+                </Router>
+              </SetNewLoad.Provider>
+            </NewLoad.Provider>
           </Width.Provider>
         </SetAuthApi.Provider>
       </AuthApi.Provider>

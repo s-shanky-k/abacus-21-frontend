@@ -27,7 +27,7 @@ function Dashboard(props) {
     }, {
         "title": 'Entrepreneurship',
         "purpose": "ENTREPRENEURSHIP",
-        "url": "/workshops/cyber-security"
+        "url": "/workshops/entrepreneurship"
     }, {
         "title": 'Job Readiness',
         "purpose": "PLACEMENTS",

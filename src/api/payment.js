@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { apiRegisterEvent, apiPayment } from "./api"
 
 
-export const _register = async (history, setregistered, data) => {
+export const _register = async (history, setregistered, data, setloading) => {
     // Redirect to Login Page
     if (Cookies.get("token") === undefined) {
         toast.error("Login Required", {
@@ -24,12 +24,14 @@ export const _register = async (history, setregistered, data) => {
             toast.success("Registration Successfull", {
                 position: toast.POSITION.BOTTOM_CENTER
             })
+            setloading(false)
             setregistered(true)
         }
         else {
             toast.error(response.message, {
                 position: toast.POSITION.BOTTOM_CENTER
             })
+            setloading(false)
         }
     }
 }

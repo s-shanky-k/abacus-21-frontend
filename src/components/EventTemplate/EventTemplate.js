@@ -109,7 +109,8 @@ function EventTemplate({ props }) {
 
   // Register
   const register = () => {
-    _register(history, setregistered, { "purpose": props.purpose });
+    setloading(true)
+    _register(history, setregistered, { "purpose": props.purpose }, setloading);
   }
 
   return (

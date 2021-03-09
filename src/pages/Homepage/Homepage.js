@@ -56,6 +56,19 @@ class Homepage extends Component {
                 margin: "auto",
               }}
             />
+
+            {/* Hidden Images */}
+
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/cloud-computing.svg`}
+            />
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/entrepreneurship.svg`}
+            />
+            <img hidden
+              src={`${process.env.PUBLIC_URL}/images/workshops/job-readiness.svg`}
+            />
+
             <div className="container-fluid  ml-sm-0  justify-content-center align-self-center pb-5">
               <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-2 justify-content-center align-self-center ">
                 <div className=" col mt-5   text-center">
@@ -142,26 +155,26 @@ class Homepage extends Component {
                 }}
               />
             </div>
-            
+
             <div className={`${styles._eventCardImgDiv}`}>
-            
+
               <div
                 className="embed-responsive embed-responsive-21by9"
                 className={styles.eventCardImg}
               >
-                
+
                 <iframe
                   src="https://www.youtube.com/embed/W0eDjWr3ATI"
                   width="100%"
                   height="65%"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 >
                 </iframe>
-                
+
               </div>
-              </div>
+            </div>
           </div>
         </div>
 
@@ -247,116 +260,116 @@ class Homepage extends Component {
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
             <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5  d-flex justify-content-center align-self-center pb-5">
               <div className="col   pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Darrshana",
-                    title1: "Frontend",
-                    img: "dev/darrshana.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
-                  }}
-                /> </FadeInSection>
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Darrshana",
+                      title1: "Frontend",
+                      img: "dev/darrshana.jpeg",
+                      href:
+                        "https://www.linkedin.com/in/darrshana-rajkumar-6a36aa1ba",
+                    }}
+                  /> </FadeInSection>
               </div>
 
               <div className="col   pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Paargav Shanker",
-                    title1: "Frontend",
-                    img: "dev/paargav.jpeg",
-                    href:
-                      "https://www.linkedin.com/in/paargav-shanker-b6708a194/",
-                  }}
-                />
-                </FadeInSection>
-              </div>
-              
-              <div className="col  pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Shankar Kumar",
-                    title1: "Frontend",
-                    img: "dev/shankar.jpeg",
-                    href: "https://www.linkedin.com/in/shankar-kumar-s",
-                  }}
-                />
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Paargav Shanker",
+                      title1: "Frontend",
+                      img: "dev/paargav.jpeg",
+                      href:
+                        "https://www.linkedin.com/in/paargav-shanker-b6708a194/",
+                    }}
+                  />
                 </FadeInSection>
               </div>
 
               <div className="col  pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Srinath Sureshkumar",
-                    title1: "Backend",
-                    img: "dev/Srinath.jpg",
-                    href:
-                      "https://www.linkedin.com/in/srinath-sureshkumar-3467331a5/",
-                  }}
-                /> </FadeInSection>
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Shankar Kumar",
+                      title1: "Frontend",
+                      img: "dev/shankar.jpeg",
+                      href: "https://www.linkedin.com/in/shankar-kumar-s",
+                    }}
+                  />
+                </FadeInSection>
+              </div>
+
+              <div className="col  pb-5 ">
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Srinath Sureshkumar",
+                      title1: "Backend",
+                      img: "dev/Srinath.jpg",
+                      href:
+                        "https://www.linkedin.com/in/srinath-sureshkumar-3467331a5/",
+                    }}
+                  /> </FadeInSection>
               </div>
               <div className="col  pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Umar Ahmed",
-                    title1: "Frontend",
-                    img: "dev/umar.jpeg",
-                    href: "https://www.linkedin.com/in/umar-ahmed-6892481b3",
-                  }}
-                />
-              </FadeInSection>
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Umar Ahmed",
+                      title1: "Frontend",
+                      img: "dev/umar.jpeg",
+                      href: "https://www.linkedin.com/in/umar-ahmed-6892481b3",
+                    }}
+                  />
+                </FadeInSection>
               </div>
               <div className="col  pb-5  ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Adhithya",
-                    title1: "Design",
-                    img: "dev/Adhithya_K.jpg",
-                    href: "https://www.linkedin.com/in/adhithya-karthikeyan/",
-                  }}
-                />
-              </FadeInSection>
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Adhithya",
+                      title1: "Design",
+                      img: "dev/Adhithya_K.jpg",
+                      href: "https://www.linkedin.com/in/adhithya-karthikeyan/",
+                    }}
+                  />
+                </FadeInSection>
               </div>
               <div className="col  pb-5 ">
-              <FadeInSection>
-                <Dev
-                  props={{
-                    title: "Akash",
-                    title1: "Design",
-                    img: "dev/Akash.jpg",
-                    href:
-                      "https://www.linkedin.com/in/akash-murugesh-0151531ab/",
-                  }}
-                />
+                <FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Akash",
+                      title1: "Design",
+                      img: "dev/Akash.jpg",
+                      href:
+                        "https://www.linkedin.com/in/akash-murugesh-0151531ab/",
+                    }}
+                  />
                 </FadeInSection>
               </div>
 
               <div className="col  pb-5 ">
                 <FadeInSection>
-                 <Dev
-                  props={{
-                    title: "Deepak",
-                    title1: "Design",
-                    img: "dev/deepak.jpeg",
-                    href: "https://www.linkedin.com/in/deepak24899/",
-                  }}
-                /> </FadeInSection>
+                  <Dev
+                    props={{
+                      title: "Deepak",
+                      title1: "Design",
+                      img: "dev/deepak.jpeg",
+                      href: "https://www.linkedin.com/in/deepak24899/",
+                    }}
+                  /> </FadeInSection>
               </div>
               <div className="col  pb-5 ">
                 <FadeInSection>
-                 <Dev
-                  props={{
-                    title: "Rohini",
-                    title1: "Design",
-                    img: "dev/Rohini R.jpg",
-                    href: "https://www.linkedin.com/in/rohini-raja/",
-                  }}
-                />
+                  <Dev
+                    props={{
+                      title: "Rohini",
+                      title1: "Design",
+                      img: "dev/Rohini R.jpg",
+                      href: "https://www.linkedin.com/in/rohini-raja/",
+                    }}
+                  />
                 </FadeInSection>
               </div>
             </div>
