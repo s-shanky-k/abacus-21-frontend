@@ -77,7 +77,7 @@ export const NonTechEvents = {
             }
         ],
 
-        theme: "This is theme",
+        theme: "Will be updated soon!",
 
         rules: [
             "Only one entry is allowed per contestant",

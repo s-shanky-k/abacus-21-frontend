@@ -16,7 +16,7 @@ export const url_paymentHackathon = "hackathon/pay"
 export const url_getRegistrationHackathon = "hackathon/getRegistration"
 
 const api = axios.create({
-    baseURL: "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
+    baseURL: "https://abacus.org.in/api/"
 })
 
 export const apiSignin = async (credentials) => {
