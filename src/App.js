@@ -37,6 +37,8 @@ export const Width = React.createContext();
 export const Height = React.createContext();
 export const NewLoad = React.createContext()
 export const SetNewLoad = React.createContext()
+export const NewLoadWorkshop = React.createContext()
+export const SetNewLoadWorkshop = React.createContext()
 
 toast.configure()
 function App() {
@@ -44,6 +46,7 @@ function App() {
   const [width, setwidth] = useState(0)
   const [height, setheight] = useState(0)
   const [newload, setnewload] = useState(true)
+  const [newloadworkshop, setnewloadworkshop] = useState(true)
 
   const history = useHistory()
 
@@ -51,8 +54,6 @@ function App() {
     if (Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) {
       setauth(true)
     }
-
-    setnewload(false)
 
     updateWindowDimensions();
     window.addEventListener('resize', updateWindowDimensions);
@@ -75,10 +76,14 @@ function App() {
           <Width.Provider value={width}>
             <NewLoad.Provider value={newload}>
               <SetNewLoad.Provider value={setnewload}>
-                <Router>
-                  <Navbar width={width} />
-                  <Routes />
-                </Router>
+                <NewLoadWorkshop.Provider value={newloadworkshop}>
+                  <SetNewLoadWorkshop.Provider value={setnewloadworkshop}>
+                    <Router>
+                      <Navbar width={width} />
+                      <Routes />
+                    </Router>
+                  </SetNewLoadWorkshop.Provider>
+                </NewLoadWorkshop.Provider>
               </SetNewLoad.Provider>
             </NewLoad.Provider>
           </Width.Provider>

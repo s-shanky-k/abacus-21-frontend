@@ -59,6 +59,8 @@ toast.configure()
 export default function Events() {
 
     const [toastDisplay, setToastDisplay] = useState(true)
+    const _SetNewLoad = React.useContext(SetNewLoad)
+    const _NewLoad = React.useContext(NewLoad)
 
     const customStyle = {
         display: 'flex',
@@ -68,14 +70,14 @@ export default function Events() {
     }
 
     useEffect(() => {
-        if(toastDisplay) {
+        if(_NewLoad) {
             toast.info("Single Payment for both Tech and Non-Tech Events", {
                 position: toast.POSITION.BOTTOM_LEFT,
                 autoClose: 8000,
                 closeButton: false,
                 style: customStyle,
             })
-            setToastDisplay(false);
+            _SetNewLoad(false)
         }
         return () => {
             
