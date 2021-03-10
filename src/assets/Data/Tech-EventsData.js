@@ -142,8 +142,8 @@ export const TechEvents = {
         sponsor: "Amazon",
 
         rules: [
-            "Only a team of two is allowed for this event.",
-            "Team mates will be allowed to interact with each other only after the first round.",
+            "This event is for individual participants only.",
+            
             "There will be no negative marking for MCQs.",
             "Participants are allowed to use any one of the following programming languages for the coding rounds (C, C++, Java, Python3)",
             "Participants found guilty are not allowed to proceed with the competition.",
