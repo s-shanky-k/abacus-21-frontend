@@ -251,6 +251,9 @@ class Homepage extends Component {
         </div>
 
         {/* Child Class */}
+
+        {/* Dev Section */}
+
         <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
@@ -285,6 +288,7 @@ class Homepage extends Component {
                   />
                 </FadeInSection>
               </div>
+
 
               <div className="col  pb-5 ">
                 <FadeInSection>
