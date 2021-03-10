@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 
-export const baseURL = "http://ec2-3-16-135-186.us-east-2.compute.amazonaws.com:3000/"
+export const baseURL = "https://abacus.org.in/api/"
 export const url_signin = "auth/signin";
 export const url_register = "auth/register"
 export const url_forgotPassword = "auth/forgotPassword"
