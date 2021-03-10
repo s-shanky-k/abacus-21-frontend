@@ -21,7 +21,7 @@ export const _register = async (history, setregistered, data, setloading) => {
         })
 
         if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Registration Successful", {
                 position: toast.POSITION.BOTTOM_CENTER
             })
             setloading(false)
@@ -38,7 +38,7 @@ export const _register = async (history, setregistered, data, setloading) => {
 
 export const _paymentConfirmation = async (history, setpaymentDetails, toggleModal, data, setloading) => {
     if (Cookies.get("token") === undefined) {
-        toast.success("Login Required", {
+        toast.error("Login Required", {
             position: toast.POSITION.BOTTOM_CENTER
         })
         history.push("/login-register")
@@ -58,7 +58,7 @@ export const _paymentConfirmation = async (history, setpaymentDetails, toggleMod
         }
         else {
             setloading(false)
-            toast.success(response.message, {
+            toast.error(response.message, {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         }

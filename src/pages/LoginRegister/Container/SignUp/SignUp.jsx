@@ -228,7 +228,7 @@ function SignUp() {
                 Cookies.set("token", response.token)
                 Cookies.set("details", obj_str)
                 SetAuth(true)
-                toast.success("Registration Successfull", {
+                toast.success("Registration Successful", {
                     position: toast.POSITION.BOTTOM_LEFT
                 })
                 history.push("/dashboard")
