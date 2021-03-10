@@ -179,17 +179,45 @@ class Homepage extends Component {
         </div>
 
         {/* Child Class */}
-        <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
-          <div className="text-center mt-0">
-            <Heading text="Sponsors" fontSize="50px" />
-            </div>
-            <div className="container-fluid mx-auto d-flex justify-content-center align-self-center mt-0">
-            <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
-             
-      <div class="col text-center">
-      <Heading text="Merchandise Sponsors" fontSize="30px" />
+        
+<div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
+  <div className="text-center mt-0">
+  <Heading text="Sponsors" fontSize="50px" />
+  </div>
+  <div className="container-fluid mx-auto d-flex justify-content-center align-self-center mt-0">
+  <div className="row row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
+    <div class="col text-center">
+    <Heading text="Title Sponsors" fontSize="30px" />
+           <div class="row row-cols-lg-2 d-flex justify-content-center align-self-center ">
+           <div className="col text-center">
+                <FadeInSection>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`}
+                    className={`${styles.img2}`}
+                    alt="Motorq"
+                  />
+                </FadeInSection>
+                </div>
+
+              <div className="col text-center pb-5">
+              <FadeInSection>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`}
+                    className={`${styles.img2}`}
+                    alt="Visa"
+                  />
+                </FadeInSection> 
+              </div>
+
+             </div>
+      
+      </div>         
+      <div class="col">
+      <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
+<div class="col text-center ">
+<Heading text="Merchandise Sponsors" fontSize="30px" />
       <div class="row  d-flex justify-content-center align-self-center">
-      <div className="col text-center mt-5 pb-5 d-flex justify-content-center align-self-center">
+      <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
       <FadeInSection>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/Career Crafter.jpg`}
@@ -203,33 +231,8 @@ class Homepage extends Component {
              </div>
 </div>
 <div class="col text-center">
-             
-              <Heading text="Title Sponsors" fontSize="30px" />
-           <div class="row row-cols-lg-2 d-flex justify-content-center align-self-center ">
-           <div className="col text-center pr-lg-5 mt-5">
-                <FadeInSection>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`}
-                    className={`${styles.img}`}
-                    alt="Motorq"
-                  />
-                </FadeInSection>
-                </div>
-
-              <div className="col text-center pl-lg-5 mt-5 pb-5">
-              <FadeInSection>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`}
-                    className={`${styles.img}`}
-                    alt="Visa"
-                  />
-                </FadeInSection> 
-              </div>
-
-             </div></div>
-<div class="col text-center">
-      <Heading text="Internship Sponsors" fontSize="30px" />
-      <div class="row  d-flex justify-content-center align-self-center mt-5 pb-5 pt-4">
+<Heading text="Internship Sponsors" fontSize="30px" />
+      <div class="row  d-flex justify-content-center align-self-center  pb-5 pt-4">
       <div className="col text-center">
       <FadeInSection>
                   <img
@@ -243,10 +246,11 @@ class Homepage extends Component {
                
              </div>
 </div>
-             
-             
-             </div>
-</div>
+
+
+      </div>
+  </div>  
+</div><div></div></div>
           
         </div>
 
