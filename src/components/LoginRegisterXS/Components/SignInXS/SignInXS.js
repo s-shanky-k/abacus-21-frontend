@@ -116,8 +116,8 @@ function SignInXS() {
                 { validationError ? (<div className={styles.login_validation_output}>{validationError}</div>) : null}
                 <Link to="/forgot-password"><div className={styles.forgot_password} >Forgot password?</div></Link>
 
-                <GoogleButton className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
                 <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
+                <GoogleButton className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
             </div>
         </div>
 

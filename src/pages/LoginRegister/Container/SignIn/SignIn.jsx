@@ -101,8 +101,9 @@ function SignIn(props) {
                 }
                 <Link className="forgot-password" to="/forgot-password">Forgot password?</Link>
 
-                <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
                 <NeonButton props={{ text: "Sign In", color: "#26a0da", onClick: onSubmit, parameters: SetAuth, credentials: { email: email, pwd: pwd } }} />
+                <GoogleButton className="google-button" onClick={clickGoogleIcon} type="dark" />
+
             </div>}
         </>
 
