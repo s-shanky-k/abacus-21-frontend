@@ -4,6 +4,7 @@ import SignInXS from './Components/SignInXS/SignInXS'
 import SignUpXS from './Components/SignUpXS/SignUpXS'
 import Heading from '../Heading/Heading'
 import Heading1 from '../Heading1/Heading1'
+import Footer from '../Footer/Footer'
 
 export default function LoginRegisterXS() {
 
@@ -21,6 +22,7 @@ export default function LoginRegisterXS() {
     }
 
     return (
+        <>
         <div className={styles.formWrapper}>
             <div className={styles.toggleDiv}>
                 {login ? <div className={styles.toggleButton} onClick={handleLoginClick}><Heading text="LOGIN" fontSize="35px" /></div> : <div className={styles.toggleButton} onClick={handleLoginClick}><Heading1 text="LOGIN" fontSize="35px" /></div>}
@@ -28,5 +30,7 @@ export default function LoginRegisterXS() {
             </div>
             { login ? <SignInXS></SignInXS> : <SignUpXS></SignUpXS> }
         </div>
+        <Footer scroll_snap={false} />
+        </>
     )
 }

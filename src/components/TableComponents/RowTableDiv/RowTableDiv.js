@@ -60,7 +60,7 @@ function RowTableDiv(props) {
 
 
     let render_data1 = [<p>Not Registered</p>]
-    let render_data2 = [<p to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></p>]
+    let render_data2 = [<Link to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></Link>]
 
     if (props.item && props.type === "events" && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {

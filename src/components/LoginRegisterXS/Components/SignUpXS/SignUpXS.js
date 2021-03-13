@@ -263,8 +263,8 @@ function SignUpXS() {
                     <input className={styles.register_input_field} type="password" placeholder="Confirm Password" required value={cpwd} onChange={(e) => setcpwd(e.target.value)} />
                 </div>
                 {validationError ? (<div className={styles.register_validation_output}>{validationError}</div>) : null}
-                <GoogleButton label="Register with Google" className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
                 <NeonButton props={{ text: "Sign Up", color: "#26a0da", onClick: onSubmit }} />
+                <GoogleButton label="Register with Google" className={styles.google_button} onClick={clickGoogleIcon} type="dark" />
             </div>
         </div>
     );
