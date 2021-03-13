@@ -182,49 +182,81 @@ class Homepage extends Component {
         
 <div className={`${styles._homepage} ${styles.bg1} ${styles._responsive}`}>
   <div className="text-center mt-0">
-  <Heading text="Sponsors" fontSize="50px" />
+  <Heading text="Sponsors" fontSize="40px" />
   </div>
   <div className="container-fluid mx-auto d-flex justify-content-center align-self-center mt-0">
-  <div className="row row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
+  <div className="m-auto row row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
     <div class="col text-center">
     <Heading text="Title Sponsors" fontSize="30px" />
            <div class="row row-cols-lg-2 d-flex justify-content-center align-self-center ">
            <div className="col text-center">
-                <FadeInSection>
+                
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/motorq.svg`}
                     className={`${styles.img2}`}
                     alt="Motorq"
                   />
-                </FadeInSection>
+                
                 </div>
 
               <div className="col text-center pb-5">
-              <FadeInSection>
+              
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/visa_modified.svg`}
                     className={`${styles.img2}`}
                     alt="Visa"
                   />
-                </FadeInSection> 
+                
               </div>
 
              </div>
       
       </div>         
       <div class="col">
-      <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
+      <div class="m-auto row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
 <div class="col text-center ">
 <Heading text="Merchandise Sponsors" fontSize="30px" />
       <div class="row  d-flex justify-content-center align-self-center">
       <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
-      <FadeInSection>
+      
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/Career Crafter.jpg`}
                     className={`${styles.img}`}
                     alt="Career Crafter"
                   />
-      </FadeInSection> 
+      
+
+          </div>
+               
+             </div>
+</div>
+<div class="col text-center ">
+<Heading text="Workshops Sponsors" fontSize="30px" />
+      <div class="row  d-flex justify-content-center align-self-center">
+      <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
+     
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/about-us/Tamilpreneur Logo.png`}
+                    className={`${styles.img}`}
+                    alt="Career Crafter"
+                  />
+      
+
+          </div>
+               
+             </div>
+</div>
+<div class="col text-center ">
+<Heading text="Platform Sponsors" fontSize="30px" />
+      <div class="row  d-flex justify-content-center align-self-center">
+      <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
+      
+                  <img
+                    src="https://codechef_shared.s3.amazonaws.com/download/New%20CodeChef%20Logo/cc-logo.svg"
+                    className={`${styles.img}`}
+                    alt="Career Crafter"
+                  />
+    
 
           </div>
                
@@ -234,13 +266,13 @@ class Homepage extends Component {
 <Heading text="Internship Sponsors" fontSize="30px" />
       <div class="row  d-flex justify-content-center align-self-center  pb-5 pt-4">
       <div className="col text-center">
-      <FadeInSection>
+      
                   <img
                     src={`${process.env.PUBLIC_URL}/images/about-us/amazon.jpeg`}
                     className={`${styles.img1}`}
                     alt="Amazon"
                   />
-      </FadeInSection> 
+     
 
           </div>
                
