@@ -11,11 +11,25 @@ export const Workshops = {
 
         speakers: [
             {
+                name: "Palanidaran Chidambaram",
+                href:"https://www.linkedin.com/mwlite/in/palanidaranchidambaram",
+                profession: "Director, Appstore and Cross-Screen Tech",
+                img:"Palanidaran.jpeg",
+                company:"Amazon India"
+            },
+            {
                 name: "Akshay Ramesh",
                 href:"https://www.linkedin.com/in/akshay-ramesh-309ab040/",
                 profession: "Lead BI Developer",
                 img:"Akshay.jpg",
                 company:"Visual BI Solutions"
+            },
+            {
+                name: "Nivetha Govindan",
+                href:"https://www.linkedin.com/in/nivetha-govindan-8a44a1137",
+                profession: "Associate Developer",
+                img:"Nivetha.jpeg",
+                company:"Sap Labs India"
             },
             {
                 href:"https://www.linkedin.com/mwlite/in/rangarajan-sridhar-6a3429192",
@@ -24,14 +38,7 @@ export const Workshops = {
                 img:"Rangarajan.jpeg",
                 company:"Citicorp Services India Pvt Ltd"
             },
-            //{
-              //  name: "Paargav",
-               // profession: "xyz"
-          //  },
-           // {
-              //  name: "Paargav",
-               // profession: "xyz"
-          //  }//
+            
         ], 
         // sponsor: "",
         contact: [
@@ -97,18 +104,15 @@ export const Workshops = {
                 company:"Rolls-Royce India Pvt. Ltd."
                 
             },
-          /*  {
-                name: "Paargav",
-                profession: "xyz"
-            },
             {
-                name: "Paargav",
-                profession: "xyz"
-            },
-            {
-                name: "Paargav",
-                profession: "xyz"
-            }*/
+                name:"Savitha Ramasamy",
+               href:"https://www.linkedin.com/in/savitha-ramasamy-936428b6/",
+               profession: "Scientist III & Principal Investigator, Institute for Infocomm Research",
+               img:"Savitha.jpg",
+               company:"A*STAR, Singapore"
+               
+           },
+         
         ], 
         contact: [
             {
@@ -160,8 +164,15 @@ export const Workshops = {
         dateTime: [
             "Will be updated soon!"
         ],
-        /* speakers: [
+         speakers: [
             {
+                name:"Thiyagarajan Balasubramanian",
+                href:" https://www.linkedin.com/in/thiyagab/",
+                profession: "Senior Manager",
+                img:"Thiyagarajan Balasubramanian.jpeg",
+                company:"Walmart Global Tech India" 
+            },
+            /*{
                 name: "Paargav",
                 profession: "xyz"
             },
@@ -172,12 +183,8 @@ export const Workshops = {
             {
                 name: "Paargav",
                 profession: "xyz"
-            },
-            {
-                name: "Paargav",
-                profession: "xyz"
-            }
-        ], */
+            }*/
+        ], 
         contact: [
             {
                 name: "Varshini E",

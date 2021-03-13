@@ -152,19 +152,16 @@ export const TechEvents = {
         ],
 
         rounds: {
-            number: 3,
+            number: 2,
             roundDetails: [
                 {
                     title: "Prelims",
-                    description: "The participants will be given 30 minutes to answer MCQs based on data structures and algorithms, C programming, aptitude and basic mathematics (set theory, probability, graph theory)."
-                },
-                {
-                    title: "Semi-Finals",
-                    description: "Coding round where participants will be given 60 minutes to solve 4 programming questions."
+                    description: "The participants are expected to answer a set of MCQs and a few standard coding questions." 
+
                 },
                 {
                     title: "Finals",
-                    description: "Coding round where participants will be given 60 minutes to solve 4 programming questions."
+                    description: "Candidates must answer a few coding questions"
                 },
                 {   title : "Prize",
                     description: "The winners will get exciting cash prizes, internship opportunities, T shirts and many more goodies"

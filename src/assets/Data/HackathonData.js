@@ -6,7 +6,7 @@ export const Hackathon = {
             Then why do you wait? Fasten your belts and bump into the signature event of Abacus,
             where you need to team up and brainstorm your ideas to create a prototype.`,
     dateTime: [
-        "Will be updated soon!"
+        "25/03/2021 and 26/03/2021"
     ],
 
     contact: [
@@ -19,9 +19,11 @@ export const Hackathon = {
     // sponsor: "",
 
     rules: [
-        "The event is for a team of two participants.",
+        "The event is for a team of three participants (At Least 2 participants)",
+        "Problem statement will be provided on 25th March, 2021 and participants are expected to present their prototype on 26th March, 2021",
         "Decisions made by the administrators will be final",
-        "Participants must ensure that they have laptop with good internet connectivity for their convenience"
+        "Participants must ensure that they have laptop with good internet connectivity for their convenience",
+        "Participants must ensure that they have microsoft account"
     ],
 
     /* rounds: {

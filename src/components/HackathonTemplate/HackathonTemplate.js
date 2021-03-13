@@ -131,8 +131,7 @@ function EventTemplate({ props }) {
 
 
           {/* Contact-Sponsor/Theme-Platform */}
-          {/* <div
-            className={`${styles._homepage} ${styles.bg}`}
+           <div className={`${styles._homepage} ${styles.bg}`}
 
           >
             <div className={`${styles._about_event}`}>
@@ -143,7 +142,7 @@ function EventTemplate({ props }) {
                 }} />
               </div>
               
-              {
+              {/*
                 props.sponsor === undefined 
                 ?
                   props.theme !== undefined &&
@@ -154,20 +153,20 @@ function EventTemplate({ props }) {
                 <div className={`${styles._child} `}>
                   <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
                 </div>
-              }
+              }*/}
               
 
               <div className={`${styles._child}`}>
                 <GlowCardSimple props={{
-                  title: "Time",
+                  title: "Date",
                   list: props.dateTime
                 }} />
               </div>
             </div>
-          </div> */}
+          </div> 
 
           {/* Rules */}
-          {/* <div
+           <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
@@ -181,7 +180,7 @@ function EventTemplate({ props }) {
                 }} />
               </div>
             </div>
-          </div> */}
+          </div> 
 
 
           {/* Rounds or Instructions*/}
