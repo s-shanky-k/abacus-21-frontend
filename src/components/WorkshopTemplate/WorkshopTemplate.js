@@ -173,13 +173,13 @@ function WorkshopTemplate({ props }) {
 
 
           {/* Contact-Sponsor/Theme-Platform */}
-          {/* <div
+           <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
             <div className={`${styles._about_event}`}>
               <div className={`${styles._child}`}>
-                <GlowCardSimple props={{
+                {/*<GlowCardSimple props={{
                   title: "Contact",
                   contact: props.contact
                 }} />
@@ -196,17 +196,17 @@ function WorkshopTemplate({ props }) {
                 <div className={`${styles._child} `}>
                   <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
                 </div>
-              }
+              }*/}
               
 
               <div className={`${styles._child}`}>
                 <GlowCardSimple props={{
-                  title: "Time & Platform",
+                  title: "Date and Time",
                   list: props.dateTime
                 }} />
               </div>
             </div>
-          </div> */}
+          </div> </div>
 
           {/* Speakers */}
           {props.speakers !== undefined && 
@@ -252,7 +252,7 @@ function WorkshopTemplate({ props }) {
           </div> */}
 
           {/*Prereq*/}
-          {/* <div
+           <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
@@ -263,7 +263,7 @@ function WorkshopTemplate({ props }) {
                   list: props.prerequisite
                 }} />
               </div>
-            </div> */}
+            </div> 
 
 
 

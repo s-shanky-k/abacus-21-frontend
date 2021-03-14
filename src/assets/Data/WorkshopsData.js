@@ -6,7 +6,8 @@ export const Workshops = {
         refName: "job-readiness",
         about: `Getting a job is one of the most crucial junctures of one's life, marking the transformation from being a student to being professional. This workshop helps you in learning the industry trends from senior professionals from various top firms around the globe and get a clear picture along with some mock interviews.`,
         dateTime: [
-            "Will be updated soon!"
+            "Date - 27/03/2021",
+            "Time - 10 am to 4 pm"
         ],
 
         speakers: [
@@ -74,6 +75,7 @@ export const Workshops = {
         },
         prerequisite: [
             "Participants must have their updated resumes with them while attending the session",
+            "Participants must ensure that they have microsoft account"
         ],
         registration: true,
         purpose: "PLACEMENTS"
@@ -87,13 +89,14 @@ export const Workshops = {
         about: `Have you ever dreamt of building your own business?
                 Entrepreneurship is the key to unlock your future. 
                 Brush up the knowledge required to embark on an 
-                entrepreneurial journey with the workshop conducted by ----. 
+                entrepreneurial journey with this workshop. 
                 Also learn how to build effective relationships and other tactics to 
                 launch your own business. Awaken the Entrepreneur in you and make your ideas 
                 come alive.`,
         
         dateTime: [
-            "Will be updated soon!"
+            "Date : 26/03/2021",
+            "Time : 10 am to 4 pm"
         ],
          speakers: [
             {
@@ -162,7 +165,8 @@ export const Workshops = {
         about: `Unlock the future of data storage and computing power through our cloud computing workshop. You will learn how to apply concepts with cloud services and work with relevant tools and platforms like AWS, Azure, Google Cloud and DevOps from experts at Walmart.`,
 
         dateTime: [
-            "Will be updated soon!"
+            "Date - 27/03/2021",
+            "Time - 10 am to 4 pm"
         ],
          speakers: [
             {

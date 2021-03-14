@@ -63,7 +63,7 @@ export const NonTechEvents = {
 
         dateTime: [
             "Last Date - 20 March 2021",
-            "Instagram - Imagenation_Abacus"
+            "Instagram - abacus21_ceg"
         ],
 
         contact: [
@@ -113,7 +113,7 @@ export const NonTechEvents = {
                 official social media handle.`,
         dateTime: [
             "Last Date - 20 March 2021",
-            "Instagram - GraphicTraffic_Abacus"
+            "Instagram - abacus21_ceg"
         ],
 
         contact: [
