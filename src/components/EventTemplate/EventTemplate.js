@@ -131,10 +131,44 @@ function EventTemplate({ props }) {
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
-                <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                
+              <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+              {props.registration &&
+                  <div >
+                    {
+                      !registered ?
+                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                        :
+                        (!paid ?
+                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
+                          :
+                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
+                    }
+                  </div>
+                }
+
+                <Modal isOpen={modalIsOpen} style={{
+                  content: {
+                    backgroundColor: "#060c21",
+                    zIndex: '999',
+                    overflowY: 'hidden'
+                  },
+                  overlay: {
+                    backgroundColor: "black",
+                    zIndex: '999'
+                  }
+                }}>
+                  <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
+                </Modal>
+
+              
               </div>
-            </div>
+               </div>
           </div>
+            
+
+
+         
 
 
 
@@ -219,35 +253,7 @@ function EventTemplate({ props }) {
                     rounds: props.rounds,
                   }} />
                 </div>
-                {props.registration &&
-                  <div className="my-5">
-                    {
-                      !registered ?
-                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
-                        :
-                        (!paid ?
-                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
-                          :
-                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
-                    }
-                  </div>
-                }
-
-
-                {/* Modal */}
-                <Modal isOpen={modalIsOpen} style={{
-                  content: {
-                    backgroundColor: "#060c21",
-                    zIndex: '999',
-                    overflowY: 'hidden'
-                  },
-                  overlay: {
-                    backgroundColor: "black",
-                    zIndex: '999'
-                  }
-                }}>
-                  <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
-                </Modal>
+                
                 <div>
 
                 </div>
