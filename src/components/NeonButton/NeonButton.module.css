@@ -212,7 +212,7 @@ span,
         transition: 0.3s;  
     }
  }
- @media only screen and (min-width:1101px) and (max-width:1400px){
+ @media only screen and (min-width:1101px) and (max-width:2000px){
     .a_n3{
     background: var(--color);
      color: #fff;

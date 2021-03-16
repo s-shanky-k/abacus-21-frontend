@@ -214,7 +214,7 @@ function WorkshopTemplate({ props }) {
            <div
           className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
         >
-          <div className="text-center">
+          <div className="text-center mt-5 pt-4">
             <Heading text="Speakers" fontSize="40px" />
           </div>
           <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
