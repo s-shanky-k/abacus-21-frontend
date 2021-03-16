@@ -76,7 +76,7 @@ function EventTemplate({ props }) {
 
   // Register
   const register = () => {
-    if (Cookies.get("token") === undefined || Cookies.get("details") === undefined) {
+    if (!(Cookies.get("token") !== undefined && Cookies.get("details") !== undefined)) {
       history.push("/login-register")
       toast.error("Login Required", {
         position: toast.POSITION.BOTTOM_CENTER
@@ -103,7 +103,7 @@ function EventTemplate({ props }) {
                 <GlowCardSimple props={{
                   title: props.name,
                   content: props.about,
-                  fee:props.fee
+                  fee: props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
