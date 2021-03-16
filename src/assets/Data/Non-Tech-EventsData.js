@@ -5,7 +5,7 @@ export const NonTechEvents = {
         name: "House Full",
         refName: "house-full",
         about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
-
+        fee: `Registration Fee - RS.150`,
         dateTime: [
             "Will be updated soon!"
         ],
@@ -60,6 +60,7 @@ export const NonTechEvents = {
                 It is a social media based (Instagram) event where the contestant competes to
                 showcase their photography talent. The photos will be displayed in the abacus 
                 official social media handle`,
+        fee: `Registration Fee - RS.150`,
 
         dateTime: [
             "Last Date - 20 March 2021",
@@ -111,6 +112,7 @@ export const NonTechEvents = {
                 It is a social media based (Instagram) event where the contestant competes 
                 to showcase their designing talent. The posters will be displayed in the abacus 
                 official social media handle.`,
+        fee: `Registration Fee - RS.150`,
         dateTime: [
             "Last Date - 20 March 2021",
             "Instagram - abacus21_ceg"

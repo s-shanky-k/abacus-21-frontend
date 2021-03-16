@@ -5,6 +5,7 @@ export const Workshops = {
         name: "Job Readiness",
         refName: "job-readiness",
         about: `Getting a job is one of the most crucial junctures of one's life, marking the transformation from being a student to being professional. This workshop helps you in learning the industry trends from senior professionals from various top firms around the globe and get a clear picture along with some mock interviews.`,
+        fee: `Registration Fee - RS.350`,
         dateTime: [
             "Date - 27/03/2021",
             "Time - 10 am to 4 pm"
@@ -93,7 +94,7 @@ export const Workshops = {
                 Also learn how to build effective relationships and other tactics to 
                 launch your own business. Awaken the Entrepreneur in you and make your ideas 
                 come alive.`,
-        
+        fee: `Registration Fee - RS.250`,
         dateTime: [
             "Date : 26/03/2021",
             "Time : 10 am to 4 pm"
@@ -115,6 +116,14 @@ export const Workshops = {
                company:"A*STAR, Singapore"
                
            },
+           {
+            name:"Santhosh Muruganantham",
+           href:"https://www.linkedin.com/in/santhoshmuruganantham/",
+           profession: "Co Founder & Managing Director",
+           img:"santhosh.jpg",
+           company:"kolapasi"
+           
+       },
          
         ], 
         contact: [
@@ -163,7 +172,7 @@ export const Workshops = {
         name: "Cloud Computing",
         refName: "cloud-computing",
         about: `Unlock the future of data storage and computing power through our cloud computing workshop. You will learn how to apply concepts with cloud services and work with relevant tools and platforms like AWS, Azure, Google Cloud and DevOps from experts at Walmart.`,
-
+        fee: `Registration Fee - RS.250`,
         dateTime: [
             "Date - 27/03/2021",
             "Time - 10 am to 4 pm"

@@ -5,6 +5,7 @@ export const Hackathon = {
             innovate and develop influential solutions to a problem using technology?
             Then why do you wait? Fasten your belts and bump into the signature event of Abacus,
             where you need to team up and brainstorm your ideas to create a prototype.`,
+    fee: `Registration Fee - Rs.100`,        
     dateTime: [
         "25/03/2021 and 26/03/2021"
     ],

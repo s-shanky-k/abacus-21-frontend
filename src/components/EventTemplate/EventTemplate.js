@@ -127,7 +127,8 @@ function EventTemplate({ props }) {
               <div className={`${styles._glowCardDiv}`}>
                 <GlowCardSimple props={{
                   title: props.name,
-                  content: props.about
+                  content: props.about,
+                  fee:props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
@@ -211,10 +212,7 @@ function EventTemplate({ props }) {
           </div>
 
           {/* Rules */}
-          <div
-            className={`${styles._homepage} ${styles.bg1}`}
-
-          >
+          <div className={`${styles._homepage} ${styles.bg1}`}>
             <div className={`${styles._rulesDivContainer}`}>
               <div className={`${styles._rulesDiv}`}>
                 <GlowCard props={{

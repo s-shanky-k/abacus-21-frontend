@@ -94,7 +94,8 @@ function EventTemplate({ props }) {
               <div className={`${styles._glowCardDiv}`}>
                 <GlowCardSimple props={{
                   title: props.name,
-                  content: props.about
+                  content: props.about,
+                  fee:props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
