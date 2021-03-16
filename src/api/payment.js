@@ -21,7 +21,7 @@ export const _register = async (history, setregistered, data, setloading) => {
         })
 
         if (response.status === 200) {
-            toast.success("Registration Successful", {
+            toast.success("Registration Successful. Yet to pay.", {
                 position: toast.POSITION.BOTTOM_CENTER
             })
             setloading(false)
