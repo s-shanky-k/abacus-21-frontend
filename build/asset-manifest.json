@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fac99b3a.chunk.css",
+    "main.js": "/static/js/main.f9b1c151.chunk.js",
+    "main.js.map": "/static/js/main.f9b1c151.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6f9e60be.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6f9e60be.js.map",
+    "static/css/2.d5b8b7d2.chunk.css": "/static/css/2.d5b8b7d2.chunk.css",
+    "static/js/2.b6d4b4b4.chunk.js": "/static/js/2.b6d4b4b4.chunk.js",
+    "static/js/2.b6d4b4b4.chunk.js.map": "/static/js/2.b6d4b4b4.chunk.js.map",
+    "static/js/3.295b3ba7.chunk.js": "/static/js/3.295b3ba7.chunk.js",
+    "static/js/3.295b3ba7.chunk.js.map": "/static/js/3.295b3ba7.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.d5b8b7d2.chunk.css.map": "/static/css/2.d5b8b7d2.chunk.css.map",
+    "static/css/main.fac99b3a.chunk.css.map": "/static/css/main.fac99b3a.chunk.css.map",
+    "static/js/2.b6d4b4b4.chunk.js.LICENSE.txt": "/static/js/2.b6d4b4b4.chunk.js.LICENSE.txt",
+    "static/media/Workshops.module.css": "/static/media/asset_pattern_16 9_variation.f914e189.svg",
+    "static/media/Loader.module.css": "/static/media/Clip.37aa5dc0.woff2",
+    "static/media/App.css": "/static/media/screaming_neon.f155c1c5.ttf",
+    "static/media/page-not-found.01c812bf.svg": "/static/media/page-not-found.01c812bf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f9e60be.js",
+    "static/css/2.d5b8b7d2.chunk.css",
+    "static/js/2.b6d4b4b4.chunk.js",
+    "static/css/main.fac99b3a.chunk.css",
+    "static/js/main.f9b1c151.chunk.js"
+  ]
+}
