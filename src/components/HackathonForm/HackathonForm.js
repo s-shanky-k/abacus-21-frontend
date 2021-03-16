@@ -151,7 +151,7 @@ export default function HackathonForm() {
 
         if (response.status === 200) {
             history.push("/hackathon")
-            toast.success(response.data.message, {
+            toast.success("Registration Successfull. Yet to pay.", {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         }

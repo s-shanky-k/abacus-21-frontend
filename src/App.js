@@ -100,7 +100,8 @@ const Routes = () => {
   return (
     <Switch>
       <Route path="/" exact>
-        <Redirect to="/homepage" />
+        {(Cookies.get("token") !== undefined && Cookies.get("details") !== undefined) ? <Redirect to="/dashboard" /> : <Redirect to="/homepage" />}
+
       </Route>
       <Route path="/homepage" exact component={Homepage} />
       <Route path="/about-us" exact component={AboutUs} />
