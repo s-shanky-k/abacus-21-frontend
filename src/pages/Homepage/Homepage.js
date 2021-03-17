@@ -322,7 +322,7 @@ class Homepage extends Component {
                     props={{
                       title: "Paargav Shanker",
                       title1: "Frontend",
-                      img: "dev/Paargav.jpeg",
+                      img: "dev/paargav.jpeg",
                       href:
                         "https://www.linkedin.com/in/paargav-shanker-b6708a194/",
                     }}
