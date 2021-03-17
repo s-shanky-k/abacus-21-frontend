@@ -67,6 +67,7 @@
         flex-basis: 80% !important;
         order: 2 !important;
         margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     ._eventCardImgDiv {
@@ -117,6 +118,8 @@
 ._rulesDiv1 {
     width: 85% !important;
     flex-basis: 85% !important;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 @media only screen and (max-width:1025px){
     .bg{
