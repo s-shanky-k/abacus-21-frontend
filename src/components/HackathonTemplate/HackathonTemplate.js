@@ -76,8 +76,16 @@ function EventTemplate({ props }) {
 
   // Register
   const register = () => {
-    history.push("/hackathon-form")
-    // _register(history, setregistered);
+    if (!(Cookies.get("token") !== undefined && Cookies.get("details") !== undefined)) {
+      history.push("/login-register")
+      toast.error("Login Required", {
+        position: toast.POSITION.BOTTOM_CENTER
+      })
+    }
+    else {
+      history.push("/hackathon-form")
+    }
+
   }
 
   return (
@@ -95,7 +103,7 @@ function EventTemplate({ props }) {
                 <GlowCardSimple props={{
                   title: props.name,
                   content: props.about,
-                  fee:props.fee
+                  fee: props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
@@ -132,7 +140,7 @@ function EventTemplate({ props }) {
 
 
           {/* Contact-Sponsor/Theme-Platform */}
-           <div className={`${styles._homepage} ${styles.bg}`}
+          <div className={`${styles._homepage} ${styles.bg}`}
 
           >
             <div className={`${styles._about_event}`}>
@@ -142,7 +150,7 @@ function EventTemplate({ props }) {
                   contact: props.contact
                 }} />
               </div>
-              
+
               {/*
                 props.sponsor === undefined 
                 ?
@@ -155,7 +163,7 @@ function EventTemplate({ props }) {
                   <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
                 </div>
               }*/}
-              
+
 
               <div className={`${styles._child}`}>
                 <GlowCardSimple props={{
@@ -164,10 +172,10 @@ function EventTemplate({ props }) {
                 }} />
               </div>
             </div>
-          </div> 
+          </div>
 
           {/* Rules */}
-           <div
+          <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
@@ -181,7 +189,7 @@ function EventTemplate({ props }) {
                 }} />
               </div>
             </div>
-          </div> 
+          </div>
 
 
           {/* Rounds or Instructions*/}

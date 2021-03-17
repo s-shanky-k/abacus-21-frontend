@@ -89,7 +89,7 @@ export default function Events() {
                 <div id="#" className={`${styles._homepage} ${styles._responsive} ${styles.bg}`} >
                     <GlowCardResponsive props={{ title: "Tech Events", titleFontFamily: "Iceland", href: "events/tech", img: "events/tech.svg" }} />
                     <GlowCardResponsive props={{ title: "Hackathon", titleFontFamily: "Iceland", href: "/hackathon", img: "events/hackathon.svg" }} />
-                    <GlowCardResponsive props={{ title: "Non-Tech Events", titleFontFamily: "Iceland", href: "events/non-tech##", img: "events/nontech.svg" }} />
+                    <GlowCardResponsive props={{ title: "Non-Tech Events", titleFontFamily: "Iceland", href: "events/non-tech", img: "events/nontech.svg" }} />
                 </div>
                 <Footer />
         </>
