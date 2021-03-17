@@ -128,7 +128,7 @@ function GlowCardSimple({ props }) {
                                         : props.list.map((item, index) =>
                                             <p key={index + 1} className={styles.dateTime}>{item}</p>
                                         )
-                                    : <p className={styles.glowCardText}><span style={{ color: '#fff' }}>{props.content}</span></p>}
+                                    : <p className={styles.glowCardText}><span style={{ color: '#fff' }}>{props.content}<br/>{props.fee}</span></p>}
                             </div>
 
                         </div>
