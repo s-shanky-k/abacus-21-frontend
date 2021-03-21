@@ -23,6 +23,10 @@
     flex-wrap: wrap;
     
 }
+.img5{
+    width:100px;
+    height:130px;
+}
 .bg{
     background-color:#060c21;
     background-image:url('../../assets/Images/Asset\ 5event.svg');
@@ -226,15 +230,19 @@
     }
     .img2{
         width:250px;
-        height:180px;
+        height:150px;
     }
     .img{
         width:150px;
         height:150px;
     }
+    .img4{
+width:120px;
+height:120px;
+    }
     .img1{
-        width:220px;
-        height:90px;
+        width:120px;
+        height:70px;
     }
     ._rulesDiv {
         font-size: x-small;

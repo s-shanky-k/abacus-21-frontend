@@ -108,14 +108,7 @@ export const Workshops = {
                 company:"Rolls-Royce India Pvt. Ltd."
                 
             },
-            {
-                name:"Savitha Ramasamy",
-               href:"https://www.linkedin.com/in/savitha-ramasamy-936428b6/",
-               profession: "Scientist III & Principal Investigator, Institute for Infocomm Research",
-               img:"Savitha.jpg",
-               company:"A*STAR, Singapore"
-               
-           },
+            
            {
             name:"Santhosh Muruganantham",
            href:"https://www.linkedin.com/in/santhoshmuruganantham/",

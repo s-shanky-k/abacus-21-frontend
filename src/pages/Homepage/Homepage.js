@@ -217,16 +217,16 @@ class Homepage extends Component {
                 </div>
 
               </div>
-              <div class="col">
+             
                 <div class="m-auto row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-xs-1  d-flex justify-content-center align-self-center">
                   <div class="col text-center ">
-                    <Heading text="Merchandise Sponsors" fontSize="30px" />
+                    <Heading text="Merchandise Sponsors" fontSize="28px" />
                     <div class="row  d-flex justify-content-center align-self-center">
                       <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
 
                         <img
                           src={`${process.env.PUBLIC_URL}/images/about-us/Career Crafter.jpg`}
-                          className={`${styles.img}`}
+                          className={`${styles.img4}`}
                           alt="Career Crafter"
                         />
 
@@ -236,14 +236,14 @@ class Homepage extends Component {
                     </div>
                   </div>
                   <div class="col text-center ">
-                    <Heading text="Workshops Sponsors" fontSize="30px" />
+                    <Heading text="Workshops Sponsors" fontSize="28px" />
                     <div class="row  d-flex justify-content-center align-self-center">
                       <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
 
                         <img
                           src={`${process.env.PUBLIC_URL}/images/about-us/Tamilpreneur Logo.png`}
                           className={`${styles.img}`}
-                          alt="Career Crafter"
+                          alt="Tamilpreneur"
                         />
 
 
@@ -252,14 +252,14 @@ class Homepage extends Component {
                     </div>
                   </div>
                   <div class="col text-center ">
-                    <Heading text="Platform Sponsors" fontSize="30px" />
+                    <Heading text="Platform Sponsors" fontSize="28px" />
                     <div class="row  d-flex justify-content-center align-self-center">
                       <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
 
                         <img
                           src="https://codechef_shared.s3.amazonaws.com/download/New%20CodeChef%20Logo/cc-logo.svg"
                           className={`${styles.img}`}
-                          alt="Career Crafter"
+                          alt="Codechef"
                         />
 
 
@@ -268,9 +268,9 @@ class Homepage extends Component {
                     </div>
                   </div>
                   <div class="col text-center">
-                    <Heading text="Internship Sponsors" fontSize="30px" />
-                    <div class="row  d-flex justify-content-center align-self-center  pb-5 pt-4">
-                      <div className="col text-center">
+                    <Heading text="Internship Sponsors" fontSize="28px" />
+                    <div class="row row-cols-lg-2 d-flex justify-content-center align-self-center  pb-5 pt-4">
+                      <div className="col text-center pt-5 mb-5">
 
                         <img
                           src={`${process.env.PUBLIC_URL}/images/about-us/amazon.jpeg`}
@@ -280,6 +280,16 @@ class Homepage extends Component {
 
 
                       </div>
+                      <div className="col text-center">
+
+                    <img
+                    src={`${process.env.PUBLIC_URL}/images/about-us/Saj.jpeg`}
+                    className={`${styles.img5}`}
+                    alt="YouthInU"
+                    />
+
+
+                   </div>
 
                     </div>
                   </div>
@@ -289,7 +299,7 @@ class Homepage extends Component {
               </div>
             </div><div></div></div>
 
-        </div>
+      
 
         {/* Child Class */}
 

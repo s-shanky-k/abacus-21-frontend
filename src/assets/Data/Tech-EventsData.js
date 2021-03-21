@@ -2,11 +2,13 @@ export const TechEvents = {
     // Tenet
     "tenet": {
         name: "Tenet",
+        imgName:"Saj.jpeg",
         refName: "tenet",
         about: `TENET is a challenge where the participants have to identify and resolve bugs, thus making the system unproblematic. Logical thinking of the programmer is tested through this event where the participant has to come up with unique solutions to produce an expected output.`,
         fee: `Registration Fee - RS.150`,
         dateTime: [
-            "Will be updated soon!"
+            "Date:March 26th",
+            "Time:2pm"
         ],
 
         contact: [
@@ -28,7 +30,7 @@ export const TechEvents = {
             },
         ],
 
-        // sponsor: "",
+        sponsor: "YouthInU",
 
         rules: [
             "This event is for individual participants only.",
@@ -71,7 +73,8 @@ export const TechEvents = {
         about: `Novice.init() is an exclusive event for the first year students of various colleges. It provides scope for the young minds to explore the coding world and to assess their logical reasoning abilities. This event introduces newbies to the technical contests.`,
         fee: `Registration Fee - RS.150`,
         dateTime: [
-            "Will be updated soon!"
+            "Date:March 26th",
+            "Time:9:30am"
         ],
 
         contact: [
@@ -132,7 +135,8 @@ export const TechEvents = {
         about: `Wallow yourself in the realm of coding. Experience a myriad of challenges. Come, conflate your ideas to deal with the conundrums and become the hegemonic coder.`,
         fee: `Registration Fee - RS.150`,
         dateTime: [
-            "Will be updated soon!"
+            "Date:March 26th",
+            "Time:11am"
         ],
 
         /*contact: [
@@ -174,12 +178,14 @@ export const TechEvents = {
 
     // X-Domain Combat
     "x-domain-combat": {
+        imgName:"Saj.jpeg",
         name: "X-Domain Combat",
         refName: "x-domain-combat",
         about: `X - Domain Combat mainly focuses on the sound knowledge and solid familiarity of the participants in 3 known topics DBMS, Networks and Operating Systems.`,
         fee: `Registration Fee - RS.150`,
         dateTime: [
-            "Will be updated soon!"
+            "Date:March 26th",
+            "Time:2pm"
         ],
 
         contact: [
@@ -201,7 +207,7 @@ export const TechEvents = {
             },
         ],
 
-        // sponsor: "",
+        sponsor: "YouthInU",
 
         rules: [
             "This event allows only individual participants.",

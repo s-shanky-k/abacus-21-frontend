@@ -7,7 +7,8 @@ export const NonTechEvents = {
         about: `Are you looking for a bizarre event that furnishes a crazy time?. Then get ready and jump in. This is an event for all the non technical pros out there.`,
         fee: `Registration Fee - RS.150`,
         dateTime: [
-            "Will be updated soon!"
+             "Date:March 26th",
+            "Time:6pm"
         ],
 
         contact: [
