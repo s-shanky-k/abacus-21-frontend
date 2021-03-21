@@ -237,7 +237,7 @@ class Homepage extends Component {
                   </div>
                   <div class="col text-center ">
                     <Heading text="Workshops Sponsors" fontSize="28px" />
-                    <div class="row  d-flex justify-content-center align-self-center">
+                    <div class="row d-flex justify-content-center align-self-center">
                       <div className="col text-center mt-3 pb-3 d-flex justify-content-center align-self-center ">
 
                         <img
