@@ -111,13 +111,11 @@ function EventTemplate({ props }) {
                 {props.registration &&
                   <div className="my-5">
                     {
-                      !registered ?
-                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                      (!registered || !paid)
+                        ?
+                        <p className={`${styles._paymentText}`}>Registrations Closed!</p>
                         :
-                        (!paid ?
-                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
-                          :
-                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
+                        <p className={`${styles._paymentText}`}>Already Registered and Paid</p>
                     }
                   </div>
                 }

@@ -130,7 +130,7 @@ function WorkshopTemplate({ props }) {
                 <GlowCardSimple props={{
                   title: props.name,
                   content: props.about,
-                  fee:props.fee
+                  fee: props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
@@ -141,13 +141,11 @@ function WorkshopTemplate({ props }) {
                 {props.registration &&
                   <div >
                     {
-                      !registered ?
-                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                      (!registered || !paid)
+                        ?
+                        <p className={`${styles._paymentText}`}>Registrations Closed!</p>
                         :
-                        (!paid ?
-                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
-                          :
-                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
+                        <p className={`${styles._paymentText}`}>Already Registered and Paid</p>
                     }
                   </div>
                 }
@@ -174,7 +172,7 @@ function WorkshopTemplate({ props }) {
 
 
           {/* Contact-Sponsor/Theme-Platform */}
-           <div
+          <div
             className={`${styles._homepage} ${styles.bg}`}
 
           >
@@ -198,44 +196,44 @@ function WorkshopTemplate({ props }) {
                   <GlowCardResponsive props={{ title: props.sponsor, content: 'Sponsor', img: "events/" + `${props.refName}` + `_sponsor.svg` }} />
                 </div>
               }*/}
-              
 
-              <div className={`${styles._child}`}>
-                <GlowCardSimple props={{
-                  title: "Date and Time",
-                  list: props.dateTime
-                }} />
+
+                <div className={`${styles._child}`}>
+                  <GlowCardSimple props={{
+                    title: "Date and Time",
+                    list: props.dateTime
+                  }} />
+                </div>
               </div>
-            </div>
-          </div> </div>
+            </div> </div>
 
           {/* Speakers */}
-          {props.speakers !== undefined && 
-           <div
-          className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
-        >
-          <div className="text-center mt-5 pt-4">
-            <Heading text="Speakers" fontSize="40px" />
-          </div>
-          <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
-            <div className="row  d-flex justify-content-center align-self-center pb-5">
-              {props.speakers.map((speaker, index) =>
-              <div className="col col-lg-6 col-md-6 col-sm-12 col-xs-12 pb-5 ">
-                <Dev
-                props={{
-                  href: speaker.href,
-                  title: speaker.name,
-                  title1: speaker.profession,
-                  img: `about-us/`+`${speaker.img}`,
-                  company: speaker.company
-                }}
-                />
+          {props.speakers !== undefined &&
+            <div
+              className={`${styles._homepage} ${styles._responsive} ${styles.bg}`}
+            >
+              <div className="text-center mt-5 pt-4">
+                <Heading text="Speakers" fontSize="40px" />
               </div>
-              )
-              }
-            </div>
-          </div>
-        </div> }
+              <div className="container-fluid m-auto d-flex justify-content-center pt-5 align-self-center pb-5">
+                <div className="row  d-flex justify-content-center align-self-center pb-5">
+                  {props.speakers.map((speaker, index) =>
+                    <div className="col col-lg-6 col-md-6 col-sm-12 col-xs-12 pb-5 ">
+                      <Dev
+                        props={{
+                          href: speaker.href,
+                          title: speaker.name,
+                          title1: speaker.profession,
+                          img: `about-us/` + `${speaker.img}`,
+                          company: speaker.company
+                        }}
+                      />
+                    </div>
+                  )
+                  }
+                </div>
+              </div>
+            </div>}
 
           {/* Agenda */}
           {/* <div
@@ -253,18 +251,18 @@ function WorkshopTemplate({ props }) {
           </div> */}
 
           {/*Prereq*/}
-           <div
+          <div
             className={`${styles._homepage} ${styles.bg1}`}
 
           >
-    
+
             <div className={`${styles._child}`}>
-                <GlowCardSimple props={{
-                  title: "Prerequisites",
-                  list: props.prerequisite
-                }} />
-              </div>
-            </div> 
+              <GlowCardSimple props={{
+                title: "Prerequisites",
+                list: props.prerequisite
+              }} />
+            </div>
+          </div>
 
 
 

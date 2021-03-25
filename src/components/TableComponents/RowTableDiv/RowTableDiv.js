@@ -60,7 +60,7 @@ function RowTableDiv(props) {
 
 
     let render_data1 = [<p>Not Registered</p>]
-    let render_data2 = [<Link to={props.item.url} className={`${styles.link}`}>Register<ArrowRightIcon /></Link>]
+    let render_data2 = [<p>Registrations Closed</p>]
 
     if (props.item && props.type === "events" && props.registrationDetails) {
         for (let i = 0; i < props.registrationDetails.length; i++) {
@@ -76,70 +76,48 @@ function RowTableDiv(props) {
                         <Tooltip title="Payment ID" arrow placement="right">
                             <p className={`${styles.wordBreak}`}>{props.registrationDetails[i].paymentid}</p>
                         </Tooltip>
-
                     )
                 }
-                else if (props.registrationDetails[i].status === null) {
+                else {
                     render_data1.push(
-                        <p>Not Paid</p>
+                        <p>Not Registered</p>
                     )
                     render_data2.push(
-                        <p onClick={paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></p>
+                        <p>Registrations Closed</p>
                     )
                 }
-
-                else if (props.registrationDetails[i].status === "Failed") {
-                    render_data1.push(
-                        <p>Payment Failed</p>
-                    )
-                    render_data2.push(
-                        <p onClick={paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></p>
-                    )
-                }
-
-
             }
         }
     }
     else if (props.item && props.type === "hackathon") {
+        render_data1 = []
+        render_data2 = []
         if (props.registrationDetails.team === null) {
-
+            render_data1.push(
+                <p>Not Registered</p>
+            )
+            render_data2.push(
+                <p>Registrations Closed</p>
+            )
         }
         else {
             if (props.registrationDetails.team.status === "Credit") {
-                render_data1 = []
-                render_data2 = []
+
                 render_data1.push(
-                    // <p>Paid</p>
                     <p onClick={hack_toggleModal}>Team Details</p>
                 )
                 render_data2.push(
                     <Tooltip title="Payment ID" arrow placement="right">
                         <p className={`${styles.wordBreak}`}>{props.registrationDetails.paymentid}</p>
                     </Tooltip>
-
                 )
             }
-            else if (props.registrationDetails.team.status === null) {
-                render_data1 = []
-                render_data2 = []
+            else {
                 render_data1.push(
-                    // <p>Not Paid</p>
-                    <p onClick={hack_toggleModal} className={`${styles.link}`}>Team Details</p>
+                    <p>Not Registered</p>
                 )
                 render_data2.push(
-                    <p onClick={hack_paymentConfirmation} className={`${styles.link}`}>Pay<ArrowRightIcon /></p>
-                )
-            }
-
-            else if (props.registrationDetails.team.status === "Failed") {
-                render_data1 = []
-                render_data2 = []
-                render_data1.push(
-                    <p>Payment Failed</p>
-                )
-                render_data2.push(
-                    <p onClick={hack_paymentConfirmation} className={`${styles.link}`}>Retry<ArrowRightIcon /></p>
+                    <p>Registrations Closed</p>
                 )
             }
         }

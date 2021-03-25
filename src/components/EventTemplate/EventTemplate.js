@@ -128,22 +128,20 @@ function EventTemplate({ props }) {
                 <GlowCardSimple props={{
                   title: props.name,
                   content: props.about,
-                  fee : props.fee
+                  fee: props.fee
                 }} />
               </div>
               <div className={`${styles._eventCardImgDiv}`}>
-                
-              <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
-              {props.registration &&
+
+                <img src={`${process.env.PUBLIC_URL}/images/events/` + `${props.refName}` + `.svg`} alt="" className={styles.eventCardImg} />
+                {props.registration &&
                   <div >
                     {
-                      !registered ?
-                        (<NeonButton props={{ text: "Register", onClick: register, color: "#26a0da" }} />)
+                      (!registered || !paid)
+                        ?
+                        <p className={`${styles._paymentText}`}>Registrations Closed!</p>
                         :
-                        (!paid ?
-                          (<NeonButton props={{ text: "Pay", onClick: paymentConfirmation, color: "#26a0da" }} />)
-                          :
-                          <p className={`${styles._paymentText}`}>Already Registered and Paid</p>)
+                        <p className={`${styles._paymentText}`}>Already Registered and Paid</p>
                     }
                   </div>
                 }
@@ -162,14 +160,14 @@ function EventTemplate({ props }) {
                   <PaymentConfirmation data={paymentDetails} onClose={toggleModal} />
                 </Modal>
 
-              
+
               </div>
-               </div>
+            </div>
           </div>
-            
 
 
-         
+
+
 
 
 
@@ -180,13 +178,13 @@ function EventTemplate({ props }) {
 
           >
             <div className={`${styles._about_event}`}>
-            {props.contact !== undefined && 
-              <div className={`${styles._child}  ${styles._sponsorMargin}`}>
-                <GlowCardSimple props={{
-                  title: "Contact",
-                  contact: props.contact
-                }} />
-              </div>}
+              {props.contact !== undefined &&
+                <div className={`${styles._child}  ${styles._sponsorMargin}`}>
+                  <GlowCardSimple props={{
+                    title: "Contact",
+                    contact: props.contact
+                  }} />
+                </div>}
 
               {
                 props.sponsor === undefined
@@ -251,7 +249,7 @@ function EventTemplate({ props }) {
                     rounds: props.rounds,
                   }} />
                 </div>
-                
+
                 <div>
 
                 </div>
