@@ -2,6 +2,7 @@
 
 **Abacus'21 organized by the Department of Computer Science and Engineering, College of Engineering Guindy, Anna University**
 
+Hosted Archive Link: [abacus-2021.netlify.app/](https://abacus-2021.netlify.app/)
 
 This repository contains the frontend code of the official **Abacus'21** website. This version of Abacus is going to be one of its kind - A symposium completely online.
 
